@@ -1,0 +1,9 @@
+# Fichiers intermediaires latex #
+###################
+*.aux
+*.loa
+*.lof
+*.log
+*.lot
+*.toc
+*.out
