@@ -1,12 +1,12 @@
 \documentclass[11pt, french]{report-rd-info}
-   % - 12pt:  peut être préférable pour faciliter la lecture sur les petits écrans, demander à l'encadrement
-   % - screen:  à enlever pour obtenir un rapport au format A4
-   % - french:  à remplacer par english en cas de rédaction (exceptionnelle) en anglais
-\usepackage[latin1]{inputenc}
+   % - 12pt:  peut Ãªtre prÃ©fÃ©rable pour faciliter la lecture sur les petits Ã©crans, demander Ã  l'encadrement
+   % - screen:  Ã  enlever pour obtenir un rapport au format A4
+   % - french:  Ã  remplacer par english en cas de rÃ©daction (exceptionnelle) en anglais
+\usepackage[utf8]{inputenc}
    % - latin9, utf8, etc.
 \usepackage[T1]{fontenc}
 
-% définitions propres au contenu actuel
+% dÃ©finitions propres au contenu actuel
 \usepackage{enumerate}
 \usepackage{amsmath, amssymb}
 \usepackage{algorithm}
@@ -17,7 +17,7 @@
 	   \renewcommand{\listalgorithmname}{Liste des algorithmes}
 	\fi
 \usepackage{algorithmic}
-	\renewcommand{\algorithmicrequire}{\textbf{Précondition:}}
+	\renewcommand{\algorithmicrequire}{\textbf{PrÃ©condition:}}
 	\renewcommand{\algorithmicensure}{\textbf{Post-condition:}}
 	\renewcommand{\algorithmiccomment}[1]{\emph{// #1}}
 	\renewcommand{\algorithmicend}{\textbf{fin}}
@@ -34,8 +34,8 @@
 	\renewcommand{\algorithmicendwhile}{\algorithmicend\ \algorithmicwhile}
 	\renewcommand{\algorithmicloop}{\textbf{fin tant que}}
 	\renewcommand{\algorithmicendloop}{\algorithmicend\ \algorithmicloop}
-	\renewcommand{\algorithmicrepeat}{\textbf{répéter}}
-	\renewcommand{\algorithmicuntil}{\textbf{jusqu'à}}
+	\renewcommand{\algorithmicrepeat}{\textbf{rÃ©pÃ©ter}}
+	\renewcommand{\algorithmicuntil}{\textbf{jusqu'Ã }}
 	\renewcommand{\algorithmicprint}{\textbf{afficher}}
 	\renewcommand{\algorithmicreturn}{\textbf{renvoyer}}
 	\renewcommand{\algorithmictrue}{\textbf{vrai}}
@@ -44,55 +44,55 @@
 \newenvironment{typographie}{\begin{quote}\textbf{Typographie}. }{\end{quote}}
 \newenvironment{structuration}{\begin{quote}\textbf{Structuration}. }{\end{quote}}
 
-\newtheorem{theoreme}{Théorème}
+\newtheorem{theoreme}{ThÃ©orÃ¨me}
 \newtheorem{preuve}{Preuve}
 
 \begin{document}
 
 \title{Magic Portrait}
-\subtitle{Améliorons la photographie (de portrait) !}
+\subtitle{AmÃ©liorons la photographie (de portrait) !}
 \authorA{Pierre-Yves}{Hervo}
-\authorB{Paul-François}{Jeau}
+\authorB{Paul-FranÃ§ois}{Jeau}
 \supervisor{Matthieu}{Perreira Da Silva}
    % Si plusieurs co-encadrants, alors utiliser la forme suivante :
    %    \cosupervisor{Alter}{Ego \& {\normalfont Jean} Cadre}
 \coordinator{Nom}{Prenom}
 \institution{IRCCyN}
-   % - LINA pour un encadrement par les membres des équipes GRIM et COD (voire d'autres) ;
-   % - IRCCyN pour un encadrement par les membres des équipes IVC ;
+   % - LINA pour un encadrement par les membres des Ã©quipes GRIM et COD (voire d'autres) ;
+   % - IRCCyN pour un encadrement par les membres des Ã©quipes IVC ;
    % - XXX pour un encadrement dans le cadre d'un autre organisme
-   %   (il faut alors fournir dans le répertoire "logos" les fichiers correspondant : XXX.pdf -- à défaut XXX.jpeg ou XXX.png -- pour pdflatex *et* XXX.eps pour latex) ;
-   % - commenter pour un encadrement qui relève d'un travail de recherche non affecté à une équipe.
+   %   (il faut alors fournir dans le rÃ©pertoire "logos" les fichiers correspondant : XXX.pdf -- Ã  dÃ©faut XXX.jpeg ou XXX.png -- pour pdflatex *et* XXX.eps pour latex) ;
+   % - commenter pour un encadrement qui relÃ¨ve d'un travail de recherche non affectÃ© Ã  une Ã©quipe.
 \theme{IVC}
-   % - à fournir dans le cas d'un laboratoire (GRIM, COD ou IVC pour les équipes du département)
+   % - Ã  fournir dans le cas d'un laboratoire (GRIM, COD ou IVC pour les Ã©quipes du dÃ©partement)
    % - commenter autrement
-   % - ne peut pas être fourni si l'institution n'a pas été renseignée
+   % - ne peut pas Ãªtre fourni si l'institution n'a pas Ã©tÃ© renseignÃ©e
 %\coinstitution{Centre national de la recherche scientifique}{CNRS}{1.7cm}
    % - pour ajouter un partenaire
-   % - le logo doit correspondre au fichier déclaré, ici CNRS.pdf.
-   % - le troisième paramètre permet d'adapter la largeur du logo afin
-   %   de le rendre visuellement comparable à ceux mis par défaut (université de Nantes et
-   %   éventuellement laboratoire)
+   % - le logo doit correspondre au fichier dÃ©clarÃ©, ici CNRS.pdf.
+   % - le troisiÃ¨me paramÃ¨tre permet d'adapter la largeur du logo afin
+   %   de le rendre visuellement comparable Ã  ceux mis par dÃ©faut (universitÃ© de Nantes et
+   %   Ã©ventuellement laboratoire)
 \date{15 octobre 2013}
-   % - en français les mois ne prennent pas de majuscule (sauf si vous ne mettez pas le jour)
-   % - inutile de mettre un 0 devant les jours 1 à 9 du mois !
-   % - le jour est peut-être même une précision inutile...
+   % - en franÃ§ais les mois ne prennent pas de majuscule (sauf si vous ne mettez pas le jour)
+   % - inutile de mettre un 0 devant les jours 1 Ã  9 du mois !
+   % - le jour est peut-Ãªtre mÃªme une prÃ©cision inutile...
 
 %-------------------------------------------------------------------------------------------------------------
 
 \begin{abstract}
-%\small % À décommenter si le résumé est légèrement trop long pour tenir dans la page
-Comme son nom l'indique, le résumé condense en quelques paragraphes
-la \emph{totalité} du rapport. Il faut donc décrire succinctement et
+%\small % Ã€ dÃ©commenter si le rÃ©sumÃ© est lÃ©gÃ¨rement trop long pour tenir dans la page
+Comme son nom l'indique, le rÃ©sumÃ© condense en quelques paragraphes
+la \emph{totalitÃ©} du rapport. Il faut donc dÃ©crire succinctement et
 successivement :
 \begin{enumerate}
-   \item le sujet et la problématique ;
-   \item les objectifs fixés ;
-   \item les recherches effectuées ;
-   \item les décisions prises ;
+   \item le sujet et la problÃ©matique ;
+   \item les objectifs fixÃ©s ;
+   \item les recherches effectuÃ©es ;
+   \item les dÃ©cisions prises ;
    \item les constructions conceptuelles ;
-   \item les développements accomplis ;
-   \item les expérimentations conduites, leurs résultats et leur interprétation ;
+   \item les dÃ©veloppements accomplis ;
+   \item les expÃ©rimentations conduites, leurs rÃ©sultats et leur interprÃ©tation ;
    \item les limites de ce travail ;
    \item les perspectives qu'il ouvre.
 \end{enumerate}
@@ -100,16 +100,16 @@ successivement :
 
 \begin{classification}
 %\small % Idem
-   Des éléments d'indexation bibliographiques \emph{doivent} être fournis. Ci-dessous est illustrée l'usage du thésaurus de l'ACM avec les catégories codifiées et des éléments d'indexation ouverts.
-   Suivre le modèle de l'ACM : cf. \url{http://www.acm.org/class/1998/}
+   Des Ã©lÃ©ments d'indexation bibliographiques \emph{doivent} Ãªtre fournis. Ci-dessous est illustrÃ©e l'usage du thÃ©saurus de l'ACM avec les catÃ©gories codifiÃ©es et des Ã©lÃ©ments d'indexation ouverts.
+   Suivre le modÃ¨le de l'ACM : cf. \url{http://www.acm.org/class/1998/}
 
    \category{H.2.8}{Database Applications}{Image databases}
    \category{H.3.3}{Information Search and Retrieval}{Clustering, Information filtering, Relevance feedback}
    \category{H.3.7}{Digital Libraries}{User issues}
    \category{I.5.3}{Clustering}{Algorithms, Similarity measures}
    \category{I.4.10}{Image Representation}{Statistical, Multidimensional}
-   \terms{Des mots clés couramment employés et très généraux sont à ajouter aux catégories. ex.\ : Algorithms, performance, experimentation, human factors, verification.}
-   \keywords{Des mots clés supplémentaires et très spécifiques peuvent être ajoutés. ex.\ : Personnalisation, recherche d'images par le contenu, classification, rétro-action,
+   \terms{Des mots clÃ©s couramment employÃ©s et trÃ¨s gÃ©nÃ©raux sont Ã  ajouter aux catÃ©gories. ex.\ : Algorithms, performance, experimentation, human factors, verification.}
+   \keywords{Des mots clÃ©s supplÃ©mentaires et trÃ¨s spÃ©cifiques peuvent Ãªtre ajoutÃ©s. ex.\ : Personnalisation, recherche d'images par le contenu, classification, rÃ©tro-action,
    apprentissage.}
 \end{classification}
 
@@ -118,8 +118,8 @@ successivement :
 %-------------------------------------------------------------------------------------------------------------
 
 \begin{acknowledgements}
-Nous souhaitons remercier Mathieu PERREIRA DA SILVA pour son encadrement et ses conseils tout au long de cette première phase du projet de Recherche et Développement.
-De plus, nos remerciements s'adressent aussi à Polytech Nantes et à l'ensemble du corps de l'équipe pédagogique, pour la formation de qualité qui nous a été prodiguée.
+Nous souhaitons remercier Mathieu PERREIRA DA SILVA pour son encadrement et ses conseils tout au long de cette premiÃ¨re phase du projet de Recherche et DÃ©veloppement.
+De plus, nos remerciements s'adressent aussi Ã  Polytech Nantes et Ã  l'ensemble du corps de l'Ã©quipe pÃ©dagogique, pour la formation de qualitÃ© qui nous a Ã©tÃ© prodiguÃ©e.
 
 \end{acknowledgements}
 
@@ -133,153 +133,153 @@ De plus, nos remerciements s'adressent aussi à Polytech Nantes et à l'ensemble d
 
 \chapter{Introduction}
 
-Qui n'a jamais eu envie de pouvoir améliorer sa photo de profil sans avoir à faire appel à un photographe professionnel ? Ce projet s'inscrit dans plusieurs thèmes liés à la photographie, l'amélioration d'images et plus particulièrement celui de la photo de portrait.
+Qui n'a jamais eu envie de pouvoir amÃ©liorer sa photo de profil sans avoir Ã  faire appel Ã  un photographe professionnel ? Ce projet s'inscrit dans plusieurs thÃ¨mes liÃ©s Ã  la photographie, l'amÃ©lioration d'images et plus particuliÃ¨rement celui de la photo de portrait.
 
-\section{Présentation de la problématique}
+\section{PrÃ©sentation de la problÃ©matique}
 
-Nombreux sont-ceux qui arborent une photo de profil sur leur réseau social favori, cependant nous n'avons pas tous les capacités pour l'améliorer. Encore faut-il avoir connaissance des points à perfectionner et des moyens à mettre en oeuvre. 
-Ainsi, pouvoir concentrer une expertise dans un algorithme d'amélioration de portrait en sauverait plus d'un. La problèmatique est donc la suivante: que et comment améliorer une photo de portrait ? Bien sûr la photo de portrait qui serait obtenu ne pourra dépasser un certain seuil de modifications afin de demeurer fidèle.
+Nombreux sont-ceux qui arborent une photo de profil sur leur rÃ©seau social favori, cependant nous n'avons pas tous les capacitÃ©s pour l'amÃ©liorer. Encore faut-il avoir connaissance des points Ã  perfectionner et des moyens Ã  mettre en oeuvre. 
+Ainsi, pouvoir concentrer une expertise dans un algorithme d'amÃ©lioration de portrait en sauverait plus d'un. La problÃ¨matique est donc la suivante: que et comment amÃ©liorer une photo de portrait ? Bien sÃ»r la photo de portrait qui serait obtenu ne pourra dÃ©passer un certain seuil de modifications afin de demeurer fidÃ¨le.
 
 \section{Objectifs poursuivis}
 
-Les objectifs de ce projet sont multiples et le premier est tout d'abord l'établissement d'un état de l'art sur plusieurs domaines. Ces domaines relevent des critères esthétiques qui déterminent une image attirante / photographie attirante / un visage attirant. Subséquemment, l'étude des techniques d'améliorations des images, photographie, photo de visage est nécessaire. L'objectif ultime serait de condenser toutes ces techniques, ou d'implémenter une technique globale, qui permettrait de faire ressortir tout le potentiel d'une photo de portait. 
+Les objectifs de ce projet sont multiples et le premier est tout d'abord l'Ã©tablissement d'un Ã©tat de l'art sur plusieurs domaines. Ces domaines relevent des critÃ¨res esthÃ©tiques qui dÃ©terminent une image attirante / photographie attirante / un visage attirant. SubsÃ©quemment, l'Ã©tude des techniques d'amÃ©liorations des images, photographie, photo de visage est nÃ©cessaire. L'objectif ultime serait de condenser toutes ces techniques, ou d'implÃ©menter une technique globale, qui permettrait de faire ressortir tout le potentiel d'une photo de portait. 
 
 
-\section{Travail réalisé}
+\section{Travail rÃ©alisÃ©}
 
-Atteindre le but poursuivi ne peut se faire qu'en se fixant une ligne de travail, en émettant des hypothèses, éventuellement des probabilités de réussite ou d'échec -- auquel cas il faut prévoir des solutions de repli -- et des étapes dans la réalisation.
+Atteindre le but poursuivi ne peut se faire qu'en se fixant une ligne de travail, en Ã©mettant des hypothÃ¨ses, Ã©ventuellement des probabilitÃ©s de rÃ©ussite ou d'Ã©chec -- auquel cas il faut prÃ©voir des solutions de repli -- et des Ã©tapes dans la rÃ©alisation.
 
-Cette partie sera mise à jour au fur et à mesure de l'avancement du travail, le titre de la section devant être à l'origine << Travail à réaliser >> mais correspondant bien à << Travail réalisé >> à la fin de la rédaction du rapport.
+Cette partie sera mise Ã  jour au fur et Ã  mesure de l'avancement du travail, le titre de la section devant Ãªtre Ã  l'origine << Travail Ã  rÃ©aliser >> mais correspondant bien Ã  << Travail rÃ©alisÃ© >> Ã  la fin de la rÃ©daction du rapport.
 
 \section{Contribution}
 
-Il ne faut jamais laisser patienter le lecteur jusqu'à la fin du rapport pour connaître les résultats, positifs aussi bien que négatifs, de ce travail. Les contributions et conclusions sont donc clairement présentées dès ce chapitre d'introduction !
+Il ne faut jamais laisser patienter le lecteur jusqu'Ã  la fin du rapport pour connaÃ®tre les rÃ©sultats, positifs aussi bien que nÃ©gatifs, de ce travail. Les contributions et conclusions sont donc clairement prÃ©sentÃ©es dÃ¨s ce chapitre d'introduction !
 
-\section{Plan de l'étude}
+\section{Plan de l'Ã©tude}
 
-Une fois qu'un survol relativement précis de l'ensemble du travail a été réalisé, il convient d'entrer dans les détails pour le lecteur désireux de poursuivre la lecture du rapport.
+Une fois qu'un survol relativement prÃ©cis de l'ensemble du travail a Ã©tÃ© rÃ©alisÃ©, il convient d'entrer dans les dÃ©tails pour le lecteur dÃ©sireux de poursuivre la lecture du rapport.
 
-La logique d'ensemble de l'organisation du rapport est précisée si la simple lecture continue de chapitres ne s'impose pas d'elle-même. Chaque chapitre donne alors lieu à une description succincte. Le but de ces quelques paragraphes est de fournir une vue générale du rapport sans avoir à lire l'introduction de chaque chapitre séparément.
+La logique d'ensemble de l'organisation du rapport est prÃ©cisÃ©e si la simple lecture continue de chapitres ne s'impose pas d'elle-mÃªme. Chaque chapitre donne alors lieu Ã  une description succincte. Le but de ces quelques paragraphes est de fournir une vue gÃ©nÃ©rale du rapport sans avoir Ã  lire l'introduction de chaque chapitre sÃ©parÃ©ment.
 
-Très grossièrement, le découpage de base se répartit entre la recherche de solutions plus ou moins complètes à des problèmes similaires, voire au problème lui-même et le développement d'une (nouvelle) solution, éventuellement partielle elle-même.
+TrÃ¨s grossiÃ¨rement, le dÃ©coupage de base se rÃ©partit entre la recherche de solutions plus ou moins complÃ¨tes Ã  des problÃ¨mes similaires, voire au problÃ¨me lui-mÃªme et le dÃ©veloppement d'une (nouvelle) solution, Ã©ventuellement partielle elle-mÃªme.
 
-le chapitre~\ref{chap:EtatArt} étudie un ensemble de propositions de la littérature scientifique. L'analyse conjointe de ces dernières permet de dresser un bilan de l'état de l'art et de proposer des pistes de recherches.
+le chapitre~\ref{chap:EtatArt} Ã©tudie un ensemble de propositions de la littÃ©rature scientifique. L'analyse conjointe de ces derniÃ¨res permet de dresser un bilan de l'Ã©tat de l'art et de proposer des pistes de recherches.
 
-Le chapitre~\ref{chap:Propositions} étudie, d'un point de vue théorique, la ou les pistes les plus prometteuses. Les implications des hypothèses de travail sont développées jusqu'au point où seule l'expérimentation permettra de trancher.
+Le chapitre~\ref{chap:Propositions} Ã©tudie, d'un point de vue thÃ©orique, la ou les pistes les plus prometteuses. Les implications des hypothÃ¨ses de travail sont dÃ©veloppÃ©es jusqu'au point oÃ¹ seule l'expÃ©rimentation permettra de trancher.
 
-Le chapitre~\ref{chap:Experimentations} engage dans la voie du développement suivi des expérimentations et de l'analyse des résultats obtenus.
+Le chapitre~\ref{chap:Experimentations} engage dans la voie du dÃ©veloppement suivi des expÃ©rimentations et de l'analyse des rÃ©sultats obtenus.
 
-La conclusion permet de synthétiser les apports de ce travail et d'ouvrir des voies d'investigations supplémentaires.
+La conclusion permet de synthÃ©tiser les apports de ce travail et d'ouvrir des voies d'investigations supplÃ©mentaires.
 
 %-------------------------------------------------------------------------------------------------------------
 
-% \part{\'Etat de l'art} % À décommenter si l'état de l'art nécessite plusieurs chapitres.
-                         % Ce sera le cas si l'état de l'art est riche, où l'on distinguera un chapitre de présentation d'un chapitre critique.
-                         % Il faudra aussi décommenter la partie sur le travail réalisé
+% \part{\'Etat de l'art} % Ã€ dÃ©commenter si l'Ã©tat de l'art nÃ©cessite plusieurs chapitres.
+                         % Ce sera le cas si l'Ã©tat de l'art est riche, oÃ¹ l'on distinguera un chapitre de prÃ©sentation d'un chapitre critique.
+                         % Il faudra aussi dÃ©commenter la partie sur le travail rÃ©alisÃ©
 % \label{part:EtatArt}
 
 \chapter{\'Etat de l'art}
 \label{chap:EtatArt}
 
-Le but de cette partie est de faire le point sur l'état des connaissances qui permettent d'aider à la résolution du problème de ce travail sans devoir tout réinventer.
+Le but de cette partie est de faire le point sur l'Ã©tat des connaissances qui permettent d'aider Ã  la rÃ©solution du problÃ¨me de ce travail sans devoir tout rÃ©inventer.
 
-Notons que ce chapitre se place toujours, de manière implicite ou explicite, sous la locution : << à notre connaissance >>. Des oublis ou omissions étant toujours possible, il faut néanmoins en préciser la gravité :
+Notons que ce chapitre se place toujours, de maniÃ¨re implicite ou explicite, sous la locution : << Ã  notre connaissance >>. Des oublis ou omissions Ã©tant toujours possible, il faut nÃ©anmoins en prÃ©ciser la gravitÃ© :
 \begin{itemize}
-    \item L'oubli d'un apport \emph{très} récent, ou de portée confidentielle, est pardonnable.
-    \item L'oubli d'apports largement disponibles, du moins dans la communauté concernée, est un manque flagrant sinon de culture du moins de la capacité à retrouver de l'information pertinente.
-    \item Les connaissances de portée générale, celle de l'<< honnête homme >>, seront seulement mentionnées dans cette introduction sans les détailler dans les sections de ce chapitre. (Si un usage très technique d'un pré-requis devait être fait dans la proposition du rapport -- ex.\ : quelques éléments d'analyse de données, de probabilités, etc. --, et afin d'éviter au lecteur d'aller chercher l'information dans les sources, cette description sera reportée dans une annexe -- cf.\ annexe~\ref{ann:Rappels}.)
+    \item L'oubli d'un apport \emph{trÃ¨s} rÃ©cent, ou de portÃ©e confidentielle, est pardonnable.
+    \item L'oubli d'apports largement disponibles, du moins dans la communautÃ© concernÃ©e, est un manque flagrant sinon de culture du moins de la capacitÃ© Ã  retrouver de l'information pertinente.
+    \item Les connaissances de portÃ©e gÃ©nÃ©rale, celle de l'<< honnÃªte homme >>, seront seulement mentionnÃ©es dans cette introduction sans les dÃ©tailler dans les sections de ce chapitre. (Si un usage trÃ¨s technique d'un prÃ©-requis devait Ãªtre fait dans la proposition du rapport -- ex.\ : quelques Ã©lÃ©ments d'analyse de donnÃ©es, de probabilitÃ©s, etc. --, et afin d'Ã©viter au lecteur d'aller chercher l'information dans les sources, cette description sera reportÃ©e dans une annexe -- cf.\ annexe~\ref{ann:Rappels}.)
 \end{itemize}
 
-Normalement, les propositions antérieures ne permettent pas de résoudre le problème posé. Si, par extraordinaire ou par chance, cela était le cas, alors la conclusion de cette partie :
+Normalement, les propositions antÃ©rieures ne permettent pas de rÃ©soudre le problÃ¨me posÃ©. Si, par extraordinaire ou par chance, cela Ã©tait le cas, alors la conclusion de cette partie :
 \begin{itemize}
-    \item mentionnera honnêtement qu'il se trouve que le problème a été -- récemment -- résolu de manière satisfaisante ;
-    \item contiendra la rédaction d'un nouveau problème, connexe à celui d'origine, l'introduction du rapport sera modifiée en conséquence et de nouveaux pré-requis seront présentés ici.
+    \item mentionnera honnÃªtement qu'il se trouve que le problÃ¨me a Ã©tÃ© -- rÃ©cemment -- rÃ©solu de maniÃ¨re satisfaisante ;
+    \item contiendra la rÃ©daction d'un nouveau problÃ¨me, connexe Ã  celui d'origine, l'introduction du rapport sera modifiÃ©e en consÃ©quence et de nouveaux prÃ©-requis seront prÃ©sentÃ©s ici.
 \end{itemize}
-Remarquons que la conclusion peut être la poursuite d'une solution alternative au problème d'origine, par exemple parce que la solution trouvée dans la littérature est propriétaire ou brevetée, c'est-à-dire indisponible.
+Remarquons que la conclusion peut Ãªtre la poursuite d'une solution alternative au problÃ¨me d'origine, par exemple parce que la solution trouvÃ©e dans la littÃ©rature est propriÃ©taire ou brevetÃ©e, c'est-Ã -dire indisponible.
 
-Cela dit, et en toute probabilité, vont être ici présentés plusieurs pré-requis servant de base à la résolution de la problématique du travail. Le problème étant encore imparfaitement résolu, on doit trouver ci-dessous un certain nombre de sections correspondant à des approches antérieures (notées ici \emph{<proposition>} $i$ avec $1 \leq i \leq n$) qui fournissent des solutions \emph{partielles}.
+Cela dit, et en toute probabilitÃ©, vont Ãªtre ici prÃ©sentÃ©s plusieurs prÃ©-requis servant de base Ã  la rÃ©solution de la problÃ©matique du travail. Le problÃ¨me Ã©tant encore imparfaitement rÃ©solu, on doit trouver ci-dessous un certain nombre de sections correspondant Ã  des approches antÃ©rieures (notÃ©es ici \emph{<proposition>} $i$ avec $1 \leq i \leq n$) qui fournissent des solutions \emph{partielles}.
 
-Sont donc ici introduites la liste des propositions étudiées en expliquant pourquoi le choix s'est porté \emph{a priori} sur certaines d'entre elles ou pourquoi il a émergé \emph{a posteriori} s'il s'agissait d'un apport important à notre étude.
+Sont donc ici introduites la liste des propositions Ã©tudiÃ©es en expliquant pourquoi le choix s'est portÃ© \emph{a priori} sur certaines d'entre elles ou pourquoi il a Ã©mergÃ© \emph{a posteriori} s'il s'agissait d'un apport important Ã  notre Ã©tude.
 
 \section{\emph{<Proposition \textit{i}>}}
 
-Pour chaque proposition étudiée\footnote{Substituez au marqueur << \emph{<Proposition $i$>} >> un titre explicite ! Et ne conservez pas les crochets...}, sauf exception, le plan s'annonce de la même façon :
+Pour chaque proposition Ã©tudiÃ©e\footnote{Substituez au marqueur << \emph{<Proposition $i$>} >> un titre explicite ! Et ne conservez pas les crochets...}, sauf exception, le plan s'annonce de la mÃªme faÃ§on :
 \begin{enumerate}
-	\item une présentation générale :
+	\item une prÃ©sentation gÃ©nÃ©rale :
 		\begin{itemize}
-			\item qui fait le lien avec le travail demandé ;
-			\item doublée d'une présentation objective de la proposition d'autrui ;
+			\item qui fait le lien avec le travail demandÃ© ;
+			\item doublÃ©e d'une prÃ©sentation objective de la proposition d'autrui ;
 		\end{itemize}
-	\item une analyse critique de cette proposition où sont soulignées ses forces et ses faiblesses :
+	\item une analyse critique de cette proposition oÃ¹ sont soulignÃ©es ses forces et ses faiblesses :
 		\begin{itemize}
-			\item tout d'abord générales ;
-			\item puis vis-à-vis de sa possible exploitation dans le travail de ce rapport.
+			\item tout d'abord gÃ©nÃ©rales ;
+			\item puis vis-Ã -vis de sa possible exploitation dans le travail de ce rapport.
 		\end{itemize}
 \end{enumerate}
 
-Soulignons un point extrêmement important et relevant de l'honnêteté intellectuelle. Toutes les affirmations et propositions qui ne sont pas issues de notre travail doivent être clairement référencées, autant de fois que le texte en fait mention. Référez-vous à l'annexe~\ref{ann:Citations} pour les pratiques de mise en page et \emph{en particulier à la section~\ref{ann:Plagiat} pour ce qui concerne le \fcolorbox{red}{yellow}{\textbf{plagiat}}}.
+Soulignons un point extrÃªmement important et relevant de l'honnÃªtetÃ© intellectuelle. Toutes les affirmations et propositions qui ne sont pas issues de notre travail doivent Ãªtre clairement rÃ©fÃ©rencÃ©es, autant de fois que le texte en fait mention. RÃ©fÃ©rez-vous Ã  l'annexe~\ref{ann:Citations} pour les pratiques de mise en page et \emph{en particulier Ã  la section~\ref{ann:Plagiat} pour ce qui concerne le \fcolorbox{red}{yellow}{\textbf{plagiat}}}.
 
-La bibliographie est constituée (quasi exclusivement) de références pérennes, c'est-à-dire de référence à des ouvrages, articles de journaux ou de conférences. Ces références-là peuvent être accompagnées de références sur la Toile mais ne peuvent pas se limiter à cela. Dans le cas où une référence sur la Toile est fournie, il convient, dans la limite des droits, d'en faire une copie privée que l'on pourra transmettre en cas de demande (voire copier en annexe si elle n'est pas de taille trop importante et si l'auteur a donné sont \emph{autorisation explicite}). En effet, cette dernière peut évoluer à tout instant et même disparaître. Par ailleurs, les références à de simples sites \emph{web} n'ont pas vocation à faire partie de la bibliographie (\cite{Wolfe} est ici un contre-exemple mais pour lequel une copie a été mise en ligne sur Madoc) ; elles seront plus judicieusement portées en notes de bas de page, en ne se limitant pas à l'URL quand les informations habituelles d'une référence sont disponibles.\footnote{En reprenant la référence \cite{Wolfe}, nous aurions : Joe  \textsc{Wolfe}, \emph{How to Write a PhD Thesis}, 1996, \url{http://www.phys.unsw.edu.au/~jw/thesis.html}} \footnote{\url{http://docinsa.insa-lyon.fr/sapristi/index.php?rub=1003}} \footnote{\url{http://www.tlfq.ulaval.ca/axl/monde/citations-references.htm}} \footnote{Guy \textsc{Spielmann}, \emph{Établissement d'une bibliographie -- Méthode pour citer les sources et format des citations}, 10 janvier 2009, \url{http://www9.georgetown.edu/faculty/spielmag/docs/biblio.htm}} \footnote{François-Pierre \textsc{Gingras}, \emph{Comment citer des sources sur Internet dans un travail scientifique}, 21 mars 2005, \url{http://aix1.uottawa.ca/~fgingras/metho/citation.html}}
+La bibliographie est constituÃ©e (quasi exclusivement) de rÃ©fÃ©rences pÃ©rennes, c'est-Ã -dire de rÃ©fÃ©rence Ã  des ouvrages, articles de journaux ou de confÃ©rences. Ces rÃ©fÃ©rences-lÃ  peuvent Ãªtre accompagnÃ©es de rÃ©fÃ©rences sur la Toile mais ne peuvent pas se limiter Ã  cela. Dans le cas oÃ¹ une rÃ©fÃ©rence sur la Toile est fournie, il convient, dans la limite des droits, d'en faire une copie privÃ©e que l'on pourra transmettre en cas de demande (voire copier en annexe si elle n'est pas de taille trop importante et si l'auteur a donnÃ© sont \emph{autorisation explicite}). En effet, cette derniÃ¨re peut Ã©voluer Ã  tout instant et mÃªme disparaÃ®tre. Par ailleurs, les rÃ©fÃ©rences Ã  de simples sites \emph{web} n'ont pas vocation Ã  faire partie de la bibliographie (\cite{Wolfe} est ici un contre-exemple mais pour lequel une copie a Ã©tÃ© mise en ligne sur Madoc) ; elles seront plus judicieusement portÃ©es en notes de bas de page, en ne se limitant pas Ã  l'URL quand les informations habituelles d'une rÃ©fÃ©rence sont disponibles.\footnote{En reprenant la rÃ©fÃ©rence \cite{Wolfe}, nous aurions : Joe  \textsc{Wolfe}, \emph{How to Write a PhD Thesis}, 1996, \url{http://www.phys.unsw.edu.au/~jw/thesis.html}} \footnote{\url{http://docinsa.insa-lyon.fr/sapristi/index.php?rub=1003}} \footnote{\url{http://www.tlfq.ulaval.ca/axl/monde/citations-references.htm}} \footnote{Guy \textsc{Spielmann}, \emph{Ã‰tablissement d'une bibliographie -- MÃ©thode pour citer les sources et format des citations}, 10 janvier 2009, \url{http://www9.georgetown.edu/faculty/spielmag/docs/biblio.htm}} \footnote{FranÃ§ois-Pierre \textsc{Gingras}, \emph{Comment citer des sources sur Internet dans un travail scientifique}, 21 mars 2005, \url{http://aix1.uottawa.ca/~fgingras/metho/citation.html}}
 
-\subsection{Présentation}
+\subsection{PrÃ©sentation}
 
-Chaque étude commence par présenter la nature de la proposition examinée, c'est-à-dire sa portée et son lien avec le problème à traiter.
+Chaque Ã©tude commence par prÃ©senter la nature de la proposition examinÃ©e, c'est-Ã -dire sa portÃ©e et son lien avec le problÃ¨me Ã  traiter.
 
-Une présentation claire et synthétique résume les points principaux de la proposition étudiée.
+Une prÃ©sentation claire et synthÃ©tique rÃ©sume les points principaux de la proposition Ã©tudiÃ©e.
 
-Cette présentation doit être objective. En d'autre termes, il ne faut pas tirer de conclusion hâtive, la proposition n'aura été vraiment comprise qu'\emph{indépendamment} de l'intérêt immédiat et supposée vis-à-vis du travail demandé. Afin de préparer cette rédaction, des fiches de lecture seront établies et mises en annexe (cf.\ annexe~\ref{ann:FichesLecture}).
+Cette prÃ©sentation doit Ãªtre objective. En d'autre termes, il ne faut pas tirer de conclusion hÃ¢tive, la proposition n'aura Ã©tÃ© vraiment comprise qu'\emph{indÃ©pendamment} de l'intÃ©rÃªt immÃ©diat et supposÃ©e vis-Ã -vis du travail demandÃ©. Afin de prÃ©parer cette rÃ©daction, des fiches de lecture seront Ã©tablies et mises en annexe (cf.\ annexe~\ref{ann:FichesLecture}).
 \begin{structuration}
-Cette sous-section peut, et même doit, être structurée en fonction de la proposition. Il faut toutefois garder à l'esprit que :
+Cette sous-section peut, et mÃªme doit, Ãªtre structurÃ©e en fonction de la proposition. Il faut toutefois garder Ã  l'esprit que :
 \begin{enumerate}[(i)]
-    \item une décomposition trop profonde devient incompréhensible (il faut réorganiser le plan et fournir une logique de progression, d'où davantage linéaire) ;
-    \item chaque partie doit contenir plusieurs paragraphes (on ne crée pas un niveau hiérarchique pour un unique paragraphe qui serait précédé d'un unique paragraphe d'introduction et d'un unique paragraphe de conclusion !).
+    \item une dÃ©composition trop profonde devient incomprÃ©hensible (il faut rÃ©organiser le plan et fournir une logique de progression, d'oÃ¹ davantage linÃ©aire) ;
+    \item chaque partie doit contenir plusieurs paragraphes (on ne crÃ©e pas un niveau hiÃ©rarchique pour un unique paragraphe qui serait prÃ©cÃ©dÃ© d'un unique paragraphe d'introduction et d'un unique paragraphe de conclusion !).
 \end{enumerate}
 
-Si les propositions devenaient très longues à décrire alors les niveaux décrits dans ce pseudo rapport sont insuffisants. Il faut remplacer le présent \emph{chapitre} << \'Etat de l'art >> par une \emph{partie} d'ouvrage, les sections devenant des chapitres et ainsi de suite.
+Si les propositions devenaient trÃ¨s longues Ã  dÃ©crire alors les niveaux dÃ©crits dans ce pseudo rapport sont insuffisants. Il faut remplacer le prÃ©sent \emph{chapitre} << \'Etat de l'art >> par une \emph{partie} d'ouvrage, les sections devenant des chapitres et ainsi de suite.
 
-En cas de déséquilibre patent entre propositions, il faut trouver des regroupements thématiques dans le but d'équilibrer les tailles.  Cela s'applique d'ailleurs aussi dans le cas d'une décomposition en sections.
+En cas de dÃ©sÃ©quilibre patent entre propositions, il faut trouver des regroupements thÃ©matiques dans le but d'Ã©quilibrer les tailles.  Cela s'applique d'ailleurs aussi dans le cas d'une dÃ©composition en sections.
 
-Inversement, des sections ou chapitre trop courts amènent à fusionner des niveaux supérieurs. Ainsi deux ou trois chapitres d'une ou deux pages chacun doivent-ils être fusionnés, dans la limite où la logique s'y prête. (L'alternative extrême est de changer de catégorie de document. Ce n'est alors plus un rapport que l'on rédige mais seulement un article...)
+Inversement, des sections ou chapitre trop courts amÃ¨nent Ã  fusionner des niveaux supÃ©rieurs. Ainsi deux ou trois chapitres d'une ou deux pages chacun doivent-ils Ãªtre fusionnÃ©s, dans la limite oÃ¹ la logique s'y prÃªte. (L'alternative extrÃªme est de changer de catÃ©gorie de document. Ce n'est alors plus un rapport que l'on rÃ©dige mais seulement un article...)
 \end{structuration}
 
 \subsection{Analyse}
 
-La présentation objective est ensuite, et seulement ensuite, suivie d'une étude critique.
+La prÃ©sentation objective est ensuite, et seulement ensuite, suivie d'une Ã©tude critique.
 
-Doivent ici être pointées aussi bien ses avantages que ses limites, démonstration à l'appui.
+Doivent ici Ãªtre pointÃ©es aussi bien ses avantages que ses limites, dÃ©monstration Ã  l'appui.
 
-\subsubsection{Intérêts de la proposition $i$}
+\subsubsection{IntÃ©rÃªts de la proposition $i$}
 
-Vis-à-vis du travail demandé, il faut ici expliquer comment la proposition pourrait être utilisée. Il convient de ne pas s'autocensurer dans cette partie. Il faut émettre des idées non pas totalement sur le mode du remue-méninge mais en évitant de fermer trop précipitamment des directions de travail. La proposition permettra de faire le tri entre les bonnes idées et les idées qui se seront révélées inapplicables.
+Vis-Ã -vis du travail demandÃ©, il faut ici expliquer comment la proposition pourrait Ãªtre utilisÃ©e. Il convient de ne pas s'autocensurer dans cette partie. Il faut Ã©mettre des idÃ©es non pas totalement sur le mode du remue-mÃ©ninge mais en Ã©vitant de fermer trop prÃ©cipitamment des directions de travail. La proposition permettra de faire le tri entre les bonnes idÃ©es et les idÃ©es qui se seront rÃ©vÃ©lÃ©es inapplicables.
 
 \subsubsection{Limites de la proposition $i$}
 
-Les limites vont au delà des inconvénients objectifs de la proposition étudiée. Il faut aussi tenir compte de son << adaptabilité >> au problème traité.
+Les limites vont au delÃ  des inconvÃ©nients objectifs de la proposition Ã©tudiÃ©e. Il faut aussi tenir compte de son << adaptabilitÃ© >> au problÃ¨me traitÃ©.
 
-\section{Récapitulatif}
+\section{RÃ©capitulatif}
 
-À l'issue de ce travail bibliographique et critique, un résumé des éléments intéressants et des éléments manquants de chaque proposition est mis en évidence avec une présentation condensée des arguments ayant abouti à cette dichotomie. Les éléments seront présentés de manière synthétique dans un tableau comparatif (cf.\ tableaux~\ref{tab:Comparatif} et \ref{tab:ComparatifAlternatif} à titres d'exemples simplifiés).
+Ã€ l'issue de ce travail bibliographique et critique, un rÃ©sumÃ© des Ã©lÃ©ments intÃ©ressants et des Ã©lÃ©ments manquants de chaque proposition est mis en Ã©vidence avec une prÃ©sentation condensÃ©e des arguments ayant abouti Ã  cette dichotomie. Les Ã©lÃ©ments seront prÃ©sentÃ©s de maniÃ¨re synthÃ©tique dans un tableau comparatif (cf.\ tableaux~\ref{tab:Comparatif} et \ref{tab:ComparatifAlternatif} Ã  titres d'exemples simplifiÃ©s).
 
 \begin{table}
     \begin{center}
         \begin{tabular}{|c||c|c|}
             \hline
-            Proposition & Avantages & Inconvénients \\
+            Proposition & Avantages & InconvÃ©nients \\
             \hline
             \hline
             \ldots & \ldots & \ldots\\
             \hline
-            Proposition $i$ & avantages $i$ & inconvénients $i$\\
+            Proposition $i$ & avantages $i$ & inconvÃ©nients $i$\\
             \hline
             \ldots & \ldots & \ldots\\
             \hline
         \end{tabular}
     \end{center}
-    \caption{Tableau comparatif des propositions étudiées}
+    \caption{Tableau comparatif des propositions Ã©tudiÃ©es}
     \label{tab:Comparatif}
 \end{table}
 
-\begin{table*} % Utiliser la version étoilée des flottants pour les faire tenir sur deux colonnes
+\begin{table*} % Utiliser la version Ã©toilÃ©e des flottants pour les faire tenir sur deux colonnes
     \begin{center}
         \begin{tabular}{|c||c|c|c|c|c|}
             \hline
@@ -298,51 +298,51 @@ Les limites vont au delà des inconvénients objectifs de la proposition étudiée. 
             \hline
         \end{tabular}
     \end{center}
-    \caption{Tableau comparatif des avantages des propositions étudiées}
+    \caption{Tableau comparatif des avantages des propositions Ã©tudiÃ©es}
     \label{tab:ComparatifAlternatif}
 \end{table*}
 
 \begin{typographie}
-Au passage, notons que les tableaux, figures et autres illustrations doivent être systématiquement placés dans des éléments << flottants >>, c'est-à-dire situés non pas exactement à l'endroit où il sont mentionnés. Ils sont donc numérotés, munis d'une légende et référencés depuis le texte principal.%
-\footnote{\LaTeX\ se tire plutôt bien de cette tâche de positionnement optimal des flottants, sachant qu'il s'agit d'un problème NP-difficile !}
-Toute utilisation << en ligne >> est à proscrire. Une figure, au sens large, ne remplace pas le texte, bien au contraire ; c'est ce dernier qui établit une présentation, un raisonnement, etc., et la figure ne fait que l'illustrer pour le rendre plus compréhensible soit d'emblée soit après avoir pris connaissance du texte.
+Au passage, notons que les tableaux, figures et autres illustrations doivent Ãªtre systÃ©matiquement placÃ©s dans des Ã©lÃ©ments << flottants >>, c'est-Ã -dire situÃ©s non pas exactement Ã  l'endroit oÃ¹ il sont mentionnÃ©s. Ils sont donc numÃ©rotÃ©s, munis d'une lÃ©gende et rÃ©fÃ©rencÃ©s depuis le texte principal.%
+\footnote{\LaTeX\ se tire plutÃ´t bien de cette tÃ¢che de positionnement optimal des flottants, sachant qu'il s'agit d'un problÃ¨me NP-difficile !}
+Toute utilisation << en ligne >> est Ã  proscrire. Une figure, au sens large, ne remplace pas le texte, bien au contraire ; c'est ce dernier qui Ã©tablit une prÃ©sentation, un raisonnement, etc., et la figure ne fait que l'illustrer pour le rendre plus comprÃ©hensible soit d'emblÃ©e soit aprÃ¨s avoir pris connaissance du texte.
 \end{typographie}
 
 \section{Conclusion}
 
-À l'issue de ce travail de recherche bibliographique, il apparaît que plusieurs propositions peuvent servir de base à la résolution de notre problème.
+Ã€ l'issue de ce travail de recherche bibliographique, il apparaÃ®t que plusieurs propositions peuvent servir de base Ã  la rÃ©solution de notre problÃ¨me.
 
-Il semble se détacher un certain nombre de directions privilégiées que nous allons exploiter en priorité dans nos propositions. Celles-ci font l'objet de l'étude du chapitre suivant.
+Il semble se dÃ©tacher un certain nombre de directions privilÃ©giÃ©es que nous allons exploiter en prioritÃ© dans nos propositions. Celles-ci font l'objet de l'Ã©tude du chapitre suivant.
 
 %-------------------------------------------------------------------------------------------------------------
 
-% \part{Réalisations} % À décommenter si l'état de l'art a nécessité plusieurs chapitres.
+% \part{RÃ©alisations} % Ã€ dÃ©commenter si l'Ã©tat de l'art a nÃ©cessitÃ© plusieurs chapitres.
 % \label{part:Realisations}
 
 \chapter{Propositions}
 \label{chap:Propositions}
 
-Le titre de ce chapitre peut s'écrire au singulier ou au pluriel en fonction du nombre de propositions faites et de leur investigation.
+Le titre de ce chapitre peut s'Ã©crire au singulier ou au pluriel en fonction du nombre de propositions faites et de leur investigation.
 
-Si plusieurs propositions sont faites, elles doivent être annoncées ici et leurs points marquants décrits succinctement, comme donné en exemple dans le paragraphe et les sections suivants.
+Si plusieurs propositions sont faites, elles doivent Ãªtre annoncÃ©es ici et leurs points marquants dÃ©crits succinctement, comme donnÃ© en exemple dans le paragraphe et les sections suivants.
 
 \bigskip
 
-\emph{Dans les sections suivantes nous allons décrire notre proposition. Partis de l'hypothèse que ..., nous en avons déduit que .... Par la suite, cette idée nous a permis d'aboutir à la proposition d'un algorithme d'extraction de paramètres et d'une fonction qui permet de résumer de manière pertinente et discriminante ces différents paramètres en une unique valeur réelle. La qualité de cette mesure est démontrée. Il nous faut toutefois admettre en toute franchise que cette réduction brutale, si elle offre l'avantage indéniable, entre autres, de permettre d'ordonner les valeurs d'origine, perd toute finesse dans l'analyse de données multidimensionnelles.}
+\emph{Dans les sections suivantes nous allons dÃ©crire notre proposition. Partis de l'hypothÃ¨se que ..., nous en avons dÃ©duit que .... Par la suite, cette idÃ©e nous a permis d'aboutir Ã  la proposition d'un algorithme d'extraction de paramÃ¨tres et d'une fonction qui permet de rÃ©sumer de maniÃ¨re pertinente et discriminante ces diffÃ©rents paramÃ¨tres en une unique valeur rÃ©elle. La qualitÃ© de cette mesure est dÃ©montrÃ©e. Il nous faut toutefois admettre en toute franchise que cette rÃ©duction brutale, si elle offre l'avantage indÃ©niable, entre autres, de permettre d'ordonner les valeurs d'origine, perd toute finesse dans l'analyse de donnÃ©es multidimensionnelles.}
 
 \section{\emph{<Notre proposition \textit{i}>}}
 
-L'organisation des cette section (voire chapitre) est la plus libre qui soit. Toutefois, on peut proposer une organisation qui distingue l'intuition de sa formalisation et de sa démonstration.
+L'organisation des cette section (voire chapitre) est la plus libre qui soit. Toutefois, on peut proposer une organisation qui distingue l'intuition de sa formalisation et de sa dÃ©monstration.
 
-\subsection{Idées préliminaires}
+\subsection{IdÃ©es prÃ©liminaires}
 
-La fin du chapitre~\ref{chap:EtatArt} a permis de mettre en avant les éléments présents dans des propositions antérieures qui sont exploitables pour résoudre notre problème. Nous développons ici les idées qui nous semblent les plus à même d'y parvenir.
+La fin du chapitre~\ref{chap:EtatArt} a permis de mettre en avant les Ã©lÃ©ments prÃ©sents dans des propositions antÃ©rieures qui sont exploitables pour rÃ©soudre notre problÃ¨me. Nous dÃ©veloppons ici les idÃ©es qui nous semblent les plus Ã  mÃªme d'y parvenir.
 
 \subsection{Formalisation}
 
-Le développements des intuitions et idées de la section précédente vont aboutir à des propositions formalisées. Cela peut se traduire aussi bien par des formules que des algorithmes.
+Le dÃ©veloppements des intuitions et idÃ©es de la section prÃ©cÃ©dente vont aboutir Ã  des propositions formalisÃ©es. Cela peut se traduire aussi bien par des formules que des algorithmes.
 
-\emph{Nous avons trouvé une formule particulièrement pertinente pour résumer les nombreuses caractéristiques d'une image :}
+\emph{Nous avons trouvÃ© une formule particuliÃ¨rement pertinente pour rÃ©sumer les nombreuses caractÃ©ristiques d'une image :}
 \begin{equation}
 	\label{eq:Proposition}
 	\Phi :
@@ -352,10 +352,10 @@ Le développements des intuitions et idées de la section précédente vont aboutir 
 		\end{array}
 \end{equation}
 
-\emph{Les différents paramètres de la fonction sont eux-mêmes fournis par l'algorithme~\ref{alg:Proposition}.}
+\emph{Les diffÃ©rents paramÃ¨tres de la fonction sont eux-mÃªmes fournis par l'algorithme~\ref{alg:Proposition}.}
 
 \begin{algorithm*}
-	L'algorithme peut être décrit de différentes manières, avec les environnements :
+	L'algorithme peut Ãªtre dÃ©crit de diffÃ©rentes maniÃ¨res, avec les environnements :
 	\begin{itemize}
 		\item verbatim :
 			\begin{verbatim}
@@ -384,88 +384,88 @@ fonction F (I : image) : (T1, T2, ..., Tn)
 					\ENDIF
 				\ENDWHILE
 			\end{algorithmic}
-		\item voire avec les environnement standards et/ou en français.
+		\item voire avec les environnement standards et/ou en franÃ§ais.
 	\end{itemize}
 	\caption{Proposition}
 	\label{alg:Proposition}
 \end{algorithm*}
 
-\subsection{Démonstration}
+\subsection{DÃ©monstration}
 
-Tous les éléments de démonstration du bien fondé de la méthode proposée doivent être explicités si ce n'est sous la forme de théorèmes, du moins avec un enchaînement argumenté de causes à effets.
+Tous les Ã©lÃ©ments de dÃ©monstration du bien fondÃ© de la mÃ©thode proposÃ©e doivent Ãªtre explicitÃ©s si ce n'est sous la forme de thÃ©orÃ¨mes, du moins avec un enchaÃ®nement argumentÃ© de causes Ã  effets.
 
 \begin{theoreme}
 	Soit $(a, p, m_1, m_2, \kappa, \ldots, \alpha, \alpha', \ldots,z) \in T_1 \times \ldots \times T_n$ tel que ... alors ...
 \end{theoreme}
 
 \begin{preuve}
-	Procédons par contradiction. ...~\hfill$\square$
+	ProcÃ©dons par contradiction. ...~\hfill$\square$
 \end{preuve}
 
 \subsection{Analyse}
 
-Une analyse objective sur cette orientation est ici faite. Le problème est-il résolu dans sa totalité, sinon quelle partie ? La résolution est-elle efficace d'un point de vue informatique ? Etc.
+Une analyse objective sur cette orientation est ici faite. Le problÃ¨me est-il rÃ©solu dans sa totalitÃ©, sinon quelle partie ? La rÃ©solution est-elle efficace d'un point de vue informatique ? Etc.
 
 \section{Conclusion}
 
-Différentes idées nous ont conduit à faire différentes propositions. À ce stade, il convient de restreindre leur nombre afin d'avoir le temps de conduire des expérimentations suffisamment poussées, nous permettant d'établir des conclusions pertinentes.
+DiffÃ©rentes idÃ©es nous ont conduit Ã  faire diffÃ©rentes propositions. Ã€ ce stade, il convient de restreindre leur nombre afin d'avoir le temps de conduire des expÃ©rimentations suffisamment poussÃ©es, nous permettant d'Ã©tablir des conclusions pertinentes.
 
-\emph{En comparant les apports démontrés ou à vérifier dans le tableau ..., nous en déduisons un classement << au mérite >> qui est le suivant : .... Par manque de temps, nous allons nous limiter aux deux premiers dans le chapitre~\ref{chap:Experimentations}.}
+\emph{En comparant les apports dÃ©montrÃ©s ou Ã  vÃ©rifier dans le tableau ..., nous en dÃ©duisons un classement << au mÃ©rite >> qui est le suivant : .... Par manque de temps, nous allons nous limiter aux deux premiers dans le chapitre~\ref{chap:Experimentations}.}
 
 %-------------------------------------------------------------------------------------------------------------
 
-\chapter{Expérimentations et résultats}
+\chapter{ExpÃ©rimentations et rÃ©sultats}
 \label{chap:Experimentations}
 
-S'agissant d'un travail de recherche \emph{et} de \emph{développement}, une production de code source est très certainement présente. Auquel cas, le chapitre va commencer par une section sur le produit développé.
+S'agissant d'un travail de recherche \emph{et} de \emph{dÃ©veloppement}, une production de code source est trÃ¨s certainement prÃ©sente. Auquel cas, le chapitre va commencer par une section sur le produit dÃ©veloppÃ©.
 
 \begin{structuration}
-Soulignons que, comme dans le chapitre précédent, si le volume de ce chapitre devient très important, il est préférable de le transformer en partie de rapport, les sections suivantes devenant des chapitres, et ainsi de suite pour les parties hiérarchiquement inférieures.
+Soulignons que, comme dans le chapitre prÃ©cÃ©dent, si le volume de ce chapitre devient trÃ¨s important, il est prÃ©fÃ©rable de le transformer en partie de rapport, les sections suivantes devenant des chapitres, et ainsi de suite pour les parties hiÃ©rarchiquement infÃ©rieures.
 \end{structuration}
 
 \section{\emph{<Notre proposition \textit{i}>}}
 
-\emph{Notre proposition $i$ nous a amené à des développements plus ou moins complexes dont nous détaillons les contraintes ci-dessous. Après la vérification et la validation de ces développements, cela nous a permis de conduire différentes expérimentations dont les hypothèses de travail sont précisés (ou rappelées). Les résultats sur des jeux de données (voire des bancs d'essais normalisés) sont ensuite analysés en détail.}
+\emph{Notre proposition $i$ nous a amenÃ© Ã  des dÃ©veloppements plus ou moins complexes dont nous dÃ©taillons les contraintes ci-dessous. AprÃ¨s la vÃ©rification et la validation de ces dÃ©veloppements, cela nous a permis de conduire diffÃ©rentes expÃ©rimentations dont les hypothÃ¨ses de travail sont prÃ©cisÃ©s (ou rappelÃ©es). Les rÃ©sultats sur des jeux de donnÃ©es (voire des bancs d'essais normalisÃ©s) sont ensuite analysÃ©s en dÃ©tail.}
 
-\subsection{Développements}
+\subsection{DÃ©veloppements}
 
-Les contraintes liées à la mise en \oe uvre d'un développement informatique implémentant la (les) proposition(s) faite(s) dans le chapitre précédent sont mises en exergue dans cette partie.
+Les contraintes liÃ©es Ã  la mise en \oe uvre d'un dÃ©veloppement informatique implÃ©mentant la (les) proposition(s) faite(s) dans le chapitre prÃ©cÃ©dent sont mises en exergue dans cette partie.
 
 Il convient de distinguer :
 \begin{itemize}
-	\item les contraintes générales, celles s'appliquant \emph{a priori} à tout développement de la proposition sur quelque système, avec quelque langage que ce soit ;
-	\item les contraintes intrinsèques aux choix de développement.
+	\item les contraintes gÃ©nÃ©rales, celles s'appliquant \emph{a priori} Ã  tout dÃ©veloppement de la proposition sur quelque systÃ¨me, avec quelque langage que ce soit ;
+	\item les contraintes intrinsÃ¨ques aux choix de dÃ©veloppement.
 \end{itemize}
 
-\subsubsection{Contraintes liées aux propositions}
+\subsubsection{Contraintes liÃ©es aux propositions}
 
 Il peut ne pas y en avoir.
 
-\subsubsection{Contraintes liées au développement}
+\subsubsection{Contraintes liÃ©es au dÃ©veloppement}
 
 Nous pourrons ici exposer :
 \begin{itemize}
-	\item des contraintes liées aux choix techniques, chaque solution présentant des avantages et des inconvénients, ces derniers ne pouvant pas toujours être entièrement éliminés, par exemple des bogues inattendues sur les produits utilisés ;
-	\item des contraintes propres au travail lui-même comme le temps insuffisant pour implémenter totalement les fonctionnalités attendues.
+	\item des contraintes liÃ©es aux choix techniques, chaque solution prÃ©sentant des avantages et des inconvÃ©nients, ces derniers ne pouvant pas toujours Ãªtre entiÃ¨rement Ã©liminÃ©s, par exemple des bogues inattendues sur les produits utilisÃ©s ;
+	\item des contraintes propres au travail lui-mÃªme comme le temps insuffisant pour implÃ©menter totalement les fonctionnalitÃ©s attendues.
 \end{itemize}
 
-Cette liste n'est pas limitative. Mais il faut organiser les contraintes de manière logique et non pas seulement les énumérer.
+Cette liste n'est pas limitative. Mais il faut organiser les contraintes de maniÃ¨re logique et non pas seulement les Ã©numÃ©rer.
 
-\subsection{Expérimentations}
+\subsection{ExpÃ©rimentations}
 
-Le logiciel produit peut être aussi bien le but du travail qu'une étape intermédiaire.
+Le logiciel produit peut Ãªtre aussi bien le but du travail qu'une Ã©tape intermÃ©diaire.
 
 \bigskip
 
-Dans le cas d'un produit final, l'expérimentation se ramène :
+Dans le cas d'un produit final, l'expÃ©rimentation se ramÃ¨ne :
 \begin{itemize}
-	\item à la vérification et à la validation du développement du point de vue technique ;
-	\item à son utilisation sur un jeu de données significatif et à des mesures de qualité.
+	\item Ã  la vÃ©rification et Ã  la validation du dÃ©veloppement du point de vue technique ;
+	\item Ã  son utilisation sur un jeu de donnÃ©es significatif et Ã  des mesures de qualitÃ©.
 \end{itemize}
 
 \bigskip
 
-Dans le cas d'une étape intermédiaire, l'application du logiciel sur des jeux de données se poursuit avec une analyse minutieuse des résultats non pas du point de vue informatique (ex.\ : performances constatées vis-à-vis de la complexité asymptotique promise au chapitre~\ref{chap:Propositions}) mais bien par rapport aux buts poursuivis par le travail. Il devrait donc y avoir nombre de tableaux et/ou graphiques (cf.\ figure~\ref{fig:Courbes} comme exemple%
+Dans le cas d'une Ã©tape intermÃ©diaire, l'application du logiciel sur des jeux de donnÃ©es se poursuit avec une analyse minutieuse des rÃ©sultats non pas du point de vue informatique (ex.\ : performances constatÃ©es vis-Ã -vis de la complexitÃ© asymptotique promise au chapitre~\ref{chap:Propositions}) mais bien par rapport aux buts poursuivis par le travail. Il devrait donc y avoir nombre de tableaux et/ou graphiques (cf.\ figure~\ref{fig:Courbes} comme exemple%
 \footnote{Urs Oswald, \emph{``Graphics in LaTeX 2$_\varepsilon$,''} March 2003, \url{http://www.ursoswald.ch}.}%
 ) dans cette partie du rapport.
 
@@ -522,11 +522,11 @@ Dans le cas d'une étape intermédiaire, l'application du logiciel sur des jeux de
 	  \put(-.02, 1){\line(1, 0){.04}}
 	  \put(.03, .98){$L$}
 	\end{picture}
-	\caption{Qualité des résultats obtenus (Source : << \emph{Graphics in LaTeX 2$_\varepsilon$} >>, page~23)}
+	\caption{QualitÃ© des rÃ©sultats obtenus (Source : << \emph{Graphics in LaTeX 2$_\varepsilon$} >>, page~23)}
 	\label{fig:Courbes}
 \end{figure}
 
-Si les graphiques sont des éléments qui permettent une interprétation visuelle rapide, il est indispensable de fournir les résultats numériques correspondants. Les tableaux synthétiques apparaîtront dans cette partie (cf.\ tableau~\ref{tab:Courbes} par exemple). Les tableaux contenant l'ensemble des mesures seront reportés en annexe (cf.\ annexe~\ref{ann:Mesures}). Ces informations doivent être fournies en tant que \emph{preuve} ; un autre expérimentateur doit pouvoir contrôler, en faisant lui-même les expériences, qu'il trouve bien les résultats que nous annonçons ! Si l'information est vraiment trop importante pour tenir dans le rapport, il faudra se mettre en mesure de fournir une version électronique, en ligne de préférence, à la demande sinon en fournissant une adresse de contact pérenne...
+Si les graphiques sont des Ã©lÃ©ments qui permettent une interprÃ©tation visuelle rapide, il est indispensable de fournir les rÃ©sultats numÃ©riques correspondants. Les tableaux synthÃ©tiques apparaÃ®tront dans cette partie (cf.\ tableau~\ref{tab:Courbes} par exemple). Les tableaux contenant l'ensemble des mesures seront reportÃ©s en annexe (cf.\ annexe~\ref{ann:Mesures}). Ces informations doivent Ãªtre fournies en tant que \emph{preuve} ; un autre expÃ©rimentateur doit pouvoir contrÃ´ler, en faisant lui-mÃªme les expÃ©riences, qu'il trouve bien les rÃ©sultats que nous annonÃ§ons ! Si l'information est vraiment trop importante pour tenir dans le rapport, il faudra se mettre en mesure de fournir une version Ã©lectronique, en ligne de prÃ©fÃ©rence, Ã  la demande sinon en fournissant une adresse de contact pÃ©renne...
 
 \begin{table}
 	\centering
@@ -538,43 +538,43 @@ Si les graphiques sont des éléments qui permettent une interprétation visuelle r
 		\ldots & \ldots & \ldots\\
 		\hline
 	\end{tabular}
-	\caption{Valeurs numériques correspondant aux courbes de la figure~\ref{fig:Courbes}}
+	\caption{Valeurs numÃ©riques correspondant aux courbes de la figure~\ref{fig:Courbes}}
 	\label{tab:Courbes}
 \end{table}
 
-\subsection{Résultats}
+\subsection{RÃ©sultats}
 
-\emph{L'application de notre algorithme et de la fonction de réduction nous a fourni un jeu de valeurs dont nous avons pu analyser la qualité...}
+\emph{L'application de notre algorithme et de la fonction de rÃ©duction nous a fourni un jeu de valeurs dont nous avons pu analyser la qualitÃ©...}
 
 \section{Conclusion}
 
-La conclusion de ce chapitre est normalement le point d'orgue du travail même s'il n'en est pas nécessairement son aboutissement. Il s'agit de mettre en perspective les limites de la réalisation, la qualité et la portée des résultats néanmoins obtenus, et de dresser un retour d'expérience sur la façon de conduire cette partie du travail pour une réalisation à neuf ou << seulement >> pour une remise à niveau par un repreneur.
+La conclusion de ce chapitre est normalement le point d'orgue du travail mÃªme s'il n'en est pas nÃ©cessairement son aboutissement. Il s'agit de mettre en perspective les limites de la rÃ©alisation, la qualitÃ© et la portÃ©e des rÃ©sultats nÃ©anmoins obtenus, et de dresser un retour d'expÃ©rience sur la faÃ§on de conduire cette partie du travail pour une rÃ©alisation Ã  neuf ou << seulement >> pour une remise Ã  niveau par un repreneur.
 
-Dans le cas où plusieurs propositions ont été explorées, il faut juger soit de leur complémentarité, soit de leur supériorité relative.
+Dans le cas oÃ¹ plusieurs propositions ont Ã©tÃ© explorÃ©es, il faut juger soit de leur complÃ©mentaritÃ©, soit de leur supÃ©rioritÃ© relative.
 
 %-------------------------------------------------------------------------------------------------------------
 
 \chapter{Conclusion}
 
-À l'issue de ce travail, résumons tout d'abord rapidement les principales étapes de ce dernier. De cette expérience, nous tirons quelques enseignements et ouvrons également des perspectives pour des recherches et développements ultérieurs soit parce qu'ils n'ont pas pu être menés à terme ici, soit parce que de nouveaux défis se présentent à nous.
+Ã€ l'issue de ce travail, rÃ©sumons tout d'abord rapidement les principales Ã©tapes de ce dernier. De cette expÃ©rience, nous tirons quelques enseignements et ouvrons Ã©galement des perspectives pour des recherches et dÃ©veloppements ultÃ©rieurs soit parce qu'ils n'ont pas pu Ãªtre menÃ©s Ã  terme ici, soit parce que de nouveaux dÃ©fis se prÃ©sentent Ã  nous.
 
-\section{Résumé du travail effectué}
+\section{RÃ©sumÃ© du travail effectuÃ©}
 
-Même si cela est une énième répétition, il convient de résumer sinon la totalité des étapes du travail du moins les résultats marquants du travail.
+MÃªme si cela est une Ã©niÃ¨me rÃ©pÃ©tition, il convient de rÃ©sumer sinon la totalitÃ© des Ã©tapes du travail du moins les rÃ©sultats marquants du travail.
 
 \section{Enseignements}
 
-Les enseignements qui ont été tirés de ce travail, et il y en a nécessairement, doivent  être évoqués. Certains peuvent être personnels. D'autres seront de portée générale. Les plus précis seront ceux directement issus du travail, de ses résultats, des interprétations faites.
+Les enseignements qui ont Ã©tÃ© tirÃ©s de ce travail, et il y en a nÃ©cessairement, doivent  Ãªtre Ã©voquÃ©s. Certains peuvent Ãªtre personnels. D'autres seront de portÃ©e gÃ©nÃ©rale. Les plus prÃ©cis seront ceux directement issus du travail, de ses rÃ©sultats, des interprÃ©tations faites.
 
 \section{Perspectives de recherche}
 
-Il est rare qu'un travail, quel qu'il soit, clôture complètement un sujet. Quand bien même, il est toujours possible de proposer des prolongements, soit dans le droit fil du travail accompli, soit comme développements connexes, suite à une ou plusieurs idées qui sont venues à l'esprit ou qui n'ont pas pu être exploitées ici.
+Il est rare qu'un travail, quel qu'il soit, clÃ´ture complÃ¨tement un sujet. Quand bien mÃªme, il est toujours possible de proposer des prolongements, soit dans le droit fil du travail accompli, soit comme dÃ©veloppements connexes, suite Ã  une ou plusieurs idÃ©es qui sont venues Ã  l'esprit ou qui n'ont pas pu Ãªtre exploitÃ©es ici.
 
-Bien entendu, si le travail n'a pas été terminé, il faut indiquer les étapes. Il peut s'agir d'étapes envisagées initialement et qui peuvent être poursuivies telles quelles ou amendées. Il peut s'agir d'étapes nouvelles, le chemin jusqu'à la solution se révélant plus long que prévu.
+Bien entendu, si le travail n'a pas Ã©tÃ© terminÃ©, il faut indiquer les Ã©tapes. Il peut s'agir d'Ã©tapes envisagÃ©es initialement et qui peuvent Ãªtre poursuivies telles quelles ou amendÃ©es. Il peut s'agir d'Ã©tapes nouvelles, le chemin jusqu'Ã  la solution se rÃ©vÃ©lant plus long que prÃ©vu.
 
 %---------------------------------------------------------------------------------------------------------
 
-\nocite{*} % à supprimer, les citations dans le rapports doivent suffire à générer la bibliographie nécessaire et suffisante à la compréhension du travail (ici, cela sert à générer une "fausse" bibliographie dans ce modèle de rapport)
+\nocite{*} % Ã  supprimer, les citations dans le rapports doivent suffire Ã  gÃ©nÃ©rer la bibliographie nÃ©cessaire et suffisante Ã  la comprÃ©hension du travail (ici, cela sert Ã  gÃ©nÃ©rer une "fausse" bibliographie dans ce modÃ¨le de rapport)
 
 \bibliography{rapport}
 
@@ -591,12 +591,12 @@ Bien entendu, si le travail n'a pas été terminé, il faut indiquer les étapes. Il
 
 La loi n'autorise :
 \begin{itemize}
-	\item d'une part, que les copies ou reproductions strictement réservées à l'usage privé du copiste et non destinées à une utilisation collective ;
+	\item d'une part, que les copies ou reproductions strictement rÃ©servÃ©es Ã  l'usage privÃ© du copiste et non destinÃ©es Ã  une utilisation collective ;
 	\item d'autre part, que les analyses et les courtes citations dans un but d'exemple et d'illustration.
 \end{itemize}
-C'est ce second point qui nécessite, semble-t-il, quelques éclaircissements dans le cadre de la production d'un rapport, notamment dans sa partie bibliographique.
+C'est ce second point qui nÃ©cessite, semble-t-il, quelques Ã©claircissements dans le cadre de la production d'un rapport, notamment dans sa partie bibliographique.
 
-Les citations obéissent à quelques règles de \emph{visibilité} et de bon sens que nous précisons ci-dessous dans différents cas.
+Les citations obÃ©issent Ã  quelques rÃ¨gles de \emph{visibilitÃ©} et de bon sens que nous prÃ©cisons ci-dessous dans diffÃ©rents cas.
 
 \section{Citations courtes}
 
@@ -604,80 +604,80 @@ Les citations courtes se font << en ligne >> en mettant la copie du texte :
 \begin{enumerate}
 	\item en italique ;
 	\item entre guillemets ;
-	\item suivie de la référence à l'\oe uvre dont elle est extraite.
+	\item suivie de la rÃ©fÃ©rence Ã  l'\oe uvre dont elle est extraite.
 \end{enumerate}
 
-Ainsi donc, nous pourrions écrire que \emph{<< [s]i on est trop jeune, on ne juge pas bien [;] [s]i on est trop vieil, de même >>} \cite{Pascal-1671}.
+Ainsi donc, nous pourrions Ã©crire que \emph{<< [s]i on est trop jeune, on ne juge pas bien [;] [s]i on est trop vieil, de mÃªme >>} \cite{Pascal-1671}.
 
-Il s'agit de mettre parfaitement en évidence l'emprunt à un auteur et de créditer cet auteur.
+Il s'agit de mettre parfaitement en Ã©vidence l'emprunt Ã  un auteur et de crÃ©diter cet auteur.
 
 \bigskip
 
-Sur l'exemple, on notera les parties de textes mises entre crochets. Il s'agit des parties qui ont été modifiées vis-à-vis de l'original pour convenir à leur insertion dans ce texte. En l'occurrence, il s'agit de deux phrases que l'on a placées ici en subordonnée.
+Sur l'exemple, on notera les parties de textes mises entre crochets. Il s'agit des parties qui ont Ã©tÃ© modifiÃ©es vis-Ã -vis de l'original pour convenir Ã  leur insertion dans ce texte. En l'occurrence, il s'agit de deux phrases que l'on a placÃ©es ici en subordonnÃ©e.
 
-La plus importante de ces marques est l'ellipse (inutilisée ici), notée << [...]  >>, qui correspond à une partie de texte supprimée. Cela correspond généralement à une digression sans importance pour le propos. En revanche, omettre de préciser que l'on a tronqué la citation est un moyen courant pour tromper le lecteur sur la pensée originelle !
+La plus importante de ces marques est l'ellipse (inutilisÃ©e ici), notÃ©e << [...]  >>, qui correspond Ã  une partie de texte supprimÃ©e. Cela correspond gÃ©nÃ©ralement Ã  une digression sans importance pour le propos. En revanche, omettre de prÃ©ciser que l'on a tronquÃ© la citation est un moyen courant pour tromper le lecteur sur la pensÃ©e originelle !
 
 \section{Citations << longues >>}
 
-Les citations plus longues, de quelques phrases, voire paragraphes, utilisent un format spécifique, comme illustré ci-dessous. Il s'agit de mettre toute la citation dans un, voire plusieurs, paragraphes endentés en respectant les consignes précédentes.
+Les citations plus longues, de quelques phrases, voire paragraphes, utilisent un format spÃ©cifique, comme illustrÃ© ci-dessous. Il s'agit de mettre toute la citation dans un, voire plusieurs, paragraphes endentÃ©s en respectant les consignes prÃ©cÃ©dentes.
 
-Par exemple, si l'on souhaite conserver l'emprunt précédent dans son format d'origine, nous aurons :
+Par exemple, si l'on souhaite conserver l'emprunt prÃ©cÃ©dent dans son format d'origine, nous aurons :
 \begin{quote}
-	\emph{<< Si on est trop jeune, on ne juge pas bien. Si on est trop vieil, de même. Si on n'y songe pas assez, si on y songe trop, on s'entête, \& l'on ne peut trouver la vérité. >>} \cite{Pascal-1671}
+	\emph{<< Si on est trop jeune, on ne juge pas bien. Si on est trop vieil, de mÃªme. Si on n'y songe pas assez, si on y songe trop, on s'entÃªte, \& l'on ne peut trouver la vÃ©ritÃ©. >>} \cite{Pascal-1671}
 \end{quote}
 
-\section{Citations en langue étrangère}
+\section{Citations en langue Ã©trangÃ¨re}
 
-Lorsque la citation provient d'un texte écrit dans une langue autre que le français, généralement l'anglais, la règle de base reste la même, à savoir copier le texte d'origine tel quel afin d'assurer son intégrité. Une traduction sera fournie en note de bas de page (ce qui permettra de détecter une éventuelle incompréhension du propos...).
+Lorsque la citation provient d'un texte Ã©crit dans une langue autre que le franÃ§ais, gÃ©nÃ©ralement l'anglais, la rÃ¨gle de base reste la mÃªme, Ã  savoir copier le texte d'origine tel quel afin d'assurer son intÃ©gritÃ©. Une traduction sera fournie en note de bas de page (ce qui permettra de dÃ©tecter une Ã©ventuelle incomprÃ©hension du propos...).
 
-\section{Copie de schémas}
+\section{Copie de schÃ©mas}
 
-Les schémas, au même titre que les textes, sont des \oe uvres de l'esprit soumises au droit d'auteur et qui ne peuvent donc être éventuellement recopiées qu'avec parcimonie et en citant la source dans la légende.
+Les schÃ©mas, au mÃªme titre que les textes, sont des \oe uvres de l'esprit soumises au droit d'auteur et qui ne peuvent donc Ãªtre Ã©ventuellement recopiÃ©es qu'avec parcimonie et en citant la source dans la lÃ©gende.
 
 \section{Plagiat}
 \label{ann:Plagiat}
 
-Toute autre usage de la citation relève du plagiat, plus ou moins éhonté suivant les modifications qui sont apportées au texte d'origine.
+Toute autre usage de la citation relÃ¨ve du plagiat, plus ou moins Ã©hontÃ© suivant les modifications qui sont apportÃ©es au texte d'origine.
 
 Par exemple, le texte suivant :
 \begin{quote}
-   Dans le monde réel, très rares sont les situations où l'on serait capable d'effectuer une partition nette d'un ensemble d'objets en des parties disjointes, voire même aux frontières clairement établies. La gradualité du passage entre des classes différentes aux frontières non reconnaissables n'est-elle pas l'une des motivations essentielles, sinon la première, qui furent à l'origine de la naissance de la théorie des sous-ensembles flous. Les techniques floues de classification sont souvent nées de la tentative de généralisation de techniques déjà existantes d'après \cite{Khodja-97}.
+   Dans le monde rÃ©el, trÃ¨s rares sont les situations oÃ¹ l'on serait capable d'effectuer une partition nette d'un ensemble d'objets en des parties disjointes, voire mÃªme aux frontiÃ¨res clairement Ã©tablies. La gradualitÃ© du passage entre des classes diffÃ©rentes aux frontiÃ¨res non reconnaissables n'est-elle pas l'une des motivations essentielles, sinon la premiÃ¨re, qui furent Ã  l'origine de la naissance de la thÃ©orie des sous-ensembles flous. Les techniques floues de classification sont souvent nÃ©es de la tentative de gÃ©nÃ©ralisation de techniques dÃ©jÃ  existantes d'aprÃ¨s \cite{Khodja-97}.
 \end{quote}
 est une << citation >> \emph{maladroite} de :
 \begin{quote}
-   \emph{<< En effet, dans le monde réel qui nous entoure, très rares sont les situations où l'on serait capable d'effectuer une partition nette d'un ensemble d'objets en des parties disjointes, voire même aux frontières clairement établies. La gradualité du passage entre des classes différentes aux frontières non reconnaissables n'est-elle pas l'une des motivations essentielles, sinon la première, qui furent à l'origine de la naissance de la théorie des sous-ensembles flous [ZAD65]. L'introduction du concept de fonction d'appartenance dans des techniques de classification, et ce, très rapidement après la parution de l'article séminal de Zadeh, et les différents travaux qui le suivirent, témoignent de la fertilité de l'apport de la théorie des sous-ensembles flous au vaste champ de la classification, qui y trouve un cadre beaucoup plus naturel que celui offert par la théorie classique des ensembles. >>} \cite{Khodja-97}
+   \emph{<< En effet, dans le monde rÃ©el qui nous entoure, trÃ¨s rares sont les situations oÃ¹ l'on serait capable d'effectuer une partition nette d'un ensemble d'objets en des parties disjointes, voire mÃªme aux frontiÃ¨res clairement Ã©tablies. La gradualitÃ© du passage entre des classes diffÃ©rentes aux frontiÃ¨res non reconnaissables n'est-elle pas l'une des motivations essentielles, sinon la premiÃ¨re, qui furent Ã  l'origine de la naissance de la thÃ©orie des sous-ensembles flous [ZAD65]. L'introduction du concept de fonction d'appartenance dans des techniques de classification, et ce, trÃ¨s rapidement aprÃ¨s la parution de l'article sÃ©minal de Zadeh, et les diffÃ©rents travaux qui le suivirent, tÃ©moignent de la fertilitÃ© de l'apport de la thÃ©orie des sous-ensembles flous au vaste champ de la classification, qui y trouve un cadre beaucoup plus naturel que celui offert par la thÃ©orie classique des ensembles. >>} \cite{Khodja-97}
 \end{quote}
 
-En effet, la première << citation >> semble exprimer un point de vue partagé par d'autres auteurs plutôt qu'une véritable citation. De plus, il est possible de ne l'associer qu'à la dernière phrase et pas à l'ensemble du paragraphe.
+En effet, la premiÃ¨re << citation >> semble exprimer un point de vue partagÃ© par d'autres auteurs plutÃ´t qu'une vÃ©ritable citation. De plus, il est possible de ne l'associer qu'Ã  la derniÃ¨re phrase et pas Ã  l'ensemble du paragraphe.
 
 \bigskip
 
 Comme autre exemple, le texte suivant :
 \begin{quote}
-La problématique de l'intégration repose sur la standardisation de données internes à l'entreprise, mais aussi des données externes.
+La problÃ©matique de l'intÃ©gration repose sur la standardisation de donnÃ©es internes Ã  l'entreprise, mais aussi des donnÃ©es externes.
 
-Si on prend l'exemple d'une entreprise on aura besoin de ses données internes et externes c'est-à-dire celles des clients et fournisseurs de cette entreprise.
+Si on prend l'exemple d'une entreprise on aura besoin de ses donnÃ©es internes et externes c'est-Ã -dire celles des clients et fournisseurs de cette entreprise.
 
-Ce n'est qu'avec une bonne intégration que l'on peut offrir une vision homogène, complète et véritablement transverse de l'entreprise. Pour cela il faut que le système d'information de l'entreprise soit parfaitement structuré, maîtrisé et d'un bon niveau d'intégration. Si tel n'est pas le cas, l'entrepôt de données ne pourra pas être mis en \oe uvre à cause de la qualité des données qui reste mauvaise.
+Ce n'est qu'avec une bonne intÃ©gration que l'on peut offrir une vision homogÃ¨ne, complÃ¨te et vÃ©ritablement transverse de l'entreprise. Pour cela il faut que le systÃ¨me d'information de l'entreprise soit parfaitement structurÃ©, maÃ®trisÃ© et d'un bon niveau d'intÃ©gration. Si tel n'est pas le cas, l'entrepÃ´t de donnÃ©es ne pourra pas Ãªtre mis en \oe uvre Ã  cause de la qualitÃ© des donnÃ©es qui reste mauvaise.
 \end{quote}
 est un plagiat manifeste, avec tentative de dissimulation, de :
 \begin{quote}
-\emph{<< La problématique de l'intégration repose sur la standardisation de données internes à l'entreprise, mais aussi des données externes (provenant par exemple de clients ou de fournisseurs).}
+\emph{<< La problÃ©matique de l'intÃ©gration repose sur la standardisation de donnÃ©es internes Ã  l'entreprise, mais aussi des donnÃ©es externes (provenant par exemple de clients ou de fournisseurs).}
 
-\emph{Ce n'est qu'au prix d'une intégration poussée que l'on peut offrir une vision homogène et véritablement transverse de l'entreprise. Ce[la] suppose que le système d'information de l'entreprise en amont soit bien structuré, bien maîtrisé, et bénéficie déjà d'un niveau d'intégration suffisant. Si tel n'est pas le cas, la mauvaise qualité des données peut empêcher la mise en \oe uvre de l'entrepôt de données. >>}\footnote{\emph{Entrepôt de données}. Wikipedia, 3 février 2010, \url{http://fr.wikipedia.org/wiki/Entrepôt_de_données}}
+\emph{Ce n'est qu'au prix d'une intÃ©gration poussÃ©e que l'on peut offrir une vision homogÃ¨ne et vÃ©ritablement transverse de l'entreprise. Ce[la] suppose que le systÃ¨me d'information de l'entreprise en amont soit bien structurÃ©, bien maÃ®trisÃ©, et bÃ©nÃ©ficie dÃ©jÃ  d'un niveau d'intÃ©gration suffisant. Si tel n'est pas le cas, la mauvaise qualitÃ© des donnÃ©es peut empÃªcher la mise en \oe uvre de l'entrepÃ´t de donnÃ©es. >>}\footnote{\emph{EntrepÃ´t de donnÃ©es}. Wikipedia, 3 fÃ©vrier 2010, \url{http://fr.wikipedia.org/wiki/EntrepÃ´t_de_donnÃ©es}}
 \end{quote}
 
 \vspace{2\baselineskip}
 
-En conclusion, les opérations de << copier-coller >> sont permises sous les conditions restrictives :
+En conclusion, les opÃ©rations de << copier-coller >> sont permises sous les conditions restrictives :
 \begin{itemize}
 	\item qu'elles soient parfaitement identifiables ;
-	\item que les références aux sources soient données ;
+	\item que les rÃ©fÃ©rences aux sources soient donnÃ©es ;
 	\item qu'elles soient courtes ;
 	\item qu'elles soient peu nombreuses.
 \end{itemize}
 
-En revanche, il est possible, et même tout à fait recommandé, de \emph{reformuler}, avec son vocabulaire et dans le contexte du rapport, des \emph{idées} empruntées à d'autres auteurs. Dans ce cas-là, l'honnêteté intellectuelle se << limite >> à la référence aux sources.
+En revanche, il est possible, et mÃªme tout Ã  fait recommandÃ©, de \emph{reformuler}, avec son vocabulaire et dans le contexte du rapport, des \emph{idÃ©es} empruntÃ©es Ã  d'autres auteurs. Dans ce cas-lÃ , l'honnÃªtetÃ© intellectuelle se << limite >> Ã  la rÃ©fÃ©rence aux sources.
 
 \bigskip
 
@@ -686,9 +686,9 @@ En revanche, il est possible, et même tout à fait recommandé, de \emph{reformule
       \color{red}
       \large
       \begin{minipage}[c]{0.8\columnwidth}
-         Les contrevenants à ces règles élémentaires d'honnêteté intellectuelle seront déferrés devant la section disciplinaire de l'université.
+         Les contrevenants Ã  ces rÃ¨gles Ã©lÃ©mentaires d'honnÃªtetÃ© intellectuelle seront dÃ©ferrÃ©s devant la section disciplinaire de l'universitÃ©.
 
-         Une fraude caractérisée entraîne au minimum l'annulation de l'épreuve et jusqu'à l'expulsion de l'université assortie d'une interdiction de passer tout examen public pendant cinq ans !
+         Une fraude caractÃ©risÃ©e entraÃ®ne au minimum l'annulation de l'Ã©preuve et jusqu'Ã  l'expulsion de l'universitÃ© assortie d'une interdiction de passer tout examen public pendant cinq ans !
       \end{minipage}
    }
 \end{center}
@@ -696,11 +696,11 @@ En revanche, il est possible, et même tout à fait recommandé, de \emph{reformule
 \chapter{Rappels}
 \label{ann:Rappels}
 
-Un rappel contient, comme son nom l'indique, des éléments \emph{a priori} connus mais qu'il est bon de rappeler, notamment lorsqu'il s'agit de définitions (le terme << glossaire >> est alors préférable), de formules mathématiques, d'algorithmes standards, etc.
+Un rappel contient, comme son nom l'indique, des Ã©lÃ©ments \emph{a priori} connus mais qu'il est bon de rappeler, notamment lorsqu'il s'agit de dÃ©finitions (le terme << glossaire >> est alors prÃ©fÃ©rable), de formules mathÃ©matiques, d'algorithmes standards, etc.
 
-Ces éléments-là peuvent être fournis de manière éparse, c'est-à-dire sans formuler les liens logiques entre les eux, sans développer un discours parfaitement cohérent comme dans le reste du document.
+Ces Ã©lÃ©ments-lÃ  peuvent Ãªtre fournis de maniÃ¨re Ã©parse, c'est-Ã -dire sans formuler les liens logiques entre les eux, sans dÃ©velopper un discours parfaitement cohÃ©rent comme dans le reste du document.
 
-Par exemple, on peut écrire de manière sèche que : << La moyenne se calcule différemment suivant que les individus sont séparés, groupés ou seule leur fréquence fournie. On obtient respectivement :
+Par exemple, on peut Ã©crire de maniÃ¨re sÃ¨che que : << La moyenne se calcule diffÃ©remment suivant que les individus sont sÃ©parÃ©s, groupÃ©s ou seule leur frÃ©quence fournie. On obtient respectivement :
 \begin{eqnarray}
     \mu & = & \frac{1}{n} \sum_{i=1}^n x_i\\
     \mu & = & \frac{1}{N} \sum_{i=1}^m x_i \times n_i\\
@@ -715,24 +715,24 @@ avec :
 \chapter{D'autres rappels}
 \label{ann:RappelsInutiles}
 
-Bien sûr, le rapport ne doit pas devenir une accumulation de rappels divers. Si tel était le cas, cela signifierait que le travail bibliographique est devenu une étude critique et détaillée d'un large \emph{corpus} de connaissances. Par exemple, tous les algorithmes de classification << classiques >> (plus proches voisins, machines à vecteur de support, analyse en composantes principales, etc.) pourraient être passés en revue en vue de résoudre le (ou une partie) du problème du rapport.
+Bien sÃ»r, le rapport ne doit pas devenir une accumulation de rappels divers. Si tel Ã©tait le cas, cela signifierait que le travail bibliographique est devenu une Ã©tude critique et dÃ©taillÃ©e d'un large \emph{corpus} de connaissances. Par exemple, tous les algorithmes de classification << classiques >> (plus proches voisins, machines Ã  vecteur de support, analyse en composantes principales, etc.) pourraient Ãªtre passÃ©s en revue en vue de rÃ©soudre le (ou une partie) du problÃ¨me du rapport.
 
-Dans ce cas-là, une étude détaillée, même si elle s'applique à des éléments << bien connus >> devient nécessaire, les propositions devant sans doute être traitées chacune dans un chapitre dédié.
+Dans ce cas-lÃ , une Ã©tude dÃ©taillÃ©e, mÃªme si elle s'applique Ã  des Ã©lÃ©ments << bien connus >> devient nÃ©cessaire, les propositions devant sans doute Ãªtre traitÃ©es chacune dans un chapitre dÃ©diÃ©.
 
-La mise en perspective avec le problème à résoudre est indispensable, autrement on se retrouverait devant un simple catalogue détaillé sans autre intérêt qu'une certaine exhaustivité, le soin étant laissé au lecteur de comprendre en quoi cette énumération de propositions issues de la littérature est utile. En d'autres termes, l'étude doit apporter une plus-value.
+La mise en perspective avec le problÃ¨me Ã  rÃ©soudre est indispensable, autrement on se retrouverait devant un simple catalogue dÃ©taillÃ© sans autre intÃ©rÃªt qu'une certaine exhaustivitÃ©, le soin Ã©tant laissÃ© au lecteur de comprendre en quoi cette Ã©numÃ©ration de propositions issues de la littÃ©rature est utile. En d'autres termes, l'Ã©tude doit apporter une plus-value.
 
-\chapter{Mesures détaillées}
+\chapter{Mesures dÃ©taillÃ©es}
 \label{ann:Mesures}
 
-Les tableaux de mesures qui apparaissent dans cette annexe doivent référencer les formules, algorithmes et parties du rapport auxquels ils sont rattachés.
+Les tableaux de mesures qui apparaissent dans cette annexe doivent rÃ©fÃ©rencer les formules, algorithmes et parties du rapport auxquels ils sont rattachÃ©s.
 
-Par exemple, le tableau~\ref{tab:MesuresAlgorithme} contient l'ensemble des paramètres obtenus par l'algorithme~\ref{alg:Proposition} (en page~\pageref{alg:Proposition}) ayant servi à l'élaboration du tableau~\ref{tab:Courbes} (en page~\pageref{tab:Courbes}) \emph{via} la formule~\ref{eq:Proposition} (en page~\pageref{eq:Proposition}).
+Par exemple, le tableau~\ref{tab:MesuresAlgorithme} contient l'ensemble des paramÃ¨tres obtenus par l'algorithme~\ref{alg:Proposition} (en page~\pageref{alg:Proposition}) ayant servi Ã  l'Ã©laboration du tableau~\ref{tab:Courbes} (en page~\pageref{tab:Courbes}) \emph{via} la formule~\ref{eq:Proposition} (en page~\pageref{eq:Proposition}).
 
 \begin{table*}
 	\centering
 	\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|}
 		\hline
-		entrée & $a$ & $p$ & $m_1$ & $m_2$ & $\kappa$ & $\alpha$ & $\alpha'$ & \ldots & $z$ \\
+		entrÃ©e & $a$ & $p$ & $m_1$ & $m_2$ & $\kappa$ & $\alpha$ & $\alpha'$ & \ldots & $z$ \\
 		\hline
 		\hline
 		\texttt{img000.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
@@ -761,56 +761,56 @@ Par exemple, le tableau~\ref{tab:MesuresAlgorithme} contient l'ensemble des para
 \chapter{Fiches de lecture}
 \label{ann:FichesLecture}
 
-Cette annexe est \emph{obligatoire}, fiches détaillées et tableau récapitulatif.
+Cette annexe est \emph{obligatoire}, fiches dÃ©taillÃ©es et tableau rÃ©capitulatif.
 
-\emph{Pour chaque article et ouvrage de la bibliographie} (éventuellement pour un site \emph{web} \emph{complet} et \emph{pérenne}), il faut établir une fiche de lecture -- succincte -- comportant (i)~un résumé << objectif >> et (ii)~une analyse.
+\emph{Pour chaque article et ouvrage de la bibliographie} (Ã©ventuellement pour un site \emph{web} \emph{complet} et \emph{pÃ©renne}), il faut Ã©tablir une fiche de lecture -- succincte -- comportant (i)~un rÃ©sumÃ© << objectif >> et (ii)~une analyse.
 
-Si l'article ou l'ouvrage n'apporte rien à l'étude, il est inutile de l'insérer dans la bibliographie et de le référencer, quand bien même on y aurait consacré un temps important (cela sera noté dans les fiches de suivi).
+Si l'article ou l'ouvrage n'apporte rien Ã  l'Ã©tude, il est inutile de l'insÃ©rer dans la bibliographie et de le rÃ©fÃ©rencer, quand bien mÃªme on y aurait consacrÃ© un temps important (cela sera notÃ© dans les fiches de suivi).
 
 \section{\emph{<Titre d'un article>}}
 
-On introduit rapidement le problème traité par l'article et on le référence afin de créer un hyper-lien vers la bibliographie \cite{Pascal-1671} (et inversement).
+On introduit rapidement le problÃ¨me traitÃ© par l'article et on le rÃ©fÃ©rence afin de crÃ©er un hyper-lien vers la bibliographie \cite{Pascal-1671} (et inversement).
 
-\section{Résumé}
+\section{RÃ©sumÃ©}
 
-Le résumé doit faire apparaître l'idée phare de l'article (ou les idées principales d'un ouvrage plus important -- il peut être étudié selon ses différents chapitres). Il faut rapporter les analyses, expérimentations et conclusions établies \emph{par les auteurs}.
+Le rÃ©sumÃ© doit faire apparaÃ®tre l'idÃ©e phare de l'article (ou les idÃ©es principales d'un ouvrage plus important -- il peut Ãªtre Ã©tudiÃ© selon ses diffÃ©rents chapitres). Il faut rapporter les analyses, expÃ©rimentations et conclusions Ã©tablies \emph{par les auteurs}.
 
 \section{Analyse}
 
 C'est dans une seconde phase que l'analyse de l'article a lieu. Il s'agit :
 \begin{enumerate}
-   \item de vérifier l'exactitude du document (des erreurs sont toujours possibles, la littérature nous l'apprend !) ;
-   \item de critiquer éventuellement les apports de l'article ;
-   \item surtout d'établir le lien avec le sujet du projet.
+   \item de vÃ©rifier l'exactitude du document (des erreurs sont toujours possibles, la littÃ©rature nous l'apprend !) ;
+   \item de critiquer Ã©ventuellement les apports de l'article ;
+   \item surtout d'Ã©tablir le lien avec le sujet du projet.
 \end{enumerate}
 
 \chapter{Planification}
 
 Cette annexe est \emph{obligatoire}.
 
-La figure~\ref{fig:PlanningPrevisionnel} présente le planning élaboré \emph{a priori}...
+La figure~\ref{fig:PlanningPrevisionnel} prÃ©sente le planning Ã©laborÃ© \emph{a priori}...
 
 \begin{figure*}
-% - Utiliser la version étoilée des flottants pour les faire tenir sur deux colonnes
-% - éventuellement utiliser la conditionnelle \ifscreen ... \else ... \fi pour orienter
+% - Utiliser la version Ã©toilÃ©e des flottants pour les faire tenir sur deux colonnes
+% - Ã©ventuellement utiliser la conditionnelle \ifscreen ... \else ... \fi pour orienter
 %   correctement le planning en fonction de l'orientation du papier (cf. ci-dessous)
-%   pour l'autoévaluation.
+%   pour l'autoÃ©valuation.
 	\centering
-		\emph{<Insérer le diagramme de Gantt.>}
-	\caption{Planification prévisionnelle}
+		\emph{<InsÃ©rer le diagramme de Gantt.>}
+	\caption{Planification prÃ©visionnelle}
 	\label{fig:PlanningPrevisionnel}
 \end{figure*}
 
-La figure~\ref{fig:PlanningEffectif} présente pour sa part le planning relevé au fur et à mesure de l'avancement du travail.
+La figure~\ref{fig:PlanningEffectif} prÃ©sente pour sa part le planning relevÃ© au fur et Ã  mesure de l'avancement du travail.
 
 \begin{figure*}
 	\centering
-		\emph{<Insérer le diagramme de Gantt.>}
+		\emph{<InsÃ©rer le diagramme de Gantt.>}
 	\caption{Planning effectif}
 	\label{fig:PlanningEffectif}
 \end{figure*}
 
-Discuter les différences entre les deux plannings et les leçons apprises sur la gestion d'un projet de recherche ou de R\&D.
+Discuter les diffÃ©rences entre les deux plannings et les leÃ§ons apprises sur la gestion d'un projet de recherche ou de R\&D.
 
 \chapter{Fiches de suivi}
 \label{ann:FichesSuivi}
@@ -822,16 +822,16 @@ Discuter les différences entre les deux plannings et les leçons apprises sur la 
 \paragraph{}
 	\begin{travaileffectue}
 		\begin{itemize}
-			\item Prise de contact avec plusieurs encadrants possibles : simple, réalisée à $100$ \% ;
-			\item Etablissement de la liste des choix de sujets (24/23/48/44/22) : simple, réalisée à $100$ \% ;		
+			\item Prise de contact avec plusieurs encadrants possibles : simple, rÃ©alisÃ©e Ã  $100$ \% ;
+			\item Etablissement de la liste des choix de sujets (24/23/48/44/22) : simple, rÃ©alisÃ©e Ã  $100$ \% ;		
 		\end{itemize}
 	\end{travaileffectue}
 	
 \paragraph{}
 	\begin{planification}
 		\begin{itemize}
-			\item Rencontrer le commanditaire pour lancer le projet à l'issu de l'affectation des projets
-			\item Démarrer la partie bibliographique
+			\item Rencontrer le commanditaire pour lancer le projet Ã  l'issu de l'affectation des projets
+			\item DÃ©marrer la partie bibliographique
 		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
@@ -845,30 +845,30 @@ Discuter les différences entre les deux plannings et les leçons apprises sur la 
 \paragraph{}
 	\begin{travaileffectue}
 		\begin{itemize}
-			\item Affectation au sujet 48 de PR\&D : simple, réalisée à $100$ \% ;
-			\item Prise de contact avec l'encadrant du projet(Matthieu Perreira Da Silva) : simple, réalisée à $100$ \% ;
-			\item Réunion de démarrage du projet avec Matthieu Perreira Da Silva : simple, réalisée à $100$ \% ;
-			\item Préparation des outils de gestion de projet (mise en place d'un dépôt GitHub pour les rapports, et le code)  : simple, réalisée à $100$ \% ;
-			\item Adoption de l'outil Mendeley pour la gestion des sources bibliographiques: simple, réalisée à $100$ \% ;
+			\item Affectation au sujet 48 de PR\&D : simple, rÃ©alisÃ©e Ã  $100$ \% ;
+			\item Prise de contact avec l'encadrant du projet(Matthieu Perreira Da Silva) : simple, rÃ©alisÃ©e Ã  $100$ \% ;
+			\item RÃ©union de dÃ©marrage du projet avec Matthieu Perreira Da Silva : simple, rÃ©alisÃ©e Ã  $100$ \% ;
+			\item PrÃ©paration des outils de gestion de projet (mise en place d'un dÃ©pÃ´t GitHub pour les rapports, et le code)  : simple, rÃ©alisÃ©e Ã  $100$ \% ;
+			\item Adoption de l'outil Mendeley pour la gestion des sources bibliographiques: simple, rÃ©alisÃ©e Ã  $100$ \% ;
 		\end{itemize}
 	\end{travaileffectue}
 
 \paragraph{}
 	\begin{echange}
 		\begin{itemize}
-			\item Réception d'une liste d'articles à étudier de la part de Matthieu Perreira Da Silva mercredi ;
-			\item Nous avons rencontré Matthieu Perreira Da Silva vendredi, pour en savoir davantage sur le déroulement du projet et ses attentes. L'objectif de la première phase qui est donc bibliographique est tout d'abord de déterminer ce qui est réalisé dans les différents domaines de l'amélioration d'image, de photo et de portrait. Pour cela il est possible que tous les articles ne soient pas des articles scientifiques, en ce qui concerne le domaine de la photographie. Par ailleurs, il nous faut très rapidement déterminer les limites de l'amélioration de photo de portrait étant donné qu'il faut savoir jusqu'à quelque point une photo peut être modifié pour rester fidèle.
-			\item Matthieu Perreira Da Silva nous a aussi présenté différents outils pour la gestion de nos sources bibliographiques, ainsi que différents points d'accès aux articles scientifiques comme HAL, TEL, ACM, Springer,...
-			\item Des rencontres régulières constitueront le point névralgique du suivi du projet, et une réunion devrait avoir lieu mardi 22 octobre. Avant cela la prochaine fiche devra être remise plus tôt.
+			\item RÃ©ception d'une liste d'articles Ã  Ã©tudier de la part de Matthieu Perreira Da Silva mercredi ;
+			\item Nous avons rencontrÃ© Matthieu Perreira Da Silva vendredi, pour en savoir davantage sur le dÃ©roulement du projet et ses attentes. L'objectif de la premiÃ¨re phase qui est donc bibliographique est tout d'abord de dÃ©terminer ce qui est rÃ©alisÃ© dans les diffÃ©rents domaines de l'amÃ©lioration d'image, de photo et de portrait. Pour cela il est possible que tous les articles ne soient pas des articles scientifiques, en ce qui concerne le domaine de la photographie. Par ailleurs, il nous faut trÃ¨s rapidement dÃ©terminer les limites de l'amÃ©lioration de photo de portrait Ã©tant donnÃ© qu'il faut savoir jusqu'Ã  quelque point une photo peut Ãªtre modifiÃ© pour rester fidÃ¨le.
+			\item Matthieu Perreira Da Silva nous a aussi prÃ©sentÃ© diffÃ©rents outils pour la gestion de nos sources bibliographiques, ainsi que diffÃ©rents points d'accÃ¨s aux articles scientifiques comme HAL, TEL, ACM, Springer,...
+			\item Des rencontres rÃ©guliÃ¨res constitueront le point nÃ©vralgique du suivi du projet, et une rÃ©union devrait avoir lieu mardi 22 octobre. Avant cela la prochaine fiche devra Ãªtre remise plus tÃ´t.
 		\end{itemize}
 	\end{echange}	
 	
 \paragraph{}
 	\begin{planification}
 		\begin{itemize}
-			\item Continuer la réalisation des fiches de lecture des premiers articles;
-		\item Trouver de nouveaux articles à étudier;
-			\item La prochaine fiche de suivi devra être rendu jeudi prochain;
+			\item Continuer la rÃ©alisation des fiches de lecture des premiers articles;
+		\item Trouver de nouveaux articles Ã  Ã©tudier;
+			\item La prochaine fiche de suivi devra Ãªtre rendu jeudi prochain;
 		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
@@ -1146,28 +1146,28 @@ Discuter les différences entre les deux plannings et les leçons apprises sur la 
 	\end{planification}
 \end{fichesuivi}
 
-Le tableau récapitulatif du temps consacré au projet est \emph{obligatoire}. Si vous n'utilisez pas strictement le modèle de fiche de suivi fourni, il vous faudra l'établir vous-même. Dans le cas contraire, une commande permet de le générer automatiquement avec le texte qui le référence et des hyper-liens vers chacune des fiches (paragraphe ci-dessous).
+Le tableau rÃ©capitulatif du temps consacrÃ© au projet est \emph{obligatoire}. Si vous n'utilisez pas strictement le modÃ¨le de fiche de suivi fourni, il vous faudra l'Ã©tablir vous-mÃªme. Dans le cas contraire, une commande permet de le gÃ©nÃ©rer automatiquement avec le texte qui le rÃ©fÃ©rence et des hyper-liens vers chacune des fiches (paragraphe ci-dessous).
 
 \printweeksummary
 
-\chapter{Auto-contrôle et auto-évaluation}
+\chapter{Auto-contrÃ´le et auto-Ã©valuation}
 
 Cette annexe est \emph{obligatoire}.
 
-La figure~\ref{fig:AutoEvaluationTravailIntermediaire} permet d'énumérer un certain nombre de points importants dans les trois composantes du travail :
+La figure~\ref{fig:AutoEvaluationTravailIntermediaire} permet d'Ã©numÃ©rer un certain nombre de points importants dans les trois composantes du travail :
 \begin{enumerate}
    \item rapport ;
-   \item présentation orale ;
+   \item prÃ©sentation orale ;
    \item travail de fond ;
 \end{enumerate}
-ainsi que d'évaluer notre niveau de satisfaction à l'issue de la phase~I, composée de trois étapes :
+ainsi que d'Ã©valuer notre niveau de satisfaction Ã  l'issue de la phase~I, composÃ©e de trois Ã©tapes :
 \begin{enumerate}
-	\item étude préalable ;
-	\item étude bibliographique ;
-	\item conception générale.
+	\item Ã©tude prÃ©alable ;
+	\item Ã©tude bibliographique ;
+	\item conception gÃ©nÃ©rale.
 \end{enumerate}
 
-Les points de satisfaction ou d'insatisfaction peuvent être approfondis.
+Les points de satisfaction ou d'insatisfaction peuvent Ãªtre approfondis.
 
 \begin{figure*}
 	\centering
@@ -1176,14 +1176,14 @@ Les points de satisfaction ou d'insatisfaction peuvent être approfondis.
       \else
          \includegraphics[width=0.9\textwidth]{Images/Grille-Evaluation-PRD1}
       \fi
-	\caption{Points à contrôler à l'issue de la phase I}
+	\caption{Points Ã  contrÃ´ler Ã  l'issue de la phase I}
 	\label{fig:AutoEvaluationTravailIntermediaire}
 \end{figure*}
 
-La figure~\ref{fig:AutoEvaluationTravailFinal} permet d'énumérer un certain nombre de points importants dans les trois composantes du travail ainsi que d'évaluer notre niveau de satisfaction à l'issue de la phase~II, constituée de :
+La figure~\ref{fig:AutoEvaluationTravailFinal} permet d'Ã©numÃ©rer un certain nombre de points importants dans les trois composantes du travail ainsi que d'Ã©valuer notre niveau de satisfaction Ã  l'issue de la phase~II, constituÃ©e de :
 \begin{enumerate}
-	\item la conception détaillée ;
-	\item la réalisation ;
+	\item la conception dÃ©taillÃ©e ;
+	\item la rÃ©alisation ;
 	\item la recette.
 \end{enumerate}
 
@@ -1194,7 +1194,7 @@ La figure~\ref{fig:AutoEvaluationTravailFinal} permet d'énumérer un certain nomb
       \else
          \includegraphics[width=0.9\textwidth]{Images/Grille-Evaluation-PRD2}
       \fi
-	\caption{Points à contrôler à l'issue de la phase II}
+	\caption{Points Ã  contrÃ´ler Ã  l'issue de la phase II}
 	\label{fig:AutoEvaluationTravailFinal}
 \end{figure*}
 
