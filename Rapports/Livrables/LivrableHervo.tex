@@ -838,6 +838,40 @@ Cet article nous présente un algorithme qui va détecter les zones du visage et
 \section{Analyse}
 Cet article nous permet de voir que des solutions payantes ont déjà été développés et nous donne une idée globale des améliorations réalisables.
 
+\section{\emph{The Design of High-Level Features for Photo Quality Assessment}}
+L'article \cite{Ke} nous présente un algorithme pour classifier une image. Cette méthode permet de déterminer informatiquement si une photo est de qualité professionnelle ou prise par un amateur.
+
+\paragraph{Résumé}
+Cet article présente les critères utilisés par les auteurs pour déterminer si une image semble réalisée par un professionnel ou non. Pour cela, ils utilisent des critères haut niveaux. Ces dernier sont basés sur l'observation des critères bas niveau généralement utilisés dans l'analyse d'image. Ils servent à corriger les problèmes observés lors de l'utilisation de ces critères bas niveaux et apportent de nouvelles pistes de classification.
+Tous ces critères haut niveaux sont retirés uniquement des caractéristiques de la photo et ne concernent pas les méta-données de l'image.
+
+Les critères retenus pour identifier une photo professionnelle sont :
+- la simplicité , c'est à dire à quel point il est facile de détacher le sujet du fond. Plus c'est simple, plus la photo est de bonne qualité.
+- le réalisme , c'est à dire à quel point la photo peut sembler atypique par rapport aux autres , la petite touche qui la rend différente.
+
+C'est pour cela que dans l'algorithme les auteurs utilisent les caractéristiques suivantes qui référent directement aux critères listés plus haut : 
+- La distribution des bords. En analysant ce paramètres, on peux voir si le sujet se détache ou non du reste au niveau du centre de l'image. Cela permet d'analyse la simplicité.
+- Le nombre de nuances de couleurs dans l'image permet également de déterminer sa simplicité. Moins il y en a, plus la photo est professionnelle.
+- La distribution de couleurs. Plus il y en a , plus la photo est réaliste et à été prise avec soin.
+- le niveau de flou,plus l'image est floue, moins bonne elle est.
+
+En plus de ces critères hauts niveaux, ils vont également utilisé le contraste et l'éclairage.
+
+
+\paragraph{Analyse}
+Cet article nous sera utile pour la partie d'analyse de la qualité de l'image, notre but étant de permettre d'avoir un rendu "professionnel". Il nous permet de compléter les critères bas niveaux que nous avions vu dans d'autres articles par des critères plus haut niveaux. On y vois cependant la nécessité de conserver certains critères bas niveaux qui sont essentiels à l'analyse de photo.
+
+\section{\emph{Method of restoring closed eye portrait photo}}
+L'article \cite{Li} présente une méthode qui permet de rectifier l'ouverture des yeux sur un portrait.
+
+\paragraph{Résumé}
+Lorsqu'on prend une photo, il arrive qu'on ai les yeux qui se ferment et de ce fait on a une drôle d'expression sur les photos. L'article présente une méthode afin de corriger ce problème en rectifiant l'ouverture des yeux.
+Le principe est de détecter les yeux puis de voir s'il sont ouvert ou fermés, de déterminer alors une zone de restauration si besoin et d'appliquer un des modèles prédéterminés pour leur rendre l'aspect ouvert.
+L'article détaille l'algorithme utilisé pas à pas.
+
+\paragraph{Analyse}
+Ce genre de modification peut nous être utile pour notre projet car le cas d'yeux fermés ou partiellement fermés peu se présenter. Cela constitue donc une piste de réflexion intéressante.
+
 \chapter{Planification}
 
 Cette annexe est \emph{obligatoire}.
