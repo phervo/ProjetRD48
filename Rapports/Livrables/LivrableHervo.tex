@@ -872,6 +872,25 @@ L'article détaille l'algorithme utilisé pas à pas.
 \paragraph{Analyse}
 Ce genre de modification peut nous être utile pour notre projet car le cas d'yeux fermés ou partiellement fermés peu se présenter. Cela constitue donc une piste de réflexion intéressante.
 
+\section{\emph{Natural Scenes Enhancement by Adaptive Color Correction}}
+L'article \cite{Nacarri} présente une méthode qui améliore le rendu des couleurs naturels des portraits en utilisant un algorithme de correction des couleurs adaptatif. 
+
+\paragraph{Résumé}
+Des études précédentes à cet article ont montré que ce qui importait dans une image en termes de couleur était les couleurs de la peau, du ciel et de la végétation. Ce sont ces points qui vont faire qu'un observateur va être plus attiré par une photo qu'une autre. Cet algorithme fonctionne en deux temps. La première partie de l'algorithme consiste à mettre un marqueur sur chaque pixel afin de déterminer a quelle catégorie précédemment citée il appartient. Pour cela, un algorithme de classification est utilisé. La seconde partie de l'algorithme va alors améliorer les couleurs s'il le juge nécessaire.
+L'algorithme de classification a été entrainé par un jeu d'image préalablement labellisé et fait une décomposition dans l'espace HLS afin de séparer les pixels en différentes classes. Un filtre est ensuite appliquer au résultat pour corriger les pixels mal labellisés lors du passage.
+La partie de correction de couleur fonctionne quand a elle en réduisant la distance entre la couleur du pixel et la couleur de la classe cible a laquelle l'algorithme a déterminé qu'elle était rattachée.
+
+\paragraph{Analyse}
+Cet article peut nous aider en nous donnant des idées pour la classification des pixels du portrait. 
+On peut également y puiser des idées pour rendre la photo plus belle du point de vue de l'observateur sans rien modifier d'autre que les couleurs.
+Cet algorithme a été testé sur différents types d'image dont des portraits et montre des résultats très satisfaisants, les observateurs préfèrent majoritairement les images améliorées par l'algorithme.
+
+\section{\emph{AUTOMATIC FACE AND SKIN BEAUTIFICATION USING FACE DETECTION}}
+L'article \cite{Ciuc} une mméthode pour détecter et améliorer les sous-régions du visage dans un portrait en jouant sur la luminosité.
+
+\paragraph{Résumé}
+\paragraph{Analyse}
+
 \chapter{Planification}
 
 Cette annexe est \emph{obligatoire}.
