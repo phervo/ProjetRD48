@@ -838,7 +838,7 @@ En plus de ces critères hauts niveau, ils vont également utiliser le contraste
 Cet article nous sera utile pour la partie d'analyse de la qualité de l'image, notre but étant de permettre d'avoir un rendu "professionnel". Il nous permet de compléter les critères bas niveau que nous avions vus dans d'autres articles par des critères plus haut niveau. On y voit cependant la nécessité de conserver certains critères bas niveau qui sont essentiels à l'analyse de photo.
 
 \section{\emph{Method of restoring closed eye portrait photo}}
-L'article \cite{Li} présente une méthode qui permet de rectifier l'ouverture des yeux sur un portrait.
+L'article \cite{Li2011} présente une méthode qui permet de rectifier l'ouverture des yeux sur un portrait.
 
 \paragraph{Résumé}
 Lorsqu'on prend une photo, il arrive qu'on ait les yeux qui se ferment et de ce fait on a une drôle d'expression sur les photos. L'article présente une méthode afin de corriger ce problème en rectifiant l'ouverture des yeux.
@@ -848,9 +848,38 @@ L'article détaille l'algorithme utilisé pas à pas.
 \paragraph{Analyse}
 Ce genre de modification peut nous être utile pour notre projet car le cas d'yeux fermés ou partiellement fermés peut se présenter. Cela constitue donc une piste de réflexion intéressante(mais cela est peut être trop ciblé sur le cas des yeux fermés, en effet, une photo que l'on ajoute pour son profil sur un réseau social est sujette à posséder des yeux ouverts).
 
+\section{\emph{Studying Aesthetics in Photographic Images Using a Computational Approach}}
+L'article \cite{Datta} traite de l'évaluation des critères esthétiques d'une photographie au moyen d'une approche informatique.
 
+\paragraph{Résumé}
+Les données sont issues d'un apprentissage statistique pour lisser les cas exceptionnels. Une base communautaire d'échange d'images est aussi utilisée. L'évaluation pourrait être biaisée par le fait que les personnes dont les notes sont prélevées sont majoritairement issus du monde de la photographie (amateurs et professionnels). L'article s'accorde sur le fait que les critères d'esthétiques pour un observateur humain relève du subjectif. Le but de l'article est de montrer qu'il y a des critères généraux qui ont un impact sur la "beauté" d'une photographie. La base de données d'images possède à l'origine deux points évalués, l'originalité et l'esthétique. Par soucis de corrélation de ces deux éléments, les auteurs ont choisi de ne traiter que le cas Esthétique.
+Ensuite à partir de cette base, l'équipe a défini un classificateur qui distingue au niveau qualitatif les photos à partir de leurs critères bas et haut niveau (règle des tiers, saturation, exposition à la lumière et image colorée, taille et ratio, composition des couleurs des régions, ...)
+La classification est effectuée avec un arbre de décision reprenant 15 parmi les 56 propriétés visuelles retenues par le laboratoire. Les résultats seraient en mesure de déterminer si une photographie serait jugée belle ou non par un humain. 
 
+\paragraph{Analyse}
+Une nouvelle fois, cet article recoupe le sujet des critères jaugeant la beauté d'une photographie au sens général.
 
+\section{\emph{Automatic correction and enhancement of facial images}}
+L'article \cite{Konoplev2012} propose un système de détection et de correction des défauts des visages contenus dans une photographie.
+
+\paragraph{Résumé}
+La technique prend en entrée une image et la change de référentiel couleur et passe de RGB vers le modèle de couleur CIELAB (désigné comme proposant des corrections douces et des couleurs plus naturelles). L'image passe ensuite dans un filtre lissant qui va réduire le bruit. Les zones de peau sont à la suite reconnues et vont passer dans un nouveau filtre lissant pour les imperfections. Le filtre utilise tout d'abord des paramètres spécifiques aux rides puis s'en suit un traitement similaire pour les rougeurs, boutons,.... Un histogramme des valeurs des couleurs caractérisant le visage est généré, il sert ensuite de base pour corriger la couleur des pixels des défauts (par la couleur la plus naturelle). Pour la distribution des couleurs caractérisant l'image, un modèle Gaussien est utilisé.L'image originale sert à l'image corrigée de base pour un autre ajustement (contraste, luminosité). L'image résultant repasse à la fin en RGB.
+
+\paragraph{Analyse}
+Ici, on peut noter l'intérêt de l'utilisation d'un autre espace de couleur, afin de ne pas être limité en RGB. Le traitement réalisé dans un espace de couleurs perceptuel permet d'obtenir des résultats plus naturels. La phase d'acquisition de la zone du visage et des zones à modifier est une nouvelle fois présente.
+
+\section{\emph{Natural Scenes Enhancement by Adaptive Color Correction}}
+L'article \cite{Naccari} présente une méthode qui améliore le rendu des couleurs naturelles des portraits en utilisant un algorithme de correction des couleurs adaptatif. 
+
+\paragraph{Résumé}
+Des études précédentes à cet article ont montré que ce qui importait dans une image en terme de couleur était les couleurs de la peau, du ciel et de la végétation. Ce sont ces points qui vont faire qu'un observateur va être plus attiré par une photo qu'une autre. Cet algorithme fonctionne en deux temps. La première partie de l'algorithme consiste à mettre un marqueur sur chaque pixel afin de déterminer à quelle catégorie précédemment citée il appartient. Pour cela, un algorithme de classification est utilisé. La seconde partie de l'algorithme va alors améliorer les couleurs s'il le juge nécessaire.
+L'algorithme de classification a été entrainé par un jeu d'images préalablement labellisées et fait une décomposition dans l'espace HLS afin de séparer les pixels en différentes classes. Un filtre est ensuite appliqué au résultat pour corriger les pixels mal labellisés lors du passage.
+La partie de correction de couleur fonctionne quant à elle, en réduisant la distance entre la couleur du pixel et la couleur de la classe cible à laquelle l'algorithme a déterminé qu'elle était rattachée.
+
+\paragraph{Analyse}
+Cet article peut nous aider en nous donnant des idées pour la classification des pixels du portrait. 
+On peut également y puiser des idées pour rendre la photo plus belle du point de vue de l'observateur sans rien modifier d'autre que les couleurs.
+Cet algorithme a été testé sur différents types d'images dont des portraits et montre des résultats très satisfaisants, les observateurs préfèrent majoritairement les images améliorées par l'algorithme.
 
 
 
@@ -952,20 +981,70 @@ Discuter les différences entre les deux plannings et les leçons apprises sur l
 \end{fichesuivi}
 
 
-\begin{fichesuivi}{27 septembre 2010}{1er octobre 2010}
-	\tempstravailA{11}{20}
-	\tempstravailB{9}{55}
+\begin{fichesuivi}{14 octobre 2013}{20 octobre 2013}
+	\tempstravailA{10}{00}
+	\tempstravailB{10}{00}
 
+\paragraph{}
 	\begin{travaileffectue}
+		\begin{itemize}
+			\item Lecture des articles fournis par M Perreira Da Silva : simple, réalisée à $100$ \% ;
+			\item Recherche de nos propres articles bibliographiques : simple, réalisée à $100$ \% ;
+			\item Rédaction des parties introductives du rapport : simple, réalisée à $100$ \% ;
+			\item Écriture des fiches de lecture correspondant aux articles : simple, réalisée à $100$ \% ;
+		\end{itemize}
 	\end{travaileffectue}
 
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
+\paragraph{}
 	\begin{echange}
-	\end{echange}
-
+		\begin{itemize}
+			\item Prise de rendez-vous avec M Perreira Da Silva afin d'organiser une réunion d'avancement la semaine prochaine.
+			\item Transmission des accès aux outils de gestion bibliographique mis en place.
+		\end{itemize}
+	\end{echange}	
+	
+\paragraph{}
 	\begin{planification}
+		\begin{itemize}
+			\item Continuer à rechercher des articles bibliographiques.
+			\item Continuer à remplir les fiches de lectures avec les nouveaux articles.
+			\item Point d'avancement à réaliser.
+		\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\begin{fichesuivi}{21 octobre 2013}{27 octobre 2013}
+	\tempstravailA{10}{00}
+	\tempstravailB{10}{00}
+
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Lecture de 4 nouveaux articles : simple, réalisée à $100$ \% ;
+			\item Recherche de nouveaux articles : simple, réalisée à $100$ \% ;
+			\item Réunion avec M. Perreira Da Silva jeudi  : simple, réalisée à $100$ \% ;
+			\item Point de réflexion sur la future orientation du projet  : moyen, réalisée à $100$ \% ;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Nous avons rencontré M. Perreira Da Silva jeudi après midi afin de faire un premier point sur la phase bibliographique. Lors de cette réunion nous avons revu les idées tirées des articles lus. Ce qu'il ressort de cette réunion est la nécessité de déterminer l'orientation du projet. En effet nous avons pour le moment des articles qui traitent d'amélioration de photographie, de visages dans des photos, de critères esthétiques... Or il nous faut choisir une cible de travail, et savoir ce sur quoi nous concentrerons la fin de la phase bibliographique. Le but du projet peut se différentier sur une amélioration de photo de portait sur un critère très précis (à pousser), un ensemble de critères, ou sur un aspect qui relève plus de l'évaluation.
+			\item Il est clair que nous n'effectuerons pas d'opérations modifiant la photo originale telle que l'objet serait méconnaissable au retour. D'où l'importance de déterminer la limite de la manipulation de la photo en entrée.
+			\item Le but à l'issue de la réunion est donc de déterminer vers quel type d'amélioration nous voulons aller pour pouvoir rechercher les outils, méthodes, techniques existantes afin de pouvoir les comparer et in fine émettre des propositions pertinentes.
+		\end{itemize}
+	\end{echange}	
+	
+\paragraph{}
+	\begin{planification}
+		\begin{itemize}
+			\item Établir les fiches des derniers articles plus globaux ;
+			\item Déterminer l'orientation du projet avant le début de la semaine de rentrée ;
+			\item Étudier des articles en correspondance avec la nouvelle orientation ; 
+			\item Rechercher les outils traitant des problématiques relevées ;
+			\item Contacter M. Perreira Da Silva pour lui faire part de notre choix ; 
+		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
 
