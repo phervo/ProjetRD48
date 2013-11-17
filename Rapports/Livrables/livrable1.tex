@@ -181,100 +181,109 @@ La conclusion permet de synthétiser les apports de ce travail et d'ouvrir des v
 \chapter{\'Etat de l'art}
 \label{chap:EtatArt}
 
+
 Dans ce chapitre, nous allons dérouler/présenter un état de l’art sur l’amélioration de photographies, et plus particulièrement sur les photographies de portrait. Cette étude traverse plusieurs domaines qui sont la photographie de manière générale, la photographie de portrait donc de visage, les améliorations possibles à ces différents niveaux, et la manière d’évaluer la qualité esthétique.
 
-Dans une première partie nous présenterons les critères principaux jugeant l’esthétique d’une photographie de portrait, puis dans une seconde partie nous étudierons les techniques, méthodes d’amélioration automatique des scènes de portrait, des photographies(images numériques), des visages.
+
+Dans une première partie nous présenterons les critères principaux jugeant l’esthétique d’une photographie de portrait, puis dans une seconde partie nous étudierons les techniques, méthodes d’amélioration automatique des scènes de portrait, des photographies (images numériques), des visages.
+
 
 \section{\emph{De ce qui caractérise l’esthétique d’une photographie...}}
 Présentation de l'intérêt de l'étude de ce qui rend une photo belle (afin de savoir quoi améliorer et ce qui a le plus d’impact pour un humain)
 
-\subsection{\emph{Qu’est ce qu’une photographie agréable ?}}
+
+\subsection{\emph{Qu’est-ce qu’une photographie agréable ?}}
 Utilisation de l’article Studying Aesthetics in Photographic Images
 Utilisation de l’article High Level Describable Attributes for Predicting Aesthetics and Interestingness
 Utilisation de l’article The Design of High-Level Features for Photo Quality Assessment
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{\emph{L’art d’un portrait réussi}}
 Utilisation de Data-driven enhancement of facial attractiveness pour les limites des visages moyens
 Utilisation de Symmetry and Human Facial Attractiveness pour dire que dans la population on aime bien les visages symétriques
-Qu’est ce qui est spécifique au portrait ? Et à la photographie de portrait  
+Qu’est ce qui est spécifique au portrait ? Et à la photographie de portrait 
 Qu’est-ce retouche la plupart des gens ?
+Retouche des yeux avec l’utilisation de l’article Method of restoring closed eye portrait photo
+Mais ne franchit-il pas la limite que nous nous imposons de ne pas modifier l’image ?
+Les couleurs de manière global => avec un appareil photo de mauvaise qualité ou des mauvaises conditions de prises, on obtient facilement une photo avec des couleurs qui dévient de l’original.
+Les couleurs de la peau, du ciel et des végétaux plus particulièrement=>Natural Scenes Enhancement by Adaptive Color Correction.
+L’apparence de la peau (peau lisse), les gens cherchent à supprimer les imperfections avec Automatic correction and enhancement of facial images et Automatic Face and Skin Beautifiction using face detection.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Le détachement du sujet par rapport au fond voir totalement changer le fond :  on peut utiliser les techniques de segmentation et de fusion pour ce besoin. Portrait beautification: A fast and robust approach montre que des recherches sont menées sur le sujet.
 
 \section{\emph{... Aux techniques d’amélioration automatiques de nos photographies de portrait}}
-Préciser la frontière entre l’amélioration de photographie et la modification d’image
+Préciser la frontière entre l’amélioration de photographie et la modification d’image en utilisant l’article Data-driven enhancement of facial attractiveness, il y a une partie consacrée à cela.
+
+
+\subsection{\emph{La détection de visage}}
+Voir si on ne fait pas une partie dédiée à cela
+
 
 \subsection{\emph{Présentation de l’approche globale}}
+Article pouvant être utilisé : An Algorithm For Automatic Skin Smoothing In Digital Portraits
 
 \paragraph{Présentation }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Analyse }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Intérêt pour notre sujet }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+On gagne en temps de détection, on n’a pas besoin de localiser et d’isoler chaque petite imperfection, on récupère la totalité du visage et on corrige par rapport à un pixel jugé représentatif.
 
 \paragraph{Limites }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Suppose que les altérations sont situées au niveau global et modifiera l’ensemble de la photo en conséquence même si l’erreur est vraiment minime. Il ne faut donc pas se tromper et détecter de faux cas d’erreurs. Certains défauts locaux ne disparaîtront pas après le traitement. L’image obtenue est juste meilleure d’un point de vue global.
+
 
 \subsection{\emph{Présentation de l’approche locale}}
+Articles pouvant être utilisés : Method and system for enhancing portrait images that are processed in a batch mode, Automatic Face and Skin Beautifiction using face detection
 
 \paragraph{Présentation }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Analyse }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Intérêt pour notre sujet }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+On peut détecter chaque imperfection et lui appliquer un traitement différent selon sa nature. L’amélioration est déterminée pour la zone, on a donc plus de chance de gommer l’imperfection alors que le traitement global a tendance à améliorer le tout sans se préoccuper si l’imperfection locale à bien été gommée.
 
 \paragraph{Limites }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+On est obligé de détecter et traiter toutes les imperfections, ce qui est plus lourd en temps de traitement.
+Il y a toujours un risque de récupérer le mauvais pixel représentatif et de l’étendre aux pixels voisins. 
+
 
 \subsection{\emph{Changement de la technique d’appprentissage}}
 
 \paragraph{Présentation }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Analyse }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Intérêt pour notre sujet }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Limites }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsection{\emph{Les approches connexes}} 
+
+\subsection{\emph{Les approches connexes}}
 Modifications ou déplacements ou lissage, amélioration de l’existant.
 
 \paragraph{Présentation }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Analyse }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Intérêt pour notre sujet }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \paragraph{Limites }
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 
 \section{\emph{Récapitulatif}}
 
+
 Tableau comparatif des critères esthétiques pour l’évaluation des photos résultats
 Tableau comparatif des méthodes adaptables à notre sujet de recherche
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{\emph{Conclusion}}
 Bilan de l’état de l’art, Accroche vers notre proposition
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 
 %-------------------------------------------------------------------------------------------------------------
@@ -1162,15 +1171,15 @@ de la photographie
 
 
 \begin{fichesuivi}{11 novembre 2013}{17 novembre 2013}
-	\tempstravailA{14}{30}	
-	\tempstravailB{15}{35}
+	\tempstravailA{15}{30}
+	\tempstravailB{15}{30}
 
 \paragraph{}
 	\begin{travaileffectue}
 		\begin{itemize}
 			\item Recherche et lecture d'articles, thèses traitant des améliorations locales du visage : moyenne, réalisée à $100$ \% ;
 			\item Mise à jour de quelques fiches de lecture (en ayant revu l’intérêt de certains articles qui seront utiles pour l’état de l’art): moyenne, réalisée à $100$ \% ;
-			\item Passage en revu de tous les articles trouvés pour en retirer certains moins pertinents: longue, réalisée à $100$ \% ;
+			\item Passage en revu de tous les articles trouvés pour retirer les moins pertinents: longue, réalisée à $100$ \% ;
 			\item Rédaction de la partie état de l’art : simple, réalisée à $20$ \% ;
 \end{itemize}
 	\end{travaileffectue}
@@ -1186,10 +1195,11 @@ de la photographie
 		\begin{itemize}
 			\item Continuer la rédaction de l’état de l’art et la terminer 
 			\item Comparer les différents outils, et les propositions effectuées dans l’état de l’art
-			\item Rencontre M. Perreira Da Silva la semaine prochaine		
-		\end{itemize}
+			\item Rencontre M. Perreira Da Silva la semaine prochaine		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
+
+
 
 \begin{fichesuivi}{}{}
 	\tempstravailA{9}{15}
