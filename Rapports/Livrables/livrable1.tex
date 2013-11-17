@@ -73,7 +73,7 @@
    % - le troisième paramètre permet d'adapter la largeur du logo afin
    %   de le rendre visuellement comparable à ceux mis par défaut (université de Nantes et
    %   éventuellement laboratoire)
-\date{10 novembre 2013}
+\date{17 novembre 2013}
    % - en français les mois ne prennent pas de majuscule (sauf si vous ne mettez pas le jour)
    % - inutile de mettre un 0 devant les jours 1 à 9 du mois !
    % - le jour est peut-être même une précision inutile...
@@ -181,138 +181,101 @@ La conclusion permet de synthétiser les apports de ce travail et d'ouvrir des v
 \chapter{\'Etat de l'art}
 \label{chap:EtatArt}
 
-Le but de cette partie est de faire le point sur l'état des connaissances qui permettent d'aider à la résolution du problème de ce travail sans devoir tout réinventer.
+Dans ce chapitre, nous allons dérouler/présenter un état de l’art sur l’amélioration de photographies, et plus particulièrement sur les photographies de portrait. Cette étude traverse plusieurs domaines qui sont la photographie de manière générale, la photographie de portrait donc de visage, les améliorations possibles à ces différents niveaux, et la manière d’évaluer la qualité esthétique.
 
-Notons que ce chapitre se place toujours, de manière implicite ou explicite, sous la locution : << à notre connaissance >>. Des oublis ou omissions étant toujours possible, il faut néanmoins en préciser la gravité :
-\begin{itemize}
-    \item L'oubli d'un apport \emph{très} récent, ou de portée confidentielle, est pardonnable.
-    \item L'oubli d'apports largement disponibles, du moins dans la communauté concernée, est un manque flagrant sinon de culture du moins de la capacité à retrouver de l'information pertinente.
-    \item Les connaissances de portée générale, celle de l'<< honnête homme >>, seront seulement mentionnées dans cette introduction sans les détailler dans les sections de ce chapitre. (Si un usage très technique d'un pré-requis devait être fait dans la proposition du rapport -- ex.\ : quelques éléments d'analyse de données, de probabilités, etc. --, et afin d'éviter au lecteur d'aller chercher l'information dans les sources, cette description sera reportée dans une annexe -- cf.\ annexe~\ref{ann:Rappels}.)
-\end{itemize}
+Dans une première partie nous présenterons les critères principaux jugeant l’esthétique d’une photographie de portrait, puis dans une seconde partie nous étudierons les techniques, méthodes d’amélioration automatique des scènes de portrait, des photographies(images numériques), des visages.
 
-Normalement, les propositions antérieures ne permettent pas de résoudre le problème posé. Si, par extraordinaire ou par chance, cela était le cas, alors la conclusion de cette partie :
-\begin{itemize}
-    \item mentionnera honnêtement qu'il se trouve que le problème a été -- récemment -- résolu de manière satisfaisante ;
-    \item contiendra la rédaction d'un nouveau problème, connexe à celui d'origine, l'introduction du rapport sera modifiée en conséquence et de nouveaux pré-requis seront présentés ici.
-\end{itemize}
-Remarquons que la conclusion peut être la poursuite d'une solution alternative au problème d'origine, par exemple parce que la solution trouvée dans la littérature est propriétaire ou brevetée, c'est-à-dire indisponible.
+\section{\emph{De ce qui caractérise l’esthétique d’une photographie...}}
+Présentation de l'intérêt de l'étude de ce qui rend une photo belle (afin de savoir quoi améliorer et ce qui a le plus d’impact pour un humain)
 
-Cela dit, et en toute probabilité, vont être ici présentés plusieurs pré-requis servant de base à la résolution de la problématique du travail. Le problème étant encore imparfaitement résolu, on doit trouver ci-dessous un certain nombre de sections correspondant à des approches antérieures (notées ici \emph{<proposition>} $i$ avec $1 \leq i \leq n$) qui fournissent des solutions \emph{partielles}.
+\subsection{\emph{Qu’est ce qu’une photographie agréable ?}}
+Utilisation de l’article Studying Aesthetics in Photographic Images
+Utilisation de l’article High Level Describable Attributes for Predicting Aesthetics and Interestingness
+Utilisation de l’article The Design of High-Level Features for Photo Quality Assessment
 
-Sont donc ici introduites la liste des propositions étudiées en expliquant pourquoi le choix s'est porté \emph{a priori} sur certaines d'entre elles ou pourquoi il a émergé \emph{a posteriori} s'il s'agissait d'un apport important à notre étude.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\section{\emph{<Proposition \textit{i}>}}
+\subsection{\emph{L’art d’un portrait réussi}}
+Utilisation de Data-driven enhancement of facial attractiveness pour les limites des visages moyens
+Utilisation de Symmetry and Human Facial Attractiveness pour dire que dans la population on aime bien les visages symétriques
+Qu’est ce qui est spécifique au portrait ? Et à la photographie de portrait  
+Qu’est-ce retouche la plupart des gens ?
 
-Pour chaque proposition étudiée\footnote{Substituez au marqueur << \emph{<Proposition $i$>} >> un titre explicite ! Et ne conservez pas les crochets...}, sauf exception, le plan s'annonce de la même façon :
-\begin{enumerate}
-	\item une présentation générale :
-		\begin{itemize}
-			\item qui fait le lien avec le travail demandé ;
-			\item doublée d'une présentation objective de la proposition d'autrui ;
-		\end{itemize}
-	\item une analyse critique de cette proposition où sont soulignées ses forces et ses faiblesses :
-		\begin{itemize}
-			\item tout d'abord générales ;
-			\item puis vis-à-vis de sa possible exploitation dans le travail de ce rapport.
-		\end{itemize}
-\end{enumerate}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Soulignons un point extrêmement important et relevant de l'honnêteté intellectuelle. Toutes les affirmations et propositions qui ne sont pas issues de notre travail doivent être clairement référencées, autant de fois que le texte en fait mention. Référez-vous à l'annexe~\ref{ann:Citations} pour les pratiques de mise en page et \emph{en particulier à la section~\ref{ann:Plagiat} pour ce qui concerne le \fcolorbox{red}{yellow}{\textbf{plagiat}}}.
+\section{\emph{... Aux techniques d’amélioration automatiques de nos photographies de portrait}}
+Préciser la frontière entre l’amélioration de photographie et la modification d’image
 
-La bibliographie est constituée (quasi exclusivement) de références pérennes, c'est-à-dire de référence à des ouvrages, articles de journaux ou de conférences. Ces références-là peuvent être accompagnées de références sur la Toile mais ne peuvent pas se limiter à cela. Dans le cas où une référence sur la Toile est fournie, il convient, dans la limite des droits, d'en faire une copie privée que l'on pourra transmettre en cas de demande (voire copier en annexe si elle n'est pas de taille trop importante et si l'auteur a donné sont \emph{autorisation explicite}). En effet, cette dernière peut évoluer à tout instant et même disparaître. Par ailleurs, les références à de simples sites \emph{web} n'ont pas vocation à faire partie de la bibliographie (\cite{Wolfe} est ici un contre-exemple mais pour lequel une copie a été mise en ligne sur Madoc) ; elles seront plus judicieusement portées en notes de bas de page, en ne se limitant pas à l'URL quand les informations habituelles d'une référence sont disponibles.\footnote{En reprenant la référence \cite{Wolfe}, nous aurions : Joe  \textsc{Wolfe}, \emph{How to Write a PhD Thesis}, 1996, \url{http://www.phys.unsw.edu.au/~jw/thesis.html}} \footnote{\url{http://docinsa.insa-lyon.fr/sapristi/index.php?rub=1003}} \footnote{\url{http://www.tlfq.ulaval.ca/axl/monde/citations-references.htm}} \footnote{Guy \textsc{Spielmann}, \emph{Établissement d'une bibliographie -- Méthode pour citer les sources et format des citations}, 10 janvier 2009, \url{http://www9.georgetown.edu/faculty/spielmag/docs/biblio.htm}} \footnote{François-Pierre \textsc{Gingras}, \emph{Comment citer des sources sur Internet dans un travail scientifique}, 21 mars 2005, \url{http://aix1.uottawa.ca/~fgingras/metho/citation.html}}
+\subsection{\emph{Présentation de l’approche globale}}
 
-\subsection{Présentation}
+\paragraph{Présentation }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Chaque étude commence par présenter la nature de la proposition examinée, c'est-à-dire sa portée et son lien avec le problème à traiter.
+\paragraph{Analyse }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Une présentation claire et synthétique résume les points principaux de la proposition étudiée.
+\paragraph{Intérêt pour notre sujet }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Cette présentation doit être objective. En d'autre termes, il ne faut pas tirer de conclusion hâtive, la proposition n'aura été vraiment comprise qu'\emph{indépendamment} de l'intérêt immédiat et supposée vis-à-vis du travail demandé. Afin de préparer cette rédaction, des fiches de lecture seront établies et mises en annexe (cf.\ annexe~\ref{ann:FichesLecture}).
-\begin{structuration}
-Cette sous-section peut, et même doit, être structurée en fonction de la proposition. Il faut toutefois garder à l'esprit que :
-\begin{enumerate}[(i)]
-    \item une décomposition trop profonde devient incompréhensible (il faut réorganiser le plan et fournir une logique de progression, d'où davantage linéaire) ;
-    \item chaque partie doit contenir plusieurs paragraphes (on ne crée pas un niveau hiérarchique pour un unique paragraphe qui serait précédé d'un unique paragraphe d'introduction et d'un unique paragraphe de conclusion !).
-\end{enumerate}
+\paragraph{Limites }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Si les propositions devenaient très longues à décrire alors les niveaux décrits dans ce pseudo rapport sont insuffisants. Il faut remplacer le présent \emph{chapitre} << \'Etat de l'art >> par une \emph{partie} d'ouvrage, les sections devenant des chapitres et ainsi de suite.
+\subsection{\emph{Présentation de l’approche locale}}
 
-En cas de déséquilibre patent entre propositions, il faut trouver des regroupements thématiques dans le but d'équilibrer les tailles.  Cela s'applique d'ailleurs aussi dans le cas d'une décomposition en sections.
+\paragraph{Présentation }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Inversement, des sections ou chapitre trop courts amènent à fusionner des niveaux supérieurs. Ainsi deux ou trois chapitres d'une ou deux pages chacun doivent-ils être fusionnés, dans la limite où la logique s'y prête. (L'alternative extrême est de changer de catégorie de document. Ce n'est alors plus un rapport que l'on rédige mais seulement un article...)
-\end{structuration}
+\paragraph{Analyse }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsection{Analyse}
+\paragraph{Intérêt pour notre sujet }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-La présentation objective est ensuite, et seulement ensuite, suivie d'une étude critique.
+\paragraph{Limites }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Doivent ici être pointées aussi bien ses avantages que ses limites, démonstration à l'appui.
+\subsection{\emph{Changement de la technique d’appprentissage}}
 
-\subsubsection{Intérêts de la proposition $i$}
+\paragraph{Présentation }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Vis-à-vis du travail demandé, il faut ici expliquer comment la proposition pourrait être utilisée. Il convient de ne pas s'autocensurer dans cette partie. Il faut émettre des idées non pas totalement sur le mode du remue-méninge mais en évitant de fermer trop précipitamment des directions de travail. La proposition permettra de faire le tri entre les bonnes idées et les idées qui se seront révélées inapplicables.
+\paragraph{Analyse }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsubsection{Limites de la proposition $i$}
+\paragraph{Intérêt pour notre sujet }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Les limites vont au delà des inconvénients objectifs de la proposition étudiée. Il faut aussi tenir compte de son << adaptabilité >> au problème traité.
+\paragraph{Limites }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\section{Récapitulatif}
+\subsection{\emph{Les approches connexes}} 
+Modifications ou déplacements ou lissage, amélioration de l’existant.
 
-À l'issue de ce travail bibliographique et critique, un résumé des éléments intéressants et des éléments manquants de chaque proposition est mis en évidence avec une présentation condensée des arguments ayant abouti à cette dichotomie. Les éléments seront présentés de manière synthétique dans un tableau comparatif (cf.\ tableaux~\ref{tab:Comparatif} et \ref{tab:ComparatifAlternatif} à titres d'exemples simplifiés).
+\paragraph{Présentation }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\begin{table}
-    \begin{center}
-        \begin{tabular}{|c||c|c|}
-            \hline
-            Proposition & Avantages & Inconvénients \\
-            \hline
-            \hline
-            \ldots & \ldots & \ldots\\
-            \hline
-            Proposition $i$ & avantages $i$ & inconvénients $i$\\
-            \hline
-            \ldots & \ldots & \ldots\\
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Tableau comparatif des propositions étudiées}
-    \label{tab:Comparatif}
-\end{table}
+\paragraph{Analyse }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\begin{table*} % Utiliser la version étoilée des flottants pour les faire tenir sur deux colonnes
-    \begin{center}
-        \begin{tabular}{|c||c|c|c|c|c|}
-            \hline
-            Avantages    & Proposition 1 & \ldots & Proposition $i$ & \ldots & Proposition $n$ \\
-            \hline
-            \hline
-            Avantage $1$ & $\surd$       &        &                 &        & $\surd$         \\
-            \hline
-            \ldots       & \ldots        & \ldots & \ldots          & \ldots & \ldots          \\
-            \hline
-            Avantage $j$ & $\approx$     &        &                 &        &                 \\
-            \hline
-            \ldots       & \ldots        & \ldots & \ldots          & \ldots & \ldots          \\
-            \hline
-            Avantage $m$ &               &        & $\surd$         &        &                 \\
-            \hline
-        \end{tabular}
-    \end{center}
-    \caption{Tableau comparatif des avantages des propositions étudiées}
-    \label{tab:ComparatifAlternatif}
-\end{table*}
+\paragraph{Intérêt pour notre sujet }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\begin{typographie}
-Au passage, notons que les tableaux, figures et autres illustrations doivent être systématiquement placés dans des éléments << flottants >>, c'est-à-dire situés non pas exactement à l'endroit où il sont mentionnés. Ils sont donc numérotés, munis d'une légende et référencés depuis le texte principal.%
-\footnote{\LaTeX\ se tire plutôt bien de cette tâche de positionnement optimal des flottants, sachant qu'il s'agit d'un problème NP-difficile !}
-Toute utilisation << en ligne >> est à proscrire. Une figure, au sens large, ne remplace pas le texte, bien au contraire ; c'est ce dernier qui établit une présentation, un raisonnement, etc., et la figure ne fait que l'illustrer pour le rendre plus compréhensible soit d'emblée soit après avoir pris connaissance du texte.
-\end{typographie}
+\paragraph{Limites }
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\section{Conclusion}
 
-À l'issue de ce travail de recherche bibliographique, il apparaît que plusieurs propositions peuvent servir de base à la résolution de notre problème.
+\section{\emph{Récapitulatif}}
 
-Il semble se détacher un certain nombre de directions privilégiées que nous allons exploiter en priorité dans nos propositions. Celles-ci font l'objet de l'étude du chapitre suivant.
+Tableau comparatif des critères esthétiques pour l’évaluation des photos résultats
+Tableau comparatif des méthodes adaptables à notre sujet de recherche
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\section{\emph{Conclusion}}
+Bilan de l’état de l’art, Accroche vers notre proposition
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 %-------------------------------------------------------------------------------------------------------------
 
@@ -1198,20 +1161,33 @@ de la photographie
 \end{fichesuivi}
 
 
-\begin{fichesuivi}{}{}
-	\tempstravailA{7}{10}
-	\tempstravailB{14}{30}
+\begin{fichesuivi}{11 novembre 2013}{17 novembre 2013}
+	\tempstravailA{14}{30}	
+	\tempstravailB{15}{35}
 
+\paragraph{}
 	\begin{travaileffectue}
+		\begin{itemize}
+			\item Recherche et lecture d'articles, thèses traitant des améliorations locales du visage : moyenne, réalisée à $100$ \% ;
+			\item Mise à jour de quelques fiches de lecture (en ayant revu l’intérêt de certains articles qui seront utiles pour l’état de l’art): moyenne, réalisée à $100$ \% ;
+			\item Passage en revu de tous les articles trouvés pour en retirer certains moins pertinents: longue, réalisée à $100$ \% ;
+			\item Rédaction de la partie état de l’art : simple, réalisée à $20$ \% ;
+\end{itemize}
 	\end{travaileffectue}
 
-	\begin{travailnoneffectue}
+\begin{travailnoneffectue}
+		\begin{itemize}
+			\item Pas d’avancé dans la recherche d'outils réalisant des améliorations automatiques de portrait : nous avons revu l’ensemble des documents stockés dans Mendeley et procédé à un tri de ces derniers;
+		\end{itemize}
 	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
+		
+\paragraph{}
 	\begin{planification}
+		\begin{itemize}
+			\item Continuer la rédaction de l’état de l’art et la terminer 
+			\item Comparer les différents outils, et les propositions effectuées dans l’état de l’art
+			\item Rencontre M. Perreira Da Silva la semaine prochaine		
+		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
 
