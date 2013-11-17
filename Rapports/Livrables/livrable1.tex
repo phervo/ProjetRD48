@@ -142,7 +142,7 @@ Ainsi, pouvoir concentrer une expertise dans un algorithme d'amélioration de po
 
 \section{Objectifs poursuivis}
 
-Les objectifs de ce projet sont multiples et le premier est tout d'abord l'établissement d'un état de l'art sur plusieurs domaines. Ces domaines relevent des critères esthétiques qui déterminent une image attirante / photographie attirante / un visage attirant. Subséquemment, l'étude des techniques d'améliorations des images, photographie, photo de visage est nécessaire. L'objectif ultime serait de condenser toutes ces techniques, ou d'implémenter une technique globale, qui permettrait de faire ressortir tout le potentiel d'une photo de portait. 
+Les objectifs de ce projet sont multiples et le premier est tout d'abord l'établissement d'un état de l'art sur plusieurs domaines. Ces domaines relèvent des critères esthétiques qui déterminent une image attirante / photographie attirante / un visage attirant. Subséquemment, l'étude des techniques d'améliorations des images, photographie, photo de visage est nécessaire. L'objectif ultime serait de condenser toutes ces techniques, ou d'implémenter une technique globale, qui permettrait de faire ressortir tout le potentiel d'une photo de portait. 
 
 
 \section{Travail réalisé}
@@ -767,75 +767,82 @@ L'article \cite{Lee} traite de l'amélioration de portraits numériques via un a
 \paragraph{Résumé}
 Cet article s'inscrit dans le mouvement des techniques d'amélioration de portait numériques.
 Plus particulièrement, il présente un algorithme réalisant une amélioration de la peau automatiquement.
-Plusieurs étapes sont nécessaires pour réaliser ce traitement, à commencer par une phase de localisation du visage. 
-Tous les points d'intérêts sont tout d'abord enregistrés.Ensuite intervient une phase d'adoucissement de la peau. 
-Dans cette phase il faut créer un masque de pixels qui relèvent de la peau ou non. 
+Plusieurs étapes sont nécessaires pour réaliser ce traitement, à commencer par une phase de localisation du visage.
+Tous les points d'intérêts sont tout d'abord enregistrés. Ensuite intervient une phase d'adoucissement de la peau.
+Dans cette phase il faut créer un masque de pixels qui relèvent de la peau ou non.
 Un GMM(Gaussian Mixture Model: Mélange de Modèles Gaussiens) est ensuite calculé sur chacun de ces masques.
 Une fois cela effectué, intervient l'adoucissement à proprement parlé qui va lisser le visage sans affecter les détails du visage.
 Les résultats de ce traitement sont revendiqués comme aussi réussis que ceux obtenus de manière manuelle avec des outils d'édition d'image.
 
 \paragraph{Analyse}
 Dans l'esprit des traitements manuels et semi-automatiques, cet algorithme automatique permet, en tout cas d'après les photos jointes à l'article, de constater un résultat similaire.
-Les grandes étapes de l'algorithme sont communes à d'autres techniques d'imagerie, comme l'acquisition et le repérage des points d'intérêts. 
+Les grandes étapes de l'algorithme sont communes à d'autres techniques d'imagerie, comme l'acquisition et le repérage des points d'intérêts.
 Ce traitement du visage couvre une partie des améliorations possibles d'une photo de portrait.
+
 
 \section{\emph{High Level Describable Attributes for Predicting Aesthetics and Interestingness}}
 L'article \cite{Dhar}  présente une méthode de sélection automatique d'image parmi une grande collection afin d'en retirer les images qui seraient qualifiées de belles par un évaluateur humain.
 
 \paragraph{Résumé}
 Cet article nous présente trois grands groupes d'attributs utilisés par leur méthode pour rechercher d'aussi belles images qu'un humain.
-Ces trois groupes d'attributs sont les attributs relevant de la composition(arrangements des objets et des couleurs), attributs liés au contenu (visages, type de scène), et les attributs correspondant à l'éclairage (naturel).
-Une des expériences citées compare à partir d'une base d'apprentissage, les images retrouvées à partir des groupes d'attributs précédents avec les plus belles désignées par les humains.Les résultats sont décrits comme étant très proches d'un choix humain.
+Ces trois groupes d'attributs sont les attributs relevant de la composition (arrangements des objets et des couleurs), attributs liés au contenu (visages, type de scène), et les attributs correspondant à l'éclairage (naturel).
+Une des expériences citées compare à partir d'une base d'apprentissage, les images retrouvées à partir des groupes d'attributs précédents avec les plus belles désignées par les humains. Les résultats sont décrits comme étant très proches d'un choix humain.
 
 \paragraph{Analyse}
-L'article démontre qu'un ordinateur entrainer à évaluer ces critères est capable de juger les photos de la même manière qu'un humain.
+L'article démontre qu'un ordinateur entrainé à évaluer ces critères est capable de juger les photos de la même manière qu'un humain.
 Il nous permet également d'en retirer des critères d'évaluation de plus ou moins haut niveau pour l'analyse de la beauté d'un portrait.
 Nous avons pu voir que les attributs comme la règle des tiers, la profondeur du champ, couleurs complémentaires, présence de personnes ont un impact sur l'esthétique ressentie d'une photo.
 
+
 \section{\emph{Data-driven enhancement of facial attractiveness}}
-L'article \cite{Leyvand2008} traite de la problématique d'amélioration d'un portrait en utilisant la technique du recentrage. Il traite également de la problème du seuil de modification maximal au-delà duquel une photo n'est plus considérée comme fidèle à l'originale.
+L'article \cite{Leyvand2008} traite de la problématique d'amélioration d'un portrait en utilisant la technique du recentrage. Il traite également du problème du seuil de modification maximal au-delà duquel une photo n'est plus considérée comme fidèle à l'originale.
 
 \paragraph{Résumé}
-L'article présente les technique utilisés pour réaliser un recentrage qui soit "plus beau" tout en restant fidèle à la photo originale. Pour cela, ils utilisent une base d'apprentissage évaluée par des utilisateurs.
-L'algorithme va tout d'abord évaluer la beauté de l'image d'origine et retourner un vecteur avec la position des contours du visage. Avec ce vecteur, il va déterminer quelle image de la base est jugée plus belle et proche en terme de distance vectorielle. Il va alors retourner ce positionnement pour qu'on puisse modifier l'image d'origine en déformant l'image de manière à ce que le visage se retrouve à la position souhaitée. 
+L'article présente les techniques utilisées pour réaliser un recentrage qui soit "plus beau" tout en restant fidèle à la photo originale. Pour cela, ils utilisent une base d'apprentissage évaluée par des utilisateurs.
+L'algorithme va tout d'abord évaluer la beauté de l'image d'origine et retourner un vecteur avec la position des contours du visage. Avec ce vecteur, il va déterminer quelle image de la base est jugée plus belle et proche en termes de distance vectorielle. Il va alors retourner ce positionnement pour qu'on puisse modifier l'image d'origine en déformant l'image de manière à ce que le visage se retrouve à la position souhaitée.
 
 \paragraph{Analyse}
-Cet article peux être très utile car il traite d'une manière simple de l'amélioration de la beauté du portrait en repositionnant juste le visage. La problématique de modification et fidélité est aussi importante, car il nous faut savoir quand arrêter l'amélioration d'un portait.
+Cet article peut être très utile car il traite d'une manière simple de l'amélioration de la beauté du portrait en repositionnant juste le visage. La problématique de modification et fidélité est aussi importante, car il nous faut savoir quand arrêter l'amélioration d'un portait.
+
 
 \section{\emph{Method and system for enhancing portrait images that are processed in a batch mode}}
 L'article \cite{Matraszek2004} nous présente un algorithme utilisé par un logiciel breveté afin d'améliorer localement un portrait.
 
 \paragraph{Résumé}
-Cet article nous présente un algorithme qui va détecter les zones du visage et permettre à l'utilisateur de les modifier manuellement. Ce logiciel est conçu pour être utilisé par un public non professionnel et est donc constitué de différents jauges qui permettent d'augmenter ou de diminuer une valeur dans les zones ciblées. On dénombre quatre zones d'améliorations possibles : la peau, les yeux, les dents et la texture.
+\subparagraph{}
+Cet article nous présente un algorithme qui va détecter les zones du visage et permettre à l'utilisateur de les modifier manuellement (choisir la “dose” de correction”). Ce logiciel est conçu pour être utilisé par un public non professionnel et est donc constitué de différentes jauges qui permettent d'augmenter ou de diminuer une valeur dans les zones ciblées. On dénombre quatre zones d'améliorations possibles : la peau, les yeux, les dents et la texture de la peau.
+\subparagraph{}
+En ce qui concerne l’essence de l’algorithme, le traitement est effectué en plusieurs étapes : détection du ou des visages présents dans l’image traitée, extraire les zones clés de chaque visage comme la peau, les yeux, le nez, la bouche, les sourcils, le cou, les cheveux. Les visages sont donc segmentés selon toutes ces caractéristiques analysées. A la suite de cela, pour chaque partie du visage a été développé un traitement correctif. Les paramètres de ces traitements sont déterminés automatiquement au moyen d’algorithme permettant d’obtenir le genre et l’âge du visage traité (au moyen d’une méthode utilisant une SVM).
+Une amélioration des yeux citée pourrait être l’amélioration de la balance des blancs/ des couleurs de l’iris des yeux. Une présentation des principes des méthodes est réalisée dans la dernière partie de l’article.
 
 \paragraph{Analyse}
-Cet article nous permet de voir que des solutions payantes ont déjà été développées et nous donne une idée globale des améliorations réalisables.
+Cet article nous permet de voir que des solutions payantes ont déjà été développées et nous donne une idée globale des améliorations réalisables. La solution proposée est donc un enchaînement d’améliorations donnant une image de meilleure qualité. Cet article présente les calculs pour la plupart des techniques d’améliorations. On note cependant dans l'enchaînement, la présence d’un traitement de la texture de la peau qui altère la structure du visage. Si nous devions suivre le principe de la méthode présentée, nous ferions le choix de ne pas inclure ce dernier point.
 
 
 \section{\emph{The Design of High-Level Features for Photo Quality Assessment}}
 L'article \cite{Ke} nous présente un algorithme pour classifier une image. Cette méthode permet de déterminer informatiquement si une photo est de qualité professionnelle ou prise par un amateur.
 
 \paragraph{Résumé}
-Cet article présente les critères utilisés par les auteurs pour déterminer si une image semble réalisée par un professionnel ou non. Pour cela, ils utilisent des critères de haut niveau. Ces dernier sont basés sur l'observation des critères bas niveau généralement utilisés dans l'analyse d'image. Ils servent à corriger les problèmes observés lors de l'utilisation de ces critères bas niveau et apportent de nouvelles pistes de classification.
-Tous ces critères haut niveau sont retirés uniquement à partir des caractéristiques de la photo et ne concernent pas les méta-données de l'image.
+Cet article présente les critères utilisés par les auteurs pour déterminer si une image semble réalisée par un professionnel ou non. Pour cela, ils utilisent des critères de haut niveau. Ces derniers sont basés sur l'observation des critères bas niveau généralement utilisés dans l'analyse d'image. Ils servent à corriger les problèmes observés lors de l'utilisation de ces critères bas niveau et apportent de nouvelles pistes de classification.
+Tous ces critères haut niveau sont retirés uniquement à partir des caractéristiques de la photo et ne concernent pas les métadonnées de l'image.
 
 Les critères retenus pour identifier une photo professionnelle sont :
 \begin{itemize}
 \item La simplicité, c'est à dire à quel point il est facile de détacher le sujet du fond. Plus c'est simple, plus la photo est de bonne qualité.
-\item Le réalisme, c'est à dire à quel point la photo peut sembler atypique par rapport aux autres , la petite touche qui la rend différente.
+\item Le réalisme, c'est à dire à quel point la photo peut sembler atypique par rapport aux autres, la petite touche qui la rend différente.
 \end{itemize}
-C'est pour cela que dans l'algorithme les auteurs utilisent les caractéristiques suivantes qui référent directement aux critères listés plus haut : 
+C'est pour cela que dans l'algorithme les auteurs utilisent les caractéristiques suivantes qui référent directement aux critères listés plus haut :
 \begin{itemize}
-\item La distribution des bords. En analysant ce paramètres, on peux voir si le sujet se détache ou non du reste au niveau du centre de l'image. Cela permet d'analyse la simplicité.
+\item La distribution des bords. En analysant ce paramètres, on peut voir si le sujet se détache ou non du reste au niveau du centre de l'image. Cela permet d'analyse la simplicité.
 \item Le nombre de nuances de couleurs dans l'image permet également de déterminer sa simplicité. Moins il y en a, plus la photo est professionnelle.
 \item La distribution de couleurs. Plus il y en a, plus la photo est réaliste et à été prise avec soin.
-\item Le niveau de flou,plus l'image est floue, moins bonne elle est.
+\item Le niveau de flou, plus l'image est floue, moins bonne elle est.
 \end{itemize}
-En plus de ces critères hauts niveau, ils vont également utiliser le contraste et l'éclairage.
-
+En plus de ces critères haut niveau, ils vont également utiliser le contraste et l'éclairage.
 
 \paragraph{Analyse}
 Cet article nous sera utile pour la partie d'analyse de la qualité de l'image, notre but étant de permettre d'avoir un rendu "professionnel". Il nous permet de compléter les critères bas niveau que nous avions vus dans d'autres articles par des critères plus haut niveau. On y voit cependant la nécessité de conserver certains critères bas niveau qui sont essentiels à l'analyse de photo.
+
 
 \section{\emph{Method of restoring closed eye portrait photo}}
 L'article \cite{Li2011} présente une méthode qui permet de rectifier l'ouverture des yeux sur un portrait.
@@ -846,40 +853,109 @@ Le principe est de détecter les yeux puis de voir s'ils sont ouverts ou fermés
 L'article détaille l'algorithme utilisé pas à pas.
 
 \paragraph{Analyse}
-Ce genre de modification peut nous être utile pour notre projet car le cas d'yeux fermés ou partiellement fermés peut se présenter. Cela constitue donc une piste de réflexion intéressante(mais cela est peut être trop ciblé sur le cas des yeux fermés, en effet, une photo que l'on ajoute pour son profil sur un réseau social est sujette à posséder des yeux ouverts).
+Ce genre de modification peut nous être utile pour notre projet car le cas d'yeux fermés ou partiellement fermés peut se présenter. Cela constitue donc une piste de réflexion intéressante (mais cela est peut-être trop ciblé sur le cas des yeux fermés, en effet, une photo que l'on ajoute pour son profil sur un réseau social est sujette à posséder des yeux ouverts).
+
 
 \section{\emph{Studying Aesthetics in Photographic Images Using a Computational Approach}}
 L'article \cite{Datta} traite de l'évaluation des critères esthétiques d'une photographie au moyen d'une approche informatique.
 
 \paragraph{Résumé}
-Les données sont issues d'un apprentissage statistique pour lisser les cas exceptionnels. Une base communautaire d'échange d'images est aussi utilisée. L'évaluation pourrait être biaisée par le fait que les personnes dont les notes sont prélevées sont majoritairement issus du monde de la photographie (amateurs et professionnels). L'article s'accorde sur le fait que les critères d'esthétiques pour un observateur humain relève du subjectif. Le but de l'article est de montrer qu'il y a des critères généraux qui ont un impact sur la "beauté" d'une photographie. La base de données d'images possède à l'origine deux points évalués, l'originalité et l'esthétique. Par soucis de corrélation de ces deux éléments, les auteurs ont choisi de ne traiter que le cas Esthétique.
+Les données sont issues d'un apprentissage statistique pour lisser les cas exceptionnels. Une base communautaire d'échange d'images est aussi utilisée. L'évaluation pourrait être biaisée par le fait que les personnes dont les notes sont prélevées sont majoritairement issues du monde de la photographie (amateurs et professionnels). L'article s'accorde sur le fait que les critères d'esthétiques pour un observateur humain relève du subjectif. Le but de l'article est de montrer qu'il y a des critères généraux qui ont un impact sur la "beauté" d'une photographie. La base de données d'images possède à l'origine deux points évalués, l'originalité et l'esthétique. Par soucis de corrélation de ces deux éléments, les auteurs ont choisi de ne traiter que le cas Esthétique.
 Ensuite à partir de cette base, l'équipe a défini un classificateur qui distingue au niveau qualitatif les photos à partir de leurs critères bas et haut niveau (règle des tiers, saturation, exposition à la lumière et image colorée, taille et ratio, composition des couleurs des régions, ...)
-La classification est effectuée avec un arbre de décision reprenant 15 parmi les 56 propriétés visuelles retenues par le laboratoire. Les résultats seraient en mesure de déterminer si une photographie serait jugée belle ou non par un humain. 
+La classification est effectuée avec un arbre de décision reprenant 15 parmi les 56 propriétés visuelles retenues par le laboratoire. Les résultats seraient en mesure de déterminer si une photographie serait jugée belle ou non par un humain.
 
 \paragraph{Analyse}
-Une nouvelle fois, cet article recoupe le sujet des critères jaugeant la beauté d'une photographie au sens général.
+Une nouvelle fois, cet article recoupe le sujet des critères jaugeant la beauté d'une photographie au sens général. Les traitements décrits dans l’article ont été réalisés avec Matlab.
+
 
 \section{\emph{Automatic correction and enhancement of facial images}}
 L'article \cite{Konoplev2012} propose un système de détection et de correction des défauts des visages contenus dans une photographie.
 
 \paragraph{Résumé}
-La technique prend en entrée une image et la change de référentiel couleur et passe de RGB vers le modèle de couleur CIELAB (désigné comme proposant des corrections douces et des couleurs plus naturelles). L'image passe ensuite dans un filtre lissant qui va réduire le bruit. Les zones de peau sont à la suite reconnues et vont passer dans un nouveau filtre lissant pour les imperfections. Le filtre utilise tout d'abord des paramètres spécifiques aux rides puis s'en suit un traitement similaire pour les rougeurs, boutons,.... Un histogramme des valeurs des couleurs caractérisant le visage est généré, il sert ensuite de base pour corriger la couleur des pixels des défauts (par la couleur la plus naturelle). Pour la distribution des couleurs caractérisant l'image, un modèle Gaussien est utilisé.L'image originale sert à l'image corrigée de base pour un autre ajustement (contraste, luminosité). L'image résultant repasse à la fin en RGB.
+La technique prend en entrée une image et la change de référentiel couleur et passe de RGB vers le modèle de couleur CIELAB (désigné comme proposant des corrections douces et des couleurs plus naturelles). L'image passe ensuite dans un filtre lissant qui va réduire le bruit (sur l’ensemble de l’image). Les zones de peau sont à la suite reconnues et vont passer dans un nouveau filtre lissant pour les imperfections. Le filtre utilise tout d'abord des paramètres spécifiques aux rides puis s'en suit un traitement similaire pour les rougeurs, boutons,.... Un histogramme des valeurs des couleurs caractérisant le visage est généré, il sert ensuite de base pour corriger la couleur des pixels des défauts (par la couleur la plus naturelle). Pour la distribution des couleurs caractérisant l'image, un modèle Gaussien est utilisé. L’image originale sert à l'image corrigée de base pour un autre ajustement (contraste, luminosité). L'image résultant repasse à la fin en RGB.
 
 \paragraph{Analyse}
-Ici, on peut noter l'intérêt de l'utilisation d'un autre espace de couleur, afin de ne pas être limité en RGB. Le traitement réalisé dans un espace de couleurs perceptuel permet d'obtenir des résultats plus naturels. La phase d'acquisition de la zone du visage et des zones à modifier est une nouvelle fois présente.
+Ici, on peut noter l'intérêt de l'utilisation d'un autre espace de couleur, afin de ne pas être limité en RGB. Le traitement réalisé dans un espace de couleurs perceptuel permet d'obtenir des résultats plus naturels. La phase d'acquisition de la zone du visage et des zones à modifier est une nouvelle fois présente. Le fait d’appliquer le filtre anti-bruit est un point que nous n’avons pas identifié dans toutes nos lectures et il serait utile de l’inclure (pour le cas de photographie dont la qualité ne serait pas optimale). D’autre part l’application du filtre lissant sur l’image intégralement pourrait altérer les détails.
+
 
 \section{\emph{Natural Scenes Enhancement by Adaptive Color Correction}}
-L'article \cite{Naccari} présente une méthode qui améliore le rendu des couleurs naturelles des portraits en utilisant un algorithme de correction des couleurs adaptatif. 
+L'article \cite{Naccari} présente une méthode qui améliore le rendu des couleurs naturelles des portraits en utilisant un algorithme de correction des couleurs adaptatif.
 
 \paragraph{Résumé}
-Des études précédentes à cet article ont montré que ce qui importait dans une image en terme de couleur était les couleurs de la peau, du ciel et de la végétation. Ce sont ces points qui vont faire qu'un observateur va être plus attiré par une photo qu'une autre. Cet algorithme fonctionne en deux temps. La première partie de l'algorithme consiste à mettre un marqueur sur chaque pixel afin de déterminer à quelle catégorie précédemment citée il appartient. Pour cela, un algorithme de classification est utilisé. La seconde partie de l'algorithme va alors améliorer les couleurs s'il le juge nécessaire.
+Des études précédentes à cet article ont montré que ce qui importait dans une image en termes de couleur était les couleurs de la peau, du ciel et de la végétation. Ce sont ces points qui vont faire qu'un observateur va être plus attiré par une photo qu'une autre. Cet algorithme fonctionne en deux temps. La première partie de l'algorithme consiste à mettre un marqueur sur chaque pixel afin de déterminer à quelle catégorie précédemment citée il appartient. Pour cela, un algorithme de classification est utilisé. La seconde partie de l'algorithme va alors améliorer les couleurs s'il le juge nécessaire.
 L'algorithme de classification a été entrainé par un jeu d'images préalablement labellisées et fait une décomposition dans l'espace HLS afin de séparer les pixels en différentes classes. Un filtre est ensuite appliqué au résultat pour corriger les pixels mal labellisés lors du passage.
 La partie de correction de couleur fonctionne quant à elle, en réduisant la distance entre la couleur du pixel et la couleur de la classe cible à laquelle l'algorithme a déterminé qu'elle était rattachée.
 
 \paragraph{Analyse}
-Cet article peut nous aider en nous donnant des idées pour la classification des pixels du portrait. 
+Cet article peut nous aider en nous donnant des idées pour la classification des pixels du portrait.
 On peut également y puiser des idées pour rendre la photo plus belle du point de vue de l'observateur sans rien modifier d'autre que les couleurs.
 Cet algorithme a été testé sur différents types d'images dont des portraits et montre des résultats très satisfaisants, les observateurs préfèrent majoritairement les images améliorées par l'algorithme.
+
+
+\section{\emph{Automatic Face and Skin Beautifiction using face detection}}
+Un nouveau traitement automatique du visage et de la peau est présenté dans l’article \cite{Ciuc2010}.
+
+\paragraph{Résumé}
+La technique présente une amélioration de sous régions de l’image.  Elle repose sur une détection préalable de sous-régions du visage. Ensuite
+Les zones choisies du visage sont améliorées au moyen d'un noyau lissant sur la luminance. L'image finale est une combinaison de certains pixels l'image originale avec ceux de la zone correspondante améliorée (pour un rendu plus naturel).
+Ici le lissage sur la luminance dans les régions est soit la génération d’un flou, soit la réalisation d’une moyenne/approximation de la luminance, ou bien une combinaison des deux. De plus un filtre réduisant le bruit peut être appliqué sur une ou plusieurs régions selon le degré de dégradation.
+L’espace de couleur utilisé lors des améliorations est l’YUV pour la séparation luminance/chrominance.
+Au début dans la description des travaux traitant de sujets similaires, sont décrites comme peu performantes les méthodes de Kodak et P\& G utilisant des traitements globaux sur l'image (plutôt que sur des zones particulières comme le propose l’article).
+
+\paragraph{Analyse}
+La particularité de la technique ici est l’approche locale utilisée et non la globale que nous avons pu retrouver plusieurs fois. Les zones concernées (bouches et yeux principalement) peuvent subir plusieurs traitements pour supprimer les défauts de la prise de photo comme le bruit, les défauts intrinsèques du visage comme des yeux peu colorés ou des rides au niveau de la bouche. Dans l’essentiel, les moyens utilisés sont l’application de flou et la modification de la luminance (techniques très souvent utilisées pour masquer les défauts et les estomper). L’article propose donc une alternative que l’on pourrait confronter aux autres dites globales.
+
+\section{\emph{Machine à Vecteurs Supports Multi-Noyau pour la détection de points caractéristiques du visage}}
+Nous avons lu cet article \cite{Rapp2012} par rapport à l’usage d’une autre technique d’apprentissage supervisé : les machines à vecteurs de support.
+
+\paragraph{Résumé}
+Ici l'essence de l'article parle de la détection de points caractéristiques du visage.
+C’est un problème décrit comme étant non résolu pour le cas des visages variant beaucoup (manque de robustesse et de précision lorsque les expressions du visages changent ou lors de conditions de prise de photo mauvaises).
+Il y a plusieurs catégories de méthodes de détection de points caractéristiques :
+méthode d'alignement/détection conjointe/détection de points sans modèle global.
+Le domaine d'application de la méthode est la détection des points caractéristiques sur des visages ayant des expressions différentes au moyen d’un SVM.
+
+\paragraph{Analyse}
+L’article présente une technique qui peut être utile pour les portraits avec des expressions qui varient selon les photos. D’après Wikipédia, les Machines à vecteurs de supports(SVM) sont un ensemble de techniques d'apprentissage supervisé (performance supérieure ou égale à celle des réseaux de neurones ou des modèles de mixture gaussienne).
+
+
+\section{\emph{Segmentation des Traits du Visage, Analyse et Reconnaissance}}
+Une partie de cet article\cite{Cognitives2006} traite de la détection des zones du visage comme le nez, la bouche. C'est la partie qui va nous intéresser.
+
+\paragraph{Résumé}
+\subparagraph{}
+Pour détecter ces zones, les auteurs définissent des boites avec une taille prédéfinie. Il y a une boite pour l'intégralité du visage, une boite pour les yeux, une pour les sourcils. La taille de ces boites est calculée en faisant une moyenne sur un jeu d'apprentissage ou les zones en question ont été définies manuellement.
+Pour déterminer les positions de ces boites sur le visage certains critères ont été posés en dur (yeux dans premier tiers du visage, œil gauche est dans la partie gauche, ...) et d'autres ont été calculées en faisant une moyenne sur le jeu d'apprentissage (distance entre les iris par exemple).
+Une fois ces boites posées il ne reste plus qu'à détecter l'élément à l’intérieur.
+L'article traite uniquement de la détection des yeux et des sourcils.
+La thèse présente alors trois méthodes pour détecter ces éléments.
+Tout d'abord la luminance/chrominance. Une étude révèle que les méthodes par apprentissage ne sont pas pertinentes pour obtenir une segmentation fine. On parle donc de reconnaissance des caractéristiques des portions de la photo. On utilise ainsi la luminance en supposant que les sourcils sont plus sombres que les pixels de peau environnants.
+Une autre méthode consiste à définir que les yeux sont d'une autre couleur que la peau et si on trouve un bloc de couleur différente de la taille approximative des yeux alors on dit que c'est les yeux. On peut ensuite détecter le blanc de l'œil et les contours dans ce bloc.
+\subparagraph{}
+Une autre technique présentée est la détection de contours qui consiste à partir d'un pattern (motif) qui correspond à peu près à la forme des yeux et à le rendre modifiable pour qu'il détecte les formes. Cette méthode ne donne aucune garantie de réponse car l'évolution de la forme peut faire qu'au final on ne trouve rien, il n'y a pas de modèle d'évolution, c'est un processus indépendant.
+Pour pallier à ce problème existe l'approche sous forme de Template déformable. Il s'agit du même principe mais cette fois les évolutions sont faites dans un sens respectant des caractéristiques observées de l'œil humain. La suite de la thèse présente une méthode qui fait un mix des trois approches et permet la détection d'expressions.
+
+\paragraph{Analyse}
+Le problème de la méthode de détection des sourcils (par différence de couleurs) c’est qu’elle repose sur la luminance de la photo et sous-entend bonne qualité dès départ.
+Dans le cas de la recherche avec un motif déformable, une évolution forcée peut bloquer la détection des expressions faciales.
+
+
+\section{\emph{Portrait beautification: A fast and robust approach}}
+L'article \cite{Liu2007} présente un comparatif de méthodes pour pouvoir détecter un visage sur un portrait, séparer le visage de l'arrière-plan et enfin recoller le visage sur un autre arrière-plan. Il propose en parallèle un traitement à appliquer sur le visage afin de pouvoir rendre les couleurs de meilleure qualité si l'image n'est pas de bonne qualité à la base.
+
+\paragraph{Résumé}
+La première partie de l'article traite des trois techniques suivantes sur la segmentation de portraits (détecter la partie visage et la partie fond): Algorithmes génétiques, Algorithmes d'évolutions quantiques et pics d'histogramme. Chacun est présenté avec ses avantages et ses inconvénients.
+Dans la seconde partie, on traite d'un algorithme pour la fusion d'image c'est à dire recoller la partie portrait sur un autre fond.
+Dans la troisième partie, on traite d'un algorithme pour supprimer la déviation de couleur qu'aurais pu subir une image au moment de sa prise. La partie de détection du visage ne fait pas partie de cet algorithme et doit être réalisé avant de l'appliquer. L'algorithme en question fonctionne sur le principe de moyennes de pixels puis de comparaison à une table de valeur nommé "température de la couleur". Une fois qu'on a la tendance majoritaire de l'image, disons bleu par exemple, on calcule la déviation par rapport à la couleur normale et on corrige tous les pixels. Il s'agit d'un traitement global et non pas par régions.
+
+\paragraph{Analyse}
+Seul la première partie nous intéresse vraiment et elle n'offre pas de réponse claire à quel est le meilleur algorithme sur la segmentation, il est juste précisé que cela dépend des cas.
+Dans la seconde partie la segmentation a été réalisée à l'aide d'un autre algorithme plus rapide mais qui perd en précision, le but étant d'illustrer uniquement la partie fusion. Cette partie ne nous apprend donc pas grand-chose.
+La troisième partie en revanche illustre une technique pour pouvoir améliorer la couleur des portraits qui ont subis une déviation du à la mauvaise qualité de la prise de la photo.
+Le fait qu'il n'y a pas de partie résultats statistiques ou de chiffres pour illustrer le taux de réussite de cet algorithme ne permet pas d'évaluer sa performance.
+
+
+
 
 
 
