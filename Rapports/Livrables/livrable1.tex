@@ -56,7 +56,7 @@
 \supervisor{Matthieu}{Perreira Da Silva}
    % Si plusieurs co-encadrants, alors utiliser la forme suivante :
    %    \cosupervisor{Alter}{Ego \& {\normalfont Jean} Cadre}
-\coordinator{Nom}{Prenom}
+\coordinator{José}{Martinez}
 \institution{IRCCyN}
    % - LINA pour un encadrement par les membres des équipes GRIM et COD (voire d'autres) ;
    % - IRCCyN pour un encadrement par les membres des équipes IVC ;
@@ -73,7 +73,7 @@
    % - le troisième paramètre permet d'adapter la largeur du logo afin
    %   de le rendre visuellement comparable à ceux mis par défaut (université de Nantes et
    %   éventuellement laboratoire)
-\date{18 novembre 2013}
+\date{01 décembre 2013}
    % - en français les mois ne prennent pas de majuscule (sauf si vous ne mettez pas le jour)
    % - inutile de mettre un 0 devant les jours 1 à 9 du mois !
    % - le jour est peut-être même une précision inutile...
@@ -82,35 +82,18 @@
 
 \begin{abstract}
 %\small % À décommenter si le résumé est légèrement trop long pour tenir dans la page
-Comme son nom l'indique, le résumé condense en quelques paragraphes
-la \emph{totalité} du rapport. Il faut donc décrire succinctement et
-successivement :
-\begin{enumerate}
-   \item le sujet et la problématique ;
-   \item les objectifs fixés ;
-   \item les recherches effectuées ;
-   \item les décisions prises ;
-   \item les constructions conceptuelles ;
-   \item les développements accomplis ;
-   \item les expérimentations conduites, leurs résultats et leur interprétation ;
-   \item les limites de ce travail ;
-   \item les perspectives qu'il ouvre.
-\end{enumerate}
+Qui n'a jamais essayé d'améliorer soi-même un de ses clichés photographiques et encore plus un de ses portraits. Étant de nature assez complexe pour les néophytes, certains se tourneront vers des professionnels, d'autres utiliseront des logiciels de retouche d'images. Cependant tout le monde ne peut profiter de ces solutions.  Le but de ce projet de recherche est de proposer une méthode automatique d'amélioration de nos photographies de portrait. Nous avons choisi d'axer un état de l'art sur les critères qui sont le plus souvent utilisés pour caractériser l'esthétique des photographies comme la règle des tiers, ou le nombre de couleurs. Nous avons aussi choisi d'étudier les techniques d'améliorations automatiques actuelles de nos portraits numérisés afin de proposer une avancée dans ce domaine. 
+
 \end{abstract}
 
 \begin{classification}
 %\small % Idem
-   Des éléments d'indexation bibliographiques \emph{doivent} être fournis. Ci-dessous est illustrée l'usage du thésaurus de l'ACM avec les catégories codifiées et des éléments d'indexation ouverts.
-   Suivre le modèle de l'ACM : cf. \url{http://www.acm.org/class/1998/}
-
-   \category{H.2.8}{Database Applications}{Image databases}
-   \category{H.3.3}{Information Search and Retrieval}{Clustering, Information filtering, Relevance feedback}
-   \category{H.3.7}{Digital Libraries}{User issues}
-   \category{I.5.3}{Clustering}{Algorithms, Similarity measures}
-   \category{I.4.10}{Image Representation}{Statistical, Multidimensional}
-   \terms{Des mots clés couramment employés et très généraux sont à ajouter aux catégories. ex.\ : Algorithms, performance, experimentation, human factors, verification.}
-   \keywords{Des mots clés supplémentaires et très spécifiques peuvent être ajoutés. ex.\ : Personnalisation, recherche d'images par le contenu, classification, rétro-action,
-   apprentissage.}
+   \category{I.4.3}{Enhancement}{Smoothing}
+   \category{I.4.3}{Enhancement}{Filtering}   
+   \category{I.5.4}{Applications}{Computer Vision}
+   \category{I.4.6}{Segmentation}{Pixel Classification}
+   \terms{vision par ordinateur, traitements d'images, photographie, photographie de portrait, visage, manipulations d'images}
+   \keywords{critères esthétiques, retouche automatique}
 \end{classification}
 
 \maketitle
@@ -118,7 +101,8 @@ successivement :
 %-------------------------------------------------------------------------------------------------------------
 
 \begin{acknowledgements}
-Nous souhaitons remercier Mathieu PERREIRA DA SILVA pour son encadrement et ses conseils tout au long de cette première phase du projet de Recherche et Développement.
+Nous souhaitons remercier Matthieu PERREIRA DA SILVA pour son encadrement et ses conseils tout au long de cette première phase du projet de Recherche et Développement.
+
 De plus, nos remerciements s'adressent aussi à Polytech Nantes et à l'ensemble du corps de l'équipe pédagogique, pour la formation de qualité qui nous a été prodiguée.
 
 \end{acknowledgements}
@@ -137,8 +121,8 @@ Qui n'a jamais eu envie de pouvoir améliorer sa photo de profil sans avoir à f
 
 \section{Présentation de la problématique}
 
-Nombreux sont-ceux qui arborent une photo de profil sur leur réseau social favori, cependant nous n'avons pas tous les capacités pour l'améliorer. Encore faut-il avoir connaissance des points à perfectionner et des moyens à mettre en oeuvre. 
-Ainsi, pouvoir concentrer une expertise dans un algorithme d'amélioration de portrait en sauverait plus d'un. La problèmatique est donc la suivante: que et comment améliorer une photo de portrait ? Bien sûr la photo de portrait qui serait obtenu ne pourra dépasser un certain seuil de modifications afin de demeurer fidèle.
+Nombreux sont-ceux qui arborent une photo de profil sur leur réseau social favori, cependant nous n'avons pas tous les capacités pour l'améliorer. Encore faut-il avoir connaissance des points à perfectionner et des moyens à mettre en œuvre. 
+Ainsi, pouvoir concentrer une expertise dans un algorithme d'amélioration de portrait en sauverait plus d'un. La problématique est donc la suivante: que et comment améliorer une photo de portrait ? Bien sûr la photo de portrait qui serait obtenu ne pourra dépasser un certain seuil de modifications afin de demeurer fidèle.
 
 \section{Objectifs poursuivis}
 
@@ -180,51 +164,35 @@ La conclusion permet de synthétiser les apports de ce travail et d'ouvrir des v
 
 \chapter{\'Etat de l'art}
 \label{chap:EtatArt}
-
-
-
 Dans ce chapitre, nous allons dérouler/présenter un état de l’art sur l’amélioration de photographies, et plus particulièrement sur les photographies de portrait. Cette étude traverse plusieurs domaines qui sont la photographie de manière générale, la photographie de portrait donc de visage, les améliorations possibles à ces différents niveaux, et la manière d’évaluer la qualité esthétique.
-
-
 
 Dans une première partie nous présenterons les critères principaux jugeant l’esthétique d’une photographie de portrait, puis dans une seconde partie nous étudierons les techniques, méthodes d’amélioration automatique des scènes de portrait, des photographies (images numériques), des visages.
 
+\section{De ce qui caractérise l’esthétique d’une photographie...}
 
-
-\section{\emph{De ce qui caractérise l’esthétique d’une photographie...}}
-
-
-Qu’est ce qui rend une photographie attirante aux yeux d’un observateur humain? Qu’est ce qui va différencier la photo prise par un amateur de celle prise par un professionnel ? Quels sont les éléments à améliorer dans notre solution qui vont vraiment faire la différence ? 
-
+Qu’est ce qui rend une photographie attirante aux yeux d’un observateur humain? Qu’est ce qui va différencier la photo prise par un amateur de celle prise par un professionnel ? Quels sont les éléments à améliorer dans notre solution qui vont vraiment faire la différence ?
 
 Il nous est nécessaire de répondre à l’ensemble de ces questions avant même de songer à proposer une solution. C’est pourquoi dans cette première partie, nous commencerons par présenter ce qui fait l'esthétique d’une photographie simple puis nous nous intéresserons ensuite plus particulièrement au cas du portrait, cœur de notre projet et qui possède des caractéristiques propres.
 
 
-\subsection{\emph{Qu’est-ce qu’une photographie agréable ?}}
-
-
+\subsection{Qu’est-ce qu’une photographie agréable ?}
 Dans ce point nous allons traiter de ce qui rend une photo agréable à regarder pour un observateur humain.
 
+Tout d’abord, il y a deux types de critères à distinguer.
 
-
-Tout d’abord, l’étude \cite{Datta} montre qu’il n’existe pas de consensus parmi les professionnels pour qualifier si une image est belle ou non. Il existe des critères très subjectifs telle l’originalité dont l’évaluation varie selon la sensibilité d’une personne à l’autre.
-
-
+D’une part, des critères subjectifs telle l’originalité \cite{Datta} dont l’évaluation varie selon la sensibilité d’une personne à l’autre. Il n’existe pas de consensus parmi les professionnels pour déterminer ces paramètres. Il sont catégorisés comme critères de haut niveau par opposition aux critères de bas niveau qui eux se basent sur les propriétés physiques et les méta-données de l’image.
 
 Cependant Dhar et al. \cite{Dhar} montre que l’on peut distinguer quelques critères objectifs qui vont nous permettre de déterminer que la photo prise a été prise par un professionnel. Il s’agit  d’arrangements qu’il va apporter à la scène et qui sont liés à son expérience métier. Parmi ces critères on distinguera la composition de la scène avec l'arrangement des objets et des couleurs. Une règle de composition des objets bien connue est la règle des tiers et des lignes de forces. Tout objet présent sur une de ces lignes se voit mis en valeur naturellement. On trouve encore des attributs liés au contenu tel que le choix des personnages, leur placement, le choix du type de scène (intérieur ou extérieur). Enfin une partie importante correspond à mettre en valeur l'éclairage naturel présent au moment de la prise. Tous ces éléments vont mettre en avant la créativité, la touche unique du photographe de métier.
 
-
-
 De leur côté, Ke et al. Confortent cette idée et ajoute une liste d’autres critères haut niveau qui permettent de déterminer le professionnalisme de celui qui l’a prise. Il y a tout d’abord la simplicité, c'est à dire à quel point il est facile de détacher le sujet du fond. Plus c'est simple, plus la photo est de bonne qualité. Cela se caractérise en pratique par la distribution des couleurs (ou le nombre de teintes), moins la palette utilisée est large, plus la photo est professionnelle. Mais également le niveau de flou, plus une photo est flou, moins le soin apporté lors de la prise est grand et donc moins bonne est la qualité.
-Vient ensuite le réalisme, c'est à dire à quel point la photo peut sembler atypique par rapport aux autres, la petite touche qui la rend différente. 
+Vient ensuite le réalisme, c'est à dire à quel point la photo peut sembler atypique par rapport aux autres, la petite touche qui la rend différente.
 
+On peut voir un exemple de ces principes sur la figure X avec à gauche une image prise par un photographe professionnel et à droite l’image prise par un amateur.
 
+(Insérer la photo Comparaison Pro_amateur)
+ 
 
-
-
-
-
-\subsection{\emph{L’art d’un portrait réussi}}
+\subsection{L’art d’un portrait réussi}
 Utilisation de Data-driven enhancement of facial attractiveness pour les limites des visages moyens
 Utilisation de Symmetry and Human Facial Attractiveness pour dire que dans la population on aime bien les visages symétriques
 Qu’est ce qui est spécifique au portrait ? Et à la photographie de portrait
@@ -236,122 +204,69 @@ Les couleurs de la peau, du ciel et des végétaux plus particulièrement=>Natur
 L’apparence de la peau (peau lisse), les gens cherchent à supprimer les imperfections avec Automatic correction and enhancement of facial images et Automatic Face and Skin Beautifiction using face detection.
 Utilisation de l’article Aesthetic Quality Assessment of Headshots (10 critères dont certains haut niveau dédiés au visage : netteté du visage, taille du visage) 
 
-
-
 Le détachement du sujet par rapport au fond voir totalement changer le fond :  on peut utiliser les techniques de segmentation et de fusion pour ce besoin. Portrait beautification: A fast and robust approach montre que des recherches sont menées sur le sujet.
-\section{\emph{... Aux techniques d’amélioration automatiques de nos photographies de portrait}}
+
+\section{... Aux techniques d’amélioration automatiques de nos photographies de portrait}
 Préciser la frontière entre l’amélioration de photographie et la modification d’image en utilisant l’article Data-driven enhancement of facial attractiveness, il y a une partie consacrée à cela.
 
-
-
-\subsection{\emph{La détection de visage}}
+\subsection{La détection de visage}
 Voir si on ne fait pas une partie dédiée à cela
 
-
-
-\subsection{\emph{Présentation de l’approche globale}}
+\subsection{Présentation de l’approche globale}
 Article pouvant être utilisé : An Algorithm For Automatic Skin Smoothing In Digital Portraits
-
-
 
 \paragraph{Présentation }
 
-
-
 \paragraph{Analyse }
-
-
 
 \paragraph{Intérêt pour notre sujet }
 On gagne en temps de détection, on n’a pas besoin de localiser et d’isoler chaque petite imperfection, on récupère la totalité du visage et on corrige par rapport à un pixel jugé représentatif.
+
 \paragraph{Limites }
 Suppose que les altérations sont situées au niveau global et modifiera l’ensemble de la photo en conséquence même si l’erreur est vraiment minime. Il ne faut donc pas se tromper et détecter de faux cas d’erreurs. Certains défauts locaux ne disparaîtront pas après le traitement. L’image obtenue est juste meilleure d’un point de vue global.
 
-
-
-\subsection{\emph{Présentation de l’approche locale}}
+\subsection{Présentation de l’approche locale}
 Articles pouvant être utilisés : Method and system for enhancing portrait images that are processed in a batch mode, Automatic Face and Skin Beautifiction using face detection
-
-
 
 \paragraph{Présentation }
 
-
-
 \paragraph{Analyse }
-
-
 
 \paragraph{Intérêt pour notre sujet }
 On peut détecter chaque imperfection et lui appliquer un traitement différent selon sa nature. L’amélioration est déterminée pour la zone, on a donc plus de chance de gommer l’imperfection alors que le traitement global a tendance à améliorer le tout sans se préoccuper si l’imperfection locale à bien été gommée.
+
 \paragraph{Limites }
 On est obligé de détecter et traiter toutes les imperfections, ce qui est plus lourd en temps de traitement.
 Il y a toujours un risque de récupérer le mauvais pixel représentatif et de l’étendre aux pixels voisins.
 
-
-
-\subsection{\emph{Changement de la technique d’appprentissage}}
-
-
+\subsection{Changement de la technique d’appprentissage}
 
 \paragraph{Présentation }
 
-
-
 \paragraph{Analyse }
-
-
 
 \paragraph{Intérêt pour notre sujet }
 
-
-
 \paragraph{Limites }
 
-
-
-\subsection{\emph{Les approches connexes}}
+\subsection{Les approches connexes}
 Modifications ou déplacements ou lissage, amélioration de l’existant.
 
-
-
 \paragraph{Présentation }
-
-
 
 \paragraph{Analyse }
 
-
-
 \paragraph{Intérêt pour notre sujet }
-
-
 
 \paragraph{Limites }
 
-
-
-
-\section{\emph{Récapitulatif}}
-
-
+\section{Récapitulatif}
 
 Tableau comparatif des critères esthétiques pour l’évaluation des photos résultats
 Tableau comparatif des méthodes adaptables à notre sujet de recherche
 
-
-
-
-
-\section{\emph{Conclusion}}
+\section{Conclusion}
 Bilan de l’état de l’art, Accroche vers notre proposition
-
-
-
-
-
-
-
 
 
 
@@ -363,259 +278,8 @@ Bilan de l’état de l’art, Accroche vers notre proposition
 \chapter{Propositions}
 \label{chap:Propositions}
 
-Le titre de ce chapitre peut s'écrire au singulier ou au pluriel en fonction du nombre de propositions faites et de leur investigation.
-
-Si plusieurs propositions sont faites, elles doivent être annoncées ici et leurs points marquants décrits succinctement, comme donné en exemple dans le paragraphe et les sections suivants.
-
-\bigskip
-
-\emph{Dans les sections suivantes nous allons décrire notre proposition. Partis de l'hypothèse que ..., nous en avons déduit que .... Par la suite, cette idée nous a permis d'aboutir à la proposition d'un algorithme d'extraction de paramètres et d'une fonction qui permet de résumer de manière pertinente et discriminante ces différents paramètres en une unique valeur réelle. La qualité de cette mesure est démontrée. Il nous faut toutefois admettre en toute franchise que cette réduction brutale, si elle offre l'avantage indéniable, entre autres, de permettre d'ordonner les valeurs d'origine, perd toute finesse dans l'analyse de données multidimensionnelles.}
-
-\section{\emph{<Notre proposition \textit{i}>}}
-
-L'organisation des cette section (voire chapitre) est la plus libre qui soit. Toutefois, on peut proposer une organisation qui distingue l'intuition de sa formalisation et de sa démonstration.
-
-\subsection{Idées préliminaires}
-
-La fin du chapitre~\ref{chap:EtatArt} a permis de mettre en avant les éléments présents dans des propositions antérieures qui sont exploitables pour résoudre notre problème. Nous développons ici les idées qui nous semblent les plus à même d'y parvenir.
-
-\subsection{Formalisation}
-
-Le développements des intuitions et idées de la section précédente vont aboutir à des propositions formalisées. Cela peut se traduire aussi bien par des formules que des algorithmes.
-
-\emph{Nous avons trouvé une formule particulièrement pertinente pour résumer les nombreuses caractéristiques d'une image :}
-\begin{equation}
-	\label{eq:Proposition}
-	\Phi :
-		\begin{array}{ccc}
-			T_1 \times \ldots \times T_n & \to & \mathbb{R}\\
-			(a, p, m_1, m_2, \kappa, \ldots, \alpha, \alpha', \ldots,z) & \mapsto & \ldots
-		\end{array}
-\end{equation}
-
-\emph{Les différents paramètres de la fonction sont eux-mêmes fournis par l'algorithme~\ref{alg:Proposition}.}
-
-\begin{algorithm*}
-	L'algorithme peut être décrit de différentes manières, avec les environnements :
-	\begin{itemize}
-		\item verbatim :
-			\begin{verbatim}
-fonction F (I : image) : (T1, T2, ..., Tn)
-...
-			\end{verbatim}
-		\item tabbing :
-			\begin{tabbing}
-				\textbf{fonction} $F$ ($I : \mathcal{I}$) : $T_1 \times T_2 \times \cdots \times T_n$\\
-				...
-			\end{tabbing}
-		\item algorithmic :
-			\begin{algorithmic}[1]
-				\REQUIRE $n \geq 0$
-				\ENSURE $y = x^n$
-				\STATE $y \Leftarrow 1$
-				\STATE $X \Leftarrow x$
-				\STATE $N \Leftarrow n$
-				\WHILE{$N \neq 0$}
-					\IF{$N$ is even}
-						\STATE $X \Leftarrow X \times X$
-						\STATE $N \Leftarrow N / 2$
-					\ELSE[$N$ is odd]
-						\STATE $y \Leftarrow y \times X$
-						\STATE $N \Leftarrow N - 1$
-					\ENDIF
-				\ENDWHILE
-			\end{algorithmic}
-		\item voire avec les environnement standards et/ou en français.
-	\end{itemize}
-	\caption{Proposition}
-	\label{alg:Proposition}
-\end{algorithm*}
-
-\subsection{Démonstration}
-
-Tous les éléments de démonstration du bien fondé de la méthode proposée doivent être explicités si ce n'est sous la forme de théorèmes, du moins avec un enchaînement argumenté de causes à effets.
-
-\begin{theoreme}
-	Soit $(a, p, m_1, m_2, \kappa, \ldots, \alpha, \alpha', \ldots,z) \in T_1 \times \ldots \times T_n$ tel que ... alors ...
-\end{theoreme}
-
-\begin{preuve}
-	Procédons par contradiction. ...~\hfill$\square$
-\end{preuve}
-
-\subsection{Analyse}
-
-Une analyse objective sur cette orientation est ici faite. Le problème est-il résolu dans sa totalité, sinon quelle partie ? La résolution est-elle efficace d'un point de vue informatique ? Etc.
-
-\section{Conclusion}
-
-Différentes idées nous ont conduit à faire différentes propositions. À ce stade, il convient de restreindre leur nombre afin d'avoir le temps de conduire des expérimentations suffisamment poussées, nous permettant d'établir des conclusions pertinentes.
-
-\emph{En comparant les apports démontrés ou à vérifier dans le tableau ..., nous en déduisons un classement << au mérite >> qui est le suivant : .... Par manque de temps, nous allons nous limiter aux deux premiers dans le chapitre~\ref{chap:Experimentations}.}
-
-%-------------------------------------------------------------------------------------------------------------
-
-\chapter{Expérimentations et résultats}
-\label{chap:Experimentations}
-
-S'agissant d'un travail de recherche \emph{et} de \emph{développement}, une production de code source est très certainement présente. Auquel cas, le chapitre va commencer par une section sur le produit développé.
-
-\begin{structuration}
-Soulignons que, comme dans le chapitre précédent, si le volume de ce chapitre devient très important, il est préférable de le transformer en partie de rapport, les sections suivantes devenant des chapitres, et ainsi de suite pour les parties hiérarchiquement inférieures.
-\end{structuration}
-
-\section{\emph{<Notre proposition \textit{i}>}}
-
-\emph{Notre proposition $i$ nous a amené à des développements plus ou moins complexes dont nous détaillons les contraintes ci-dessous. Après la vérification et la validation de ces développements, cela nous a permis de conduire différentes expérimentations dont les hypothèses de travail sont précisés (ou rappelées). Les résultats sur des jeux de données (voire des bancs d'essais normalisés) sont ensuite analysés en détail.}
-
-\subsection{Développements}
-
-Les contraintes liées à la mise en \oe uvre d'un développement informatique implémentant la (les) proposition(s) faite(s) dans le chapitre précédent sont mises en exergue dans cette partie.
-
-Il convient de distinguer :
-\begin{itemize}
-	\item les contraintes générales, celles s'appliquant \emph{a priori} à tout développement de la proposition sur quelque système, avec quelque langage que ce soit ;
-	\item les contraintes intrinsèques aux choix de développement.
-\end{itemize}
-
-\subsubsection{Contraintes liées aux propositions}
-
-Il peut ne pas y en avoir.
-
-\subsubsection{Contraintes liées au développement}
-
-Nous pourrons ici exposer :
-\begin{itemize}
-	\item des contraintes liées aux choix techniques, chaque solution présentant des avantages et des inconvénients, ces derniers ne pouvant pas toujours être entièrement éliminés, par exemple des bogues inattendues sur les produits utilisés ;
-	\item des contraintes propres au travail lui-même comme le temps insuffisant pour implémenter totalement les fonctionnalités attendues.
-\end{itemize}
-
-Cette liste n'est pas limitative. Mais il faut organiser les contraintes de manière logique et non pas seulement les énumérer.
-
-\subsection{Expérimentations}
-
-Le logiciel produit peut être aussi bien le but du travail qu'une étape intermédiaire.
-
-\bigskip
-
-Dans le cas d'un produit final, l'expérimentation se ramène :
-\begin{itemize}
-	\item à la vérification et à la validation du développement du point de vue technique ;
-	\item à son utilisation sur un jeu de données significatif et à des mesures de qualité.
-\end{itemize}
-
-\bigskip
-
-Dans le cas d'une étape intermédiaire, l'application du logiciel sur des jeux de données se poursuit avec une analyse minutieuse des résultats non pas du point de vue informatique (ex.\ : performances constatées vis-à-vis de la complexité asymptotique promise au chapitre~\ref{chap:Propositions}) mais bien par rapport aux buts poursuivis par le travail. Il devrait donc y avoir nombre de tableaux et/ou graphiques (cf.\ figure~\ref{fig:Courbes} comme exemple%
-\footnote{Urs Oswald, \emph{``Graphics in LaTeX 2$_\varepsilon$,''} March 2003, \url{http://www.ursoswald.ch}.}%
-) dans cette partie du rapport.
-
-\begin{figure}
-	\centering
-	\setlength{\unitlength}{5cm}
-	\begin{picture}(1.2, 1.3)
-	  \put(0, 0){\vector(1, 0){1.15}}
-	  \put(1.17, -.015){$x$}
-	  \put(0, 0){\vector(0, 1){1.15}}
-	  \put(0, 1.19){\makebox(0, 0){$y$}}
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.2998/0.905) m2=10.0
-	  \qbezier(0.0,0.0)(0.2093,0.0)(0.2998,0.905)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.4625/0.8198) m2=5.0
-	  \qbezier(0.0,0.0)(0.2985,0.0)(0.4625,0.8198)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.5757/0.744) m2=3.3333
-	  \qbezier(0.0,0.0)(0.3525,0.0)(0.5757,0.744)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.6589/0.677) m2=2.5
-	  \qbezier(0.0,0.0)(0.3881,0.0)(0.6589,0.677)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.7218/0.618) m2=2.0
-	  \qbezier(0.0,0.0)(0.4128,0.0)(0.7218,0.618)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.7703/0.5662) m2=1.6667
-	  \qbezier(0.0,0.0)(0.4306,0.0)(0.7703,0.5662)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.8081/0.5207) m2=1.4286
-	  \qbezier(0.0,0.0)(0.4436,0.0)(0.8081,0.5207)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.8381/0.4806) m2=1.25
-	  \qbezier(0.0,0.0)(0.4536,0.0)(0.8381,0.4806)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.862/0.4454) m2=1.1111
-	  \qbezier(0.0,0.0)(0.4611,0.0)(0.862,0.4454)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.8814/0.4142) m2=1.0
-	  \qbezier(0.0,0.0)(0.4672,0.0)(0.8814,0.4142)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.8972/0.3866) m2=0.9091
-	  \qbezier(0.0,0.0)(0.4719,0.0)(0.8972,0.3866)
-	  % qbezier P1=(0.0/0.0) m1=0.0
-	  %         P2=(0.9102/0.362) m2=0.8333
-	  \qbezier(0.0,0.0)(0.4758,0.0)(0.9102,0.362)
-	  \put(0.5757, 0.744){\circle*{.015}}
-	  \put(0.6,    0.74){$(u,v)$}
-	  \put(0.5,    0.05){$L$}
-	  \put(0.18,    0.45){$L$}
-	  \put(1, -.02){\line(0, 1){.04}}
-	  \put(1, .06){\makebox(0, 0){$L$}}
-	  \put(-.02, 1){\line(1, 0){.04}}
-	  \put(.03, .98){$L$}
-	\end{picture}
-	\caption{Qualité des résultats obtenus (Source : << \emph{Graphics in LaTeX 2$_\varepsilon$} >>, page~23)}
-	\label{fig:Courbes}
-\end{figure}
-
-Si les graphiques sont des éléments qui permettent une interprétation visuelle rapide, il est indispensable de fournir les résultats numériques correspondants. Les tableaux synthétiques apparaîtront dans cette partie (cf.\ tableau~\ref{tab:Courbes} par exemple). Les tableaux contenant l'ensemble des mesures seront reportés en annexe (cf.\ annexe~\ref{ann:Mesures}). Ces informations doivent être fournies en tant que \emph{preuve} ; un autre expérimentateur doit pouvoir contrôler, en faisant lui-même les expériences, qu'il trouve bien les résultats que nous annonçons ! Si l'information est vraiment trop importante pour tenir dans le rapport, il faudra se mettre en mesure de fournir une version électronique, en ligne de préférence, à la demande sinon en fournissant une adresse de contact pérenne...
-
-\begin{table}
-	\centering
-	\begin{tabular}{|c||c|c|}
-		\hline
-		$x$ & $u$ & $v$\\
-		\hline
-		\hline
-		\ldots & \ldots & \ldots\\
-		\hline
-	\end{tabular}
-	\caption{Valeurs numériques correspondant aux courbes de la figure~\ref{fig:Courbes}}
-	\label{tab:Courbes}
-\end{table}
-
-\subsection{Résultats}
-
-\emph{L'application de notre algorithme et de la fonction de réduction nous a fourni un jeu de valeurs dont nous avons pu analyser la qualité...}
-
-\section{Conclusion}
-
-La conclusion de ce chapitre est normalement le point d'orgue du travail même s'il n'en est pas nécessairement son aboutissement. Il s'agit de mettre en perspective les limites de la réalisation, la qualité et la portée des résultats néanmoins obtenus, et de dresser un retour d'expérience sur la façon de conduire cette partie du travail pour une réalisation à neuf ou << seulement >> pour une remise à niveau par un repreneur.
-
-Dans le cas où plusieurs propositions ont été explorées, il faut juger soit de leur complémentarité, soit de leur supériorité relative.
-
-%-------------------------------------------------------------------------------------------------------------
-
-\chapter{Conclusion}
-
-À l'issue de ce travail, résumons tout d'abord rapidement les principales étapes de ce dernier. De cette expérience, nous tirons quelques enseignements et ouvrons également des perspectives pour des recherches et développements ultérieurs soit parce qu'ils n'ont pas pu être menés à terme ici, soit parce que de nouveaux défis se présentent à nous.
-
-\section{Résumé du travail effectué}
-
-Même si cela est une énième répétition, il convient de résumer sinon la totalité des étapes du travail du moins les résultats marquants du travail.
-
-\section{Enseignements}
-
-Les enseignements qui ont été tirés de ce travail, et il y en a nécessairement, doivent  être évoqués. Certains peuvent être personnels. D'autres seront de portée générale. Les plus précis seront ceux directement issus du travail, de ses résultats, des interprétations faites.
-
-\section{Perspectives de recherche}
-
-Il est rare qu'un travail, quel qu'il soit, clôture complètement un sujet. Quand bien même, il est toujours possible de proposer des prolongements, soit dans le droit fil du travail accompli, soit comme développements connexes, suite à une ou plusieurs idées qui sont venues à l'esprit ou qui n'ont pas pu être exploitées ici.
-
-Bien entendu, si le travail n'a pas été terminé, il faut indiquer les étapes. Il peut s'agir d'étapes envisagées initialement et qui peuvent être poursuivies telles quelles ou amendées. Il peut s'agir d'étapes nouvelles, le chemin jusqu'à la solution se révélant plus long que prévu.
 
 %---------------------------------------------------------------------------------------------------------
-
-\nocite{*} % à supprimer, les citations dans le rapports doivent suffire à générer la bibliographie nécessaire et suffisante à la compréhension du travail (ici, cela sert à générer une "fausse" bibliographie dans ce modèle de rapport)
 
 \bibliography{rapport}
 
@@ -627,177 +291,8 @@ Bien entendu, si le travail n'a pas été terminé, il faut indiquer les étapes
 
 \appendix
 
-\chapter{De la citation}
-\label{ann:Citations}
-
-La loi n'autorise :
-\begin{itemize}
-	\item d'une part, que les copies ou reproductions strictement réservées à l'usage privé du copiste et non destinées à une utilisation collective ;
-	\item d'autre part, que les analyses et les courtes citations dans un but d'exemple et d'illustration.
-\end{itemize}
-C'est ce second point qui nécessite, semble-t-il, quelques éclaircissements dans le cadre de la production d'un rapport, notamment dans sa partie bibliographique.
-
-Les citations obéissent à quelques règles de \emph{visibilité} et de bon sens que nous précisons ci-dessous dans différents cas.
-
-\section{Citations courtes}
-
-Les citations courtes se font << en ligne >> en mettant la copie du texte :
-\begin{enumerate}
-	\item en italique ;
-	\item entre guillemets ;
-	\item suivie de la référence à l'\oe uvre dont elle est extraite.
-\end{enumerate}
-
-Ainsi donc, nous pourrions écrire que \emph{<< [s]i on est trop jeune, on ne juge pas bien [;] [s]i on est trop vieil, de même >>} \cite{Pascal-1671}.
-
-Il s'agit de mettre parfaitement en évidence l'emprunt à un auteur et de créditer cet auteur.
-
-\bigskip
-
-Sur l'exemple, on notera les parties de textes mises entre crochets. Il s'agit des parties qui ont été modifiées vis-à-vis de l'original pour convenir à leur insertion dans ce texte. En l'occurrence, il s'agit de deux phrases que l'on a placées ici en subordonnée.
-
-La plus importante de ces marques est l'ellipse (inutilisée ici), notée << [...]  >>, qui correspond à une partie de texte supprimée. Cela correspond généralement à une digression sans importance pour le propos. En revanche, omettre de préciser que l'on a tronqué la citation est un moyen courant pour tromper le lecteur sur la pensée originelle !
-
-\section{Citations << longues >>}
-
-Les citations plus longues, de quelques phrases, voire paragraphes, utilisent un format spécifique, comme illustré ci-dessous. Il s'agit de mettre toute la citation dans un, voire plusieurs, paragraphes endentés en respectant les consignes précédentes.
-
-Par exemple, si l'on souhaite conserver l'emprunt précédent dans son format d'origine, nous aurons :
-\begin{quote}
-	\emph{<< Si on est trop jeune, on ne juge pas bien. Si on est trop vieil, de même. Si on n'y songe pas assez, si on y songe trop, on s'entête, \& l'on ne peut trouver la vérité. >>} \cite{Pascal-1671}
-\end{quote}
-
-\section{Citations en langue étrangère}
-
-Lorsque la citation provient d'un texte écrit dans une langue autre que le français, généralement l'anglais, la règle de base reste la même, à savoir copier le texte d'origine tel quel afin d'assurer son intégrité. Une traduction sera fournie en note de bas de page (ce qui permettra de détecter une éventuelle incompréhension du propos...).
-
-\section{Copie de schémas}
-
-Les schémas, au même titre que les textes, sont des \oe uvres de l'esprit soumises au droit d'auteur et qui ne peuvent donc être éventuellement recopiées qu'avec parcimonie et en citant la source dans la légende.
-
-\section{Plagiat}
-\label{ann:Plagiat}
-
-Toute autre usage de la citation relève du plagiat, plus ou moins éhonté suivant les modifications qui sont apportées au texte d'origine.
-
-Par exemple, le texte suivant :
-\begin{quote}
-   Dans le monde réel, très rares sont les situations où l'on serait capable d'effectuer une partition nette d'un ensemble d'objets en des parties disjointes, voire même aux frontières clairement établies. La gradualité du passage entre des classes différentes aux frontières non reconnaissables n'est-elle pas l'une des motivations essentielles, sinon la première, qui furent à l'origine de la naissance de la théorie des sous-ensembles flous. Les techniques floues de classification sont souvent nées de la tentative de généralisation de techniques déjà existantes d'après \cite{Khodja-97}.
-\end{quote}
-est une << citation >> \emph{maladroite} de :
-\begin{quote}
-   \emph{<< En effet, dans le monde réel qui nous entoure, très rares sont les situations où l'on serait capable d'effectuer une partition nette d'un ensemble d'objets en des parties disjointes, voire même aux frontières clairement établies. La gradualité du passage entre des classes différentes aux frontières non reconnaissables n'est-elle pas l'une des motivations essentielles, sinon la première, qui furent à l'origine de la naissance de la théorie des sous-ensembles flous [ZAD65]. L'introduction du concept de fonction d'appartenance dans des techniques de classification, et ce, très rapidement après la parution de l'article séminal de Zadeh, et les différents travaux qui le suivirent, témoignent de la fertilité de l'apport de la théorie des sous-ensembles flous au vaste champ de la classification, qui y trouve un cadre beaucoup plus naturel que celui offert par la théorie classique des ensembles. >>} \cite{Khodja-97}
-\end{quote}
-
-En effet, la première << citation >> semble exprimer un point de vue partagé par d'autres auteurs plutôt qu'une véritable citation. De plus, il est possible de ne l'associer qu'à la dernière phrase et pas à l'ensemble du paragraphe.
-
-\bigskip
-
-Comme autre exemple, le texte suivant :
-\begin{quote}
-La problématique de l'intégration repose sur la standardisation de données internes à l'entreprise, mais aussi des données externes.
-
-Si on prend l'exemple d'une entreprise on aura besoin de ses données internes et externes c'est-à-dire celles des clients et fournisseurs de cette entreprise.
-
-Ce n'est qu'avec une bonne intégration que l'on peut offrir une vision homogène, complète et véritablement transverse de l'entreprise. Pour cela il faut que le système d'information de l'entreprise soit parfaitement structuré, maîtrisé et d'un bon niveau d'intégration. Si tel n'est pas le cas, l'entrepôt de données ne pourra pas être mis en \oe uvre à cause de la qualité des données qui reste mauvaise.
-\end{quote}
-est un plagiat manifeste, avec tentative de dissimulation, de :
-\begin{quote}
-\emph{<< La problématique de l'intégration repose sur la standardisation de données internes à l'entreprise, mais aussi des données externes (provenant par exemple de clients ou de fournisseurs).}
-
-\emph{Ce n'est qu'au prix d'une intégration poussée que l'on peut offrir une vision homogène et véritablement transverse de l'entreprise. Ce[la] suppose que le système d'information de l'entreprise en amont soit bien structuré, bien maîtrisé, et bénéficie déjà d'un niveau d'intégration suffisant. Si tel n'est pas le cas, la mauvaise qualité des données peut empêcher la mise en \oe uvre de l'entrepôt de données. >>}\footnote{\emph{Entrepôt de données}. Wikipedia, 3 février 2010, \url{http://fr.wikipedia.org/wiki/Entrepôt_de_données}}
-\end{quote}
-
-\vspace{2\baselineskip}
-
-En conclusion, les opérations de << copier-coller >> sont permises sous les conditions restrictives :
-\begin{itemize}
-	\item qu'elles soient parfaitement identifiables ;
-	\item que les références aux sources soient données ;
-	\item qu'elles soient courtes ;
-	\item qu'elles soient peu nombreuses.
-\end{itemize}
-
-En revanche, il est possible, et même tout à fait recommandé, de \emph{reformuler}, avec son vocabulaire et dans le contexte du rapport, des \emph{idées} empruntées à d'autres auteurs. Dans ce cas-là, l'honnêteté intellectuelle se << limite >> à la référence aux sources.
-
-\bigskip
-
-\begin{center}
-   \fcolorbox{red}{yellow}{
-      \color{red}
-      \large
-      \begin{minipage}[c]{0.8\columnwidth}
-         Les contrevenants à ces règles élémentaires d'honnêteté intellectuelle seront déferrés devant la section disciplinaire de l'université.
-
-         Une fraude caractérisée entraîne au minimum l'annulation de l'épreuve et jusqu'à l'expulsion de l'université assortie d'une interdiction de passer tout examen public pendant cinq ans !
-      \end{minipage}
-   }
-\end{center}
-
 \chapter{Rappels}
 \label{ann:Rappels}
-
-Un rappel contient, comme son nom l'indique, des éléments \emph{a priori} connus mais qu'il est bon de rappeler, notamment lorsqu'il s'agit de définitions (le terme << glossaire >> est alors préférable), de formules mathématiques, d'algorithmes standards, etc.
-
-Ces éléments-là peuvent être fournis de manière éparse, c'est-à-dire sans formuler les liens logiques entre les eux, sans développer un discours parfaitement cohérent comme dans le reste du document.
-
-Par exemple, on peut écrire de manière sèche que : << La moyenne se calcule différemment suivant que les individus sont séparés, groupés ou seule leur fréquence fournie. On obtient respectivement :
-\begin{eqnarray}
-    \mu & = & \frac{1}{n} \sum_{i=1}^n x_i\\
-    \mu & = & \frac{1}{N} \sum_{i=1}^m x_i \times n_i\\
-    \mu & = & \sum_{i=1}^m x_i \times f_i
-\end{eqnarray}
-avec :
-\begin{itemize}
-    \item $N = \sum_{i=1}^m n_i$ ;
-    \item $f_i = \frac{n_i}{N}$. >>
-\end{itemize}
-
-\chapter{D'autres rappels}
-\label{ann:RappelsInutiles}
-
-Bien sûr, le rapport ne doit pas devenir une accumulation de rappels divers. Si tel était le cas, cela signifierait que le travail bibliographique est devenu une étude critique et détaillée d'un large \emph{corpus} de connaissances. Par exemple, tous les algorithmes de classification << classiques >> (plus proches voisins, machines à vecteur de support, analyse en composantes principales, etc.) pourraient être passés en revue en vue de résoudre le (ou une partie) du problème du rapport.
-
-Dans ce cas-là, une étude détaillée, même si elle s'applique à des éléments << bien connus >> devient nécessaire, les propositions devant sans doute être traitées chacune dans un chapitre dédié.
-
-La mise en perspective avec le problème à résoudre est indispensable, autrement on se retrouverait devant un simple catalogue détaillé sans autre intérêt qu'une certaine exhaustivité, le soin étant laissé au lecteur de comprendre en quoi cette énumération de propositions issues de la littérature est utile. En d'autres termes, l'étude doit apporter une plus-value.
-
-\chapter{Mesures détaillées}
-\label{ann:Mesures}
-
-Les tableaux de mesures qui apparaissent dans cette annexe doivent référencer les formules, algorithmes et parties du rapport auxquels ils sont rattachés.
-
-Par exemple, le tableau~\ref{tab:MesuresAlgorithme} contient l'ensemble des paramètres obtenus par l'algorithme~\ref{alg:Proposition} (en page~\pageref{alg:Proposition}) ayant servi à l'élaboration du tableau~\ref{tab:Courbes} (en page~\pageref{tab:Courbes}) \emph{via} la formule~\ref{eq:Proposition} (en page~\pageref{eq:Proposition}).
-
-\begin{table*}
-	\centering
-	\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|}
-		\hline
-		entrée & $a$ & $p$ & $m_1$ & $m_2$ & $\kappa$ & $\alpha$ & $\alpha'$ & \ldots & $z$ \\
-		\hline
-		\hline
-		\texttt{img000.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img001.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img002.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img003.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img004.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img005.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img006.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img007.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img008.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img009.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img010.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img011.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img012.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img013.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img014.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img015.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\texttt{img016.jpg} & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots & \ldots\\
-		\hline
-	\end{tabular}
-	\caption{Quelques mesures fournies par l'algorithme~\ref{alg:Proposition}}
-	\label{tab:MesuresAlgorithme}
-\end{table*}
 
 \chapter{Fiches de lecture}
 \label{ann:FichesLecture}
@@ -820,7 +315,6 @@ Dans l'esprit des traitements manuels et semi-automatiques, cet algorithme autom
 Les grandes étapes de l'algorithme sont communes à d'autres techniques d'imagerie, comme l'acquisition et le repérage des points d'intérêts.
 Ce traitement du visage couvre une partie des améliorations possibles d'une photo de portrait.
 
-
 \section{\emph{High Level Describable Attributes for Predicting Aesthetics and Interestingness}}
 L'article \cite{Dhar}  présente une méthode de sélection automatique d'image parmi une grande collection afin d'en retirer les images qui seraient qualifiées de belles par un évaluateur humain.
 
@@ -834,7 +328,6 @@ L'article démontre qu'un ordinateur entrainé à évaluer ces critères est cap
 Il nous permet également d'en retirer des critères d'évaluation de plus ou moins haut niveau pour l'analyse de la beauté d'un portrait.
 Nous avons pu voir que les attributs comme la règle des tiers, la profondeur du champ, couleurs complémentaires, présence de personnes ont un impact sur l'esthétique ressentie d'une photo.
 
-
 \section{\emph{Data-driven enhancement of facial attractiveness}}
 L'article \cite{Leyvand2008} traite de la problématique d'amélioration d'un portrait en utilisant la technique du recentrage. Il traite également du problème du seuil de modification maximal au-delà duquel une photo n'est plus considérée comme fidèle à l'originale.
 
@@ -845,7 +338,6 @@ L'algorithme va tout d'abord évaluer la beauté de l'image d'origine et retourn
 
 \paragraph{Analyse}
 Cet article peut être très utile car il traite d'une manière simple de l'amélioration de la beauté du portrait en repositionnant juste le visage. La problématique de modification et fidélité est aussi importante, car il nous faut savoir quand arrêter l'amélioration d'un portait.
-
 
 \section{\emph{Method and system for enhancing portrait images that are processed in a batch mode}}
 L'article \cite{Matraszek2004} nous présente un algorithme utilisé par un logiciel breveté afin d'améliorer localement un portrait.
@@ -889,7 +381,6 @@ En plus de ces critères haut niveau, ils vont également utiliser le contraste 
 \paragraph{Analyse}
 Cet article nous sera utile pour la partie d'analyse de la qualité de l'image, notre but étant de permettre d'avoir un rendu "professionnel". Il nous permet de compléter les critères bas niveau que nous avions vus dans d'autres articles par des critères plus haut niveau. On y voit cependant la nécessité de conserver certains critères bas niveau qui sont essentiels à l'analyse de photo.
 
-
 \section{\emph{Method of restoring closed eye portrait photo}}
 L'article \cite{Li2011} présente une méthode qui permet de rectifier l'ouverture des yeux sur un portrait.
 
@@ -900,7 +391,6 @@ L'article détaille l'algorithme utilisé pas à pas.
 
 \paragraph{Analyse}
 Ce genre de modification peut nous être utile pour notre projet car le cas d'yeux fermés ou partiellement fermés peut se présenter. Cela constitue donc une piste de réflexion intéressante (mais cela est peut-être trop ciblé sur le cas des yeux fermés, en effet, une photo que l'on ajoute pour son profil sur un réseau social est sujette à posséder des yeux ouverts).
-
 
 \section{\emph{Studying Aesthetics in Photographic Images Using a Computational Approach}}
 L'article \cite{Datta} traite de l'évaluation des critères esthétiques d'une photographie au moyen d'une approche informatique.
@@ -914,7 +404,6 @@ La classification est effectuée avec un arbre de décision reprenant 15 parmi l
 \paragraph{Analyse}
 Une nouvelle fois, cet article recoupe le sujet des critères jaugeant la beauté d'une photographie au sens général. Les traitements décrits dans l’article ont été réalisés avec Matlab.
 
-
 \section{\emph{Automatic correction and enhancement of facial images}}
 L'article \cite{Konoplev2012} propose un système de détection et de correction des défauts des visages contenus dans une photographie.
 
@@ -927,7 +416,6 @@ Le filtre utilise tout d'abord des paramètres spécifiques aux rides puis s'en 
 Ici, on peut noter l'intérêt de l'utilisation d'un autre espace de couleur, afin de ne pas être limité en RGB. Le traitement réalisé dans un espace de couleurs perceptuel permet d'obtenir des résultats plus naturels. La phase d'acquisition de la zone du visage et des zones à modifier est une nouvelle fois présente. 
 
 Le fait d’appliquer le filtre anti-bruit est un point que nous n’avons pas identifié dans toutes nos lectures et il serait utile de l’inclure (pour le cas de photographie dont la qualité ne serait pas optimale). D’autre part l’application du filtre lissant sur l’image intégralement pourrait altérer les détails.
-
 
 \section{\emph{Natural Scenes Enhancement by Adaptive Color Correction}}
 L'article \cite{Naccari} présente une méthode qui améliore le rendu des couleurs naturelles des portraits en utilisant un algorithme de correction des couleurs adaptatif.
@@ -943,7 +431,6 @@ Cet article peut nous aider en nous donnant des idées pour la classification de
 On peut également y puiser des idées pour rendre la photo plus belle du point de vue de l'observateur sans rien modifier d'autre que les couleurs.
 
 Cet algorithme a été testé sur différents types d'images dont des portraits et montre des résultats très satisfaisants, les observateurs préfèrent majoritairement les images améliorées par l'algorithme.
-
 
 \section{\emph{Automatic Face and Skin Beautifiction using face detection}}
 Un nouveau traitement automatique du visage et de la peau est présenté dans l’article \cite{Ciuc2010}.
@@ -974,7 +461,6 @@ Le domaine d'application de la méthode est la détection des points caractéris
 \paragraph{Analyse}
 L’article présente une technique qui peut être utile pour les portraits avec des expressions qui varient selon les photos. D’après Wikipédia, les Machines à vecteurs de supports(SVM) sont un ensemble de techniques d'apprentissage supervisé (performance supérieure ou égale à celle des réseaux de neurones ou des modèles de mixture gaussienne).
 
-
 \section{\emph{Segmentation des Traits du Visage, Analyse et Reconnaissance}}
 Une partie de cet article\cite{Cognitives2006} traite de la détection des zones du visage comme le nez, la bouche. C'est la partie qui va nous intéresser.
 
@@ -997,7 +483,6 @@ Pour pallier à ce problème existe l'approche sous forme de Template déformabl
 Le problème de la méthode de détection des sourcils (par différence de couleurs) c’est qu’elle repose sur la luminance de la photo et sous-entend bonne qualité dès départ.
 Dans le cas de la recherche avec un motif déformable, une évolution forcée peut bloquer la détection des expressions faciales.
 
-
 \section{\emph{Portrait beautification: A fast and robust approach}}
 L'article \cite{Liu2007} présente un comparatif de méthodes pour pouvoir détecter un visage sur un portrait, séparer le visage de l'arrière-plan et enfin recoller le visage sur un autre arrière-plan. Il propose en parallèle un traitement à appliquer sur le visage afin de pouvoir rendre les couleurs de meilleure qualité si l'image n'est pas de bonne qualité à la base.
 
@@ -1013,7 +498,6 @@ Dans la seconde partie la segmentation a été réalisée à l'aide d'un autre a
 
 La troisième partie en revanche illustre une technique pour pouvoir améliorer la couleur des portraits qui ont subis une déviation du à la mauvaise qualité de la prise de la photo.
 Le fait qu'il n'y a pas de partie résultats statistiques ou de chiffres pour illustrer le taux de réussite de cet algorithme ne permet pas d'évaluer sa performance.
-
 
 \section{\emph{Aesthetic Quality Assessment of Headshots}}
 Cette proposition \cite{Males2013} est assez récente (septembre 2013) est traite de l’évaluation de la qualité esthétique d’une photographie de portrait.
@@ -1039,21 +523,10 @@ Les critères bas niveau sont calculés sur l’ensemble de l’image tels que l
 
 Les avancées possibles pour cet article sont l’utilisation d’un meilleur outil de détection des visages ainsi qu’une méthode de détection des yeux.
 
-
 \paragraph{Analyse}
 Cet article apporte des précisions sur le cas particulier de la qualité des photographies de portrait où le visage est donc l’objet principal. Les 10 critères utilisés recoupent une grande partie des critères génériques applicables sur une photo classique. Le ratio sur la place qu’occupe le visage est par exemple la nouveauté de cet article. 
 
 Autre point intéressant il s’agit de la confrontation entre deux classificateurs par apprentissage supervisés que sont SVM et AdaBoost. L’un a l’air plus performant d’après les résultats de l’article. La bibliographie est aussi intéressante puisqu’elle cite des sources traitant l’évaluation de l’esthétique dans les portraits, les méthodes d’améliorations des portraits pour les photographes, les machines à vecteur de support ...
-
-
-
-
-
-
-
-
-
-
 
 
 \chapter{Planification}
@@ -1082,7 +555,6 @@ La figure~\ref{fig:PlanningEffectif} présente pour sa part le planning relevé 
 	\label{fig:PlanningEffectif}
 \end{figure*}
 
-Discuter les différences entre les deux plannings et les leçons apprises sur la gestion d'un projet de recherche ou de R\&D.
 
 \chapter{Fiches de suivi}
 \label{ann:FichesSuivi}
@@ -1312,238 +784,61 @@ de la photographie
 		\begin{itemize}
 			\item Continuer la rédaction de l’état de l’art et la terminer 
 			\item Comparer les différents outils, et les propositions effectuées dans l’état de l’art
-			\item Rencontre M. Perreira Da Silva la semaine prochaine		\end{itemize}
+			\item Rencontre M. Perreira Da Silva la semaine prochaine		
+		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
 
+\begin{fichesuivi}{18 novembre 2013}{24 novembre 2013}
+	\tempstravailA{03}{00}
+	\tempstravailB{06}{00}
 
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{9}{15}
-	\tempstravailB{13}{45}
-
+\paragraph{}
 	\begin{travaileffectue}
+		\begin{itemize}
+			\item  : simple, réalisée à $100$ \% ;
+			\item Rédaction de la partie état de l’art : simple, réalisée à $22$ \% ;
+			\item Rencontre avec M. Perreira Da Silva le mardi 19/11 : simple, réalisée à $100$ \% ;
+		\end{itemize}
 	\end{travaileffectue}
 
-	\begin{travailnoneffectue}
+\begin{travailnoneffectue}
+		\begin{itemize}
+			\item Pas d’avancée dans la recherche d'outils réalisant des améliorations automatiques de portrait : nous avons revu l’ensemble des documents stockés dans Mendeley et procédé à un tri de ces derniers;
+		\end{itemize}
 	\end{travailnoneffectue}
-
+		
+\paragraph{}
 	\begin{echange}
-	\end{echange}
-
+		\begin{itemize}
+			\item M. Perreira Da Silva nous a envoyé un nouvel article traitant de l'évaluation de la qualité esthétique des photos portraits. Cet article, qui est cette fois dédié à la photographie de portrait, apporte un complément sur ce que nous avions et permet d'affirmer certains critères qui sont apparus dans plusieurs articles.
+			\item Nous avons eu une réunion mardi avec M. Perreira Da Silva. Lors de cette réunion, nous avons abordé plusieurs points.
+			\item Nous hésitions sur la mise en forme de la partie sur les critères esthétiques dans l'état de l'art, et grâce à la discussion, nous les présenteront successivement et listeront les méthodes de calculs s'il y en a.
+			\item Concernant la table listant les éléments bibliographiques, certaines entrées étaient peu complètes. Certaines entrées sous Mendeley n'avaient pas le bon type de document et certaines métadonnées étaient mal extraites.
+			 \item Lors de la soutenance intermédiaire, le but est donc de présenter les critères d'évaluations esthétiques(et outils si possible) que nous avons identifiés. Une seconde partie sera dédiée aux propositions d'améliorations de photographie de portrait existantes. Chacun de ces points devra faire l'heure d'un comparatif avant de faire ressortir les avantages et limites de chaque approche.
+			\item Toujours pour l'état de l'Art, il vaut mieux ne pas mettre de côté les traitements modifiant la structure des images afin de pouvoir mettre en avant les limites de ces solutions dans le comparatif et expliquer notre proposition.
+			\item Au fil de nos lectures nous avons noté que pour la partie évaluation de la qualité des images, certains classificateurs fonctionnant au moyen d'un apprentissage supervisé, utilisaient des bases d'images pour l'entrainement et les tests. La question était de savoir si de telles bases étaient utilisées à Polytech. M. Perreira Da Silva nous a conseillé de nous pencher sur un rapport de projet de recherche de l'an dernier pour ce point. En effet le sujet traitant de la Beauté des Visages utilisait plusieurs bases de visages. Il s'agit des bases Karolinska et FEI. Une partie à ce sujet dans la partie évaluation de l'esthétique pourrait être utile, elle préciserait des méthodes d'évaluation globale et subjective(comme par exemple la possibilité de demander l'avis d'observateurs). Nous pourrions tout aussi bien effectuer des tests sur le trombinoscope de l'intranet. 
+			\item Nous nous sommes aussi intéressés aux outils pour manipuler les images et plus particulièrement permettant la détection de visages (en vue de pouvoir les améliorer). Nous avons lu que Matlab avait en 2012 mis à jour sa boite à outils pour la Vision par Ordinateur et que ses fonctions pouvaient être intéressantes. Il y a aussi la librairie OpenCV qui couplée au C++ peut donner de bons résultats. Nonobstant, M. Perreira n'est pas sûr que nous disposions de la toolbox Matlab. Après vérification, nous n'avons en effet pas cette toolbox disponible. Cette partie concernant les outils pour la manipulation peuvent apparaître dans la partie proposition mais ne devraient pas avoir une proportion très importante. En plus de cela, si nous le souhaitons plus tard, M. Perreira Da Silva peut nous envoyer du code Matlab pour estimer le flou d'une image.
+			\item Dans la partie proposition, deux propositions pourraient être le bienvenu. En effet, nous pourrions présenter une approche que l'on pourrait de plus performante mais que nous ne pourrions mettre en place en raison de logiciels ou d'outils non disponibles, et une approche plus réaliste axée sur les manques d'une (ou d'une combinaison) des techniques existantes. 					\item Maintenant concernant le rapport, la rédaction se termine à la partie Propositions. Il ne faut pas oublier la partie auto-contrôle qui est à compléter.
+		\end{itemize}
+	\end{echange}		
+		
+\paragraph{}
 	\begin{planification}
+		\begin{itemize}
+			\item Envoyer à M. Perreira Da Silva, au plus tard jeudi, une version bien avancée du rapport avant d'avoir un retour avant le rendu du dimanche 1er décembre.
+			\item Le diaporama sera aussi à réaliser afin de pouvoir compléter la fiche d'auto-contrôle
+			\item Le Gantt effectif de la phase I est aussi à fournir
+		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
 
-\begin{fichesuivi}{}{}
-	\tempstravailA{18}{40}
-	\tempstravailB{1}{25}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{21}{40}
-	\tempstravailB{17}{10}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{4}{30}
-	\tempstravailB{8}{15}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{10}{10}
-	\tempstravailB{11}{00}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{3}{30}
-	\tempstravailB{2}{10}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{10}{00}
-	\tempstravailB{10}{00}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{3}{45}
-	\tempstravailB{10}{20}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{16}{30}
-	\tempstravailB{18}{15}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{14}{30}
-	\tempstravailB{22}{30}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{17}{45}
-	\tempstravailB{12}{50}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-\begin{fichesuivi}{}{}
-	\tempstravailA{13}{10}
-	\tempstravailB{9}{30}
-
-	\begin{travaileffectue}
-	\end{travaileffectue}
-
-	\begin{travailnoneffectue}
-	\end{travailnoneffectue}
-
-	\begin{echange}
-	\end{echange}
-
-	\begin{planification}
-	\end{planification}
-\end{fichesuivi}
-
-Le tableau récapitulatif du temps consacré au projet est \emph{obligatoire}. Si vous n'utilisez pas strictement le modèle de fiche de suivi fourni, il vous faudra l'établir vous-même. Dans le cas contraire, une commande permet de le générer automatiquement avec le texte qui le référence et des hyper-liens vers chacune des fiches (paragraphe ci-dessous).
 
 \printweeksummary
 
 \chapter{Auto-contrôle et auto-évaluation}
 
-Cette annexe est \emph{obligatoire}.
-
-La figure~\ref{fig:AutoEvaluationTravailIntermediaire} permet d'énumérer un certain nombre de points importants dans les trois composantes du travail :
-\begin{enumerate}
-   \item rapport ;
-   \item présentation orale ;
-   \item travail de fond ;
-\end{enumerate}
-ainsi que d'évaluer notre niveau de satisfaction à l'issue de la phase~I, composée de trois étapes :
-\begin{enumerate}
-	\item étude préalable ;
-	\item étude bibliographique ;
-	\item conception générale.
-\end{enumerate}
-
-Les points de satisfaction ou d'insatisfaction peuvent être approfondis.
+La figure~\ref{fig:AutoEvaluationTravailIntermediaire} présente l'auto-évaluation que nous avons réalisée pour la première partie du projet de recherche.
 
 \begin{figure*}
 	\centering
@@ -1555,23 +850,4 @@ Les points de satisfaction ou d'insatisfaction peuvent être approfondis.
 	\caption{Points à contrôler à l'issue de la phase I}
 	\label{fig:AutoEvaluationTravailIntermediaire}
 \end{figure*}
-
-La figure~\ref{fig:AutoEvaluationTravailFinal} permet d'énumérer un certain nombre de points importants dans les trois composantes du travail ainsi que d'évaluer notre niveau de satisfaction à l'issue de la phase~II, constituée de :
-\begin{enumerate}
-	\item la conception détaillée ;
-	\item la réalisation ;
-	\item la recette.
-\end{enumerate}
-
-\begin{figure*}
-	\centering
-      \ifscreen
-         \rotatebox{90}{\includegraphics[width=0.9\textheight]{Images/Grille-Evaluation-PRD2}}
-      \else
-         \includegraphics[width=0.9\textwidth]{Images/Grille-Evaluation-PRD2}
-      \fi
-	\caption{Points à contrôler à l'issue de la phase II}
-	\label{fig:AutoEvaluationTravailFinal}
-\end{figure*}
-
 \end{document}
