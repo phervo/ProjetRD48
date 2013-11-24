@@ -157,23 +157,31 @@ Une fois familiarisés avec les enjeux du contexte, le chapitre~\ref{chap:Propos
 \label{chap:EtatArt}
 Dans ce chapitre, nous allons dérouler/présenter un état de l’art sur l’amélioration de photographies, et plus particulièrement sur les photographies de portrait. Cette étude traverse plusieurs domaines qui sont la photographie de manière générale, la photographie de portrait donc de visage, les améliorations possibles à ces différents niveaux, et la manière d’évaluer la qualité esthétique.
 
+
 Dans une première partie nous présenterons les critères principaux jugeant l’esthétique d’une photographie de portrait, puis dans une seconde partie nous étudierons les techniques, méthodes d’amélioration automatique des scènes de portrait, des photographies (images numériques), des visages.
+
 
 \section{De ce qui caractérise l’esthétique d’une photographie...}
 
-Qu’est ce qui rend une photographie attirante aux yeux d’un observateur humain? Qu’est ce qui va différencier la photo prise par un amateur de celle prise par un professionnel ? Quels sont les éléments les plus discriminants dans un processus d'évaulation de photographies ?
+
+Qu’est ce qui rend une photographie attirante aux yeux d’un observateur humain? Qu’est ce qui va différencier la photo prise par un amateur de celle prise par un professionnel ? Quels sont les éléments les plus discriminants dans un processus d'évaluation de photographies ?
+
 
 Il nous est nécessaire de répondre à l’ensemble de ces questions avant même de songer à formuler une proposition. C’est pourquoi dans cette première partie, nous commencerons par présenter ce qui régit l'esthétique d’une photographie simple, puis nous nous intéresserons plus particulièrement au cas du portrait, cœur de notre projet et qui possède des caractéristiques propres.
+
 
 
 \subsection{Qu’est-ce qu’une photographie agréable ?}
 Dans ce point nous allons traiter de ce qui rend une photo agréable à regarder pour un observateur humain. Tout d’abord, les critères peuvent faire référence à deux niveaux d'analyse.
 
+
 D’une part, des critères subjectifs telle l’originalité \cite{Datta} dont l’évaluation varie selon la sensibilité d’une personne à l’autre. Il n’existe pas de consensus parmi les professionnels pour déterminer ces paramètres. Ils sont catégorisés comme critères de haut niveau par opposition aux critères de bas niveau qui eux se basent sur les propriétés physiques et les métadonnées de l’image. Toujours dans le même article, les auteurs utilisent 56 propriétés liées aux photographies pour déterminer leur pertinence. Au niveau pratique, 15 propriétés semblent plus discriminantes que les autres.
 \paragraph*{}
 Cependant Dhar et al. \cite{Dhar} montre que l’on peut distinguer quelques critères objectifs qui vont nous permettre de déterminer que la photo prise a été prise par un professionnel. Il s’agit  d’arrangements qu’il va apporter à la scène et qui sont liés à son expérience métier. Parmi ces critères on distinguera la composition de la scène avec l'arrangement des objets et des couleurs. Une règle de composition des objets bien connue est la règle des tiers et des lignes de forces. Tout objet présent sur une de ces lignes se voit mis en valeur naturellement. On trouve encore des attributs liés au contenu tel que le choix des personnages, leur placement, le choix du type de scène (intérieur ou extérieur). Enfin une partie importante correspond à mettre en valeur l'éclairage naturel présent au moment de la prise. Tous ces éléments vont mettre en avant la créativité, la touche unique du photographe de métier.
 
+
 On peut voir un exemple de ces principes sur la figure~\ref{fig:ComparaisonPhotosAmateurPro} avec à gauche une image prise par un photographe professionnel et à droite l’image prise par un amateur. Le rendu est plus appréciable à gauche en raison des couleurs plus vives, mais aussi de la luminosité adéquate. On peut aussi voir que le tiers bas est sombre et qu’il permet de découper la photographie et d’accentuer l’attention sur le pont. Le tiers haut est aussi bien choisi avec le dégradé bleu du ciel. En opposition, celle de l’amateur présente des couleurs plus ternes et moins chaleureuses.
+
 
 \begin{figure*}
 	\centering
@@ -183,14 +191,17 @@ On peut voir un exemple de ces principes sur la figure~\ref{fig:ComparaisonPhoto
 \end{figure*}
 
 
+
 \paragraph*{}
-De leur côté, Ke et al. Confortent cette idée et ajoute une liste d’autres critères de haut niveau qui permettent de déterminer le professionnalisme de celui qui l’a prise. Il y a tout d’abord la simplicité, c'est à dire à quel point il est facile de détacher le sujet du fond. Plus c'est simple, plus la photo est de bonne qualité. Cela se caractérise en pratique par la distribution des couleurs (ou le nombre de teintes), moins la palette utilisée est large, plus la photo est professionnelle. Mais également le niveau de flou, plus une photo est flou, moins le soin apporté lors de la prise est grand et donc moins bonne est la qualité.
+De leur côté, Ke et al. . \cite{Ke}  confortent cette idée et ajoute une liste d’autres critères de haut niveau qui permettent de déterminer le professionnalisme de celui qui l’a prise. Il y a tout d’abord la simplicité, c'est à dire à quel point il est facile de détacher le sujet du fond. Plus c'est simple, plus la photo est de bonne qualité. Cela se caractérise en pratique par la distribution des couleurs (ou le nombre de teintes), moins la palette utilisée est large, plus la photo est professionnelle. Mais également le niveau de flou, plus une photo est flou, moins le soin apporté lors de la prise est grand et donc moins bonne est la qualité.
 Vient ensuite le réalisme, c'est à dire à quel point la photo peut sembler atypique par rapport aux autres, la petite touche qui la rend différente.
 \paragraph*{}
-Au final, certains articles comme \cite{Ke} tendent à montrer que l'usage exclusif de l'une ou l'autre des catégories n’est pas une solution en soit et que l’utilisation des deux est nécessaire afin d’obtenir un résultat optimal. Si l’on se base uniquement sur les critères bas niveaux, on disposera de toutes les informations que l’on souhaite sur sa composition technique (histogrammes, palettes de couleurs, etc) mais on n’aura pas d’indicateurs pour évaluer sa beauté conceptuelle. Avec les critères de haut niveau, on obtiendra de bien meilleurs résultats, on aura plus d’informations sur la composition de la photo (placement des personnes, des objets par exemple) mais cela restera quand même insuffisant. En effet, nous n’aurons pas les informations techniques comme la distribution des couleurs, la luminosité, \ldots, autant de critères qui servent à détecter la touche d’originalité d’un professionnel (voir point précédent). 
+Au final, certains articles comme Ke et al. tendent à montrer que l'usage exclusif de l'une ou l'autre des catégories n’est pas une solution en soit et que l’utilisation des deux est nécessaire afin d’obtenir un résultat optimal. Si l’on se base uniquement sur les critères bas niveaux, on disposera de toutes les informations que l’on souhaite sur sa composition technique (histogrammes, palettes de couleurs, etc) mais on n’aura pas d’indicateurs pour évaluer sa beauté conceptuelle. Avec les critères de haut niveau, on obtiendra de bien meilleurs résultats, on aura plus d’informations sur la composition de la photo (placement des personnes, des objets par exemple) mais cela restera quand même insuffisant. En effet, nous n’aurons pas les informations techniques comme la distribution des couleurs, la luminosité, \ldots, autant de critères qui servent à détecter la touche d’originalité d’un professionnel (voir point précédent).
 Ainsi, au final, c’est la combinaison des deux niveaux de critères qui permet de détecter correctement le degré de beauté d’une photographie.
 
+
 Nous allons donc maintenant vous présenter de manière plus détaillée la liste des critères de chaque niveau mis en avant dans nos lectures :
+
 
 \paragraph{Critères dits de haut niveau} : ce sont dans l'ensemble des caractéristiques plus subjectives et que l'on peut calculer à partir de mesures faites à plus bas niveau
 \subparagraph{Attributs liés à la composition des photographies}
@@ -198,64 +209,97 @@ Nous allons donc maintenant vous présenter de manière plus détaillée la list
 \item[Règle des Tiers]
 La règle des tiers consiste à diviser la photo en 6 blocs égaux en ajoutant deux lignes virtuelles verticales et deux lignes virtuelles horizontales. Il a  été prouvé qu’une photo est plus esthétique si le sujet se trouve sur l’une de ces lignes ou à l’une des intersections de ces lignes. Pour savoir si la photo respecte cette règle, on détecte le sujet principal de l’image et on calcule la distance entre le centre de la forme détectée et ces lignes/intersections.
 
+
 \item[Profondeur de champ]
-La profondeur de champ désigne une technique où les objets ou personnes proches sont mises en avant sur la photographie par rapport au fond. Pour cela, on applique un flou sur  le fond, ce qui a pour effet de faire ressortir les objets non flouttés (donc nets) et de donner une impression de profondeur à la photo. Pour obtenir cet effet de manière technique, on utilise un filtre sur l’image qui va déterminer un coefficient de flou à appliquer.
+La profondeur de champ désigne une technique où les objets ou personnes proches sont mises en avant sur la photographie par rapport au fond. Pour cela, on applique un flou sur  le fond, ce qui a pour effet de faire ressortir les objets non floutés (donc nets) et de donner une impression de profondeur à la photo. Pour obtenir cet effet de manière technique, on utilise un filtre sur l’image qui va déterminer un coefficient de flou à appliquer.
+
 
 \item[Couleurs complémentaires]
 Il existe certaines couleurs qui vont mieux ensembles que d’autres, voire qui donnent une ambiance à la scène. Il s’agit des couleurs qui se trouvent à deux extrémités différentes du spectre de couleur. On va donc privilégier ces complémentarités de couleurs dans une photographie afin de la rendre plus belle à regarder ou lui donner un certain effet de style. Pour détecter cela, une solution est de construire un tableau  qui indique dans quelle partie du spectre se trouve une couleur puis d’apprendre au logiciel laquelle se retrouve fréquemment  avec quelle autre via une algorithme d’apprentissage.
 
+
 \item[Présence d'un objet saillant]
-Cet indicateur permet de détecter les objets larges séparés du fond de l’image. Pour cela, trois techniques sont combinées : un filtre de contraste multi-échelle pour détecter les formes, un histogramme des pixels avoisinants pour détecter les changements de couleur et dans le même ordre d’idées un filtre pour avoir la distribution des couleurs de l’image.
+Cet indicateur permet de détecter les objets larges séparés du fond de l’image. Pour cela, trois techniques sont combinées : une carte de contraste multi-échelle pour détecter les formes, un histogramme des pixels avoisinants pour détecter les changements de couleur et dans le même ordre d’idées une cartographie de la distribution des couleurs de l’image.
 \end{description}
+
 
 \subparagraph{Attributs liés au contenu}
 \begin{description}
 \item[Présence de personnes]
-C’est un attribut de haut niveau qui permet d’indiquer si des personnes sont présentes ou non sur une image. Les études indiquent que les observateurs humains apprécient les photos mettant en scène leurs congénères. Pour cela, on se sert d’algorithmes automatiques comme celui développé par Viola et Jones. La limite de ce critère est que le performance dépend de l’algorithme utilisé et généralement de l’apprentissage réalisé au préalable. 
+C’est un attribut de haut niveau qui permet d’indiquer si des personnes sont présentes ou non sur une image. Les études indiquent que les observateurs humains apprécient les photos mettant en scène leurs congénères. Pour cela, on se sert d’algorithmes automatiques comme celui développé par Viola et Jones. La limite de ce critère est que le performance dépend de l’algorithme utilisé et généralement de l’apprentissage réalisé au préalable.
+
 
 \item[Portrait d'une personne]
-Un portrait est aussi un type de scène que l’on apprécie. L’indice de détection de portrait consiste à indiquer si les pixels représentant le visage sur la photographie représentent plus d’un certain pourcentage de l’image et si cette dernière peut donc être classifier comme portrait. Il s’agit d’un simple seuil à dépasser, par exemple si le visage représente plus de 25% de l’image.
+Un portrait est aussi un type de scène que l’on apprécie. L’indice de détection de portrait consiste à indiquer si les pixels représentant le visage sur la photographie représentent plus d’un certain pourcentage de l’image et si cette dernière peut donc être classifier comme portrait. Il s’agit d’un simple seuil à dépasser, par exemple si le visage représente plus de 25\% de l’image.
+
 
 \item[Photo en intérieur ou extérieur]
 Ce paramètre indique si la photo a été prise en intérieur ou en extérieur. Pour cela, on utilise un algorithme avec apprentissage sur un jeu de données spécifiques contenant les deux types de scènes. Ce paramètre permettra de juger la beauté de la photo sur le principe qu’une photographie en extérieur est plus esthétique qu’une photographie en intérieur (on parle ici de la photographie en général et pas du cas particulier du portrait).Ce critère seul est assez compliqué à utiliser pour discriminer l’esthétique, il gagne à être combiner avec d’autres.
 
+
 \item[Type de scène]
-L’indicateur type de scène permet de détecter l’environnement dans laquelle la photographie a été prise, s’il s’agit d’un salon, d’un bureau, d’une plage, ect. Pour cela on s’appuie sur un algorithme de détection du type SVM ayant eu une phase d’apprentissage au préalable.
+L’indicateur type de scène permet de détecter l’environnement dans laquelle la photographie a été prise, s’il s’agit d’un salon, d’un bureau, d’une plage, \ldots. Pour cela on s’appuie sur un algorithme de détection du type SVM ayant eu une phase d’apprentissage au préalable.
+
 
 \end{description}
+
 
 \subparagraph{Luminosité du ciel}
 La luminosité du ciel va jouer un rôle important. En effet, cela va apporter un éclairage différent sur la scène et donc une ambiance particulière. Le fait que la photographie soit prise de jour ou à la tombée de la nuit ne va pas apporter la même atmosphère. De la même manière, une photo prise par beau temps va être jugée plus jolie qu’une photo prise par temps gris. La première étape ici est de détecter la partie relative au ciel dans la photo, puis d’analyser l’histogramme des couleurs et/ou la luminosité.
 
+
 \subparagraph{Mesure du Caractère familier}
-L’être humain compare instinctivement une photo qu’il regarde avec celles qu’il a déjà vues dans le passé. Ainsi, quelque chose de “nouveau” pourra avoir un certain impact sur l’observateur. Pour déterminer ce facteur de manière informatique, on calcule la distance de certains critères de bas niveau de l’image par rapport à ces critères obtenus en apprentissage sur d’autres photos. Ce critère est difficilement utilisable quand on analyse une photographie seule (et non par par lots).
+L’être humain compare instinctivement une photo qu’il regarde avec celles qu’il a déjà vues dans le passé. Ainsi, quelque chose de “nouveau” pourra avoir un certain impact sur l’observateur. Pour déterminer ce facteur de manière informatique, on calcule la distance de certains critères de bas niveau de l’image par rapport à ces critères obtenus en apprentissage sur d’autres photos. Ce critère est difficilement utilisable quand on analyse une photographie seule (et non par lots).
+
 
 \subparagraph{Étude de la texture}
 Le fait que l’image soit lisse ou granuleuse va avoir un impact sur l’évaluation de sa beauté. Une image granuleuse sera plutôt bien évaluée tandis qu’une image lisse aura plutôt tendance à indiquer un hors champ et donc une image de mauvaise qualité. Pour détecter cela, on applique des filtres de texture pour détecter si l’image est granuleuse ou lisse.
 
+
 \subparagraph{Taille et Ratios}
 La taille d’une image et surtout le ratio hauteur/largeur aura un gros impact sur la perception de l’utilisateur humain. Pour détecter cela, on introduit une simple formule d’échelle pour détecter si l’image respecte l’une des normes photographiques. Certains préfèrent les rations 4:3 ou d’autres 16:9.
 
+
 \subparagraph{Complexité des formes}
-\subparagraph{Image colorée}
-\subparagraph{Nombre de couleurs}
+Il a été prouvé que les formes avaient un impact sur la perception de l’observateur. L'idée étant de détecter par un traitement automatique quelles formes plaisent plus que d’autres. Cependant, il s’agit d’un travail laborieux car il faut mettre en place un outil pour détecter tous les types de formes et ensuite lui faire apprendre sur une base d’image quelles formes ont une réelle signification et dans quel contexte. 
+
+
+\subparagraph{Image colorée \& Nombre de couleurs}
+L’étude des couleurs dans une image permet d’évaluer plusieurs choses. Tout d’abord, cela permet de déterminer si l’image est monochromatique  ou polychromatique. S’il n’est pas censé y avoir un effet particulier sur la photo (comme un filtre de type sépia par exemple) alors on peut déduire qu’il y a eu un problème au niveau de la prise. Ces images seront alors considérées comme prises par un amateur.
+Le deuxième point pour séparer une photo prise par un amateur de celle prise par un professionnel est que la seconde possède moins de couleurs distinctes. En effet le photographe va jouer sur les couleurs complémentaires pour mettre en valeur le sujet avec peu de couleurs. Il utilisera quand même des filtres pour jouer sur les nuances. En conclusion, on trouvera donc moins de couleurs différentes mais plus de nuances d’une même couleur au niveau du sujet sur une photo professionnelle. A l’inverse, au niveau du fond de l’image on trouvera peu de nuances étant donné que c’est le sujet qui doit être mis en avant.
 
 
 \paragraph{Critères dits de bas niveau} : ce sont les caractéristiques objectives déterminées à partir des métadonnées des photographies
 \subparagraph{Histogramme de la couleur du ciel}
+Pour évaluer les critères haut niveaux relatifs aux ciels que nous avons présentés précédemment, il est nécessaire de pouvoir se baser sur des critères bas niveau. Le critère retenu est un histogramme dans l’espace HSV pour déterminer la tendance dominante. L’histogramme peut être utilisé à plus haut niveau pour différencier les différents types de ciel.
 \subparagraph{Propriétés de Haar}
+Les propriétés de Haar relèvent d’une technique de détection des sous-régions d’une image. Ces propriétés sont directement utilisées par l’algorithme de détection des visages élaboré par Viola et Jones. Par exemple, si la zone des yeux est plus sombre que celle des joues, ces zones peuvent être modélisées par des rectangles adjacents. La position de ces rectangles devient de plus en plus précise en ayant une grande base d’apprentissage. La méthode de Viola et Jones utilise des fenêtres sur une image pour séparer les régions et déterminer une boite englobant un visage s’il y en a.
+
+
 \subparagraph{Mesure du flou}
+Pour mesurer le flou, on applique un filtre Gaussien pour retirer les hautes fréquences de l’image puis une transformée de fourrier. Le niveau de flou de la photo est inversement proportionnel à l’indice obtenu.
+
+
 \subparagraph{Carte de contraste multi-échelle}
+Cette technique bas niveau identifie des zones de pixels au contraste similaire dans une image. L’image est analysée à plusieurs échelles, à un niveau local et global. Une carte des régions de contraste est réalisée sur les objets et formes qui y sont détectés. Cette carte peut être utilisée à un plus haut niveau pour comparer une région à une carte de contraste d’un objet connu. Avec cela on peut déterminer ce qui se trouve sur une image, le tout à condition que la base de connaissance soit suffisamment fournie. Cet outil est difficilement applicable dans un premier temps car il présuppose une détection de formes ou d’objets dans l’image traitée. 
+
+
 \subparagraph{Saturation et Teinte}
+Une photographie est composée de tout un ensemble de pixels possédant chacun une teinte d’une intensité plus au moins forte. Cette variation d’intensité est la saturation. Si l’intensité d’une couleur est forte on parle de haute saturation et la couleur est alors vive. A l’inverse une saturation faible donne une impression de couleur terne. En utilisant ce critère on peut à un niveau local ou global étudier les conditions de prise de photographie par exemple. Une saturation globale très faible juge une image fade.
+
+
 \subparagraph{Luminosité}
+La luminosité est l’un des critères de base de la photographie. Une surexposition  comme une sous-exposition conduiront à une image trop claire ou trop sombre et elles seront donc évaluées négativement. On reconnaîtra donc une image de qualité professionnelle comme une photographie de luminosité moyenne correspondant à la lumière du jour. Pour déterminer si notre photo correspond ou pas, on fait la moyenne de l’intensité des pixels et on compare la valeur obtenue avec celle attribuée à une bonne exposition.
 \subparagraph{}
 Tous ces critères nous permettent de juger les photographies de manière générale, mais n'existent-ils pas des propriétés propres au cas des photographies de portrait ? C'est ce que nous allons étudier dans le prochain point.
 
 
 
+
+
 \subsection{L’art d’un portrait réussi}
 Maintenant, concentrons-nous sur le caractère différent des photographies de portrait et sur ce qui est utilisé pour différencier les bonnes des mauvaises.
-Prendre une photographie de portrait est une activité qui s'est beaucoup démocratisée avec l'avènement des appareils photos numériques et des smartphones aux capteurs de plus en plus puissants. Malgré les scènes de prises de photos dédiées aux photos portraits, les résultats ne nous satisfont pas toujours.
+Prendre une photographie de portrait est une activité qui s'est beaucoup démocratisée avec l'avènement des appareils photos numériques et des smartphones aux capteurs de plus en plus puissants. Malgré les scènes de prises de photos dédiées aux photos de portrait, les résultats ne nous satisfont pas toujours.
 \paragraph*{}
 Très souvent, affligés de ce constat, nombreux se tournent vers la retouche de leurs clichés. Les principaux points retouchés dans les photographies de portrait, sont la netteté du visage, le retrait des yeux rouges (dus à l'usage du flash qui se reflète dans nos yeux), un équilibrage de la balance des blancs afin de redonner à la peau une teinte plus naturelle, la correction des imperfections cutanées, la modification de la forme de certaines zones du visage (comme le nez), la diminution des rides et signes de l'âge... Ce panel n'est pas exhaustif étant donné que selon les photos la correction de certains points est plus utile que sur d'autres.
 \paragraph*{}
@@ -264,63 +308,73 @@ La retouche peut s'avérer couteuse, surtout en ce qui concerne l'acquisition d'
 Nous ne nous intéresseront pas dans ce projet à ce qui fait la beauté intrinsèque des visages que l'on a photographiés, mais nous pouvons citer l'étude suivante, par Leyvand et Al.\cite{Leyvand2008}, qui a cherchée à déterminer ce qui fait qu'un visage est attirant ou non. Dans leurs travaux, à l'issue de l'analyse d'une base d'images ayant des niveaux d'attirance différents,  une méthode a été développée pour modifier des visages de sorte qu'ils nous plaisent plus. Cette technique est basée sur la construction de masque de visages de beauté moyenne. L'intérêt de cette étude est que nous serions sensibles à un certain type de visage mais aussi d'expression.
 \paragraph*{}
 De plus, les êtres humains sont très sensibles à la symétrie des visages comme le présente Perret et Al. \cite{Perrett1999}. Même si nous préférons des visages symétriques, leur article indique qu'un certain degré d'asymétrie est quand même appréciable et plus attirant. La figure~\ref{fig:VisagesSymetriques} présente en haut les visages naturels et en-dessous une version corrigée de la symétrie des visages.
- 
- \begin{figure*}
+\begin{figure*}
 	\centering
 	\includegraphics[width=0.5\textwidth]{Images/ea_visages_symetriques}
 	\caption{Comparaison entre des visages asymétriques et plus symétriques\cite{Perrett1999}}
 	\label{fig:VisagesSymetriques}
 \end{figure*}
 
-Males et AL. \cite{Males2013} ont développé une procédure d'évaluation de photographie de portraits sur 10 critères. Certains sont communs aux photographies classiques comme la profondeur de champ et la luminosité, et certains sont spécifiques au cas des portraits tels que la netteté du visage et la taille du visage. Les critères qui ont été retenus sont les suivants : 
+
+Males et AL. \cite{Males2013} ont développé une procédure d'évaluation de photographie de portraits sur 10 critères. Certains sont communs aux photographies classiques comme la profondeur de champ et la luminosité, et certains sont spécifiques au cas des portraits tels que la netteté du visage et la taille du visage. Les critères qui ont été retenus sont les suivants :
+
 
 
 \subparagraph{Critères vus précédemment} profondeur de champ, contraste, composition (type règle des tiers)
 \subparagraph{La netteté} dans ce type de photo, c'est bien entendu le visage qui doit être net. Un visage flou n'est pas agréable à regarder. Son calcul est basé sur deux facteurs (mesure spectrale sur l’ampleur de spectre local et une mesure spatiale sur la variation des maximums locaux). Cependant ce critère est moins apprécié sur certaines zones du visage comme les rides par exemple
 \subparagraph{La clarté} dans le sens d'une image peu chargée. Une image ayant trop d'objet n'aide pas à la mise en avant du visage. La clarté est calculée comme un pixel moyen à partir de l’espace de couleur HSL.
 \subparagraph{La coupure et la surexposition} un visage surexposé à la lumière donne une impression de photographie mal pensée. Le degré de  surexposition est calculé dans l’espace de gris de la photo. La surexposition est estimée comme le pourcentage de la zone du visage qui a ses pixels valués à la plus forte intensité (les plus clairs).
-\subparagraph{La taille du visage} relatif à l’essence des photos de portrait. C'est un critère qui fait écho à celui de la présence d'un objet sailliant et donc principal. L’œil doit être attiré par le visage, il faut donc évaluer un ratio entre la zone du visage et la taille de l’image totale
+\subparagraph{La taille du visage} relatif à l’essence des photos de portrait. C'est un critère qui fait écho à celui de la présence d'un objet saillant et donc principal. L’œil doit être attiré par le visage, il faut donc évaluer un ratio entre la zone du visage et la taille de l’image totale
 \subparagraph*{}
 Une photo comme la figure~\ref{fig:VisageAgreable} est un bon exemple du respect de ces critères.
 
- \begin{figure*}
+
+\begin{figure*}
 	\centering
 	\includegraphics[width=0.7\textwidth]{Images/ea_visageagreable}
 	\caption{Une photographie respectant les critères esthétiques dans le cas de portrait\cite{Males2013}}
 	\label{fig:VisageAgreable}
 \end{figure*}
 
-Nous connaissons désormais les grands critères utilisés pour analyser les photographies ainsi que celles relevant spécifiquement des portraits. Dans le prochain point nous allons parcourir quelques idées pour l'évaluation de la qualité des images. 
+
+Nous connaissons désormais les grands critères utilisés pour analyser les photographies ainsi que celles relevant spécifiquement des portraits. Dans le prochain point nous allons parcourir quelques idées pour l'évaluation de la qualité des images.
+
 
 
 \subsection{Techniques d’évaluations et bases d’images}
 
-Cette partie s’inscrit dans le processus de discrimination des photographies et présente brièvement quelques travaux qui ont été menés pour évaluer la qualité de photographies. L’évaluation de la qualité des photographies que nous générerions avec la méthode que nous proposons serait intéressante. Si le temps nous le permet cet aspect pourrait être vu plus en détail à la fin du projet. 
 
-De nombreuses techniques utilisent des classificateurs basés sur un apprentissage supervisé, comme celle de Males et AL. \cite{Males2013}. Dans leur méthode les critères bas niveau sont calculés sur l’ensemble de l’image tels que le contraste et le nombre de teintes. Les critères haut niveau sont directement calculés dans la boite englobant le visage (détecté par la méthode de Viola et Jones). Une fois tous les critères calculés, ils sont normalisés et inclus dans un vecteur. Vecteurs qui vont alimenter le classificateur. Deux classificateurs ont été utilisés dans leurs travaux afin de comparer leur performances, il s’agit de SVM et d’AdaBoost. SVM a été en moyenne meilleur qu’AdaBoost. Ils ont établi un comparatif de la précision des deux classificateurs dans le tableau~\ref{tab:ComparaisonSVMAdaBoost}. On peut constater que l'usage d'un SVM semble un peu plus performant.
+Cette partie s’inscrit dans le processus de discrimination des photographies et présente brièvement quelques travaux qui ont été menés pour évaluer la qualité de photographies. L’évaluation de la qualité des photographies que nous générerions avec la méthode que nous proposons serait intéressante. Si le temps nous le permet cet aspect pourrait être vu plus en détail à la fin du projet.
+
+
+De nombreuses techniques utilisent des classificateurs basés sur un apprentissage supervisé, comme celle de Males et AL. \cite{Males2013}. Dans leur méthode les critères bas niveau sont calculés sur l’ensemble de l’image tels que le contraste et le nombre de teintes. Les critères haut niveau sont directement calculés dans la boite englobant le visage (détecté par la méthode de Viola et Jones). Une fois tous les critères calculés, ils sont normalisés et inclus dans un vecteur. Vecteurs qui vont alimenter le classificateur. Deux classificateurs ont été utilisés dans leurs travaux afin de comparer leurs performances, il s’agit de SVM et d’AdaBoost. SVM a été en moyenne meilleur qu’AdaBoost. Ils ont établi un comparatif de la précision des deux classificateurs dans le tableau~\ref{tab:ComparaisonSVMAdaBoost}. On peut constater que l'usage d'un SVM semble un peu plus performant.
+
 
 \begin{table}
 \begin{center}
 \begin{tabular}{|c|c|}
-\hline 
- & Précision de la classification \\ 
-\hline 
-SVM & 86.33\% \\ 
-\hline 
-Real AdaBoost & 84.66\% \\ 
-\hline 
-\end{tabular} 
+\hline
+& Précision de la classification \\
+\hline
+SVM & 86.33\% \\
+\hline
+Real AdaBoost & 84.66\% \\
+\hline
+\end{tabular}
 \end{center}
 \caption{Tableau des résultats de classification avec des techniques différentes \cite{Males2013}}
 \label{tab:ComparaisonSVMAdaBoost}
 \end{table}
 \paragraph*{}
-Afin que ces méthodes fonctionnent il faut être en mesure de fournir une base de visages qui permettraient d’entrainer les algorithmes mais aussi de les éprouver en phase de test. 
+Afin que ces méthodes fonctionnent il faut être en mesure de fournir une base de visages qui permettraient d’entrainer les algorithmes mais aussi de les éprouver en phase de test.
 Des bases avec de grands nombres de photographies de portrait sont indéniablement préférables. Le site du Laboratoire d'Informatique et des Systèmes Adaptatifs (LISA) de l'Université de Montréal liste des bases d'images qui pourraient être utilisées par ses étudiants\footnote{\url{http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/FacesDatabases}}. Cependant toutes les bases ne sont plus accessibles, et pour celles qui le sont, des demandes d'utilisations doivent être envoyées aux laboratoires de recherches responsables de ces bases. Dans la majeure partie de leurs bases, de nombreuses expressions de visages sont enregistrées et peuvent être utilisées pour tester la robustesse des algorithmes de détection des visages et des zones caractéristiques comme les yeux, le nez, la bouche.
 
-Nos recherches nous ont conduites à un rapport de projet de recherche écrit par David et Sissoko\footnote{\url{http://madoc.univ-nantes.fr/pluginfile.php/480996/mod_folder/content/3/DAVID\%20SISSOKO\%20Rapport\%20v2.pdf?forcedownload=1}} . Leur étude était axée sur la beauté des visages, et afin d'éprouver leur proposition d'extraction et de notation des visages, ils ont utilisés les bases d'images de Karolinska et de LEI.
+
+Nos recherches nous ont conduites à un rapport de projet de recherche écrit par David et Sissoko\footnote{\url{http://madoc.univ-nantes.fr/pluginfile.php/480996/mod_folder/content/3/DAVID\%20SISSOKO\%20Rapport\%20v2.pdf?forcedownload=1}}. Leur étude était axée sur la beauté des visages, et afin d'éprouver leur proposition d'extraction et de notation des visages, ils ont utilisés les bases d'images de Karolinska et de LEI.
+
 
 La base Karolinska répertorie des visages sous différentes expressions de suédois. Ce sont donc des photographies de visages européens. Cette base propose une base d'images de résolutions convenables (562*762) en comparaison de résolutions plus faibles dans la base FEI de 260*360. Par contre la base FEI met en avant 200 visages de brésiliens sous plusieurs positions différentes. La base de Karolinska est donc plus qualitative que la base FEI, mais on on observe l'inverse en ce qui concerne la partie quantitative. Un point pourrait au final nous faire pencher vers la base FEI, c'est la présence d'un fond qui n'est pas terne comme dans la base Karolinska.
+
 
 \paragraph*{}
 A présent que nous savons ce qu'il faut étudier sur une photographie de portrait, il est temps de nous intéresser aux méthodes qui permettent d'améliorer et retoucher de manière automatique existantes. Puis nous nous forgerons un comparatif des critères esthétiques importants avec ceux utilisés afin de déterminer ceux qui pourraient manquer dans les méthodes.
@@ -328,37 +382,65 @@ A présent que nous savons ce qu'il faut étudier sur une photographie de portra
 
 
 \section{\ldots Aux techniques d’amélioration automatiques de nos photographies de portrait}
-Préciser la frontière entre l’amélioration de photographie et la modification d’image en utilisant l’article Data-driven enhancement of facial attractiveness, il y a une partie consacrée à cela.
+L’étude des critères esthétiques faite, nous savons quels sont les éléments pertinents qui influent dans la qualité des photographies de portrait. Cette seconde partie de l’état de l’art présente une analyse critique des méthodes et techniques existantes qui ont été développées en vue d’améliorer nos clichés et de faire ressortir tout leur potentiel 
 
-Dans certains cas, nous pouvons posséder des clichés que l'on qualifierait de raté car les yeux du sujet sont fermés. Cela ne pose pas de problèmes lorsque nous avons pris la précaution de prendre plusieurs photographies mais le cas échéant, une méthode a été développée pour réinsérer des yeux là où ils sont fermés par Li et Al.\cite{Li2011}. 
-Mais ne franchit-il pas la limite que nous nous imposons de ne pas modifier l’image ?
+Cette section débute par la présentation des techniques de correction dans un esprit global, elle sera suivie logiquement par celles ayant une essence locale.
 
-Un autre point concerne les couleurs de manière globale. Avec un appareil photo de mauvaise qualité ou des mauvaises conditions de prises, on obtient facilement une photo avec des couleurs qui dévient de l’original. Retoucher en vue de retrouver une couleur naturelle c'est ce qui est présenté par Naccari et Al. \cite{Naccari}.
-
-Le détachement du sujet par rapport au fond voir totalement changer le fond : on peut utiliser les techniques de segmentation et de fusion pour ce besoin. Liu et Al. \cite{Liu2007} ce sont concentrés sur ce sujet.
-
-\subsection{La détection de visage}
-Voir si on ne fait pas une partie dédiée à cela
-
-\subsection{Présentation de l’approche globale}
-Article pouvant être utilisé : An Algorithm For Automatic Skin Smoothing In Digital Portraits
+\subsection{Technique globale pour l’amélioration de la peau}
+L'article \cite{Lee} traite de l'amélioration de portraits numériques via un adoucissement de la peau.
 
 \paragraph{Présentation }
+Cet article s'inscrit dans le mouvement des techniques d'amélioration de portait numériques.
+Plus particulièrement, il présente un algorithme réalisant une amélioration de la peau automatiquement.
+Plusieurs étapes sont nécessaires pour réaliser ce traitement, à commencer par une phase de localisation du visage.
+Tous les points d'intérêts sont tout d'abord enregistrés. Ensuite intervient une phase d'adoucissement de la peau.
+Dans cette phase il faut créer un masque de pixels qui relèvent de la peau ou non.
+Un GMM(Gaussian Mixture Model: Mélange de Modèles Gaussiens) est ensuite calculé sur chacun de ces masques.
+Une fois cela effectué, intervient l'adoucissement à proprement parlé qui va lisser le visage sans affecter les détails du visage.
+Les résultats de ce traitement sont revendiqués comme aussi réussis que ceux obtenus de manière manuelle avec des outils d'édition d'image.
+
+\paragraph{Analyse }
+Dans l'esprit des traitements manuels et semi-automatiques, cet algorithme automatique permet, en tout cas d'après les photos jointes à l'article, de constater un résultat similaire.
+Les grandes étapes de l'algorithme sont communes à d'autres techniques d'imagerie, comme l'acquisition et le repérage des points d'intérêts.
+Ce traitement du visage couvre une partie des améliorations possibles d'une photo de portrait.
+\paragraph{Intérêt pour notre sujet }
+On gagne en temps de détection, on n’a pas besoin de localiser et d’isoler chaque petite imperfection, on récupère la totalité du visage et on corrige l’ensemble
+
+\paragraph{Limites }
+Cette technique applique de manière générale un flou sur la peau. Ce flou peut induire une perte de détails et de la netteté du visage. Hors il ne faudrait pas que la profondeur de champ s’amenuise à cause d’une augmentation du flou sur l'objet saillant de la photographie.
+
+\subsection{Méthode d’amélioration globale de portrait par recentrage du visage}
+
+\paragraph{Présentation }
+Dans \cite{Leyvand2008}, Leyvand and co traitent d'un procédé intéressant pour améliorer un portrait en utilisant la technique du recentrage.
+La première étape consiste à récupérer un mapping du visage de la personne sur le protrait en récupérant les points de repère.
+Cet ensemble de points est alors transformé en graphe où le poid de chaque arc est la distance entre les deux noeuds. 
+L'algoritme possède une base de distances apprises par apprentissage sur des photos évalués belles par des utilisateurs.
+Ainsi lors de la troisième étape, l'algorithme va détecter la photographie la plus jolie dans un intervalle de distances proche et retourner ces distances.
+Le but de rester dans un intervalle proche est de ne pas trop modifier l'image d'origine et de rester fidèle à l'apparence originelle de la personne.
+Lors de la quatrième étape, le logiciel va déplacer les pixels du visage par déformation de manière à ce qu'ils cadrent avec les longueurs retournées lors de l'étape précédent.
+Cette déformation se fait dans un plan 2d et non pas 3d.
+
 
 \paragraph{Analyse }
 
 \paragraph{Intérêt pour notre sujet }
-On gagne en temps de détection, on n’a pas besoin de localiser et d’isoler chaque petite imperfection, on récupère la totalité du visage et on corrige par rapport à un pixel jugé représentatif.
+Cet article nous a permis de voir les limites à partir desquels on ne pouvais plus parler de la correction d’imperfections mais plutôt de modification du visage. Il présente une technique efficace pour réaliser des traitements d’améliorations dans le plan 2D. 
 
 \paragraph{Limites }
-Suppose que les altérations sont situées au niveau global et modifiera l’ensemble de la photo en conséquence même si l’erreur est vraiment minime. Il ne faut donc pas se tromper et détecter de faux cas d’erreurs. Certains défauts locaux ne disparaîtront pas après le traitement. L’image obtenue est juste meilleure d’un point de vue global.
 
-\subsection{Présentation de l’approche locale}
-Articles pouvant être utilisés : Method and system for enhancing portrait images that are processed in a batch mode, Automatic Face and Skin Beautifiction using face detection
+\subsection{Méthode d’amélioration des photos de portrait par combinaison de traitements sur des sous-régions}
+Un article écrit par Matraszek et Simon\cite{Matraszek2004} nous présente un algorithme utilisé par un logiciel breveté afin d'améliorer un portrait. Cet outil combine les améliorations sur plusieurs régions.
 
 \paragraph{Présentation }
+\subparagraph{}
+Cet article nous présente un algorithme qui va détecter les zones du visage et permettre à l'utilisateur de les modifier manuellement (choisir la “dose” de correction”). Ce logiciel est conçu pour être utilisé par un public non professionnel et est donc constitué de différentes jauges qui permettent d'augmenter ou de diminuer une valeur dans les zones ciblées. On dénombre quatre zones d'améliorations possibles : la peau, les yeux, les dents et la texture de la peau.
+\subparagraph{}
+En ce qui concerne l’essence de l’algorithme, le traitement est effectué en plusieurs étapes : détection du ou des visages présents dans l’image traitée, extraire les zones clés de chaque visage comme la peau, les yeux, le nez, la bouche, les sourcils, le cou, les cheveux. Les visages sont donc segmentés selon toutes ces caractéristiques analysées. A la suite de cela, pour chaque partie du visage a été développé un traitement correctif. Les paramètres de ces traitements sont déterminés automatiquement au moyen d’algorithme permettant d’obtenir le genre et l’âge du visage traité (au moyen d’une méthode utilisant une SVM).
+Une amélioration des yeux citée pourrait être l’amélioration de la balance des blancs/ des couleurs de l’iris des yeux. Une présentation des principes des méthodes est réalisée dans la dernière partie de l’article.
 
 \paragraph{Analyse }
+Cet article nous permet de voir que des solutions payantes ont déjà été développées et nous donne une idée globale des améliorations réalisables. La solution proposée est donc un enchaînement d’améliorations donnant une image de meilleure qualité. Cet article présente les calculs pour la plupart des techniques d’améliorations. On note cependant dans l'enchaînement, la présence d’un traitement de la texture de la peau qui altère la structure du visage. Si nous devions suivre le principe de la méthode présentée, nous ferions le choix de ne pas inclure ce dernier point.
 
 \paragraph{Intérêt pour notre sujet }
 On peut détecter chaque imperfection et lui appliquer un traitement différent selon sa nature. L’amélioration est déterminée pour la zone, on a donc plus de chance de gommer l’imperfection alors que le traitement global a tendance à améliorer le tout sans se préoccuper si l’imperfection locale à bien été gommée.
@@ -366,27 +448,43 @@ On peut détecter chaque imperfection et lui appliquer un traitement différent 
 \paragraph{Limites }
 On est obligé de détecter et traiter toutes les imperfections, ce qui est plus lourd en temps de traitement.
 Il y a toujours un risque de récupérer le mauvais pixel représentatif et de l’étendre aux pixels voisins.
-
-\subsection{Changement de la technique d’appprentissage}
+\subsection{Méthode d’amélioration des photos de portrait sur des sous-régions du visage}
+Un nouveau traitement automatique du visage et de la peau est présenté dans l’article de Ciuc et Al. \cite{Ciuc2010}.
 
 \paragraph{Présentation }
+La technique présente une amélioration de sous régions de l’image.  Elle repose sur une détection préalable de sous-régions du visage. Ensuite
+Les zones choisies du visage sont améliorées au moyen d'un noyau lissant sur la luminance. L'image finale est une combinaison de certains pixels l'image originale avec ceux de la zone correspondante améliorée (pour un rendu plus naturel).
+Ici le lissage sur la luminance dans les régions est soit la génération d’un flou, soit la réalisation d’une moyenne/approximation de la luminance, ou bien une combinaison des deux. De plus un filtre réduisant le bruit peut être appliqué sur une ou plusieurs régions selon le degré de dégradation.
+L’espace de couleur utilisé lors des améliorations est l’YUV pour la séparation luminance/chrominance.
+Au début dans la description des travaux traitant de sujets similaires, sont décrites comme peu performantes les méthodes de Kodak et P\& G utilisant des traitements globaux sur l'image (plutôt que sur des zones particulières comme le propose l’article).
 
-\paragraph{Analyse }
+\paragraph{Analyse}
+La particularité de la technique ici est l’approche locale utilisée et non la globale que nous avons pu retrouver plusieurs fois. Les zones concernées (bouches et yeux principalement) peuvent subir plusieurs traitements pour supprimer les défauts de la prise de photo comme le bruit, les défauts intrinsèques du visage comme des yeux peu colorés ou des rides au niveau de la bouche. Dans l’essentiel, les moyens utilisés sont l’application de flou et la modification de la luminance (techniques très souvent utilisées pour masquer les défauts et les estomper). L’article propose donc une alternative que l’on pourrait confronter aux autres dites globales.
 
+
+\subsection{Technique d’amélioration plus fine basée sur l’analyse des défauts du portrait}
+L'article \cite{Konoplev2012} propose un système de détection et de correction des défauts des visages contenus dans une photographie.
+
+\paragraph{Présentation}
+La technique prend en entrée une image et la change de référentiel couleur et passe de RGB vers le modèle de couleur CIELAB (désigné comme proposant des corrections douces et des couleurs plus naturelles). L'image passe ensuite dans un filtre lissant qui va réduire le bruit (sur l’ensemble de l’image). Les zones de peau sont à la suite reconnues et vont passer dans un nouveau filtre lissant pour les imperfections. Le filtre utilise tout d'abord des paramètres spécifiques aux rides puis s'en suit un traitement similaire pour les rougeurs, boutons,.... Un histogramme des valeurs des couleurs caractérisant le visage est généré, il sert ensuite de base pour corriger la couleur des pixels des défauts (par la couleur la plus naturelle). Pour la distribution des couleurs caractérisant l'image, un modèle Gaussien est utilisé. L’image originale sert à l'image corrigée de base pour un autre ajustement (contraste, luminosité). L'image résultant repasse à la fin en RGB.
+
+\paragraph{Analyse}
+Ici, on peut noter l'intérêt de l'utilisation d'un autre espace de couleur, afin de ne pas être limité en RGB. Le traitement réalisé dans un espace de couleurs perceptuel permet d'obtenir des résultats plus naturels. La phase d'acquisition de la zone du visage et des zones à modifier est une nouvelle fois présente. Le fait d’appliquer le filtre anti-bruit est un point que nous n’avons pas identifié dans toutes nos lectures et il serait utile de l’inclure (pour le cas de photographie dont la qualité ne serait pas optimale). D’autre part l’application du filtre lissant sur l’image intégralement pourrait altérer les détails.
 \paragraph{Intérêt pour notre sujet }
 
 \paragraph{Limites }
+
 
 \subsection{Les approches connexes}
-Modifications ou déplacements ou lissage, amélioration de l’existant.
 
-\paragraph{Présentation }
+Préciser la frontière entre l’amélioration de photographie et la modification d’image en utilisant l’article Data-driven enhancement of facial attractiveness, il y a une partie consacrée à cela.
 
-\paragraph{Analyse }
+Dans certains cas, nous pouvons posséder des clichés que l'on qualifierait de raté car les yeux du sujet sont fermés. Cela ne pose pas de problèmes lorsque nous avons pris la précaution de prendre plusieurs photographies mais le cas échéant, une méthode a été développée pour réinsérer des yeux là où ils sont fermés par Li et Al.\cite{Li2011}.
+Mais ne franchit-il pas la limite que nous nous imposons de ne pas modifier l’image ?
 
-\paragraph{Intérêt pour notre sujet }
+Un autre point concerne les couleurs de manière globale. Avec un appareil photo de mauvaise qualité ou des mauvaises conditions de prises, on obtient facilement une photo avec des couleurs qui dévient de l’original. Retoucher en vue de retrouver une couleur naturelle c'est ce qui est présenté par Naccari et Al. \cite{Naccari}.
 
-\paragraph{Limites }
+Le détachement du sujet par rapport au fond voir totalement changer le fond : on peut utiliser les techniques de segmentation et de fusion pour ce besoin. Liu et Al. \cite{Liu2007} ce sont concentrés sur ce sujet.
 
 \section{Récapitulatif}
 
@@ -395,6 +493,10 @@ Tableau comparatif des méthodes adaptables à notre sujet de recherche
 
 \section{Conclusion}
 Bilan de l’état de l’art, Accroche vers notre proposition
+
+
+
+
 
 
 
@@ -918,15 +1020,14 @@ de la photographie
 \end{fichesuivi}
 
 \begin{fichesuivi}{18 novembre 2013}{24 novembre 2013}
-	\tempstravailA{08}{15}
-	\tempstravailB{16}{50}
-
+	\tempstravailA{12}{05}
+	\tempstravailB{19}{30}
 \paragraph{}
 	\begin{travaileffectue}
 		\begin{itemize}
 			\item Rédaction de la partie résumé du rapport avec sa classification ACM : simple, réalisée à $100$ \% ;
 			\item Mise à jour de la partie introductive du rapport : simple, réalisée à $100$%;
-			\item Rédaction de la partie état de l’art : simple, réalisée à $80$ \% ;
+			\item Rédaction de la partie état de l’art : simple, réalisée à $70$ \% ;
 			\item Rencontre avec M. Perreira Da Silva le mardi 19/11 : simple, réalisée à $100$ \% ;
 		\end{itemize}
 	\end{travaileffectue}
@@ -954,12 +1055,15 @@ de la photographie
 \paragraph{}
 	\begin{planification}
 		\begin{itemize}
-			\item Envoyer à M. Perreira Da Silva, au plus tard jeudi, une version bien avancée du rapport avant d'avoir un retour avant le rendu du dimanche 1er décembre.
+			\item Envoyer à M. Perreira Da Silva, au plus tard jeudi, une version bien avancée du rapport avant d'avoir un retour avant le rendu du dimanche 1er décembre.(état de l'art terminé, propositions formulées)
 			\item Le diaporama sera aussi à réaliser afin de pouvoir compléter la fiche d'auto-contrôle
 			\item Le Gantt effectif de la phase I est aussi à fournir
 		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
+
+
+
 
 
 
