@@ -175,7 +175,7 @@ Il nous est nécessaire de répondre à l’ensemble de ces questions avant mêm
 Dans ce point nous allons traiter de ce qui rend une photo agréable à regarder pour un observateur humain. Tout d’abord, les critères peuvent faire référence à deux niveaux d'analyse.
 
 
-D’une part, des critères subjectifs telle l’originalité \cite{Datta} dont l’évaluation varie selon la sensibilité d’une personne à l’autre. Il n’existe pas de consensus parmi les professionnels pour déterminer ces paramètres. Ils sont catégorisés comme critères de haut niveau par opposition aux critères de bas niveau qui eux se basent sur les propriétés physiques et les métadonnées de l’image. Toujours dans le même article, les auteurs utilisent 56 propriétés liées aux photographies pour déterminer leur pertinence. Au niveau pratique, 15 propriétés semblent plus discriminantes que les autres.
+D’une part, des critères subjectifs tel que l’originalité \cite{Datta} dont l’évaluation varie selon la sensibilité d’une personne à l’autre. Il n’existe pas de consensus parmi les professionnels pour déterminer ces paramètres. Ils sont catégorisés comme critères de haut niveau par opposition aux critères de bas niveau qui eux se basent sur les propriétés physiques et les métadonnées de l’image. Toujours dans le même article, les auteurs utilisent 56 propriétés liées aux photographies pour déterminer leur pertinence. Au niveau pratique, 15 propriétés semblent plus discriminantes que les autres.
 \paragraph*{}
 Cependant Dhar et al. \cite{Dhar} montre que l’on peut distinguer quelques critères objectifs qui vont nous permettre de déterminer que la photo prise a été prise par un professionnel. Il s’agit  d’arrangements qu’il va apporter à la scène et qui sont liés à son expérience métier. Parmi ces critères on distinguera la composition de la scène avec l'arrangement des objets et des couleurs. Une règle de composition des objets bien connue est la règle des tiers et des lignes de forces. Tout objet présent sur une de ces lignes se voit mis en valeur naturellement. On trouve encore des attributs liés au contenu tel que le choix des personnages, leur placement, le choix du type de scène (intérieur ou extérieur). Enfin une partie importante correspond à mettre en valeur l'éclairage naturel présent au moment de la prise. Tous ces éléments vont mettre en avant la créativité, la touche unique du photographe de métier.
 
@@ -380,74 +380,99 @@ La base Karolinska répertorie des visages sous différentes expressions de sué
 A présent que nous savons ce qu'il faut étudier sur une photographie de portrait, il est temps de nous intéresser aux méthodes qui permettent d'améliorer et retoucher de manière automatique existantes. Puis nous nous forgerons un comparatif des critères esthétiques importants avec ceux utilisés afin de déterminer ceux qui pourraient manquer dans les méthodes.
 
 
-
 \section{\ldots Aux techniques d’amélioration automatiques de nos photographies de portrait}
 L’étude des critères esthétiques faite, nous savons quels sont les éléments pertinents qui influent dans la qualité des photographies de portrait. Cette seconde partie de l’état de l’art présente une analyse critique des méthodes et techniques existantes qui ont été développées en vue d’améliorer nos clichés et de faire ressortir tout leur potentiel 
 
 Cette section débute par la présentation des techniques de correction dans un esprit global, elle sera suivie logiquement par celles ayant une essence locale.
 
 \subsection{Technique globale pour l’amélioration de la peau}
-L'article \cite{Lee} traite de l'amélioration de portraits numériques via un adoucissement de la peau.
+Nous allons commencé par vous présenter les traitements qui agissent de manière globale sur une photographie de portrait. Le premier, inventé par Lee et Al.\cite{Lee} traite de l'amélioration de portraits numériques via un adoucissement de la peau.
 
-\paragraph{Présentation }
-Cet article s'inscrit dans le mouvement des techniques d'amélioration de portait numériques.
-Plus particulièrement, il présente un algorithme réalisant une amélioration de la peau automatiquement.
-Plusieurs étapes sont nécessaires pour réaliser ce traitement, à commencer par une phase de localisation du visage.
-Tous les points d'intérêts sont tout d'abord enregistrés. Ensuite intervient une phase d'adoucissement de la peau.
+\paragraph{Présentation}
+Cet article s'inscrit dans le mouvement des techniques d'amélioration de portraits numériques.
+Plus particulièrement, il présente un algorithme réalisant une amélioration de la peau automatique qui est aussi illustré par la figure~\ref{fig:FonctionnementLee}.
+Plusieurs étapes sont nécessaires pour réaliser ce traitement, à commencer par une phase de localisation des visages contenus dans la photographie en utilisant la méthode de Viola et Jones.
+Tous les points d'intérêts sont d'abord enregistrés comme le nez, la bouche, les yeux. 
+Ensuite intervient une phase d'adoucissement de la peau.
 Dans cette phase il faut créer un masque de pixels qui relèvent de la peau ou non.
-Un GMM(Gaussian Mixture Model: Mélange de Modèles Gaussiens) est ensuite calculé sur chacun de ces masques.
-Une fois cela effectué, intervient l'adoucissement à proprement parlé qui va lisser le visage sans affecter les détails du visage.
+Un GMM(Gaussian Mixture Model: Mélange de Modèles Gaussiens) est utilisé afin de déterminé des masques de pixels correspondant à la peau ou non. 
+Sur l’image originale est appliqué un flou gaussien. A partir de cette version floue, on récupère seulement les pixels situés dans le masque de peau. On superpose ensuite le masque de peau original avec sa version floue (avec une opacité à 50%) afin d’obtenir un visage plus lisse. Le fond, et les zones ne relevant pas de la peau tels les yeux ne sont pas modifiés. 
 Les résultats de ce traitement sont revendiqués comme aussi réussis que ceux obtenus de manière manuelle avec des outils d'édition d'image.
+\begin{figure*}
+	\centering
+\includegraphics[width=0.7\textwidth]{Images/ea_algo_smoothing}
+	\caption{Principe de fonctionnement de la méthode développée par Lee et Al.l\cite{Lee}}.
+	\label{fig:FonctionnementLee}
+\end{figure*}
 
 \paragraph{Analyse }
 Dans l'esprit des traitements manuels et semi-automatiques, cet algorithme automatique permet, en tout cas d'après les photos jointes à l'article, de constater un résultat similaire.
 Les grandes étapes de l'algorithme sont communes à d'autres techniques d'imagerie, comme l'acquisition et le repérage des points d'intérêts.
-Ce traitement du visage couvre une partie des améliorations possibles d'une photo de portrait.
+Ce traitement du visage couvre une partie des améliorations possibles d'une photo de portrait. Cet article se concentre exclusivement sur le traitement de la peau, qui induit une correction par application de flou des rides par exemple.
+
 \paragraph{Intérêt pour notre sujet }
-On gagne en temps de détection, on n’a pas besoin de localiser et d’isoler chaque petite imperfection, on récupère la totalité du visage et on corrige l’ensemble
+On gagne en temps de détection, on n’a pas besoin de localiser et d’isoler chaque petite imperfection, on récupère la totalité du visage et on corrige l’ensemble des pixels de peau. En comparaison avec d’autres techniques, de bons résultats sont obtenus avec une méthode qui a une complexité qui dépend majoritairement de la détection des bons pixels de peau.
 
 \paragraph{Limites }
-Cette technique applique de manière générale un flou sur la peau. Ce flou peut induire une perte de détails et de la netteté du visage. Hors il ne faudrait pas que la profondeur de champ s’amenuise à cause d’une augmentation du flou sur l'objet saillant de la photographie.
+Cette technique applique de manière générale un flou sur la peau. Ce flou peut induire une perte de détails et de la netteté du visage. Hors il ne faudrait pas que la profondeur de champ s’amenuise à cause d’une augmentation du flou sur l'objet saillant de la photographie. Cette technique a un moment donné utilise un flou gaussien sur l’image intégrale, il est dommage que le fond flou ne soit pas réinjecté dans l’image résultat pour augmenter la profondeur de champ.
 
-\subsection{Méthode d’amélioration globale de portrait par recentrage du visage}
+Cette première méthode a l’avantage d’être assez simple à appliquer dès lors que la détection de la peau est précise. Le fait d’appliquer un flou sur le visage, provoque un lissage de ce dernier, une réduction des rides,\ldots , donc d’imperfections cutanées. Cette méthode permet aussi de traiter la peau des sujets portant une barbe ou des lunettes par exemple.
+
+
+\subsection{Méthode d’amélioration globale de portrait par déformation du visage}
+Nous allons à présent nous intéresser au cas d’une nouvelle méthode d’amélioration de visages en les déformant. 
 
 \paragraph{Présentation }
-Dans \cite{Leyvand2008}, Leyvand and co traitent d'un procédé intéressant pour améliorer un portrait en utilisant la technique du recentrage.
-La première étape consiste à récupérer un mapping du visage de la personne sur le protrait en récupérant les points de repère.
-Cet ensemble de points est alors transformé en graphe où le poid de chaque arc est la distance entre les deux noeuds. 
-L'algoritme possède une base de distances apprises par apprentissage sur des photos évalués belles par des utilisateurs.
-Ainsi lors de la troisième étape, l'algorithme va détecter la photographie la plus jolie dans un intervalle de distances proche et retourner ces distances.
-Le but de rester dans un intervalle proche est de ne pas trop modifier l'image d'origine et de rester fidèle à l'apparence originelle de la personne.
-Lors de la quatrième étape, le logiciel va déplacer les pixels du visage par déformation de manière à ce qu'ils cadrent avec les longueurs retournées lors de l'étape précédent.
-Cette déformation se fait dans un plan 2d et non pas 3d.
-
+Dans leur article, Leyvand et al.\cite{Leyvand2008} traitent d'un procédé intéressant pour améliorer un portrait en utilisant la technique de déformation du visage pour le faire ressembler à un visage jugé plus beau. La figure~\ref{fig:FonctionnemenLeyvand} illustre le fonctionnement de leur méthode. Leur méthode fonctionne de la manière suivante: 
+\begin{enumerate}
+\item La première étape consiste à détecter le visage dans la photographie ainsi que ses éléments caractéristiques. Les points repérés vont être combinés afin d’obtenir une carte du visage. 
+\item Cet ensemble de points est alors transformé en graphe où le poids de chaque arc est la distance entre les deux noeuds(sommets équivalents aux points caractéristiques du visage). Ce graphe de distances est calculé en utilisant la triangulation de Delaunay.
+\item L'algorithme possède une base de distances acquises par apprentissage sur des photos évaluées belles par des utilisateurs. Ainsi lors de la troisième étape, l'algorithme va détecter la photographie la plus jolie dans un intervalle de distances proche et retourner ces distances.
+\item Le but est de rester dans un intervalle proche est de ne pas trop modifier l'image d'origine et de rester fidèle à l'apparence originelle de la personne.
+Lors de la quatrième étape, le logiciel va déplacer les pixels du visage par déformation de manière à ce qu'ils cadrent avec le masque de distances du visage modifié à l’issue de l'étape précédent.
+\end{enumerate}
+\begin{figure*}
+	\centering
+\includegraphics[width=0.7\textwidth]{Images/ea_algo_datadriven}
+	\caption{Principe de fonctionnement de la méthode développée par Leyvand et Al.l\cite{Leyvand2008}}.
+	\label{fig:FonctionnemenLeyvand}
+\end{figure*}
 
 \paragraph{Analyse }
+Les résultats fournis dans l’article semblent encourageant et constituent une alternative viable à l’amélioration de portrait. L’obtention de bons résultats dépend fortement de la pertinence et la taille de la base des photographies pour l’apprentissage.
 
 \paragraph{Intérêt pour notre sujet }
-Cet article nous a permis de voir les limites à partir desquels on ne pouvais plus parler de la correction d’imperfections mais plutôt de modification du visage. Il présente une technique efficace pour réaliser des traitements d’améliorations dans le plan 2D. 
+Cet article nous a permis de voir les limites à partir desquelles on ne pouvait plus parler de la correction d’imperfections mais plutôt de modification du visage. Il présente une technique efficace pour réaliser des traitements d’améliorations dans le plan 2D. 
 
 \paragraph{Limites }
+En utilisant cette technique, on peut facilement tomber dans la modification de le structure du visage. Il faut alors se poser la question suivante : à partir de quel seuil peut on considérer que nous n’avons plus affaire avec le même visage ?
+
+Cet article nous a présenté une méthode d’amélioration structurelle des visages. Elle est basée sur une base d’apprentissage utilisée par une machine à vecteurs de supports pour la régression (SVR).
 
 \subsection{Méthode d’amélioration des photos de portrait par combinaison de traitements sur des sous-régions}
-Un article écrit par Matraszek et Simon\cite{Matraszek2004} nous présente un algorithme utilisé par un logiciel breveté afin d'améliorer un portrait. Cet outil combine les améliorations sur plusieurs régions.
+Nous passons à présent aux méthodes d’améliorations par traitements locaux. Dans ce premier article, écrit par Matraszek et Simon\cite{Matraszek2004} on nous présente un algorithme utilisé par un logiciel breveté afin d'améliorer un portrait. Cet outil combine les améliorations sur plusieurs régions.
 
 \paragraph{Présentation }
 \subparagraph{}
 Cet article nous présente un algorithme qui va détecter les zones du visage et permettre à l'utilisateur de les modifier manuellement (choisir la “dose” de correction”). Ce logiciel est conçu pour être utilisé par un public non professionnel et est donc constitué de différentes jauges qui permettent d'augmenter ou de diminuer une valeur dans les zones ciblées. On dénombre quatre zones d'améliorations possibles : la peau, les yeux, les dents et la texture de la peau.
 \subparagraph{}
-En ce qui concerne l’essence de l’algorithme, le traitement est effectué en plusieurs étapes : détection du ou des visages présents dans l’image traitée, extraire les zones clés de chaque visage comme la peau, les yeux, le nez, la bouche, les sourcils, le cou, les cheveux. Les visages sont donc segmentés selon toutes ces caractéristiques analysées. A la suite de cela, pour chaque partie du visage a été développé un traitement correctif. Les paramètres de ces traitements sont déterminés automatiquement au moyen d’algorithme permettant d’obtenir le genre et l’âge du visage traité (au moyen d’une méthode utilisant une SVM).
+En ce qui concerne l’essence de l’algorithme, le traitement est effectué en plusieurs étapes : détection du ou des visages présents dans l’image traitée, extraire les zones clés de chaque visage comme la peau, les yeux, le nez, la bouche, les sourcils, le cou, les cheveux. Les visages sont donc segmentés selon toutes ces caractéristiques analysées. A la suite de cela, pour chaque partie du visage a été développé un traitement correctif. Les paramètres de ces traitements sont déterminés automatiquement au moyen d’algorithme permettant d’obtenir le genre et l’âge du visage traité (au moyen d’une méthode utilisant une SVM). Ils utilisent aussi une classification des pixels de peau afin d’inclure le cou.
+Un utilisateur peut choisir d’appliquer dans l’ordre qu’il désire les différents traitements. Si ce n’est pas le cas, le logiciel dispose d’un ordre prédéfini: correction de la teinte de la peau, de la blancheur des dents et des yeux. Il termine par une modification de la structure du visage.
+\subparagraph{}
 Une amélioration des yeux citée pourrait être l’amélioration de la balance des blancs/ des couleurs de l’iris des yeux. Une présentation des principes des méthodes est réalisée dans la dernière partie de l’article.
 
-\paragraph{Analyse }
+\paragraph{Analyse}
 Cet article nous permet de voir que des solutions payantes ont déjà été développées et nous donne une idée globale des améliorations réalisables. La solution proposée est donc un enchaînement d’améliorations donnant une image de meilleure qualité. Cet article présente les calculs pour la plupart des techniques d’améliorations. On note cependant dans l'enchaînement, la présence d’un traitement de la texture de la peau qui altère la structure du visage. Si nous devions suivre le principe de la méthode présentée, nous ferions le choix de ne pas inclure ce dernier point.
 
 \paragraph{Intérêt pour notre sujet }
-On peut détecter chaque imperfection et lui appliquer un traitement différent selon sa nature. L’amélioration est déterminée pour la zone, on a donc plus de chance de gommer l’imperfection alors que le traitement global a tendance à améliorer le tout sans se préoccuper si l’imperfection locale à bien été gommée.
+On peut détecter chaque imperfection et lui appliquer un traitement différent selon sa nature. L’amélioration est déterminée pour la zone, on a donc plus de chance de gommer l’imperfection alors que le traitement global a tendance à améliorer le tout sans se préoccuper si l’imperfection locale à bien été gommée. Le plus de leur technique réside dans les multiples traitements réalisés. On peut choisir de privilégier une correction plus qu’une autre. De plus ces corrections pourraient être réutilisées séparément.
 
 \paragraph{Limites }
-On est obligé de détecter et traiter toutes les imperfections, ce qui est plus lourd en temps de traitement.
-Il y a toujours un risque de récupérer le mauvais pixel représentatif et de l’étendre aux pixels voisins.
+On est obligé de détecter et traiter toutes les imperfections, ce qui est plus lourd en temps de traitement. 
+Il y a toujours un risque de récupérer le mauvais pixel représentatif et de l’étendre aux pixels voisins. 
+Comme pour l’article sur la déformation du visage, on modifie l’apparence originelle de la personne. Il faut donc se poser les mêmes questions sur l’éthique de cette pratique et si nous décidons de l’utiliser. 
+
+
 \subsection{Méthode d’amélioration des photos de portrait sur des sous-régions du visage}
 Un nouveau traitement automatique du visage et de la peau est présenté dans l’article de Ciuc et Al. \cite{Ciuc2010}.
 
@@ -493,6 +518,10 @@ Tableau comparatif des méthodes adaptables à notre sujet de recherche
 
 \section{Conclusion}
 Bilan de l’état de l’art, Accroche vers notre proposition
+
+
+
+
 
 
 
@@ -559,12 +588,14 @@ Il nous permet également d'en retirer des critères d'évaluation de plus ou mo
 Nous avons pu voir que les attributs comme la règle des tiers, la profondeur du champ, couleurs complémentaires, présence de personnes ont un impact sur l'esthétique ressentie d'une photo.
 
 \section{\emph{Data-driven enhancement of facial attractiveness}}
-L'article \cite{Leyvand2008} traite de la problématique d'amélioration d'un portrait en utilisant la technique du recentrage. Il traite également du problème du seuil de modification maximal au-delà duquel une photo n'est plus considérée comme fidèle à l'originale.
+L'article Leyvand et al. \cite{Leyvand2008} traite de la problématique d'amélioration d'un portrait en utilisant la technique de déformation. Il traite également du problème du seuil de modification maximal au-delà duquel une photo n'est plus considérée comme fidèle à l'originale.
 
 \paragraph{Résumé}
-L'article présente les techniques utilisées pour réaliser un recentrage qui soit "plus beau" tout en restant fidèle à la photo originale. Pour cela, ils utilisent une base d'apprentissage évaluée par des utilisateurs.
-
+L'article présente les techniques utilisées pour réaliser une déformation du visage afin de le rendre  "plus beau" tout en restant fidèle à la photo originale. Pour cela, ils utilisent une base d'apprentissage évaluée par des utilisateurs.
 L'algorithme va tout d'abord évaluer la beauté de l'image d'origine et retourner un vecteur avec la position des contours du visage. Avec ce vecteur, il va déterminer quelle image de la base est jugée plus belle et proche en termes de distance vectorielle. Il va alors retourner ce positionnement pour qu'on puisse modifier l'image d'origine en déformant l'image de manière à ce que le visage se retrouve à la position souhaitée.
+
+\paragraph{Analyse}
+Cet article peut être très utile car il traite d'une manière simple de l'amélioration de la beauté du portrait en repositionnant juste le visage. La problématique de modification et fidélité est aussi importante, car il nous faut savoir quand arrêter l'amélioration d'un portait.
 
 \paragraph{Analyse}
 Cet article peut être très utile car il traite d'une manière simple de l'amélioration de la beauté du portrait en repositionnant juste le visage. La problématique de modification et fidélité est aussi importante, car il nous faut savoir quand arrêter l'amélioration d'un portait.

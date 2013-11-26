@@ -1,0 +1,7 @@
+Tout d'abord avoir LibreOffice ou OpenOffice installé.
+Ensuite dans Calc, avoir une feuille de calcul ouverte.
+Sélectionner la zone qui deviendra un tableau Latex.
+Puis faire Outils/Macros/ExecuterLaMacro
+Choisir CalcToLatex et lancer la macro Main.
+Dans la boite de dialogue peuvent être remplis le label et la légende du tableau.
+Le code Latex est ensuite affiché.
