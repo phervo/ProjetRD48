@@ -7,6 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{subfig}
 % définitions propres au contenu actuel
 \usepackage{enumerate}
 \usepackage{amsmath, amssymb}
@@ -74,7 +75,7 @@
    % - le troisième paramètre permet d'adapter la largeur du logo afin
    %   de le rendre visuellement comparable à ceux mis par défaut (université de Nantes et
    %   éventuellement laboratoire)
-\date{01 décembre 2013}
+\date{28 novembre 2013}
    % - en français les mois ne prennent pas de majuscule (sauf si vous ne mettez pas le jour)
    % - inutile de mettre un 0 devant les jours 1 à 9 du mois !
    % - le jour est peut-être même une précision inutile...
@@ -126,7 +127,7 @@ Ainsi, pouvoir concentrer une expertise dans un algorithme d'amélioration de po
 
 Cette étude est conséquemment concentrée sur l'analyse des critères esthétiques que nous humains utilisons le plus pour discriminer et qualifier un photographie attirante et réussie. Ces premiers critères étant issus de ressentis subjectifs, des critères plus objectifs sont de mises. 
 Des méthodes d'amélioration existent et se concentrent sur une partie des critères précédents, mais quelles sont celles qui dénaturent le moins le caractère naturel de l'image originale et quels sont les points qui pourraient être plus précis ? 
-C'est en analysant ce qui nous plait et ce qui est amélioré que nous pouvons apporté une proposition de réponse à notre problématique.
+C'est en analysant ce qui nous plait et ce qui est amélioré que nous pouvons apporter une proposition de réponse à notre problématique.
 
 \section{Objectifs poursuivis}
 Les objectifs de ce projet sont multiples et le premier est tout d'abord l'établissement d'un état de l'art sur plusieurs domaines. Ces domaines relèvent des critères esthétiques qui déterminent une image attirante / photographie attirante / un visage attirant. Subséquemment, l'étude des techniques d'améliorations des images, photographies, photos de visage est nécessaire. L'objectif ultime serait de condenser toutes ces techniques, ou d'améliorer une de ces techniques, qui permettrait de faire ressortir tout le potentiel d'une photo de portait. Afin de résumer l'horizon vers lequel tend ce projet, les objectifs sont donc :
@@ -181,15 +182,16 @@ D’une part, des critères subjectifs tel que l’originalité \cite{Datta} don
 Cependant Dhar et al. \cite{Dhar} montre que l’on peut distinguer quelques critères objectifs qui vont nous permettre de déterminer que la photo prise a été prise par un professionnel. Il s’agit  d’arrangements qu’il va apporter à la scène et qui sont liés à son expérience métier. Parmi ces critères on distinguera la composition de la scène avec l'arrangement des objets et des couleurs. Une règle de composition des objets bien connue est la règle des tiers et des lignes de forces. Tout objet présent sur une de ces lignes se voit mis en valeur naturellement. On trouve encore des attributs liés au contenu tel que le choix des personnages, leur placement, le choix du type de scène (intérieur ou extérieur). Enfin une partie importante correspond à mettre en valeur l'éclairage naturel présent au moment de la prise. Tous ces éléments vont mettre en avant la créativité, la touche unique du photographe de métier.
 
 
-On peut voir un exemple de ces principes sur la figure~\ref{fig:ComparaisonPhotosAmateurPro} avec à gauche une image prise par un photographe professionnel et à droite l’image prise par un amateur. Le rendu est plus appréciable à gauche en raison des couleurs plus vives, mais aussi de la luminosité adéquate. On peut aussi voir que le tiers bas est sombre et qu’il permet de découper la photographie et d’accentuer l’attention sur le pont. Le tiers haut est aussi bien choisi avec le dégradé bleu du ciel. En opposition, celle de l’amateur présente des couleurs plus ternes et moins chaleureuses.
+On peut voir un exemple de ces principes sur la figure~\ref{fig:ComparaisonPhotosAmateurPro} avec à gauche une image prise par un amateur~\ref{fig:photoama} et à droite prise par un photographe professionnel~\ref{fig:photopro}. Le rendu est plus appréciable à droite en raison des couleurs plus vives, mais aussi de la luminosité adéquate. On peut aussi voir que le tiers bas est sombre et qu’il permet de découper la photographie et d’accentuer l’attention sur le pont. Le tiers haut est aussi bien choisi avec le dégradé bleu du ciel. En opposition, celle de l’amateur présente des couleurs plus ternes et moins chaleureuses.
 
-
-\begin{figure*}
-	\centering
-\includegraphics[width=0.7\textwidth]{Images/ea_comparaison_photo_amateur_professionnel}
-	\caption{Comparaison entre la photo d'un amateur et celle d'un professionnel\cite{Ke}}
-	\label{fig:ComparaisonPhotosAmateurPro}
+\begin{figure*}[htp]
+  \centering
+  \subfloat[Photo d'un Amateur]{\label{fig:photoama}\includegraphics[scale=0.50]{Images/ea_photo_ama}}                
+  \subfloat[Photo d'un Professionnel]{\label{fig:photopro}\includegraphics[scale=0.50]{Images/ea_photo_pro}}
+  \caption{Comparaison entre la photo d'un amateur et celle d'un professionnel\cite{Ke}}
+  \label{fig:ComparaisonPhotosAmateurPro}
 \end{figure*}
+
 
 
 
@@ -216,7 +218,7 @@ La profondeur de champ désigne une technique où les objets ou personnes proche
 
 
 \item[Couleurs complémentaires]
-Il existe certaines couleurs qui vont mieux ensembles que d’autres, voire qui donnent une ambiance à la scène. Il s’agit des couleurs qui se trouvent à deux extrémités différentes du spectre de couleur. On va donc privilégier ces complémentarités de couleurs dans une photographie afin de la rendre plus belle à regarder ou lui donner un certain effet de style. Pour détecter cela, une solution est de construire un tableau  qui indique dans quelle partie du spectre se trouve une couleur puis d’apprendre au logiciel laquelle se retrouve fréquemment  avec quelle autre via une algorithme d’apprentissage.
+Il existe certaines couleurs qui vont mieux ensembles que d’autres, voire qui donnent une ambiance à la scène. Il s’agit des couleurs qui se trouvent à deux extrémités différentes du spectre de couleur. On va donc privilégier ces complémentarités de couleurs dans une photographie afin de la rendre plus belle à regarder ou lui donner un certain effet de style. Pour détecter cela, une solution est de construire un tableau  qui indique dans quelle partie du spectre se trouve une couleur puis d’apprendre au logiciel laquelle se retrouve fréquemment  avec quelle autre via un algorithme d’apprentissage.
 
 
 \item[Présence d'un objet saillant]
@@ -374,7 +376,7 @@ Des bases avec de grands nombres de photographies de portrait sont indéniableme
 Nos recherches nous ont conduites à un rapport de projet de recherche écrit par David et Sissoko\footnote{\url{http://madoc.univ-nantes.fr/pluginfile.php/480996/mod_folder/content/3/DAVID\%20SISSOKO\%20Rapport\%20v2.pdf?forcedownload=1}}. Leur étude était axée sur la beauté des visages, et afin d'éprouver leur proposition d'extraction et de notation des visages, ils ont utilisés les bases d'images de Karolinska et de LEI.
 
 
-La base Karolinska répertorie des visages sous différentes expressions de suédois. Ce sont donc des photographies de visages européens. Cette base propose une base d'images de résolutions convenables (562*762) en comparaison de résolutions plus faibles dans la base FEI de 260*360. Par contre la base FEI met en avant 200 visages de brésiliens sous plusieurs positions différentes. La base de Karolinska est donc plus qualitative que la base FEI, mais on on observe l'inverse en ce qui concerne la partie quantitative. Un point pourrait au final nous faire pencher vers la base FEI, c'est la présence d'un fond qui n'est pas terne comme dans la base Karolinska.
+La base Karolinska répertorie des visages sous différentes expressions de suédois. Ce sont donc des photographies de visages européens. Cette base propose une base d'images de résolutions convenables (562*762) en comparaison de résolutions plus faibles dans la base FEI de 260*360. Par contre la base FEI met en avant 200 visages de brésiliens sous plusieurs positions différentes. La base de Karolinska est donc plus qualitative que la base FEI, mais on observe l'inverse en ce qui concerne la partie quantitative. Un point pourrait au final nous faire pencher vers la base FEI, c'est la présence d'un fond qui n'est pas terne comme dans la base Karolinska.
 
 
 \paragraph*{}
@@ -397,7 +399,7 @@ Tous les points d'intérêts sont d'abord enregistrés comme le nez, la bouche, 
 Ensuite intervient une phase d'adoucissement de la peau.
 Dans cette phase il faut créer un masque de pixels qui relèvent de la peau ou non.
 Un GMM(Gaussian Mixture Model: Mélange de Modèles Gaussiens) est utilisé afin de déterminé des masques de pixels correspondant à la peau ou non. 
-Sur l’image originale est appliqué un flou gaussien. A partir de cette version floue, on récupère seulement les pixels situés dans le masque de peau. On superpose ensuite le masque de peau original avec sa version floue (avec une opacité à 50%) afin d’obtenir un visage plus lisse. Le fond, et les zones ne relevant pas de la peau tels les yeux ne sont pas modifiés. 
+Sur l’image originale est appliqué un flou gaussien. A partir de cette version floue, on récupère seulement les pixels situés dans le masque de peau. On superpose ensuite le masque de peau original avec sa version floue (avec une opacité à 50\%) afin d’obtenir un visage plus lisse. Le fond, et les zones ne relevant pas de la peau tels les yeux ne sont pas modifiés. 
 Les résultats de ce traitement sont revendiqués comme aussi réussis que ceux obtenus de manière manuelle avec des outils d'édition d'image.
 \begin{figure*}
 	\centering
@@ -533,10 +535,10 @@ Nous analyserons tout d'abord le cas des critères esthétiques qui sont variés
 
 
 \begin{table*}
-\centering
-\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
+\begin{center}
+\begin{tabular}{|p{3cm}|p{7cm}|p{7cm}|}
 \hline
-Critère & Avantages & Inconvénients \\ \hline
+\textbf{Critère} & \textbf{Avantages} & \textbf{Inconvénients} \\ \hline
 Histogramme de la couleur de l'image & - Permet de déterminer la tendance dominantes. Critère bas niveau, facile à calculer. On peut l'utiliser pour déterminer des critères de plus haut niveau (comme la couleur du ciel). & - Il faut quand même utiliser un critère de plus haut niveau pour déterminer le type de scène. \\ \hline
 Propriétés de Haar & - Permet de détecter les sous-régions du visage. & - La précision sera lié à la quantité et à la qualité des données de la base d'apprentissage. \\ \hline
 Mesure du flou & - Critère bas niveau, facile à calculer. Permet d'avoir une première évaluation de la qualité de la photo. &  \\ \hline
@@ -548,72 +550,121 @@ Profondeur de champ & - Permet de mettre en valeur le sujet de manière simple &
 Couleurs complémentaires & - Permet de déterminer si la photographie est professionnelle ou non & Dépend de l’algorithme d'apprentissage. \\ \hline
 Présence d'un objet saillant & - Simple à mettre en place, on peut l'appliquer au cas des portraits et calculer la proportion du visage dans la photo & - Soit la zone servant de base au ratio peut être déterminée en tant que nombre de pixels de peau sur l'image par exemple, ou alors par rapport aux pixels dans la boite englobant le visage \\ \hline
 \end{tabular}
+\end{center}
 \caption{Tableau comparatif des critères esthétiques}
 \label{tab:ComparaisonCriteres}
 \end{table*}
 
-
-
-
-
-
-
-
-
-
-
 \begin{table*}
-\centering
-\begin{tabular}{|p{3cm}|p{6cm}|p{6cm}|}
+\begin{center}
+\begin{tabular}{|p{3cm}|p{6.5cm}|p{6.5cm}|}
 \hline
-Méthode/Critique & Avantages & Inconvénients \\ \hline
+\textbf{Méthode} & \textbf{Avantages} & \textbf{Inconvénients} \\ \hline
 Technique globale pour la peau & - Méthode assez simple en terme de traitement (application de flou). Traitement global donc gain de temps dans la détection des imperfections. Les photos témoins ont un bon rendu & - Traitement global donc risque de perte de détails à certains endroits \\ \hline
 Méthode globale par déformation du visage & - Calculs dans un graphe planaire, on reste en 2D. Le visage est embelli par son remodelage. & - Problème d'éthique lié à la restructuration du visage. Les résultats dépendent fortement de la base d'apprentissage. \\ \hline
-Méthode par enchaînement modulable de traitements sur différentes imperfections & - Un traitement correctif spécifique pour différentes zones du visage(peau, yeux, dents, texture peau). Détection de l'âge et du sexe de la personne. L'utilisateur peut faire varier la dose de correction par zone. Inclus la zone du cou, ce que la plupart  & - Il faut détecter et ensuite traiter chaque zone du visage, ce qui coute plus cher en temps de calcul qu'un algorithme global. La dernière étape modifie la forme du visage, on retombe dans la même problématique éthique qu'au dessus. \\ \hline
+Méthode par enchaînement modulable de traitements sur différentes imperfections & - Un traitement correctif spécifique pour différentes zones du visage (peau, yeux, dents, texture peau). Détection de l'âge et du sexe de la personne. L'utilisateur peut faire varier la dose de correction par zone. Inclus la zone du cou, ce que la plupart  & - Il faut détecter et ensuite traiter chaque zone du visage, ce qui coute plus cher en temps de calcul qu'un algorithme global. La dernière étape modifie la forme du visage, on retombe dans la même problématique éthique qu'au-dessus. \\ \hline
 Méthode d’amélioration des photos de portrait sur des sous-régions du visage & - Traitement local donc précis. Utilise principalement une correction de la luminance. Un esprit maquillage & - Lourd en temps de calcul. Correction uniquement axée sur les yeux et la bouche. \\ \hline
 Technique basée sur l’analyse des défauts du portrait & - Corrections successives d'imperfections par itérations. Traitements dans un autre espace de couleur pour avoir un rendu plus naturel. & - Cette précision se paye en temps de calcul. \\ \hline
-Commentaires généraux & - On note que le visage est traité de différentes manières. Les cibles peuvent être la peau, la blancheur des yeux et des dents, les rides, imperfections & - Les traitements sont principalement dans une optique d'amélioration du visage et s'intéressent peu au reste (comme la profondeur de champ par exemple).. \\ \hline
+\textbf{Commentaires généraux} & - On note que le visage est traité de différentes manières. Les cibles peuvent être la peau, la blancheur des yeux et des dents, les rides, imperfections & - Les traitements sont principalement dans une optique d'amélioration du visage et s'intéressent peu au reste (comme la profondeur de champ par exemple) \\ \hline
 \end{tabular}
+\end{center}
 \caption{Tableau comparatif des méthodes}
 \label{tab:ComparaisonMéthodes}
 \end{table*}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Conclusion}
-Dans ce chapitre, nous vous avons présenté les techniques les plus utilisées ainsi que quelques alternatives intéressantes. Cependant, ce projet de recherche et développement a pour but de nous faire rechercher des solutions dans des domaines ou extensions encore inexplorés. C’est pourquoi, à partir de cette étude de l’existant, nous avons déterminé quels étaient les points manquants ou ceux qui pourraient être approfondis. Cela nous a permis de définir notre problématique et nos propositions de traitement. Ces propositions sont exposées dans le prochain chapitre. 
-
-
-
-
-
-
-
-
-
+Dans ce chapitre, nous vous avons présenté les techniques les plus utilisées ainsi que quelques alternatives intéressantes. Cependant, ce projet de recherche et développement a pour but de nous faire rechercher des solutions dans des domaines ou extensions encore inexplorés. 
+\paragraph*{}
+C’est pourquoi, à partir de cette étude de l’existant, nous avons déterminé quels étaient les points manquants ou ceux qui pourraient être approfondis. Cela nous a permis de définir notre problématique et nos propositions de traitement. Ces propositions sont exposées dans le prochain chapitre. 
 
 
 %-------------------------------------------------------------------------------------------------------------
 
 % \part{Réalisations} % À décommenter si l'état de l'art a nécessité plusieurs chapitres.
 % \label{part:Realisations}
-
 \chapter{Propositions}
 \label{chap:Propositions}
+La finalité de notre projet, est de proposer une méthode d'amélioration de photographie de portrait. L’objectif est d’obtenir un rendu de qualité professionnel sans que l’utilisateur ait besoin d’avoir de connaissances dans le domaine de la retouche d’image.
 
+Cette partie s’axe en trois temps, un premier qui balisera les limites, une seconde sera consacrée à l’exposé de propositions potentielles pour répondre à notre problématique. La dernière partie sera quant à elle dédiée à la proposition de la solution élue.
+
+\section{Nos limites}
+Tout d’abord, nous avons décidé de poser quelques limites à notre périmètre de solutions éligibles. En effet avec la retouche de photographie de plus en plus démocratisée, il n’est pas rare de visualiser des images modifiées pour embellir la personne à tel point qu’on peut à juste titre se demander s’il s’agit toujours de la même. D’après ce constat, nous sommes en droit de nous demander où fixer la limite entre la réinterprétation totale d’une photo et son embellissement.
+\paragraph*{}
+Au cours de nos lectures, nous avons été confrontés à des propositions ayant trait principalement à la déformation de la structure physique du visage. Par exemple, les travaux de Leyvand et al.\cite{Leyvand2008} remodelaient le visage à partir des plus beaux échantillons en base. Les résultats pouvaient être caractérisés de plus beau que l’original. Nonobstant, en opposant les visages avant/après nous pouvions penser qu’il s'agissait de visages de personnes différentes. La figure ~\ref{fig:VisagesData} illustre nos propos en confrontant un visage avant à gauche et sa version finale à l’issue de l’algorithme à droite.
+
+\begin{figure*}
+	\centering
+	\includegraphics[width=0.4\textwidth]{Images/ea_data_visages}
+	\caption{Évolution d’un visage par déformation avec la méthode de Leyvand et al.\cite{Leyvand2008}}
+	\label{fig:VisagesData}
+\end{figure*}
+ 
+Nous avons fait le choix de ne pas traiter la structure du visage d’une personne. L’image traitée doit au final être une version embellie de l’image originale. La contrainte éthique étant posée,  nous nous concentrerons sur l’amélioration de la peau du visage(en corrigeant les rides, acné,\ldots) ainsi que le fond de l’image. 
+
+Le cadre des solutions étant défini, nous allons présenter dans la prochaine partie des propositions envisageables pour le projet.
+
+
+\section{Nos propositions}
+Dans cette section, nous allons présenter de manière succincte les deux solutions auxquelles nous avons pensées. A l’issue de cet exposé, un tableau récapitulatif comparera les propositions.
+
+\subsection{Corriger les imperfections cutanées par le flou et une meilleure profondeur de champ}
+\label{propun}
+Nous avons dans un premier temps songé à nous intéresser au cas du fond. C’est un élément des photographies de portrait dont les méthodes des articles ne tirent pas profit. L’amélioration du fond sera conjuguée à celle du visage avec l’application d’un flou sur la peau à la manière de Lee et Al.\cite{Lee}.
+
+\paragraph{Objectifs}
+L’objectif ici est d’améliorer simplement la photographie de portrait en mettant le sujet plus en valeur. Comme nous l’indiquions dans le résumé des méthodes à la fin du chapitre précédent, la technique de la profondeur de champs est assez peu utilisée alors qu’elle permet d’améliorer sensiblement la qualité de la photographie. Une fois le sujet mis en valeur, nous pourrions traiter la partie cutanée du visage afin de gommer la plupart des imperfections. Le visage embelli combiné avec un fond plus simple permettront d’obtenir une photographie améliorée.
+
+\paragraph{Idées préliminaires}
+Pour mettre en place cette solution, nous avons pensé à l'enchaînement suivant : 
+Nous pourrions émettre a priori des conditions préalables sur les photographies avant de les traiter. L’une d’elle est une photo avec peu de bruit. De plus l’image qui serait corrigée devra contenir un visage prépondérant, avec une orientation de face. 
+Le premier traitement à réaliser sur l’image serait la diminution du bruit si la condition n’a pas été respectée. Sa réduction peut passer par l’application d’un filtre passe-haut pour éliminer les pixels de couleurs aberrantes. 
+
+\paragraph{}
+Dans le cas où tous les critères seraient conformes à ceux attendus, voici les étapes que nous suivrions pour cette solution: 
+\begin{enumerate}
+\item Nous commencerions par rééquilibrer les couleurs en utilisant l’histogramme des couleurs et en réadaptant la balance des blancs.
+\item La méthode de Lee serait ensuite appliquée pour améliorer la peau du visage. Ce que l’on pourrait étendre concerne le fond. Il faut tout d’abord détacher le sujet (du buste aux cheveux) du fond, et appliquer sur ce premier un flou avec un certain coefficient, afin de le rendre plus indistinct et ainsi focaliser l’attention de l’observateur sur le visage.
+\item Le sujet serait combiné avec l’image résultante précédente.
+\end{enumerate}
+
+\paragraph{}
+En ce qui concerne les outils que nous pourrions utilisés pour réaliser ces étapes nous en avons relevé quelques-uns dans les articles. Pour détecter le visage, une méthode qui a été majoritairement utilisée est celle de Viola et Jones. Elle permet de détecter un visage dans une photo. Cette méthode est directement implémentée dans la librairie de Vision par Ordinateur OpenCV. Elle est aussi utilisée dans une boite à outils de Matlab. Ensuite, dans cette zone un classificateur pourrait être utilisé pour identifier les pixels de peau. 
+Le lissage de la peau serait réalisé avec une combinaison des pixels de peau (enregistrés dans le masque) et une version floue de l’image. Une technique de flou connu est le flou gaussien.
+
+Cette proposition étendant la méthode de Lee et Al. s’intéresse donc au cas du fond et de la mise en valeur du sujet.
+
+\subsection{Vers un embellissent optimal sans déformation du visage}
+\label{propdeux}
+Cette seconde idée évoque un traitement plus poussé et performant des photographies.
+
+\paragraph{Objectifs}
+Dans cette approche, nous souhaiterions améliorer la qualité de la photographie au maximum de ce qu’il est possible de faire sans modifier la structure du visage.
+
+\paragraph{Idées préliminaires}
+Comme dans l’approche précédente, nous réaliserions des traitements sur le fond afin de le rendre plus beau puis nous appliquerions un flou afin d’en détacher le sujet. Une fois cela fait nous nous attaquerions au traitement du visage. Au niveau du traitement, nous commencerions par détecter les masque de pixels correspondant au visage, aux yeux, aux cheveux. Nous améliorerons le visage par le traitement des imperfections comme dans la méthode précédente puis nous embellirons l’éclat des dents et des cheveux.
+
+Cette solution plus complexe à mettre en œuvre, pourrait produire des résultats intéressants à confronter avec les méthodes existantes.
+
+\subsection{Conclusion}
+Nous avons dans le tableau ~\ref{tab:compprop} listé les avantages et inconvénients de nos propositions. De manière globale, la proposition ~\ref{propun} est plus réaliste en termes de temps de travail et d’utilisations d’outils existants. La proposition ~\ref{propdeux}, elle, dépend de nombreuses techniques de détection des défauts et de zones cibles, qui ne sont pas disponibles pour une partie. Combiner, trouver ou développer ces techniques serait un travail chronophage et requièrerait une charge de travail bien supérieure. 
+
+
+
+
+\begin{table*}
+\begin{center}
+\begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+Proposition & Avantage & Inconvénient & Faisabilité \\ \hline
+Corriger par flou et meilleure profondeur de champ & - Mise en valeur simple et efficace du sujet. Réalisable en utilisant OpenCV. Le traitement du fond n'a pas été traité dans l'existant. & - Il faut une technique pour séparer le sujet du fond & Faisable \\ \hline
+Embellissent optimal sans déformation du visage & - Mise en valeur de la totalité du sujet. Cela représente la combinaison de la plupart des méthodes de l'existant (hormis celles qui changent la structure du visage). & - Nécessite beaucoup de détections et de corrections. Cette proposition sera donc beaucoup plus longue à exécuter. & Difficile \\ \hline
+\end{tabular}
+\end{center}
+\caption{Tableau comparatif des propositions possibles}
+\label{tab:compprop}
+\end{table*}
 
 %---------------------------------------------------------------------------------------------------------
 
@@ -623,12 +674,7 @@ Dans ce chapitre, nous vous avons présenté les techniques les plus utilisées 
 
 \listoftables{}
 
-\listofalgorithms{}
-
 \appendix
-
-\chapter{Rappels}
-\label{ann:Rappels}
 
 \chapter{Fiches de lecture}
 \label{ann:FichesLecture}
@@ -868,8 +914,6 @@ Autre point intéressant il s’agit de la confrontation entre deux classificate
 
 
 \chapter{Planification}
-
-Cette annexe est \emph{obligatoire}.
 
 La figure~\ref{fig:PlanningPrevisionnel} présente le planning élaboré \emph{a priori}...
 
