@@ -1,10 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="ganttPrevisionnel" company="GroupeProjet48Polytech" webLink="http://" view-date="2013-11-05" view-index="0" gantt-divider-location="497" resource-divider-location="300" version="2.0">
+<?xml version="1.0" encoding="UTF-8"?><project name="ganttPrevisionnel" company="GroupeProjet48Polytech" webLink="http://" view-date="2013-09-16" view-index="0" gantt-divider-location="1" resource-divider-location="300" version="2.0" locale="fr_FR">
     <description/>
-    <view zooming-state="default:2" id="gantt-chart"/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="33" order="0"/>
+        <field id="tpd4" name="Date de début" width="33" order="1"/>
+        <field id="tpd5" name="Date de fin" width="33" order="2"/>
+        <option id="taskLabelUp" value="name"/>
+        <option id="taskLabelDown" value="taskDates"/>
+    </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="70" order="0"/>
-        <field id="1" name="Rôle par défaut" width="29" order="1"/>
+        <field id="0" name="Nom" width="52" order="0"/>
+        <field id="1" name="Rôle par défaut" width="47" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -32,7 +37,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Choix Projet" color="#8cb6ce" meeting="false" start="2013-09-30" duration="7" complete="100" expand="true">
+        <task id="0" name="Choix Projet" color="#8cb6ce" meeting="false" start="2013-10-02" duration="5" complete="100" expand="true">
             <depend id="3" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="3" name="Acquisition du sujet" color="#8cb6ce" meeting="false" start="2013-10-07" duration="7" complete="100" expand="true">
@@ -44,10 +49,16 @@
         <task id="13" name="Comparatifs sur l'état de l'art" color="#8cb6ce" meeting="false" start="2013-11-16" duration="5" complete="100" expand="true">
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="17" name="Formulation proposition" color="#8cb6ce" meeting="false" start="2013-11-21" duration="4" complete="100" expand="true">
+        <task id="17" name="Formulation propositions" color="#8cb6ce" meeting="false" start="2013-11-21" duration="4" complete="100" expand="true">
             <depend id="9" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="9" name="Préparation soutenance" color="#8cb6ce" meeting="false" start="2013-11-25" duration="6" complete="100" expand="true"/>
+        <task id="9" name="Préparation soutenance" color="#8cb6ce" meeting="false" start="2013-11-25" duration="6" complete="100" expand="true">
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="20" name="Soutenance Intermédiaire" color="#8cb6ce" meeting="false" start="2013-12-01" duration="7" complete="0" expand="true"/>
+        <task id="23" name="Rédaction du Rapport" color="#8cb6ce" meeting="false" start="2013-10-14" duration="42" complete="100" expand="true">
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
     </tasks>
     <resources/>
     <allocations/>
@@ -57,13 +68,14 @@
         <displaycolumn property-id="tpd7" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd6" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd10" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd11" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="247" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="111" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="135" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="15" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="15" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="15" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
