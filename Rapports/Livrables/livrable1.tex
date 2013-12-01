@@ -1,4 +1,4 @@
-\documentclass[11pt, french,screen]{report-rd-info}
+\documentclass[11pt, french]{report-rd-info}
   % - 12pt:  peut être préférable pour faciliter la lecture sur les petits écrans, demander à l'encadrement
   % - screen:  à enlever pour obtenir un rapport au format A4
   % - french:  à remplacer par english en cas de rédaction (exceptionnelle) en anglais
@@ -765,8 +765,21 @@ Autre point intéressant il s’agit de la confrontation entre deux classifieurs
 
 
 \chapter{Planification}
-La figure~\ref{fig:PlanningPrevisionnel} présente le planning élaboré \emph{a priori}...
 
+\subsection{Gantt Previsionnel}
+Une fois le sujet affecté, nous avions fait une estimation des différentes phases que nous aurions à réaliser et du temps que chacune nous prendrait. Tout est résumé dans la figure ~\ref{fig:PlanningPrevisionnel}.
+
+\subsection{Gantt Previsionnel}
+Maintenant que nous arrivons à la fin de la première période, il est temps de mettre en place le Gantt effectif afin de pouvoir le comparer avec celui présenté précédemment et d’analyser notre avancement. Le diagramme de Gantt effectif est représenté dans la figure ~\ref{fig:PlanningEffectif}.
+
+\subsection{Comparaison des différences de planification}
+\paragraph*{}
+Nous avions prévu les grandes phases suivantes : Choix du sujet, Acquisition du sujet, Étude bibliographique, Comparatifs sur l'état de l'art, Formulation propositions, Préparation soutenance, Soutenance Intermédiaire, Rédaction du Rapport
+
+On peut voir que nous avons respecté ces différentes phases, il n’y a pas eu d’ajouts ou de suppressions à ce niveau-là. La seule différence se situe au niveau des dates où l’on constate un décalage d’environ une semaine. En effet, notre projet nécessitant une importante phase bibliographique, nous avons préféré y consacrer un peu plus de temps afin d’être sûr d’avoir fait le tour du sujet. Au final, nous arrivons quand même au même état final. Si on regarde la partie gestion des ressources, sur ces Gantts ne figurent pas les affectations des membres du binôme. Tout au long de cette première phase, nous avons fait le choix de toujours travailler ensemble afin d’assurer que nous ayons la même base bibliographique pour pouvoir bien traiter la prochaine phase.
+
+\paragraph*{}
+Cette première phase nous permet de dégager les conclusions suivantes en ce qui concerne la planification. Tout d’abord la gestion hebdomadaire des tâches est primordiale si nous voulons que chaque acteur du projet soit à jour. De plus, il ne faut pas prendre de retard sur les grandes étapes du projet, le cas échéant, il est plus difficile de gérer les imprévus qui pourraient survenir. Dans la prochaine phase la difficulté supplémentaire sera l’évaluation de la difficulté des étapes de la réalisation. Il s’agira de ne pas sous ou sur-évaluer les difficultés à venir.
 
 \begin{figure*}
 	\centering
@@ -774,16 +787,12 @@ La figure~\ref{fig:PlanningPrevisionnel} présente le planning élaboré \emph{a
 	\caption{Planification prévisionnelle}
 	\label{fig:PlanningPrevisionnel}
 \end{figure*}
-La figure~\ref{fig:PlanningEffectif} présente pour sa part le planning relevé au fur et à mesure de l'avancement du travail.
 \begin{figure*}
 	\centering
 		\includegraphics[width=1\textwidth]{Gantts/p1_effectif}
 	\caption{Planning effectif}
 	\label{fig:PlanningEffectif}
 \end{figure*}
-
-
-
 
 
 \chapter{Fiches de suivi}
@@ -1019,7 +1028,8 @@ de la photographie
 			\item Toujours pour l'état de l'Art, il vaut mieux ne pas mettre de côté les traitements modifiant la structure des images afin de pouvoir mettre en avant les limites de ces solutions dans le comparatif et expliquer notre proposition.
 			\item Au fil de nos lectures nous avons noté que pour la partie évaluation de la qualité des images, certains classifieurs fonctionnant au moyen d'un apprentissage supervisé, utilisaient des bases d'images pour l'entrainement et les tests. La question était de savoir si de telles bases étaient utilisées à Polytech. M. Perreira Da Silva nous a conseillé de nous pencher sur un rapport de projet de recherche de l'an dernier pour ce point. En effet le sujet traitant de la Beauté des Visages utilisait plusieurs bases de visages. Il s'agit des bases Karolinska et FEI. Une partie à ce sujet dans la partie évaluation de l'esthétique pourrait être utile, elle préciserait des méthodes d'évaluation globale et subjective(comme par exemple la possibilité de demander l'avis d'observateurs). Nous pourrions tout aussi bien effectuer des tests sur le trombinoscope de l'intranet.
 			\item Nous nous sommes aussi intéressés aux outils pour manipuler les images et plus particulièrement permettant la détection de visages (en vue de pouvoir les améliorer). Nous avons lu que Matlab avait en 2012 mis à jour sa boite à outils pour la Vision par Ordinateur et que ses fonctions pouvaient être intéressantes. Il y a aussi la librairie OpenCV qui couplée au C++ peut donner de bons résultats. Nonobstant, M. Perreira n'est pas sûr que nous disposions de la toolbox Matlab. Après vérification, nous n'avons en effet pas cette toolbox disponible. Cette partie concernant les outils pour la manipulation peuvent apparaître dans la partie proposition mais ne devraient pas avoir une proportion très importante. En plus de cela, si nous le souhaitons plus tard, M. Perreira Da Silva peut nous envoyer du code Matlab pour estimer le flou d'une image.
-			\item Dans la partie proposition, deux propositions pourraient être le bienvenu. En effet, nous pourrions présenter une approche que l'on pourrait de plus performante mais que nous ne pourrions mettre en place en raison de logiciels ou d'outils non disponibles, et une approche plus réaliste axée sur les manques d'une (ou d'une combinaison) des techniques existantes. 					\item Maintenant concernant le rapport, la rédaction se termine à la partie Propositions. Il ne faut pas oublier la partie auto-contrôle qui est à compléter.
+			\item Dans la partie proposition, deux propositions pourraient être le bienvenu. En effet, nous pourrions présenter une approche que l'on pourrait de plus performante mais que nous ne pourrions mettre en place en raison de logiciels ou d'outils non disponibles, et une approche plus réaliste axée sur les manques d'une (ou d'une combinaison) des techniques existantes. 					
+			\item Maintenant concernant le rapport, la rédaction se termine à la partie Propositions. Il ne faut pas oublier la partie auto-contrôle qui est à compléter.
 		\end{itemize}
 	\end{echange}		
 		
@@ -1032,6 +1042,37 @@ de la photographie
 		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
+\begin{fichesuivi}{25 novembre 2013}{01 décembre 2013}
+	\tempstravailA{26}{10}
+	\tempstravailB{23}{20}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Fin de la rédaction de la partie état de l’art : simple, réalisée à $100$ \% ;
+			\item Fin de la rédaction de la fiche d’auto-contrôle  : simple, réalisée à $100$ \% ;
+			\item Rapport intermédiaire soumis à M. PERREIRA DA SILVA pour jeudi :  simple, réalisée à $100$ \% ;
+			\item Modifications du  livrable intermédiaire suite aux commentaire de   M. PERREIRA DA SILVA : simple, réalisée à $100$ \% ;
+			\item Rédaction du support de présentation pour la soutenance : simple, réalisée à $100$ \% ;
+			\item Rendu du livrable intermédiaire  : simple, réalisée à $100$ \% ;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Envoi du rapport intermédiaire à M. PERREIRA DA SILVA;
+			\item Nous avons reçu les commentaires sur le rapport vendredi et avons modifié en conséquence ce que nous pouvions dans le temps restant;
+		\end{itemize}
+	\end{echange}
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item La soutenance intermédiaire aura lieu le 4 décembre à 16h00;
+			\item Pendant la semaine, l’objectif est de mieux se fixer les idées pour la méthode de sélection du fond d’une photographie avec un portrait.
+		\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+\newpage
 \printweeksummary
 \chapter{Auto-contrôle et auto-évaluation}
 La figure~\ref{fig:AutoEvaluationTravailIntermediaire} présente l'auto-évaluation que nous avons réalisée pour la première partie du projet de recherche.
