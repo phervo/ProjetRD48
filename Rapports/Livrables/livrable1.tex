@@ -168,6 +168,7 @@ Nous allons donc maintenant vous présenter de manière plus détaillée la list
 \paragraph{Critères dits de haut niveau} : Ce sont dans l'ensemble des caractéristiques plus subjectives et que l'on peut calculer à partir de mesures faites à plus bas niveau. Cependant, une grande partie des critères haut niveaux tel l’originalité par exemple ne possèdent pas de consensus au niveau de leur définition, il n’est donc pas possible de les évaluer automatiquement. Nous allons vous présenter une liste de ceux pour qui il est possible de le faire aujourd'hui. Cette liste est divisée en trois groupes: le premier traite des critères liés à la composition structurelle des photographies, le second expose les critères relatifs au contenu, quant au troisième groupe, il s'agit des critères ne relevant pas des deux premiers groupes.\footnote{Les équation utilisées pour mesurer les critères s'exécutent dans le contexte suivant : la photographie en RGB doit être convertie dans l'espace HSV. Plusieurs matrices de deux dimensions $X x Y$ sont générées $I_H$, $I_S$ et $I_v$.}
 
 \subparagraph{Attributs liés à la composition des photographies}
+Sous cette étiquette sont regroupés les attributs caractérisant la manière dont sont composées les photographies. 
 \begin{description}
 \item[Règle des tiers]
 Elle consiste à diviser la photo en blocs égaux en ajoutant deux lignes virtuelles verticales et deux lignes virtuelles horizontales. Il a  été "prouvé" qu’une photo est plus esthétique si le sujet se trouve sur l’une de ces lignes ou à l’une des intersections de ces lignes. Pour savoir si la photo respecte cette règle, on détecte le sujet principal de l’image et on calcule la distance entre le centre de la forme détectée et ces lignes ou intersections. Une autre méthode de calcul est basée sur le fait que l'objet principal est placé à la périphérie où à l'intérieur du rectangle intérieur. On y étudie la teinte moyenne dans l'espace HSV \footnote{HSV: désigne un espace colorimétrique dont les initiales signifient Hue, Saturation, Value. En français cela correspond à TSV (Teinte, Saturation, Valeur).} selon l'équation ~\ref{teintemoyenne}. 
@@ -185,6 +186,7 @@ Il existe certaines couleurs qui vont mieux ensembles que d’autres, voire qui 
 Cet indicateur permet de détecter les objets larges séparés du fond de l’image. Pour cela, trois techniques sont combinées : une carte de contraste multi-échelle pour détecter les formes, un histogramme des pixels avoisinants pour détecter les changements de couleur et dans le même ordre d’idées une cartographie de la distribution des couleurs de l’image.
 \end{description}
 \subparagraph{Attributs liés au contenu}
+Les attributs liées au contenu sont axés sur ce qui a été pris en photographie. Il s'agit donc de critères explicitant le sujet et son environnement.
 \begin{description}
 \item[Présence de personnages humains]
 C’est un attribut de haut niveau qui permet d’indiquer si des personnes sont présentes ou non sur une image. Les études indiquent que les observateurs humains apprécient les photos mettant en scène leurs congénères. Pour cela, on se sert d’algorithmes automatiques comme celui développé par Viola et Jones \cite{Viola2004}. La limite de ce critère est que le performance dépend de l’algorithme utilisé et généralement de l’apprentissage réalisé au préalable.
@@ -197,6 +199,7 @@ L’indicateur type de scène permet de détecter l’environnement dans laquell
 \end{description}
 
 \subparagraph{Autres attributs}
+Cette catégorie regroupe les attributs hors des deux premières catégories.
 \begin{description}
 
 \item[Luminosité du ciel]
