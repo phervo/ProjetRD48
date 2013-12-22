@@ -103,7 +103,7 @@
 		\newcommand{\novMacro}{novembre }
 		\newcommand{\decMacro}{d\'ecembre }
 		
-		\newcommand{\WeeklyReport}{Fiche de suivi de la semaine 11}
+		\newcommand{\WeeklyReport}{Fiche de suivi de la semaine 12}
 		\newcommand{\WeeklyReportFrom}{du}
 		\newcommand{\WeeklyReportTo}{au}
 		\newcommand{\WeeklyAuthorWork}{Temps de travail de}

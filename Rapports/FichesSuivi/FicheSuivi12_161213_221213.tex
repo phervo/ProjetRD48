@@ -1,0 +1,40 @@
+\documentclass[12pt]{fiche-rd-info}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\authorA{Pierre-Yves}{Hervo}
+\authorB{Paul-François}{Jeau}
+\begin{fichesuivi}{16 décembre 2013}{22 décembre 2013}
+	\tempstravailA{13}{00}
+	\tempstravailB{13}{00}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Réunion d'avancement avec M. PERREIRA DA SILVA le 20 : simple, réalisée à $100$ \%;
+			\item Premières expérimentations de détection de peau. La base d'images n'est pas adaptée pour les premières détections. La couleur du fond qui est uniforme, est trop proche de la couleur de la peau. Cela induit une mauvaise détection si on se base sur l'appartenance du pixel à un intervalle supposé englober un certain panel de couleurs de peau : simple, réalisée à $50$ \%;
+			\item Premier essai de la méthode de Viola et Jones pour détecter la boite englobant le visage. La méthode fonctionne mais la boite est un peu trop petite pour contenir le visage intégralement : simple, réalisée à $70$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Lors de la réunion avec M. PERREIRA DA SILVA, nous avons abordé tout d'abord la fin de la première phase. A l'issue de ce point, nous avons plus longuement discuté du déroulement de cette nouvelle phase. Actuellement les outils de développement sont en place (pour l'instant Visual Studio et OpenCV), et quelques expérimentations ont été effectuées. Cela a permis de détecter quelques pistes d'améliorations, notamment en ce qui concerne l'identification du masque de peau. Une piste d'amélioration pourrait être l'étude des densités de probabilités des pixels de peau contenus dans la boite englobant le visage. Un autre point à prendre en compte est la base d'images utilisée lors de la détection. En effet les images possèdent un fond trop proche de la couleur de la peau, ce qui induit une mauvaise détection. Une base d'images pour la détection de la peau plus adaptée doit être choisie;
+			\item L'autre problématique de ce projet est l'amélioration de la profondeur de champ. Pour réaliser cela, nous devons tout d'abord segmenter l'image en termes de contenus au premier plan et de contenus à un plan plus éloigné. La segmentation couleur pourrait être utilisée pour identifier le sujet (cheveux+visage+buste,...), mais elle serait potentiellement plus aisée à mettre en place sous Matlab que sur OpenCV. De ce constat, le traitement final pourrait solliciter OpenCV et Matlab;
+			\item De manière générale, ce projet sera divisé en deux temps. Nous devons en premier lieu, avec OpenCV, détecter et traiter les zones de peau. Puis dans un second temps, sous Matlab, il faudrait implémenter un module pour traiter le cas de la profondeur de champ;
+			\item Une fois les congés terminés, un point sera à réaliser quant à l'avancement sur le premier module. 
+		\end{itemize}
+	\end{echange}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Faire un retour à la rentrée sur l'avancement du projet à M. PERREIRA DA SILVA;
+			\item Tout d'abord avancer au mieux possible le premier module d'amélioration de la peau;
+		\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\end{document}
