@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 {
 	char *imagename = "images/v1.jpg";
 	//InvertMyFace(imagename);
-	DetectMyFace(imagename);
+	//DetectMyFace(imagename);
 	//DetectSkinTone(imagename);
 	//RunHist_and_BackProj(imagename);
 	//TestSeparationHSV(imagename);
