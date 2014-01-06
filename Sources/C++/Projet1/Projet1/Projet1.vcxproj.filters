@@ -21,5 +21,16 @@
     <ClCompile Include="ImageProcessing.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="DetecteurPeau.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Essais.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DetecteurPeau.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

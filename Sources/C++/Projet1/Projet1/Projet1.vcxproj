@@ -121,8 +121,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DetecteurPeau.cpp" />
+    <ClCompile Include="Essais.cpp" />
     <ClCompile Include="ImageProcessing.cpp" />
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DetecteurPeau.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
