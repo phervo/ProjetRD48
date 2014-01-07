@@ -2,8 +2,12 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "DetecteurPeau.h"
+<<<<<<< HEAD
 #include "CorrectionsGenerales.h"
 #include "LisseurPeau.h"
+=======
+#include "FloutteurPeau.h"
+>>>>>>> d841904e52b39ec1cc9a197cc596cae9375ccb0c
 #include <stdlib.h>
 #include <stdio.h>
 #include <opencv/cv.h>
@@ -21,12 +25,27 @@ void lisserImage(char*);
 
 int main(int argc, char *argv[])
 {
+<<<<<<< HEAD
 	char *nomImage = "images/v2.jpg";
 
 	//getPeauImage(nomImage);
 	//corrigerImage(nomImage);
 	//getPeauApresCorrection(nomImage);
 	lisserImage(nomImage);
+=======
+	char *imagename = "images/c1.jpg";
+	Mat monImage = imread(imagename, CV_LOAD_IMAGE_UNCHANGED);
+	imshow("image base", monImage);
+	DetecteurPeau monDetecteurPeau;
+	Mat masquePeau;
+	masquePeau = monDetecteurPeau.getMasquePeauFiltré(monImage);
+	imshow("masque peau", masquePeau);
+	FloutteurPeau floutteurPeau;
+	Mat resultat = floutteurPeau.combinaisonMasqueImageOriginale(monImage, masquePeau);
+	imshow("Image resultante", resultat);
+	waitKey(0);
+	cvDestroyAllWindows();
+>>>>>>> d841904e52b39ec1cc9a197cc596cae9375ccb0c
 	return 0;
 }
 
