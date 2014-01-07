@@ -24,17 +24,10 @@
     <ClCompile Include="Essais.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="CorrectionsGenerales.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="LisseurPeau.cpp">
-=======
-    <ClCompile Include="FloutteurPeau.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="EssaiFlous.cpp">
->>>>>>> d841904e52b39ec1cc9a197cc596cae9375ccb0c
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -42,14 +35,10 @@
     <ClInclude Include="DetecteurPeau.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="CorrectionsGenerales.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="LisseurPeau.h">
-=======
-    <ClInclude Include="FloutteurPeau.h">
->>>>>>> d841904e52b39ec1cc9a197cc596cae9375ccb0c
       <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>
