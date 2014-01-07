@@ -21,7 +21,9 @@ DetecteurPeau::~DetecteurPeau(void){
 //Methode qui va chercher les pixels de peau de l'image en entrée
 Mat DetecteurPeau::getMasquePeau(Mat imageEnEntree){
 	Mat masquePeau;
+	//Passage de l'image de l'espace de couleurs BGR vers YCrCb pour les traitements
 	cvtColor(imageEnEntree, masquePeau, COLOR_BGR2YCrCb);
+	//Filtrage des pixels appartenant à l'intervalle des pixels de peau  
 	inRange(masquePeau, Scalar(Y_MIN, Cr_MIN, Cb_MIN), Scalar(Y_MAX, Cr_MAX, Cb_MAX), masquePeau);
 	return masquePeau;
 }
