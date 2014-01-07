@@ -123,11 +123,14 @@
   <ItemGroup>
     <ClCompile Include="DetecteurPeau.cpp" />
     <ClCompile Include="Essais.cpp" />
+    <ClCompile Include="FloutteurPeau.cpp" />
     <ClCompile Include="ImageProcessing.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="EssaiFlous.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DetecteurPeau.h" />
+    <ClInclude Include="FloutteurPeau.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

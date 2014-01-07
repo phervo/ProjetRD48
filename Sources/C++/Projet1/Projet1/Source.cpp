@@ -2,6 +2,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "DetecteurPeau.h"
+#include "FloutteurPeau.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -19,7 +20,9 @@ int main(int argc, char *argv[])
 {
 	char *imagename = "images/o1.jpg";
 
-	getPeauImage(imagename);
+	//getPeauImage(imagename);
+	FloutteurPeau floutteurPeau;
+	floutteurPeau.flouterImageTotale(imagename);
 	return 0;
 }
 
