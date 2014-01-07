@@ -8,6 +8,8 @@ public:
 	FloutteurPeau(void);
 	~FloutteurPeau(void);
 
-	void flouterImageTotale(char *);
+	Mat flouterImageTotale(Mat);
+	Mat Opacite50prcent(Mat);
+	Mat combinaisonMasqueImageOriginale(Mat,Mat);
 
 };

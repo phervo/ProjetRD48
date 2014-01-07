@@ -18,11 +18,18 @@ void getPeauImage(char*);
 
 int main(int argc, char *argv[])
 {
-	char *imagename = "images/o1.jpg";
-
-	//getPeauImage(imagename);
+	char *imagename = "images/c1.jpg";
+	Mat monImage = imread(imagename, CV_LOAD_IMAGE_UNCHANGED);
+	imshow("image base", monImage);
+	DetecteurPeau monDetecteurPeau;
+	Mat masquePeau;
+	masquePeau = monDetecteurPeau.getMasquePeauFiltré(monImage);
+	imshow("masque peau", masquePeau);
 	FloutteurPeau floutteurPeau;
-	floutteurPeau.flouterImageTotale(imagename);
+	Mat resultat = floutteurPeau.combinaisonMasqueImageOriginale(monImage, masquePeau);
+	imshow("Image resultante", resultat);
+	waitKey(0);
+	cvDestroyAllWindows();
 	return 0;
 }
 
