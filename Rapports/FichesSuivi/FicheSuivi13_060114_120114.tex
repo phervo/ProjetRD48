@@ -1,0 +1,31 @@
+\documentclass[12pt]{fiche-rd-info}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\authorA{Pierre-Yves}{Hervo}
+\authorB{Paul-François}{Jeau}
+\begin{fichesuivi}{6 janvier 2014}{12 janvier 2014}
+	\tempstravailA{13}{00}
+	\tempstravailB{13}{00}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Développement et intégration du premier module d’amélioration de la peau. A l’issue de quelques études pendant les congés, nous avons en conséquence cette semaine développé chacun de notre côté une partie dédiée à la détection de peau en se basant sur l’espace de couleurs YCrCb et une seconde partie dédiée au lissage de la peau à partir de la méthode de Lee et al. Ce module fonctionne tout d’abord par une détection des pixels relevant de la peau dans l’espace YCrCb, puis à partir de l’image sur laquelle on applique un filtre flou gaussien (de noyau plus ou moins grand) on combine la valeur des pixels de peau originale avec la valeur correspondant dans l’image modifiée. En respectant la méthode de Lee et al. ce seuil d’opacité est fixé à 50% afin que le lissage soit naturel  : moyen, réalisée à $100$ \%;
+			\item Etude de fonction pour la segmentation couleur des images sous Matlab et OpenCV : simple, réalisée à $50$ \%;
+			\item Etude d’un code d’estimation de la carte de Flou sous Matlab indiqué par M. Perreira Da Silva: simple, réalisé à $80$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item La première partie d’amélioration de la peau étant terminé, nous nous concentrons à présent sur la seconde partie qui est la segmentation des éléments que l’on veut positionner au premier plan par rapport au fond sur lequel on appliquera un flou plus fort.		
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\end{document}
+
+
