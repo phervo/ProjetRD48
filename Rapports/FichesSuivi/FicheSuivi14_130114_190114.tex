@@ -1,0 +1,40 @@
+\documentclass[12pt]{fiche-rd-info}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\authorA{Pierre-Yves}{Hervo}
+\authorB{Paul-François}{Jeau}
+\begin{fichesuivi}{13 janvier 2014}{19 janvier 2014}
+	\tempstravailA{12}{00}
+	\tempstravailB{12}{00}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Nous avons continué cette semaine à traiter les phases d'amélioration de la profondeur de champ et de correction du contraste et de la luminosité. Nous avons étudié ces deux points sous Matlab cette fois-ci pour des raisons plus pratiques. Pour réaliser notre première version du traitement d'amélioration de la profondeur de champ, nous avons utilisé des codes Matlab développés pour dresser une carte de profondeur (Defocus Estimation).On calcule une image floue (de type disque pour le différencier du flou gaussien de la peau), puis à partir de la carte obtenue, on peut conserver la version floue d'un pixel si sa profondeur est supérieur à celle que l'on observe en moyenne dans la zone dessinée par la boite englobant le visage par Viola et Jones. Les premiers résultats sont mitigés car selon les images, une partie du visage est estimée dans un plan de profondeur similaire au fond rendant la séparation difficile :moyenne, réalisée à $60$ \%;
+			\item Nous avons aussi voulu étudier la segmentation d'une image en termes de couleurs et de parties connexes pour pouvoir "floutter" tout ce qui est hors du visage+corps+cheveux mais nos études ne sont encore pas assez poussées: moyenne, réalisée à $40$ \%;
+			\item A l'issue de nos recherches pour l'amélioration du contraste et de la luminosité, nous avons lu un article proposant d'améliorer les composantes de l'image dans l'espace HSV. Des algorithmes Matlab que nous avons adaptés, produisent des résultats qui nous semblent corrects, cependant le temps de calcul est assez important(25 secondes de traitement pour une image de 500x700 pixels) : moyenne, réalisée à $70$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Nous avons rencontré M. Perreira Da Silva lundi après-midi et lui avons montré nos travaux de lissage de peau. Les points à améliorer sont la taille du noyau utilisé pour le flou, ainsi que la classification des pixels de peau. Cette classification peut sélectionner des pixels assez éloignés du visage et cela induit des zones qui ne devraient pas être lissées . Pour corriger cela, il faudrait s'intéresser aux composantes connexes et profiter de la boite de Viola et Jones.
+		\end{itemize}
+	\end{echange}
+
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Améliorer la construction du masque des pixels de peau afin de ne conserver de manière générale que la composante connexe que l'on retrouve dans la boite de Viola et Jones. Cela permettrait d'éliminer certaines erreurs de classification.
+			\item Continuer nos travaux sur l'amélioration du fond car les résultats ne correspondent pas encore à nos attentes. De plus les temps de calculs sont particulièrement longs (et une personne lambda possède des images qui peuvent potentiellement être au minimum quatre fois plus grandes).	
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\end{document}
+
+

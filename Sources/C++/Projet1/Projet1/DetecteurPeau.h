@@ -1,3 +1,19 @@
+/*
+-----------------------------------------------------------------------------
+Polytech Nantes
+2013-2014 INFO5
+-----------------------------------------------------------------------------
+Projet de Recherche et développement
+Sujet 48 Magic Portrait
+-----------------------------------------------------------------------------
+Etudiants:
+Pierre-Yves HERVO
+Paul-François JEAU
+-----------------------------------------------------------------------------
+*/
+
+//-----Librairies et Headers-------------------------------------------------
+
 #pragma once
 //Inspiré du travail de http://razibdeb.wordpress.com/2013/09/10/skin-detection-in-c-using-opencv/
 
@@ -5,6 +21,7 @@
 using namespace std;
 using namespace cv;
 
+//-----Entete des méthodes/fonctions-----------------------------------------
 class DetecteurPeau{
 
 public:

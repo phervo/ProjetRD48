@@ -21,6 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B330DE4B-77C9-43E8-8FB4-24A5C67AF7EE}</ProjectGuid>
     <RootNamespace>Projet1</RootNamespace>
+    <ProjectName>magicportrait</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -121,14 +122,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CorrectionsGenerales.cpp" />
     <ClCompile Include="DetecteurPeau.cpp" />
     <ClCompile Include="Essais.cpp" />
     <ClCompile Include="LisseurPeau.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Application.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CorrectionsGenerales.h" />
     <ClInclude Include="DetecteurPeau.h" />
     <ClInclude Include="LisseurPeau.h" />
   </ItemGroup>
