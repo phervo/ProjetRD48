@@ -54,13 +54,15 @@ int main(int argc, char *argv[])
 	}
 
 	//Vérification du type de l'image
-	//L'image est-elle en couleur et possède-t-elle trois canaux de couleurs ?
-
+	if (monImageCible.channels()!= 3){
+		cerr << "Erreur: l'image " << argv[1] << " n'est pas en couleur en ne comporte pas 3 composantes" << endl;
+		return -3;
+	}
 
 	//Vérification de la présence de visage dans l'image
 	if (detecterVisage(monImageCible)){
 		cerr << "Erreur: l'image " << argv[1] << " ne contient aucun visage" << endl;
-		return -3;
+		return -4;
 	}
 
 	//Lancement du traitement en tant que tel
@@ -90,7 +92,7 @@ bool detecterVisage(Mat monImage){
 
 	if (!classifieur_visage.load(classifieur_visage_fichier)){
 		cerr << "Erreur: Impossible de charger le Detecteur de Haar de visages" << endl;
-		exit(-3);
+		exit(-4);
 	}
 	//Recherche de visage(s) dans l'image
 	vector<Rect> visages;

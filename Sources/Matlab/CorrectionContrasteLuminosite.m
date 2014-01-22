@@ -20,6 +20,9 @@
 %Principe    : Appelle la fonction ContrastEnhancement et écrit l'image de retour
 
 function [imageRetour] = CorrectionContrasteLuminosite(nomImage,nomImageRetour)
+
+	addpath('ContrastEnhancement_Sources\');
+		
     imageRetour = ContrastEnhancement(nomImage);
     imwrite(imageRetour,nomImageRetour,'Quality',100);
 end
