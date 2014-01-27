@@ -1,2 +1,0 @@
-REM magicportrait_enhance_fils_in_directory.bat <repertoire_contenant_images_cibles> <repertoire_destination>
-magicportrait_enhance_fils_in_directory.bat 00_images_cibles 01_images_apres_lissage_peau

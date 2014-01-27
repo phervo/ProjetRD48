@@ -23,6 +23,8 @@
 
 function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
 
+	addpath('DefocusEstimation_Sources\');
+	
     %Image Floue
     imageOriginale=imread(nomImage);
     w = fspecial('disk',8);
@@ -46,7 +48,7 @@ function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
     
     x=boitesEnglobantes(1);
     y=boitesEnglobantes(2);
-    hauteur_boiteboitesEnglobantesbboxes(3);
+    hauteur_boite=boitesEnglobantes(3);
     largeur_boite=boitesEnglobantes(4);
     
     %Calcul du seuil de profondeur moyen pour le visage dans la boite
