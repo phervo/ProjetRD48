@@ -73,4 +73,3 @@ Mat DetecteurPeau::getMasquePeauFiltré(Mat imageEnEntree){
 
 	return masquePeauErodé;
 }
-
