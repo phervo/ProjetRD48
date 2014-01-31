@@ -33,11 +33,11 @@ bool detecterVisage(Mat);
 Mat  lisserPeau(Mat); 
 void lisserPeauTest(char*);
 Mat retournerEtiquettage(Mat masquePeau);
-void determinerEtiquetes(Mat * matriceEtiquettage, int i, int j, int *numeroEtiquette);
-int inf(int etiquetteCourante, int etiquetteAdjacente);
+void determinerEtiquetes(Mat * matriceEtiquettage, int i, int j, unsigned char *numeroEtiquette);
+unsigned char inf(unsigned char etiquetteCourante, unsigned char etiquetteAdjacente);
 Rect detecterCadreVisage(Mat monImage);
-Mat changerMasquePeau(Mat masqueOriginal, set<int> ensembleEtiquette, Mat matriceEtiquette);
-set<int> getEnsembleEtiquette(Mat etiquettes, Rect cadreVisage);
+Mat changerMasquePeau(Mat masqueOriginal, set<unsigned char> ensembleEtiquette, Mat matriceEtiquette);
+set<unsigned char> getEnsembleEtiquette(Mat etiquettes, Rect cadreVisage);
 
 
 //-----Main du programme-----------------------------------------------------
@@ -78,16 +78,22 @@ int main(int argc, char *argv[])
 	DetecteurPeau monDetecteurPeau = DetecteurPeau();
 	Mat masquePeau;
 	masquePeau = monDetecteurPeau.getMasquePeauFiltré(monImageCible);
-	imshow("Masque des pixels de peau", masquePeau);
+
 	Mat etiquettage = retournerEtiquettage(masquePeau);
+	
+	
 	Rect cadreEnglobant = detecterCadreVisage(monImageCible);
-	/*set<int> ensembleEtiquette = getEnsembleEtiquette(etiquettage, cadreEnglobant);
+
+	set<unsigned char> ensembleEtiquette = getEnsembleEtiquette(etiquettage, cadreEnglobant);
 	Mat resultat = changerMasquePeau(masquePeau, ensembleEtiquette, etiquettage);
-	imshow("Image après Lissage", resultat);*/
+
+	imshow("Image après Lissage", resultat);
+	imshow("Masque des pixels de peau", monImageCible);
+
 	waitKey(0);
 	cvDestroyAllWindows();
 	//Ecriture de l'image résultante
-	//imwrite(argv[2], resultat);
+	imwrite("Images_Test/o1_res_2.jpg", resultat);
 
 	return 0;
 }
@@ -149,7 +155,13 @@ Rect detecterCadreVisage(Mat monImage){
 
 	if (!visages.empty()){
 		cadreEnglobant = visages[0]; //on recupere le premier uniquement
+
+		for (Rect cadre : visages){
+			if ((cadreEnglobant.height*cadreEnglobant.width) < (cadre.height*cadre.width))cadreEnglobant = cadre;
+			//rectangle(monImage, cadre, 'r');
+		}
 	}
+
 
 
 	//Retour du résultat de la recherche
@@ -208,66 +220,52 @@ void lisserPeauTest(char* nomImage){
 /*Retourner matrice d equittage*/
 Mat retournerEtiquettage(Mat masquePeau){
 	
-	int numero = 1;
-	Mat matriceEtiquettage = Mat(masquePeau.rows, masquePeau.cols, CV_8SC1);
-	for (int i = 0; i < masquePeau.rows; i++){
-		for (int j = 0; j < masquePeau.cols; j++){
-			matriceEtiquettage.at<int>(i, j) = 0;
-		}
-	}
-	cout << matriceEtiquettage .rows<< endl;
-	cout << matriceEtiquettage.cols << endl;
+	unsigned char numero = 1;
+	Mat matriceEtiquettage = Mat::zeros(masquePeau.size(), CV_8UC1);;
 	
 
 	for (int i = 0; i < masquePeau.rows; i++){
 		for (int j = 0; j < masquePeau.cols; j++){
-			if ((float)masquePeau.at<int>(i, j) == 255){ //si pixel est blanc
+			if ((int)masquePeau.at<unsigned char>(i, j) == 255){ //si pixel est blanc
 				determinerEtiquetes(&matriceEtiquettage, i, j, &numero);
-			}
-			else{
-				matriceEtiquettage.at<int>(i, j) = 0;
 			}
 		}
 	}
+	cout << "Nombre étiquettes : " << numero<<endl;
 	imshow("etiquettage", matriceEtiquettage);
 	return matriceEtiquettage;
 }
 
-void determinerEtiquetes(Mat * matriceEtiquettage, int i, int j, int *numeroEtiquette){
-	matriceEtiquettage->at<int>(i, j) = *numeroEtiquette;
+void determinerEtiquetes(Mat * matriceEtiquettage, int i, int j, unsigned char *numeroEtiquette){
+	matriceEtiquettage->at<unsigned char>(i, j) = *numeroEtiquette;
 	int nbLigne = matriceEtiquettage->rows-1;
 	int nbCol = matriceEtiquettage->cols-1;
 	
-	cout << "i" <<i << endl;
-	cout << "j"<<j << endl;
-
 	if (j>=1){
-		matriceEtiquettage->at<int>(i, j) = inf(matriceEtiquettage->at<int>(i, j), matriceEtiquettage->at<int>(i, j - 1));
+		matriceEtiquettage->at<unsigned char>(i, j) = inf(matriceEtiquettage->at<unsigned char>(i, j), matriceEtiquettage->at<unsigned char>(i, j - 1));
 	}
 	
 	if (i>=1){
-		matriceEtiquettage->at<int>(i, j) = inf(matriceEtiquettage->at<int>(i, j), matriceEtiquettage->at<int>(i - 1, j));
+		matriceEtiquettage->at<unsigned char>(i, j) = inf(matriceEtiquettage->at<unsigned char>(i, j), matriceEtiquettage->at<unsigned char>(i - 1, j));
 	}
 	
-	if (1<=i<nbLigne && 1<=j<nbCol){
-		matriceEtiquettage->at<int>(i, j) = inf(matriceEtiquettage->at<int>(i, j), matriceEtiquettage->at<int>(i - 1, j + 1));
+	if ((1<=i)&&(i<nbLigne) && (1<=j)&&(j<nbCol)){
+		matriceEtiquettage->at<unsigned char>(i, j) = inf(matriceEtiquettage->at<unsigned char>(i, j), matriceEtiquettage->at<unsigned char>(i - 1, j + 1));
 	}
 	
 	if (i>=1 && j>=1){
-		matriceEtiquettage->at<int>(i, j) = inf(matriceEtiquettage->at<int>(i, j), matriceEtiquettage->at<int>(i - 1, j - 1));
+		matriceEtiquettage->at<unsigned char>(i, j) = inf(matriceEtiquettage->at<unsigned char>(i, j), matriceEtiquettage->at<unsigned char>(i - 1, j - 1));
 	}
 
-	if (matriceEtiquettage->at<int>(i, j) == *numeroEtiquette){
+	if (matriceEtiquettage->at<unsigned char>(i, j) == *numeroEtiquette){
 		(*numeroEtiquette)++;
-		cout << "nouvelle etiquette" << *numeroEtiquette << endl;
 	}
 }
  
-int inf(int etiquetteCourante,int etiquetteAdjacente){
-	int retour=0;
-	cout << "etiquetteCourante" <<etiquetteCourante << endl;
-	cout << "etiquetteAdjacente" << etiquetteAdjacente << endl;
-	if (etiquetteAdjacente == 0){
+unsigned char inf(unsigned char etiquetteCourante, unsigned char etiquetteAdjacente){
+	unsigned char retour = 0;
+	
+	if (etiquetteAdjacente == (unsigned char)0){
 		retour = etiquetteCourante;
 	}
 	else{
@@ -278,20 +276,18 @@ int inf(int etiquetteCourante,int etiquetteAdjacente){
 			retour = etiquetteAdjacente;
 		}
 	}
-	cout << "valeure de retour" << retour << endl;
 	return retour;
 }
 
 /*Fonction qui recupere les etiquettes au pixel*/
-set<int> getEnsembleEtiquette(Mat etiquettes, Rect cadreVisage){
-	std::set<int> monEnsemble;
+set<unsigned char> getEnsembleEtiquette(Mat etiquettes, Rect cadreVisage){
+	std::set<unsigned char> monEnsemble;
 
 	for (int i = cadreVisage.x; i < cadreVisage.x + cadreVisage.width;i++){
 		for (int j = cadreVisage.y; j < cadreVisage.y + cadreVisage.height; j++){
-			//
-			if (etiquettes.at<int>(i, j) != 0 &&  monEnsemble.count(etiquettes.at<int>(i, j)) == 0){
-				cout << etiquettes.at<int>(i, j) << endl;
-				monEnsemble.insert(etiquettes.at<int>(i, j));
+			
+			if ((int)etiquettes.at<unsigned char>(i, j) != 0 && monEnsemble.count(etiquettes.at<unsigned char>(i, j)) == 0){
+				monEnsemble.insert(etiquettes.at<unsigned char>(i, j));
 			}
 			
 		}
@@ -301,18 +297,21 @@ set<int> getEnsembleEtiquette(Mat etiquettes, Rect cadreVisage){
 
 /*Fonction qui change le masque de peau en tenant compte de la presence ou non de l'etiquette dans le masque englobant.
 Si l'etiquette n'est pas dans le cadre englobant alors pas besoin de conserver la composante connexe dans le masque de peau.*/
-Mat changerMasquePeau(Mat masqueOriginal, set<int> ensembleEtiquette, Mat matriceEtiquette){
+Mat changerMasquePeau(Mat masqueOriginal, set<unsigned char> ensembleEtiquette, Mat matriceEtiquette){
+
 	Mat nouveauMasquePeau = Mat::zeros(masqueOriginal.size(), CV_8UC1);;
+	
 	for (int i = 0; i < masqueOriginal.rows; i++){
 		for (int j = 0; j < masqueOriginal.cols; j++){
-			//cout << ensembleEtiquette.count(matriceEtiquette.at<int>(i, j)) << endl;
-			if (ensembleEtiquette.count(matriceEtiquette.at<int>(i, j)) == 0){
-				nouveauMasquePeau.at<unsigned char>(i, j) = 0;
+			
+			unsigned char etiquette = matriceEtiquette.at<unsigned char>(i, j);
+
+			if (ensembleEtiquette.count(etiquette)){
+				nouveauMasquePeau.at<unsigned char>(i, j) = masqueOriginal.at<unsigned char>(i, j);
 			}
-			else{
-				nouveauMasquePeau.at<unsigned char>(i, j) = (int)masqueOriginal.at<unsigned char>(i, j);
-			}
+			
 		}
 	}
+
 	return nouveauMasquePeau;
 }

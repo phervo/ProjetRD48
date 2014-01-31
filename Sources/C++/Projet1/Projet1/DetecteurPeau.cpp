@@ -46,7 +46,7 @@ Principe  : On passe l'image dans le domaine de couleur YCrCb puis on détecte to
 dans les intervalles définis comme caractéristiques des piels de peau.
 */
 Mat DetecteurPeau::getMasquePeau(Mat imageEnEntree){
-	Mat masquePeau;
+	Mat masquePeau ;
 	//Passage de l'image de l'espace de couleurs BGR vers YCrCb pour les traitements
 	cvtColor(imageEnEntree, masquePeau, COLOR_BGR2YCrCb);
 	//Filtrage des pixels appartenant à l'intervalle des pixels de peau  
