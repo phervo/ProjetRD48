@@ -48,7 +48,6 @@ int main(int argc, char *argv[])
 
 	//Chargement de l'image cible
 	Mat monImageCible = imread(argv[1], CV_LOAD_IMAGE_UNCHANGED);
-	imshow("Image originale", monImageCible);
 
 	if (monImageCible.empty()){
 		cerr << "Erreur: l'image " << argv[1] << " n'a pas pu être chargée" << endl;
@@ -70,10 +69,6 @@ int main(int argc, char *argv[])
 	//Lancement du traitement en tant que tel
 	Mat resultat = lisserPeau(monImageCible);
 
-	imshow("Image après Lissage", resultat);
-
-	waitKey(0);
-	cvDestroyAllWindows();
 	//Ecriture de l'image résultante
 	imwrite(argv[2], resultat);
 
@@ -127,15 +122,12 @@ Mat lisserPeau(Mat monImage){
 
 	//Recherche du masque de peau 
 	DetecteurPeau monDetecteurPeau = DetecteurPeau();;
-	Mat           masquePeau = monDetecteurPeau.getMasquePeauFiltré(monImage);
-	Mat etiquettage = monDetecteurPeau.getMatriceEtiquettage(masquePeau);
-	Rect cadreEnglobant = monDetecteurPeau.detecterCadreVisage(monImage);
-	set<unsigned char> ensembleEtiquette = monDetecteurPeau.getEnsembleEtiquette(etiquettage, cadreEnglobant);
-	Mat nouveauMasque = monDetecteurPeau.changerMasquePeau(masquePeau, ensembleEtiquette, etiquettage);
-	imshow("Masque de peau", nouveauMasque);
+	Mat           masquePeau       = monDetecteurPeau.getMasquePeauFiltré(monImage);
+
+
 	//Lissage de la peau avec la méthode de Lee et Al.
 	LisseurPeau   lisseurPeau;
-	Mat           resultat = lisseurPeau.lisserImageMethodeLee(monImage, nouveauMasque);
+	Mat           resultat = lisseurPeau.lisserImageMethodeLee(monImage, masquePeau);
 
 	return resultat;
 }

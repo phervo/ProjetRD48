@@ -30,12 +30,13 @@ public:
 
 	Mat getMasquePeau(Mat);
 	Mat getMasquePeauFiltré(Mat);
-	Mat getMatriceEtiquettage(Mat);
-	unsigned char inf(unsigned char etiquetteCourante, unsigned char etiquetteAdjacente);
-	void determinerEtiquette(Mat * matriceEtiquettage, int numeroLigne, int numeroColonne, unsigned char *numeroEtiquette);
-	Rect detecterCadreVisage(Mat );
-	set<unsigned char> getEnsembleEtiquette(Mat, Rect);
-	Mat changerMasquePeau(Mat , set<unsigned char> , Mat );
+	Mat getMatriceEtiquetage(Mat);
+	Mat filtrerMasquePeauSelonComposantesConnexes(Mat, set<unsigned char>, Mat);
+	Rect detecterCadreVisage(Mat);
+	set<unsigned char> getEtiquettesDansCadreVisage(Mat, Rect);
+	unsigned char getEtiquetteInferieure(unsigned char, unsigned char);
+	void choisirEtiquette(Mat*, int, int, unsigned char*);
+	
 	
 private:
 	int Y_MIN;

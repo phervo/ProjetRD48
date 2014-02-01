@@ -17,12 +17,12 @@
 %Paramètre   : nomImage       : nom de l'image dont on va corriger le contraste et la luminosité
 %			 : nomImageRetour : nom de l'image de retour
 %Retourne    : imageRetour    : la matrice de l'image de retour
-%Principe    : Appelle la fonction ContrastEnhancement et écrit l'image de retour
+%Principe    : Ajuste les limites des histogrammes et écrit l'image de retour
 
 function [imageRetour] = CorrectionContrasteLuminosite(nomImage,nomImageRetour)
-
-	addpath('ContrastEnhancement_Sources\');
-		
-    imageRetour = ContrastEnhancement(nomImage);
+    
+    monImage = imread(nomImage);
+    sl = stretchlim(monImage);
+    imageRetour = imadjust(monImage,sl,[]);
     imwrite(imageRetour,nomImageRetour,'Quality',100);
 end

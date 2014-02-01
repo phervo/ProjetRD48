@@ -27,10 +27,11 @@ function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
 	
     %Image Floue
     imageOriginale=imread(nomImage);
-    w = fspecial('disk',8);
+    w = fspecial('disk',16);
     %w = fspecial('gaussian',[64 64],6);
     imageFloue = imfilter(imageOriginale,w,'replicate');
-    
+    figure(1);
+    imshow(imageFloue);
     
     %Carte de profondeur
     imageOriginale_Double=im2double(imread(nomImage));
@@ -41,7 +42,8 @@ function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
     flouMaximum=3;
     [sDMap, fDmap] = defocusEstimation(imageOriginale_Double,carteBordure,std,lambda,flouMaximum);
 
-    
+
+
     %Detection de la boite englobante du visage
     detecteurVisage = vision.CascadeObjectDetector; 		
     boitesEnglobantes = step(detecteurVisage,imageOriginale); 
@@ -52,22 +54,33 @@ function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
     largeur_boite=boitesEnglobantes(4);
     
     %Calcul du seuil de profondeur moyen pour le visage dans la boite
-    SEUIL = mean(fDmap(x:x+hauteur_boite,y:y+largeur_boite));
-   
+    SEUIL = mean(mean(fDmap(x:x+hauteur_boite,y:y+largeur_boite)));
+%    carteProfondeurFond = fDmap>SEUIL(1);
+    carteProfondeurFond = fDmap>1.25;
+
+    
+    imageRetour = zeros(size(imageOriginale),class(imageOriginale));
     %Construction de l'image résultante, si à une position donnée, le pixel
     %est à une profondeur supérieure à la profondeur moyenne au niveau du
     %visage, on choisit la version floue sinon on prend la version
     %originale du pixel
     s = size(imageOriginale);
-    imageRetour = imageOriginale;
     for i=1:s(1)
         for j=1:s(2)
-            if(fDmap(i,j)>SEUIL)
-                imageRetour(i,j) = imageFloue(i,j);
+            if(carteProfondeurFond(i,j)==1)
+                imageRetour(i,j,1) = imageFloue(i,j,1);
+                imageRetour(i,j,2) = imageFloue(i,j,2);
+                imageRetour(i,j,3) = imageFloue(i,j,3);
+            else
+                imageRetour(i,j,1) = imageOriginale(i,j,1);
+                imageRetour(i,j,2) = imageOriginale(i,j,2);
+                imageRetour(i,j,3) = imageOriginale(i,j,3);
             end;
         end;
     end;
- 
+    figure(3);
+    imshow(imageRetour);
+    
     %Ecriture du résultat
     imwrite(imageRetour,nomImageRetour,'Quality',100); 
 end
