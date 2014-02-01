@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 
 	//Chargement de l'image cible
 	//Mat monImageCible = imread(argv[1], CV_LOAD_IMAGE_UNCHANGED);
-	Mat monImageCible = imread("Images_Test/o1.jpg", CV_LOAD_IMAGE_UNCHANGED);
+	Mat monImageCible = imread("Images_Test/v4.jpg", CV_LOAD_IMAGE_UNCHANGED);
 
 	if (monImageCible.empty()){
 		cerr << "Erreur: l'image " << argv[1] << " n'a pas pu être chargée" << endl;
@@ -88,12 +88,12 @@ int main(int argc, char *argv[])
 	Mat resultat = changerMasquePeau(masquePeau, ensembleEtiquette, etiquettage);
 
 	imshow("Image après Lissage", resultat);
-	imshow("Masque des pixels de peau", monImageCible);
+	imshow("Masque des pixels de peau", masquePeau);
 
 	waitKey(0);
 	cvDestroyAllWindows();
 	//Ecriture de l'image résultante
-	imwrite("Images_Test/o1_res_2.jpg", resultat);
+	imwrite("Images_Test/v4_res_2.jpg", resultat);
 
 	return 0;
 }
