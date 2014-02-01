@@ -28,9 +28,15 @@ public:
 	DetecteurPeau(void);
 	~DetecteurPeau(void);
 
-	Mat getMasquePeau(Mat imageEnEntree);
-	Mat getMasquePeauFiltré(Mat imageEnEntree);
-
+	Mat getMasquePeau(Mat);
+	Mat getMasquePeauFiltré(Mat);
+	Mat getMatriceEtiquettage(Mat);
+	unsigned char inf(unsigned char etiquetteCourante, unsigned char etiquetteAdjacente);
+	void determinerEtiquette(Mat * matriceEtiquettage, int numeroLigne, int numeroColonne, unsigned char *numeroEtiquette);
+	Rect detecterCadreVisage(Mat );
+	set<unsigned char> getEnsembleEtiquette(Mat, Rect);
+	Mat changerMasquePeau(Mat , set<unsigned char> , Mat );
+	
 private:
 	int Y_MIN;
 	int Y_MAX;

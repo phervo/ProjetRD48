@@ -32,29 +32,23 @@ using namespace std;
 bool detecterVisage(Mat);
 Mat  lisserPeau(Mat); 
 void lisserPeauTest(char*);
-Mat retournerEtiquettage(Mat masquePeau);
-void determinerEtiquetes(Mat * matriceEtiquettage, int i, int j, unsigned char *numeroEtiquette);
-unsigned char inf(unsigned char etiquetteCourante, unsigned char etiquetteAdjacente);
-Rect detecterCadreVisage(Mat monImage);
-Mat changerMasquePeau(Mat masqueOriginal, set<unsigned char> ensembleEtiquette, Mat matriceEtiquette);
-set<unsigned char> getEnsembleEtiquette(Mat etiquettes, Rect cadreVisage);
 
 
 //-----Main du programme-----------------------------------------------------
 int main(int argc, char *argv[])
 {
 	//Vérification de l'argument
-	/*if (argc < 3) {
+	if (argc < 3) {
 		cerr << "Utilisation de : " << argv[0] << endl;
 		cerr << "Argument 1 : nom_image_cible" << endl;
 		cerr << "Argument 2 : nom_image_resultat" << endl;
 		cerr << "Exemple d'utilisation : nom_executable <nom_fichier_cible> <nom_fichier_resultat>" << endl;
 		return -1;
-	}*/
+	}
 
 	//Chargement de l'image cible
-	//Mat monImageCible = imread(argv[1], CV_LOAD_IMAGE_UNCHANGED);
-	Mat monImageCible = imread("Images_Test/v4.jpg", CV_LOAD_IMAGE_UNCHANGED);
+	Mat monImageCible = imread(argv[1], CV_LOAD_IMAGE_UNCHANGED);
+	imshow("Image originale", monImageCible);
 
 	if (monImageCible.empty()){
 		cerr << "Erreur: l'image " << argv[1] << " n'a pas pu être chargée" << endl;
@@ -74,26 +68,14 @@ int main(int argc, char *argv[])
 	}
 
 	//Lancement du traitement en tant que tel
-	//Mat resultat = lisserPeau(monImageCible);
-	DetecteurPeau monDetecteurPeau = DetecteurPeau();
-	Mat masquePeau;
-	masquePeau = monDetecteurPeau.getMasquePeauFiltré(monImageCible);
-
-	Mat etiquettage = retournerEtiquettage(masquePeau);
-	
-	
-	Rect cadreEnglobant = detecterCadreVisage(monImageCible);
-
-	set<unsigned char> ensembleEtiquette = getEnsembleEtiquette(etiquettage, cadreEnglobant);
-	Mat resultat = changerMasquePeau(masquePeau, ensembleEtiquette, etiquettage);
+	Mat resultat = lisserPeau(monImageCible);
 
 	imshow("Image après Lissage", resultat);
-	imshow("Masque des pixels de peau", masquePeau);
 
 	waitKey(0);
 	cvDestroyAllWindows();
 	//Ecriture de l'image résultante
-	imwrite("Images_Test/v4_res_2.jpg", resultat);
+	imwrite(argv[2], resultat);
 
 	return 0;
 }
@@ -131,42 +113,7 @@ bool detecterVisage(Mat monImage){
 	return visages.empty();
 }
 
-/*
-Methode detecterCadreVisage
-*/
-Rect detecterCadreVisage(Mat monImage){
-	Rect cadreEnglobant= Rect();
-	//Chargement du classifieur de Haar
-	String classifieur_visage_fichier = "haarcascade_frontalface_default.xml";
-	CascadeClassifier classifieur_visage;
 
-	if (!classifieur_visage.load(classifieur_visage_fichier)){
-		cerr << "Erreur: Impossible de charger le Detecteur de Haar de visages" << endl;
-		exit(-4);
-	}
-	//Recherche de visage(s) dans l'image
-	vector<Rect> visages;
-	Mat monImage_niveauxGris;
-
-	cvtColor(monImage, monImage_niveauxGris, CV_BGR2GRAY);
-	equalizeHist(monImage_niveauxGris, monImage_niveauxGris);
-
-	classifieur_visage.detectMultiScale(monImage_niveauxGris, visages, 1.1, 2, 0 | CV_HAAR_SCALE_IMAGE, Size(30, 30));
-
-	if (!visages.empty()){
-		cadreEnglobant = visages[0]; //on recupere le premier uniquement
-
-		for (Rect cadre : visages){
-			if ((cadreEnglobant.height*cadreEnglobant.width) < (cadre.height*cadre.width))cadreEnglobant = cadre;
-			//rectangle(monImage, cadre, 'r');
-		}
-	}
-
-
-
-	//Retour du résultat de la recherche
-	return cadreEnglobant;
-}
 
 
 /*
@@ -179,12 +126,16 @@ on lisse l'image en nous inspirant de la méthode de Lee et Al.
 Mat lisserPeau(Mat monImage){
 
 	//Recherche du masque de peau 
-	DetecteurPeau monDetecteurPeau;
+	DetecteurPeau monDetecteurPeau = DetecteurPeau();;
 	Mat           masquePeau = monDetecteurPeau.getMasquePeauFiltré(monImage);
-
+	Mat etiquettage = monDetecteurPeau.getMatriceEtiquettage(masquePeau);
+	Rect cadreEnglobant = monDetecteurPeau.detecterCadreVisage(monImage);
+	set<unsigned char> ensembleEtiquette = monDetecteurPeau.getEnsembleEtiquette(etiquettage, cadreEnglobant);
+	Mat nouveauMasque = monDetecteurPeau.changerMasquePeau(masquePeau, ensembleEtiquette, etiquettage);
+	imshow("Masque de peau", nouveauMasque);
 	//Lissage de la peau avec la méthode de Lee et Al.
 	LisseurPeau   lisseurPeau;
-	Mat           resultat = lisseurPeau.lisserImageMethodeLee(monImage, masquePeau);
+	Mat           resultat = lisseurPeau.lisserImageMethodeLee(monImage, nouveauMasque);
 
 	return resultat;
 }
@@ -217,101 +168,3 @@ void lisserPeauTest(char* nomImage){
 	cvDestroyAllWindows();
 }
 
-/*Retourner matrice d equittage*/
-Mat retournerEtiquettage(Mat masquePeau){
-	
-	unsigned char numero = 1;
-	Mat matriceEtiquettage = Mat::zeros(masquePeau.size(), CV_8UC1);;
-	
-
-	for (int i = 0; i < masquePeau.rows; i++){
-		for (int j = 0; j < masquePeau.cols; j++){
-			if ((int)masquePeau.at<unsigned char>(i, j) == 255){ //si pixel est blanc
-				determinerEtiquetes(&matriceEtiquettage, i, j, &numero);
-			}
-		}
-	}
-	cout << "Nombre étiquettes : " << numero<<endl;
-	imshow("etiquettage", matriceEtiquettage);
-	return matriceEtiquettage;
-}
-
-void determinerEtiquetes(Mat * matriceEtiquettage, int i, int j, unsigned char *numeroEtiquette){
-	matriceEtiquettage->at<unsigned char>(i, j) = *numeroEtiquette;
-	int nbLigne = matriceEtiquettage->rows-1;
-	int nbCol = matriceEtiquettage->cols-1;
-	
-	if (j>=1){
-		matriceEtiquettage->at<unsigned char>(i, j) = inf(matriceEtiquettage->at<unsigned char>(i, j), matriceEtiquettage->at<unsigned char>(i, j - 1));
-	}
-	
-	if (i>=1){
-		matriceEtiquettage->at<unsigned char>(i, j) = inf(matriceEtiquettage->at<unsigned char>(i, j), matriceEtiquettage->at<unsigned char>(i - 1, j));
-	}
-	
-	if ((1<=i)&&(i<nbLigne) && (1<=j)&&(j<nbCol)){
-		matriceEtiquettage->at<unsigned char>(i, j) = inf(matriceEtiquettage->at<unsigned char>(i, j), matriceEtiquettage->at<unsigned char>(i - 1, j + 1));
-	}
-	
-	if (i>=1 && j>=1){
-		matriceEtiquettage->at<unsigned char>(i, j) = inf(matriceEtiquettage->at<unsigned char>(i, j), matriceEtiquettage->at<unsigned char>(i - 1, j - 1));
-	}
-
-	if (matriceEtiquettage->at<unsigned char>(i, j) == *numeroEtiquette){
-		(*numeroEtiquette)++;
-	}
-}
- 
-unsigned char inf(unsigned char etiquetteCourante, unsigned char etiquetteAdjacente){
-	unsigned char retour = 0;
-	
-	if (etiquetteAdjacente == (unsigned char)0){
-		retour = etiquetteCourante;
-	}
-	else{
-		if (etiquetteCourante <= etiquetteAdjacente){
-			retour = etiquetteCourante;
-		}
-		else{
-			retour = etiquetteAdjacente;
-		}
-	}
-	return retour;
-}
-
-/*Fonction qui recupere les etiquettes au pixel*/
-set<unsigned char> getEnsembleEtiquette(Mat etiquettes, Rect cadreVisage){
-	std::set<unsigned char> monEnsemble;
-
-	for (int i = cadreVisage.x; i < cadreVisage.x + cadreVisage.width;i++){
-		for (int j = cadreVisage.y; j < cadreVisage.y + cadreVisage.height; j++){
-			
-			if ((int)etiquettes.at<unsigned char>(i, j) != 0 && monEnsemble.count(etiquettes.at<unsigned char>(i, j)) == 0){
-				monEnsemble.insert(etiquettes.at<unsigned char>(i, j));
-			}
-			
-		}
-	}
-	return monEnsemble;
-}
-
-/*Fonction qui change le masque de peau en tenant compte de la presence ou non de l'etiquette dans le masque englobant.
-Si l'etiquette n'est pas dans le cadre englobant alors pas besoin de conserver la composante connexe dans le masque de peau.*/
-Mat changerMasquePeau(Mat masqueOriginal, set<unsigned char> ensembleEtiquette, Mat matriceEtiquette){
-
-	Mat nouveauMasquePeau = Mat::zeros(masqueOriginal.size(), CV_8UC1);;
-	
-	for (int i = 0; i < masqueOriginal.rows; i++){
-		for (int j = 0; j < masqueOriginal.cols; j++){
-			
-			unsigned char etiquette = matriceEtiquette.at<unsigned char>(i, j);
-
-			if (ensembleEtiquette.count(etiquette)){
-				nouveauMasquePeau.at<unsigned char>(i, j) = masqueOriginal.at<unsigned char>(i, j);
-			}
-			
-		}
-	}
-
-	return nouveauMasquePeau;
-}
