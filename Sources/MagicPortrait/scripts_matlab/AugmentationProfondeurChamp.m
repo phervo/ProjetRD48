@@ -25,11 +25,11 @@ function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
 
 	addpath('DefocusEstimation_Sources\');
 	
-%     %Image Floue
-%     imageOriginale=imread(nomImage);
-%     %w = fspecial('disk',16);
-%     w = fspecial('gaussian',[21 21],7);
-%     imageFloue = imfilter(imageOriginale,w,'replicate');
+    %Image Floue
+    imageOriginale=imread(nomImage);
+    %w = fspecial('disk',16);
+    w = fspecial('gaussian',[21 21],7);
+    imageFloue = imfilter(imageOriginale,w,'replicate');
     
     
     %Carte de profondeur
@@ -48,55 +48,55 @@ function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
     
     
     
-%     
-%     
-%     
-%     
-%     
-%     %Detection de la boite englobante du visage
-%     detecteurVisage = vision.CascadeObjectDetector; 		
-%     boitesEnglobantes = step(detecteurVisage,imageOriginale); 
-%     
-%     x=boitesEnglobantes(1);
-%     y=boitesEnglobantes(2);
-%     hauteur_boite=boitesEnglobantes(3);
-%     largeur_boite=boitesEnglobantes(4);
-%     
-%     figure(1);
-%     hold on;
-%     imshow(imageOriginale);
-%     rectangle('Position',[x,y,largeur_boite,hauteur_boite]);
-%     hold off;
-%     
-%     figure(2);
-%     imshow(imageFloue);
-%     
-%     %Calcul du seuil de profondeur moyen pour le visage dans la boite
-%     SEUIL = mean(mean(fDmap(x:x+hauteur_boite,y:y+largeur_boite)));
-%     carteProfondeurFond = fDmap>SEUIL(1)+0.2;
-%     %carteProfondeurFond = fDmap>1.25;
-% 
-%     
-%     imageRetour = zeros(size(imageOriginale),class(imageOriginale));
-%     %Construction de l'image résultante, si à une position donnée, le pixel
-%     %est à une profondeur supérieure à la profondeur moyenne au niveau du
-%     %visage, on choisit la version floue sinon on prend la version
-%     %originale du pixel
-%     s = size(imageOriginale);
-%     for i=1:s(1)
-%         for j=1:s(2)
-%             if(carteProfondeurFond(i,j)==1)
-%                 imageRetour(i,j,1:3) = imageOriginale(i,j,1:3)*0.5+imageFloue(i,j,1:3)*0.5;
-%             else
-%                 imageRetour(i,j,1:3) = imageOriginale(i,j,1:3);
-%             end;
-%         end;
-%     end;
-%     
-%     figure(3);
-%     imshow(imageRetour);
-%     
-%     %Ecriture du résultat
-%     imwrite(imageRetour,nomImageRetour,'Quality',100); 
+    
+    
+    
+    
+    
+    %Detection de la boite englobante du visage
+    detecteurVisage = vision.CascadeObjectDetector; 		
+    boitesEnglobantes = step(detecteurVisage,imageOriginale); 
+    
+    x=boitesEnglobantes(1);
+    y=boitesEnglobantes(2);
+    hauteur_boite=boitesEnglobantes(3);
+    largeur_boite=boitesEnglobantes(4);
+    
+    figure(1);
+    hold on;
+    imshow(imageOriginale);
+    rectangle('Position',[x,y,largeur_boite,hauteur_boite]);
+    hold off;
+    
+    figure(2);
+    imshow(imageFloue);
+    
+    %Calcul du seuil de profondeur moyen pour le visage dans la boite
+    SEUIL = mean(mean(fDmap(x:x+hauteur_boite,y:y+largeur_boite)));
+    carteProfondeurFond = fDmap>SEUIL(1)+0.2;
+    %carteProfondeurFond = fDmap>1.25;
+
+    
+    imageRetour = zeros(size(imageOriginale),class(imageOriginale));
+    %Construction de l'image résultante, si à une position donnée, le pixel
+    %est à une profondeur supérieure à la profondeur moyenne au niveau du
+    %visage, on choisit la version floue sinon on prend la version
+    %originale du pixel
+    s = size(imageOriginale);
+    for i=1:s(1)
+        for j=1:s(2)
+            if(carteProfondeurFond(i,j)==1)
+                imageRetour(i,j,1:3) = imageOriginale(i,j,1:3)*0.5+imageFloue(i,j,1:3)*0.5;
+            else
+                imageRetour(i,j,1:3) = imageOriginale(i,j,1:3);
+            end;
+        end;
+    end;
+    
+    figure(3);
+    imshow(imageRetour);
+    
+    %Ecriture du résultat
+    imwrite(imageRetour,nomImageRetour,'Quality',100); 
 end
 
