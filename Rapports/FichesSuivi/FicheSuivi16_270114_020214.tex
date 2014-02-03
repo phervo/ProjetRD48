@@ -1,0 +1,35 @@
+\documentclass[12pt]{fiche-rd-info}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\authorA{Pierre-Yves}{Hervo}
+\authorB{Paul-François}{Jeau}
+\begin{fichesuivi}{27 janvier 2014}{02 février 2014}
+	\tempstravailA{25}{30}
+	\tempstravailB{24}{30}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Nous avons amélioré la construction du masque de peau pour le lissage. Nous avons étiqueté les composantes connexes du masque initial, puis nous avons conservé toutes les composantes connexes qui passaient au moins dans la boite englobant le visage afin d'éliminer une partie des faux positifs: difficile, $100$ \%;
+			\item En ce qui concerne l'amélioration du contraste et de la luminosité, nous avons changé de méthode. Auparavant, le travail était réalisé dans l'espace HSV et le temps de calcul était trop long. Nous avons donc pensé à une autre technique reprenant la méthode de "stretching" d'histogramme. Cette technique va rééquilibrer les histogrammes des composantes de l'image afin qu'ils occupent toute la plage de valeurs disponibles. Le résultat est obtenu de manière bien plus rapide et nous semble meilleur : moyenne, $100$ \%;
+			\item La dernière modification est celle de la séparation du fond et de la personne au premier plan. Nous avons revu certains paramètres de notre traitement afin d'obtenir un seuil de profondeur plus judicieux, de plus, nous avons intégré un peu d'opacité avec le flou que nous rajoutons sur le fond afin d'avoir un résultat plus naturel. Les résultats semblent indiquer que les images ont le fond qui se détache plus facilement si dès le départ il y a un peu de flou. En effet nous utilisons la carte de profondeur de l'image et si cette dernière n'a pas de fond un peu flou, il est compliqué d'augmenter l'effet de défocus. Il s'agit d'une des limites de l'approche mise en place. Une autre critique est le temps de traitement qui est assez long pour les images ayant une dimension supérieure à 500 pixels. Au delà, le temps peut être compté en vingtaine de minutes (et plus encore selon la taille de l'image).
+L'utilisation de Matlab s'avère être assez coûteuse et l'implémentation gagnerait à être migrée en C++ pour le gain de vitesse.Nous n'avons plus le problème de couleurs qui déteignent et le flou est renforcé : difficile, $100$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Faire un point avec M. Perreira Da Silva sur la fin du développement
+			\item Prendre des images supplémentaires avec un fond plus complexe et éprouver notre traitement.
+			\item Terminer la documentation des codes, et avancer le rapport final.
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\end{document}
+
+
