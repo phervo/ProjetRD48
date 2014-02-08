@@ -79,12 +79,13 @@ Mat DetecteurPeau::getMasquePeauFiltré(Mat imageEnEntree){
 	Mat composantesConnexes               = getMatriceEtiquetage(masquePeauErodé);
 	
 	Rect cadreEnglobant                   = detecterCadreVisage(imageEnEntree);
+
 	set<unsigned char>  etiquettes        = getEtiquettesDansCadreVisage(composantesConnexes, cadreEnglobant);
 
 	//Et on élimine par filtrage une grande partie des faux positifs restant
 	Mat nouveauMasque = filtrerMasquePeauSelonComposantesConnexes(masquePeauErodé, etiquettes, composantesConnexes);
 
-	return masquePeauErodé;
+	return nouveauMasque;
 }
 
 /*
@@ -227,11 +228,12 @@ afin de ne conserver dans notre masque de peau que les pixels correspondant à ce
 set<unsigned char> DetecteurPeau::getEtiquettesDansCadreVisage(Mat etiquettes, Rect cadreVisage){
 	std::set<unsigned char> ensemble;
 
-	for (int i = cadreVisage.x; i < cadreVisage.x + cadreVisage.width; i++){
-		for (int j = cadreVisage.y; j < cadreVisage.y + cadreVisage.height; j++){
+	for (int i = cadreVisage.y; i < cadreVisage.y + cadreVisage.height; i++){
+		for (int j = cadreVisage.x; j < cadreVisage.x + cadreVisage.width; j++){
 			//On ne conserve que les étiquettes des composantes connexes qui apparaissent dans le cadre englobant
-			if ((int)etiquettes.at<unsigned char>(i, j) != 0 && ensemble.count(etiquettes.at<unsigned char>(i, j)) == 0){
-				ensemble.insert(etiquettes.at<unsigned char>(i, j));
+			unsigned char etiquette = etiquettes.at<unsigned char>(i, j);
+			if ((int)etiquette != 0 && ensemble.count(etiquette) == 0){
+				ensemble.insert(etiquette);
 			}
 
 		}

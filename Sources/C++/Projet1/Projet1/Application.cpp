@@ -37,6 +37,7 @@ void lisserPeauTest(char*);
 //-----Main du programme-----------------------------------------------------
 int main(int argc, char *argv[])
 {
+	
 	//Vérification de l'argument
 	if (argc < 3) {
 		cerr << "Utilisation de : " << argv[0] << endl;
@@ -71,7 +72,7 @@ int main(int argc, char *argv[])
 
 	//Ecriture de l'image résultante
 	imwrite(argv[2], resultat);
-
+	
 	return 0;
 }
 

@@ -1,0 +1,1 @@
+call magicportrait_traitement_complet_une_image.bat 00_images_cibles\va.jpg 01_images_apres_lissage_peau\va_lisse.jpg 02_images_apres_augmentation_profondeur_champ\va_lisse_prof.jpg 03_images_apres_correction_contraste_luminosite\va_lisse_prof_contraste.jpg

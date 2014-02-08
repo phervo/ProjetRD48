@@ -8,5 +8,4 @@ for %%f in (%vari%"\*") do (
 	cd "scripts_matlab"
 	matlab.exe -nodisplay -nosplash -nodesktop -r "AugmentationProfondeurChamp('\"..\\"%%f','\"..\\"%varj%\%%~nf\"_profondeur\"%%~xf');"
 	cd ..
-	taskkill /im matlab.exe
 )

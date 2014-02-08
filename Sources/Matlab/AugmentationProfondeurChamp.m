@@ -41,38 +41,30 @@ function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
     flouMaximum=3;
     [sDMap, fDmap] = defocusEstimation(imageOriginale_Double,carteBordure,std,lambda,flouMaximum);
 
-    imshow(fDmap,[0 flouMaximum]);
+    %imshow(fDmap,[0 flouMaximum]);
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     %Detection de la boite englobante du visage
     detecteurVisage = vision.CascadeObjectDetector; 		
     boitesEnglobantes = step(detecteurVisage,imageOriginale); 
     
-    x=boitesEnglobantes(1);
-    y=boitesEnglobantes(2);
-    hauteur_boite=boitesEnglobantes(3);
-    largeur_boite=boitesEnglobantes(4);
+    numColonne=boitesEnglobantes(1);
+    numLigne=boitesEnglobantes(2);
+    nbColonnesBoite=boitesEnglobantes(3);
+    nbLignesBoite=boitesEnglobantes(4);
     
-    figure(1);
-    hold on;
-    imshow(imageOriginale);
-    rectangle('Position',[x,y,largeur_boite,hauteur_boite]);
-    hold off;
+    %figure(1);
+    %hold on;
+    %imshow(imageOriginale);
+    %%x, y , width ,height
+    %rectangle('Position',[numColonne,numLigne,nbColonnesBoite,nbLignesBoite]);
+    %hold off;
     
-    figure(2);
-    imshow(imageFloue);
+    %figure(2);
+    %imshow(imageFloue);
     
     %Calcul du seuil de profondeur moyen pour le visage dans la boite
-    SEUIL = mean(mean(fDmap(x:x+hauteur_boite,y:y+largeur_boite)));
+    SEUIL = mean(mean(fDmap(numLigne:numLigne+nbLignesBoite,numColonne:numColonne+nbColonnesBoite)));
     carteProfondeurFond = fDmap>SEUIL(1)+0.2;
     %carteProfondeurFond = fDmap>1.25;
 
@@ -93,8 +85,8 @@ function [imageRetour] = AugmentationProfondeurChamp(nomImage,nomImageRetour)
         end;
     end;
     
-    figure(3);
-    imshow(imageRetour);
+    %figure(3);
+    %imshow(imageRetour);
     
     %Ecriture du résultat
     imwrite(imageRetour,nomImageRetour,'Quality',100); 
