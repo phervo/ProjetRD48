@@ -1,0 +1,47 @@
+\documentclass[12pt]{fiche-rd-info}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\authorA{Pierre-Yves}{Hervo}
+\authorB{Paul-François}{Jeau}
+\begin{fichesuivi}{03 février 2014}{09 février 2014}
+	\tempstravailA{11}{00}
+	\tempstravailB{11}{20}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Dernières corrections des codes C++ et Matlab  : moyenne, $100$ \%;
+			\item Réalisation des diagrammes d’activités principaux illustrant l’enchaînement des différents codes développés : simple, $100$ \%;
+			\item Lancement de nos codes d’améliorations sur 22 images différentes afin d’étudier les résultats du traitement  : simple, $100$ \%;
+			\item Rencontre avec M. Perreira Da Silva pour faire un point de fin de développement et sur les résultats  : simple, $100$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Au cours de notre rencontre avec M. Perreira Da Silva cette semaine, nous avons abordé les résultats et discuté des images pour lesquelles le traitement fonctionne bien et celles pour lesquelles on constate quelques limites.
+			\item Tout d’abord la première limite est la constitution du masque des pixels de peau qui aurait gagné à être personnalisé et construit sur la base de chaque image. Cela aurait pu se faire en calculant la couleur moyenne des pixels de peau dans la boite englobante du visage. Or, notre méthode utilise des bornes assez “génériques” qui peuvent se révéler insuffisantes comme nous avons pu le constater sur certaines images.
+			\item Ensuite vient l’augmentation de la profondeur de champ. Notre méthode s’appuie sur la détection de la profondeur des pixels dans l’image et le renforcement de cet effet. Incidemment, s’il y a peu de profondeur dans l’image, le traitement sera peu efficace et visible..
+	\item Pour ce qui est de la dernière étape, la correction du contraste et de la luminosité, les résultats sont très corrects à l’exception d’un changement de couleur que nous avons remarqué et d’une correction rendant l’image moins “belle” qu’auparavant. Mais dans l’ensemble, c’est une partie du traitement qui fonctionne bien.
+	\item En dehors de ce point sur les résultats, nous avons aussi parlé du rapport final et du point sur l’évaluation des résultats. Si une évaluation quantitative n’est pas possible dans le temps imparti, nous évaluerons de manière qualitatif les images que nous avons corrigées et identifierons les limites du traitement.
+		\end{itemize}
+	\end{echange}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Terminer le rapport du projet pour la partie 
+			\item Préparer la procédure de recette en prévision de la dernière semaine
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\end{document}
+
+
+
+
