@@ -73,7 +73,7 @@
   % - le troisième paramètre permet d'adapter la largeur du logo afin
   %   de le rendre visuellement comparable à ceux mis par défaut (université de Nantes et
   %   éventuellement laboratoire)
-\date{1 décembre 2013}
+\date{16 février 2014}
   % - en français les mois ne prennent pas de majuscule (sauf si vous ne mettez pas le jour)
   % - inutile de mettre un 0 devant les jours 1 à 9 du mois !
   % - le jour est peut-être même une précision inutile...
@@ -94,9 +94,11 @@ Qui n'a jamais essayé d'améliorer soi-même un de ses clichés photographiques
 \maketitle
 %-------------------------------------------------------------------------------------------------------------
 \begin{acknowledgements}
-Nous souhaitons remercier Matthieu PERREIRA DA SILVA pour son encadrement et ses conseils tout au long de cette première phase du projet de Recherche et développement.
+Nous souhaitons remercier Matthieu PERREIRA DA SILVA pour son encadrement et ses conseils tout au long de ce projet de Recherche et développement.
 
-De plus, nos remerciements s'adressent aussi à Polytech Nantes, et à l'ensemble du corps de l'équipe pédagogique, pour la formation de qualité qui nous a été prodiguée.
+De même, nous sommes reconnaissant envers M. José MARTINEZ pour ses suggestions de corrections de rapport.
+
+Pour terminer, nos remerciements s'adressent aussi à Polytech Nantes, et à l'ensemble du corps de l'équipe pédagogique, pour la formation de qualité qui nous a été prodiguée.
 \end{acknowledgements}
 %-------------------------------------------------------------------------------------------------------------
 \newpage
@@ -117,15 +119,25 @@ C'est en analysant ce qui nous plaît et ce qui est amélioré que nous pouvons 
 Les objectifs de ce projet sont multiples et le premier est tout d'abord l'établissement d'un état de l'art sur plusieurs domaines. Ces domaines relèvent des critères esthétiques qui déterminent une image attirante / photographie attirante / un visage attirant. Subséquemment, l'étude des techniques d'améliorations des images, photographies, photos de visage est nécessaire. L'objectif ultime serait de condenser toutes ces techniques, ou d'améliorer une de ces techniques, qui permettrait de faire ressortir tout le potentiel d'une photo de portrait. Afin de résumer l'horizon vers lequel tend ce projet, les objectifs sont donc de
 \begin{itemize}
 \item déterminer les critères esthétiques permettant de discriminer les photographies de portrait;
-\item proposer une méthode permettant de retoucher nos photos de profil de manière automatique afin de répondre aux critères de beauté les plus importants.
+\item proposer une méthode permettant de retoucher nos photos de profil de manière automatique afin de répondre aux critères de beauté les plus importants;
+\item développer cette proposition et obtenir un prototype fonctionnel;
+\item l'évaluer afin de voir si les résultats obtenus sont conformes à nos attentes;
+\item retirer les conclusions de cette évaluation et d'avoir une analyse critique sur le travail réalisé lors de ce projet.
 \end{itemize}
 \section{Travail réalisé}
 Ce rapport condense tout notre travail autour de l'état de l'art du sujet. En effet notre projet se découpe en deux parties. Les deux parties les plus importantes sont la réalisation d'un état de l'art sur les critères esthétiques des photographies, mais aussi sur les techniques d'améliorations des images. Ce dernier axe de l'état de l'art est aussi le cœur de ce projet de recherche, c'est pourquoi, à l'issue d'un comparatif des différentes méthodes existantes pour la retouche d'images numérisées, nous avons proposé une amélioration d'une des approches existantes.
-Dans la prochaine phase, le but est de développer et d'expérimenter notre proposition et de nous confronter aux autres méthodes.
+Dans la phase suivante nous avons développé et expérimenté notre proposition. Le but étant de pouvoir au final la confronter aux autres méthodes.
+
+ 
+
 \section{Plan de l'étude}
 Afin d'organiser toute notre étude, nous avons procédé dans la première phase à un découpage en deux temps. Tout d'abord, le chapitre~\ref{chap:EtatArt} présente et analyse les critères retenus actuellement pour évaluer des photographies. S'en suit, dans ce chapitre, une confrontation des méthodes d'amélioration de nos photos de portrait existantes.
 
-Une fois familiarisés avec les enjeux du contexte, le chapitre~\ref{chap:Propositions} présente les techniques les plus abouties et les points que nous pourrions modifier afin de répondre au mieux à notre problématique.
+Une fois familiarisés avec les enjeux du contexte, le chapitre~\ref{chap:Propositions} présente les techniques les plus abouties et les points que nous pourrions modifier afin de répondre au mieux à notre problématique.Ce chapitre expose les différentes propositions que nous avons élaborées pour répondre à la problématique initialement définie.
+
+Dans le chapitre ~\ref{chap:Experimentations}, nous détaillons la proposition que nous avons retenue et évaluons la solution développée.
+Enfin, le chapitre ~\ref{chap:Conclusion} retrace tout le travail qui a été réalisé et permet de fournir des nouvelles pistes de réflexion pour l'avenir.
+
 %-------------------------------------------------------------------------------------------------------------
 % \part{\'Etat de l'art} % À décommenter si l'état de l'art nécessite plusieurs chapitres.
                         % Ce sera le cas si l'état de l'art est riche, où l'on distinguera un chapitre de présentation d'un chapitre critique.
@@ -582,14 +594,14 @@ Dans cette approche, nous souhaiterions améliorer la qualité de la photographi
 \paragraph{Idées préliminaires}
 Comme dans l’approche précédente, nous réaliserions des traitements sur le fond afin de le rendre plus beau puis nous appliquerions un flou afin d’en détacher le sujet. Une fois cela fait nous nous attaquerions au traitement du visage. Au niveau du traitement, nous commencerions par détecter les masque de pixels correspondant au visage, aux yeux, aux cheveux. Nous améliorerons le visage par le traitement des imperfections comme dans la méthode précédente puis nous embellirions l’éclat des dents et des cheveux.
 Cette solution plus complexe à mettre en œuvre, pourrait produire des résultats intéressants à confronter avec les méthodes existantes.
-\subsection{Conclusion}
+\subsection{Conclusion et élection de la proposition suivie}
 Nous avons dans le tableau ~\ref{tab:compprop} listé les avantages et inconvénients de nos propositions. De manière globale, la proposition ~\ref{propun} est plus réaliste en termes de temps de travail et d’utilisation d’outils existants. 
 
 La proposition ~\ref{propdeux}, elle, dépend de nombreuses techniques de détection des défauts et de zones cibles, qui ne sont pas disponibles pour une grande partie. Combiner, trouver ou développer ces techniques serait un travail chronophage et requièrait une charge de travail bien supérieure. 
 \paragraph*{}
-C’est la raison pour laquelle, nous avons décidé que nous nous consacrerons au développement de la première solution lors de la seconde phase de ce projet.
+C’est la raison pour laquelle, nous avons décidé de nous consacrer au développement de la première solution lors de la seconde phase de ce projet. Une fois ce choix réalisé, il nous reste à identifier plus précisément les techniques déjà implémentées
+et à concevoir, plus formellement, la manière de mettre en œuvre cette solution.
 
-Plus précisément, dans la prochaine phase, nous allons identifier clairement les techniques utilisables. Puis nous concevrons de manière plus formelle la manière de mettre en œuvre la première proposition. À la suite de cela, nous entamerons les développements correspondants.
 
 \begin{table*}
 \begin{center}
@@ -603,6 +615,70 @@ Embellissent optimal sans déformation du visage & - Mise en valeur de la totali
 \caption{Tableau comparatif des propositions possibles}
 \label{tab:compprop}
 \end{table*}
+
+
+\section{Correction par ajout de flou et augmentation de la profondeur de champ}
+\subsection{Détection des pixels de peau}
+
+\subsection{Augmentation de la profondeur de champ}
+
+\subsection{Correction du contraste et de la luminosité}
+
+\subsection{Principe général de fonctionnement de la proposition}
+
+\subsection{Processus d'évaluation}
+
+\section{Conclusion}
+
+
+
+
+
+
+
+
+
+\chapter{Expérimentations et résultats}
+\label{chap:Experimentations}
+
+
+\section{Développements}
+\subsection{Lissage de la peau}
+\subsection{Augmentation de la profondeur de champ}
+\subsection{Correction du contraste et de la luminosité}
+
+
+\section{Résultats}
+
+
+\section{Interprétation et évaluation des résultats}
+
+\section{Conclusion}
+
+
+
+
+
+\chapter{Conclusion}
+\label{chap:Conclusion}
+
+
+
+\section{Résumé du travail effectué}
+
+\section{Enseignements}
+
+\section{Perspectives de recherche}
+
+
+
+
+
+
+
+
+
+
 %---------------------------------------------------------------------------------------------------------
 \bibliography{rapport}
 \listoffigures{}
@@ -781,34 +857,71 @@ Autre point intéressant il s’agit de la confrontation entre deux classifieurs
 
 
 \chapter{Planification}
+Cette partie est dédiée à la planification qui a été réalisée tout au long du projet.
 
+\section{Phase I}
 \subsection{Gantt Previsionnel}
-Une fois le sujet affecté, nous avions fait une estimation des différentes phases que nous aurions à réaliser et du temps que chacune nous prendrait. Tout est résumé dans la figure ~\ref{fig:PlanningPrevisionnel}.
+Une fois le sujet affecté, nous avions fait une estimation des différentes phases que nous aurions à réaliser et du temps que chacune nous prendrait lors de la première phase. Tout est résumé dans la figure ~\ref{fig:PlanningPrevisionnel}.
 
 \subsection{Gantt Effectif}
-Maintenant que nous arrivons à la fin de la première période, il est temps de mettre en place le Gantt effectif afin de pouvoir le comparer avec celui présenté précédemment et d’analyser notre avancement. Le diagramme de Gantt effectif est représenté dans la figure ~\ref{fig:PlanningEffectif}.
+A l'issue de la première période nous avons conservé une vue du planning effectif. Le diagramme de Gantt effectif est représenté dans la figure ~\ref{fig:PlanningEffectif}. Dans le point suivant nous allons le comparer avec celui présenté précédemment et analyser la première phase.
 
-\subsection{Comparaison des différences de planification}
+\subsection{Comparaison des différences de planification de la première phase}
 \paragraph*{}
 Nous avions prévu les grandes phases suivantes : Choix du sujet, Acquisition du sujet, Étude bibliographique, Comparatifs sur l'état de l'art, Formulation propositions, Préparation soutenance, Soutenance Intermédiaire, Rédaction du Rapport
 
-On peut voir que nous avons respecté ces différentes phases, il n’y a pas eu d’ajouts ou de suppressions à ce niveau-là. La seule différence se situe au niveau des dates où l’on constate un décalage d’environ une semaine. En effet, notre projet nécessitant une importante phase bibliographique, nous avons préféré y consacrer un peu plus de temps afin d’être sûr d’avoir fait le tour du sujet. Au final, nous arrivons quand même au même état final. Si on regarde la partie gestion des ressources, sur ces Gantts ne figurent pas les affectations des membres du binôme. Tout au long de cette première phase, nous avons fait le choix de toujours travailler ensemble afin d’assurer que nous ayons la même base bibliographique pour pouvoir bien traiter la prochaine phase.
+On peut voir que nous avons respecté ces différentes phases, il n’y a pas eu d’ajouts ou de suppressions à ce niveau-là. La seule différence se situe au niveau des dates où l’on constate un décalage d’environ une semaine. En effet, notre projet nécessitant une importante phase bibliographique, nous avons préféré y consacrer un peu plus de temps afin d’être sûr d’avoir fait le tour du sujet. Au final, nous arrivons quand même au même état final. Si on regarde la partie gestion des ressources, sur ces Gantts ne figurent pas les affectations des membres du binôme. Tout au long de la première phase, nous avons fait le choix de toujours travailler ensemble afin d’assurer que nous ayons la même base bibliographique pour pouvoir bien traiter la prochaine phase.
 
 \paragraph*{}
-Cette première phase nous permet de dégager les conclusions suivantes en ce qui concerne la planification. Tout d’abord la gestion hebdomadaire des tâches est primordiale si nous voulons que chaque acteur du projet soit à jour. De plus, il ne faut pas prendre de retard sur les grandes étapes du projet, le cas échéant, il est plus difficile de gérer les imprévus qui pourraient survenir. Dans la prochaine phase la difficulté supplémentaire sera l’évaluation de la difficulté des étapes de la réalisation. Il s’agira de ne pas sous ou sur-évaluer les difficultés à venir.
+La première phase nous a permis de dégager les conclusions suivantes en ce qui concerne la planification. Tout d’abord la gestion hebdomadaire des tâches est primordiale si nous voulons que chaque acteur du projet soit à jour. De plus, il ne faut pas prendre de retard sur les grandes étapes du projet, le cas échéant, il est plus difficile de gérer les imprévus qui pourraient survenir. 
 
 \begin{figure*}
 	\centering
 		\includegraphics[width=1\textwidth]{Gantts/p1_previsionnel}
-	\caption{Planification prévisionnelle}
+	\caption{Planification prévisionnelle Phase I}
 	\label{fig:PlanningPrevisionnel}
 \end{figure*}
 \begin{figure*}
 	\centering
 		\includegraphics[width=1\textwidth]{Gantts/p1_effectif}
-	\caption{Planning effectif}
+	\caption{Planning effectif Phase I}
 	\label{fig:PlanningEffectif}
 \end{figure*}
+
+
+
+\section{Phase II}
+\subsection{Gantt Previsionnel}
+A l'issue de la première phase nous avons réalisé dans la figure~\ref{fig:PlanningPrevisionnel2} notre hypothèse de planification. Ce diagramme de Gantt, est centré sur le développement du projet.
+
+\subsection{Gantt Effectif}
+Maintenant que nous arrivons à la fin de la dernière phase, nous avons réalisé un nouveau diagramme de Gantt effectif ~\ref{fig:PlanningEffectif2}. Il illustre ce qui a été réalisé et nous pouvons constater des différences par rapport à ce qui était prévu.
+
+\subsection{Comparaison des différences de planification de la seconde phase}
+
+Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes  Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes.
+
+
+
+\begin{figure*}
+	\centering
+		\includegraphics[width=1\textwidth]{Gantts/p2_previsionnel}
+	\caption{Planification prévisionnelle Phase II}
+	\label{fig:PlanningPrevisionnel2}
+\end{figure*}
+\begin{figure*}
+	\centering
+		\includegraphics[width=1\textwidth]{Gantts/p2_effectif}
+	\caption{Planning effectif Phase II}
+	\label{fig:PlanningEffectif2}
+\end{figure*}
+
+
+
+
+
+
+
 
 
 \chapter{Fiches de suivi}
@@ -1088,10 +1201,220 @@ de la photographie
 		\end{itemize}
 	\end{planification}
 \end{fichesuivi}
+
+
+\begin{fichesuivi}{2 décembre 2013}{8 décembre 2013}
+	\tempstravailA{10}{10}
+	\tempstravailB{10}{10}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Répétition pour la soutenance intermédiaire : simple, réalisée à $100$ \% ;
+			\item Passage de la soutenance intermédiaire le 4 décembre : simple, réalisée à $100$ \% ;
+			\item Correction du rapport à l'issue de la réception de sa version amendée par M. MARTINEZ (hors correction des champs manquants dans la bibliographie) :  simple, réalisée à $80$ \% ;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Etablir une planification plus précise de la phase de développement, en raison de la réduction du nombre de semaines restantes
+			\item Installer OpenCV, Visual Studio pour de premières expérimentations et manipulations
+		\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+
+\begin{fichesuivi}{9 décembre 2013}{15 décembre 2013}
+	\tempstravailA{09}{45}
+	\tempstravailB{09}{45}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Fin de la correction du rapport au niveau de la complétude des champs de la bibliographie:  simple, réalisée à $100$ \% ;
+			\item Installation d’OpenCV et de Visual Studio: simple, réalisée à $100$ \% ;
+			\item Premières expérimentations pour nous refamiliariser avec le C++ et utiliser OpenCV: simple, réalisée à $100$ \% ;
+			\item Prise de rendez-vous avec Matthieu PERREIRA DA SILVA pour la semaine prochaine:  simple, réalisée à $100$ \% ;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Rencontrer M. PERREIRA DA SILVA pour faire le point post soutenance et expliquer ce que nous voulons mettre en place.;
+			\item Commencer à implémenter, utiliser des briques existantes pour la détection de visages et de pîxels de peau;
+		\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+
+\begin{fichesuivi}{16 décembre 2013}{22 décembre 2013}
+	\tempstravailA{13}{00}
+	\tempstravailB{13}{00}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Réunion d'avancement avec M. PERREIRA DA SILVA le 20 : simple, réalisée à $100$ \%;
+			\item Premières expérimentations de détection de peau. La base d'images n'est pas adaptée pour les premières détections. La couleur du fond qui est uniforme, est trop proche de la couleur de la peau. Cela induit une mauvaise détection si on se base sur l'appartenance du pixel à un intervalle supposé englober un certain panel de couleurs de peau : simple, réalisée à $50$ \%;
+			\item Premier essai de la méthode de Viola et Jones pour détecter la boite englobant le visage. La méthode fonctionne mais la boite est un peu trop petite pour contenir le visage intégralement : simple, réalisée à $70$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Lors de la réunion avec M. PERREIRA DA SILVA, nous avons abordé tout d'abord la fin de la première phase. A l'issue de ce point, nous avons plus longuement discuté du déroulement de cette nouvelle phase. Actuellement les outils de développement sont en place (pour l'instant Visual Studio et OpenCV), et quelques expérimentations ont été effectuées. Cela a permis de détecter quelques pistes d'améliorations, notamment en ce qui concerne l'identification du masque de peau. Une piste d'amélioration pourrait être l'étude des densités de probabilités des pixels de peau contenus dans la boite englobant le visage. Un autre point à prendre en compte est la base d'images utilisée lors de la détection. En effet les images possèdent un fond trop proche de la couleur de la peau, ce qui induit une mauvaise détection. Une base d'images pour la détection de la peau plus adaptée doit être choisie;
+			\item L'autre problématique de ce projet est l'amélioration de la profondeur de champ. Pour réaliser cela, nous devons tout d'abord segmenter l'image en termes de contenus au premier plan et de contenus à un plan plus éloigné. La segmentation couleur pourrait être utilisée pour identifier le sujet (cheveux+visage+buste,...), mais elle serait potentiellement plus aisée à mettre en place sous Matlab que sur OpenCV. De ce constat, le traitement final pourrait solliciter OpenCV et Matlab;
+			\item De manière générale, ce projet sera divisé en deux temps. Nous devons en premier lieu, avec OpenCV, détecter et traiter les zones de peau. Puis dans un second temps, sous Matlab, il faudrait implémenter un module pour traiter le cas de la profondeur de champ;
+			\item Une fois les congés terminés, un point sera à réaliser quant à l'avancement sur le premier module. 
+		\end{itemize}
+	\end{echange}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Faire un retour à la rentrée sur l'avancement du projet à M. PERREIRA DA SILVA;
+			\item Tout d'abord avancer au mieux possible le premier module d'amélioration de la peau;
+		\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\begin{fichesuivi}{6 janvier 2014}{12 janvier 2014}
+	\tempstravailA{13}{00}
+	\tempstravailB{13}{00}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Développement et intégration du premier module d’amélioration de la peau. A l’issue de quelques études pendant les congés, nous avons en conséquence cette semaine développé chacun de notre côté une partie dédiée à la détection de peau en se basant sur l’espace de couleurs YCrCb et une seconde partie dédiée au lissage de la peau à partir de la méthode de Lee et al. Ce module fonctionne tout d’abord par une détection des pixels relevant de la peau dans l’espace YCrCb, puis à partir de l’image sur laquelle on applique un filtre flou gaussien (de noyau plus ou moins grand) on combine la valeur des pixels de peau originale avec la valeur correspondant dans l’image modifiée. En respectant la méthode de Lee et al. ce seuil d’opacité est fixé à 50% afin que le lissage soit naturel  : moyen, réalisée à $100$ \%;
+			\item Etude de fonction pour la segmentation couleur des images sous Matlab et OpenCV : simple, réalisée à $50$ \%;
+			\item Etude d’un code d’estimation de la carte de Flou sous Matlab indiqué par M. Perreira Da Silva: simple, réalisé à $80$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item La première partie d’amélioration de la peau étant terminé, nous nous concentrons à présent sur la seconde partie qui est la segmentation des éléments que l’on veut positionner au premier plan par rapport au fond sur lequel on appliquera un flou plus fort.		
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\begin{fichesuivi}{13 janvier 2014}{19 janvier 2014}
+	\tempstravailA{12}{00}
+	\tempstravailB{12}{00}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Nous avons continué cette semaine à traiter les phases d'amélioration de la profondeur de champ et de correction du contraste et de la luminosité. Nous avons étudié ces deux points sous Matlab cette fois-ci pour des raisons plus pratiques. Pour réaliser notre première version du traitement d'amélioration de la profondeur de champ, nous avons utilisé des codes Matlab développés pour dresser une carte de profondeur (Defocus Estimation).On calcule une image floue (de type disque pour le différencier du flou gaussien de la peau), puis à partir de la carte obtenue, on peut conserver la version floue d'un pixel si sa profondeur est supérieur à celle que l'on observe en moyenne dans la zone dessinée par la boite englobant le visage par Viola et Jones. Les premiers résultats sont mitigés car selon les images, une partie du visage est estimée dans un plan de profondeur similaire au fond rendant la séparation difficile :moyenne, réalisée à $60$ \%;
+			\item Nous avons aussi voulu étudier la segmentation d'une image en termes de couleurs et de parties connexes pour pouvoir "floutter" tout ce qui est hors du visage+corps+cheveux mais nos études ne sont encore pas assez poussées: moyenne, réalisée à $40$ \%;
+			\item A l'issue de nos recherches pour l'amélioration du contraste et de la luminosité, nous avons lu un article proposant d'améliorer les composantes de l'image dans l'espace HSV. Des algorithmes Matlab que nous avons adaptés, produisent des résultats qui nous semblent corrects, cependant le temps de calcul est assez important(25 secondes de traitement pour une image de 500x700 pixels) : moyenne, réalisée à $70$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Nous avons rencontré M. Perreira Da Silva lundi après-midi et lui avons montré nos travaux de lissage de peau. Les points à améliorer sont la taille du noyau utilisé pour le flou, ainsi que la classification des pixels de peau. Cette classification peut sélectionner des pixels assez éloignés du visage et cela induit des zones qui ne devraient pas être lissées . Pour corriger cela, il faudrait s'intéresser aux composantes connexes et profiter de la boite de Viola et Jones.
+		\end{itemize}
+	\end{echange}
+
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Améliorer la construction du masque des pixels de peau afin de ne conserver de manière générale que la composante connexe que l'on retrouve dans la boite de Viola et Jones. Cela permettrait d'éliminer certaines erreurs de classification.
+			\item Continuer nos travaux sur l'amélioration du fond car les résultats ne correspondent pas encore à nos attentes. De plus les temps de calculs sont particulièrement longs (et une personne lambda possède des images qui peuvent potentiellement être au minimum quatre fois plus grandes).	
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\begin{fichesuivi}{20 janvier 2014}{26 janvier 2014}
+	\tempstravailA{07}{00}
+	\tempstravailB{11}{00}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Nous avons réalisé des scripts batch afin d'automatiser l'exécution de la chaîne de  traitements de nos différents codes C++ et Matlab. Cela permettra de lancer sur un lot d'images le traitement de manière plus automatique, moyenne, $100$\%;
+			\item Nous avons modifié l'architecture de nos codes C++ et Matlab afin de les rendre plus clair et de documenter en vue du dépôt final: moyenne, réalisée à $100$ \%;
+			\item Nous avons continué à modifier les scripts Matlab pour la défocalisation du fond et le code C++ pour le lissage de la peau mais les résultats ne sont pas encore satisfaisant, moyenne, $20$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Terminer la correction du lissage du visage et éliminer les erreurs de flou du fond qui altèrent la couleur.
+			\item Nous souhaitons achever la partie développement du projet la semaine prochaine afin d'avoir une semaine de bilan, de documentation et de finalisation du rapport.
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\begin{fichesuivi}{27 janvier 2014}{02 février 2014}
+	\tempstravailA{25}{30}
+	\tempstravailB{24}{30}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Nous avons amélioré la construction du masque de peau pour le lissage. Nous avons étiqueté les composantes connexes du masque initial, puis nous avons conservé toutes les composantes connexes qui passaient au moins dans la boite englobant le visage afin d'éliminer une partie des faux positifs: difficile, $100$ \%;
+			\item En ce qui concerne l'amélioration du contraste et de la luminosité, nous avons changé de méthode. Auparavant, le travail était réalisé dans l'espace HSV et le temps de calcul était trop long. Nous avons donc pensé à une autre technique reprenant la méthode de "stretching" d'histogramme. Cette technique va rééquilibrer les histogrammes des composantes de l'image afin qu'ils occupent toute la plage de valeurs disponibles. Le résultat est obtenu de manière bien plus rapide et nous semble meilleur : moyenne, $100$ \%;
+			\item La dernière modification est celle de la séparation du fond et de la personne au premier plan. Nous avons revu certains paramètres de notre traitement afin d'obtenir un seuil de profondeur plus judicieux, de plus, nous avons intégré un peu d'opacité avec le flou que nous rajoutons sur le fond afin d'avoir un résultat plus naturel. Les résultats semblent indiquer que les images ont le fond qui se détache plus facilement si dès le départ il y a un peu de flou. En effet nous utilisons la carte de profondeur de l'image et si cette dernière n'a pas de fond un peu flou, il est compliqué d'augmenter l'effet de défocus. Il s'agit d'une des limites de l'approche mise en place. Une autre critique est le temps de traitement qui est assez long pour les images ayant une dimension supérieure à 500 pixels. Au delà, le temps peut être compté en vingtaine de minutes (et plus encore selon la taille de l'image).
+L'utilisation de Matlab s'avère être assez coûteuse et l'implémentation gagnerait à être migrée en C++ pour le gain de vitesse.Nous n'avons plus le problème de couleurs qui déteignent et le flou est renforcé : difficile, $100$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Faire un point avec M. Perreira Da Silva sur la fin du développement
+			\item Prendre des images supplémentaires avec un fond plus complexe et éprouver notre traitement.
+			\item Terminer la documentation des codes, et avancer le rapport final.
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+\begin{fichesuivi}{03 février 2014}{09 février 2014}
+	\tempstravailA{11}{00}
+	\tempstravailB{11}{20}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item Dernières corrections des codes C++ et Matlab  : moyenne, $100$ \%;
+			\item Réalisation des diagrammes d’activités principaux illustrant l’enchaînement des différents codes développés : simple, $100$ \%;
+			\item Lancement de nos codes d’améliorations sur 22 images différentes afin d’étudier les résultats du traitement  : simple, $100$ \%;
+			\item Rencontre avec M. Perreira Da Silva pour faire un point de fin de développement et sur les résultats  : simple, $100$ \%;
+		\end{itemize}
+	\end{travaileffectue}
+
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Au cours de notre rencontre avec M. Perreira Da Silva cette semaine, nous avons abordé les résultats et discuté des images pour lesquelles le traitement fonctionne bien et celles pour lesquelles on constate quelques limites.
+			\item Tout d’abord la première limite est la constitution du masque des pixels de peau qui aurait gagné à être personnalisé et construit sur la base de chaque image. Cela aurait pu se faire en calculant la couleur moyenne des pixels de peau dans la boite englobante du visage. Or, notre méthode utilise des bornes assez “génériques” qui peuvent se révéler insuffisantes comme nous avons pu le constater sur certaines images.
+			\item Ensuite vient l’augmentation de la profondeur de champ. Notre méthode s’appuie sur la détection de la profondeur des pixels dans l’image et le renforcement de cet effet. Incidemment, s’il y a peu de profondeur dans l’image, le traitement sera peu efficace et visible..
+	\item Pour ce qui est de la dernière étape, la correction du contraste et de la luminosité, les résultats sont très corrects à l’exception d’un changement de couleur que nous avons remarqué et d’une correction rendant l’image moins “belle” qu’auparavant. Mais dans l’ensemble, c’est une partie du traitement qui fonctionne bien.
+	\item En dehors de ce point sur les résultats, nous avons aussi parlé du rapport final et du point sur l’évaluation des résultats. Si une évaluation quantitative n’est pas possible dans le temps imparti, nous évaluerons de manière qualitatif les images que nous avons corrigées et identifierons les limites du traitement.
+		\end{itemize}
+	\end{echange}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item Terminer le rapport du projet pour la partie 
+			\item Préparer la procédure de recette en prévision de la dernière semaine
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
+
+
+
 \newpage
 \printweeksummary
 \chapter{Auto-contrôle et auto-évaluation}
-La figure~\ref{fig:AutoEvaluationTravailIntermediaire} présente l'auto-évaluation que nous avons réalisée pour la première partie du projet de recherche.
+La figure~\ref{fig:AutoEvaluationTravailIntermediaire} présente l'auto-évaluation que nous avons réalisée pour la première partie du projet de recherche. La figure ~\ref{fig:AutoEvaluationTravailFinal} concerne la seconde partie du projet.
 \begin{figure*}
 	\centering
      \ifscreen % macro TeX (issue de la classe report-rd-info.cls) permettant d'ajuster le contenu en fonction du l'orientation du document (<< screen >> ou pas)
@@ -1102,5 +1425,19 @@ La figure~\ref{fig:AutoEvaluationTravailIntermediaire} présente l'auto-évaluat
 	\caption{Points à contrôler à l'issue de la phase I}
 	\label{fig:AutoEvaluationTravailIntermediaire}
 \end{figure*}
+
+
+\begin{figure*}
+	\centering
+     \ifscreen % macro TeX (issue de la classe report-rd-info.cls) permettant d'ajuster le contenu en fonction du l'orientation du document (<< screen >> ou pas)
+        \rotatebox{90}{\includegraphics[width=0.9\textheight]{Images/Grille-Evaluation-PRD2}}
+     \else
+        \includegraphics[width=0.9\textwidth]{Images/Grille-Evaluation-PRD1}
+     \fi
+	\caption{Points à contrôler à l'issue de la phase II}
+	\label{fig:AutoEvaluationTravailFinal}
+\end{figure*}
+
+
 \end{document}
 
