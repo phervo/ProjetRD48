@@ -1,8 +1,0 @@
-There is an excellent paper on skin color detection by Chai and Ngan 1999. 
-The distribution of skin color is best determined by thresholding 77 <= Cb <= 127, and 133 <= Cr <= 173 according to Chai and Ngan. 
-
-In a more recent model (Kukhare and Novosielski 2004) these numbers have been adjusted slightly to Y > 80, 85 < Cb < 135, and 135 < Cr < 180. 
-
-So convert your image to YCbCr and try the above settings. 
-
-Note that within TiViPE you can use the skinColor module or use its C++ routine found in the Data5D library Data5D C_Color::skinColor (Data5D d)

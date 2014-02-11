@@ -1,4 +1,4 @@
-\documentclass[11pt, french,screen]{report-rd-info}
+\documentclass[11pt, french]{report-rd-info}
   % - 12pt:  peut être préférable pour faciliter la lecture sur les petits écrans, demander à l'encadrement
   % - screen:  à enlever pour obtenir un rapport au format A4
   % - french:  à remplacer par english en cas de rédaction (exceptionnelle) en anglais
@@ -316,6 +316,7 @@ Une photo comme la figure~\ref{fig:VisageAgreable} est un bon exemple du respect
 \end{figure*}
 Nous connaissons désormais les grands critères utilisés pour analyser les photographies ainsi que ceux relevant spécifiquement des portraits. Dans le prochain point nous allons parcourir quelques idées pour l'évaluation de la qualité des images.
 \subsection{Techniques d’évaluations et bases d’images}
+\label{part:PointEvaluation}
 Cette partie s’inscrit dans le processus de discrimination des photographies et présente brièvement quelques travaux qui ont été menés pour évaluer la qualité de photographies. L’évaluation de la qualité des photographies que nous générerions avec la méthode que nous proposons serait intéressante. Si le temps nous le permet cet aspect pourrait être vu plus en détails à la fin du projet.
 \paragraph*{}
 De nombreuses techniques utilisent des classifieurs basés sur un apprentissage supervisé, comme celle de Males et al. \cite{Males2013}. Dans leur méthode, les critères de bas niveau sont calculés sur l’ensemble de l’image tels que le contraste et le nombre de teintes. Les critères de haut niveau sont directement calculés dans la boîte englobant le visage (détecté par la méthode de Viola et Jones \cite{Viola2004}). Une fois tous les critères calculés, ils sont normalisés et inclus dans un vecteur. Les vecteurs obtenus sur plusieurs images vont alimenter les classifieurs. Deux classifieurs ont été utilisés dans leurs travaux afin de comparer leurs performances, il s’agit de SVM et d’AdaBoost. SVM a été en moyenne meilleur qu’AdaBoost\footnote{AdaBoost: raccourci du nom Adaptive Boosting. Il s'agit d'une méthode d'apprentissage automatique.}. Ils ont établi un comparatif de la précision des deux classifieurs dans le tableau~\ref{tab:ComparaisonSVMAdaBoost}. On peut constater que l'usage d'un SVM semble un peu plus performant.
@@ -583,7 +584,7 @@ Dans le cas où tous les critères seraient conformes à ceux attendus, voici le
 \item Le sujet serait combiné avec l’image résultante précédente.
 \end{enumerate}
 \paragraph{}
-En ce qui concerne les outils que nous pourrions utiliser pour réaliser ces étapes nous en avons relevés quelques-uns dans les articles. Pour détecter le visage, une méthode qui a été majoritairement utilisée est celle de Viola et Jones \cite{Viola2004}. Elle permet de détecter un visage dans une photo. Cette méthode est directement implémentée dans la bibliothèque de fonctions de Vision par Ordinateur OpenCV. Elle est aussi utilisée dans une boîte à outils de Matlab. Ensuite, dans cette zone un classifieur pourrait être utilisé pour identifier les pixels de peau.
+En ce qui concerne les outils que nous pourrions utiliser pour réaliser ces étapes nous en avons relevés quelques-uns dans les articles. Pour détecter le visage, une méthode qui a été majoritairement utilisée est celle de Viola et Jones \cite{Viola2004}. Elle permet de détecter un visage dans une photo. Cette méthode est directement implémentée dans la bibliothèque de fonctions de Vision par Ordinateur OpenCV. Elle est aussi utilisée dans une boîte à outils de Matlab \copyright. Ensuite, dans cette zone un classifieur pourrait être utilisé pour identifier les pixels de peau.
 Le lissage de la peau serait réalisé avec une combinaison des pixels de peau (enregistrés dans le masque) et une version floue de l’image. Une technique de flou connue est le flou gaussien par exemple.
 Cette proposition étendant la méthode de Lee et al. \cite{Lee} s’intéresse donc au cas du fond et de la mise en valeur du sujet.
 \subsection{Vers un embellissent optimal sans déformation du visage}
@@ -618,15 +619,113 @@ Embellissent optimal sans déformation du visage & - Mise en valeur de la totali
 
 
 \section{Correction par ajout de flou et augmentation de la profondeur de champ}
+Nous avons choisi de nous intéresser à la première solution qui se concentre sur les imperfections du visage et au détachement du sujet de la photo par rapport au fond. Nonobstant, il reste quelques compléments bibliographiques à apporter avant d'aller plus loin. En effet, nous devons savoir comment la peau est sélectionnée actuellement, mais aussi savoir quelle piste nous devons explorer afin d'augmenter l'effet de défocalisation sur le fond. En plus de cela, il serait intéressant d'énoncer une manière d'évaluer les résultats obtenus.
+
+
 \subsection{Détection des pixels de peau}
+\paragraph*{}
+Ce premier complément bibliographique s'axe sur la technique de classification des pixels de peau dans une image en couleur. Si dans le domaine RGB la classification est peu précise, d'autres domaines offrent plus de possibilité comme le YCrCb. Des chercheurs ont effectué des études sur les intervalles qui caractérisaient le mieux la couleur de la peau dans les différents canaux de l'YCrCb. Tout d'abord en 1999, Chai et Ngan \cite{Chai1999} ont déterminé que les intervalles suivants fonctionnaient bien: 
+
+\begin{itemize}
+\item 133 <= Cr <= 173;
+\item 77 <= Cb <= 127.
+\end{itemize}
+
+\paragraph*{}
+La composante Y n'était alors pas limitée, afin de ne pas mettre en jeu l'exposition dans les critères de sélection.
+Puis en 2004, Kukharev et Nowosielski \cite{Kukharev2004} ont réajusté les intervalles de la sorte:
+
+\begin{itemize}
+\item 135 < Cr < 180;
+\item 85 < Cb < 135;
+\item Y > 80.
+\end{itemize}
+
+\paragraph*{}
+Ces ajustements ont l'avantage de détecter plus correctement les pixels de peau puisque la composante correspondant à la luminance se voit bornée. L'ajout de seuils minimum et maximum permettent de ne pas être trop permissif lors de la sélection des pixels et d'éliminer quelques faux positifs mal éclairés. Par contre, les pixels de peau trop peu exposés ne sont plus considérés comme tels. La figure~\ref{fig:IntervalleMasquePeau1} compare les masques que l'on peut obtenir à partir d'un visage avec les deux intervalles proposés. On constate que le masque~\ref{fig:IntervalleMasquePeau1_Ancien} est plus pertinent que le masque~\ref{fig:IntervalleMasquePeau1_Nouveau} notamment en raison de la meilleure classification des cheveux par exemple.
+
+\begin{figure*}[htp]
+ \centering
+ \subfloat[Visage Original]{\label{fig:IntervalleMasquePeau1_Original}\includegraphics[scale=0.22]{Images/ea_peau_visage2_original}}               
+ \subfloat[Masque de peau avec anciens intervalles \cite{Chai1999}]{\label{fig:IntervalleMasquePeau1_Ancien}\includegraphics[scale=0.22]{Images/ea_peau_visage2_ancien_intervalle}}
+ \subfloat[Masque de peau avec nouveaux intervalles \cite{Kukharev2004}]{\label{fig:IntervalleMasquePeau1_Nouveau}\includegraphics[scale=0.22]{Images/ea_peau_visage2_nouvel_intervalle}}
+ \caption{Comparaison des masques de pixels de peau obtenus avec les deux intervalles pour un visage}
+ \label{fig:IntervalleMasquePeau1}
+\end{figure*}
+
+\paragraph*{}
+Nous avons choisi, à l'issue de ce point, d'utiliser la seconde version des intervalles en YCrCb pour la classification des pixels de peau.
 
 \subsection{Augmentation de la profondeur de champ}
+\paragraph*{}
+La profondeur de champ est un critère qui, nous le rappelons, a été retenu pour qualifier les images de portrait. Ce critère est d'autant plus respecté quand le fond derrière le sujet est flou. Et nous avons opté pour la réalisation d'un traitement qui permettrait d'améliorer cet indice. Mais comment procéder  ?
+
+\paragraph*{}
+Premièrement, il faut tout d'abord segmenter l'image en entrée de la sorte: 
+\begin{itemize}
+\item pixels appartenant au fond;
+\item pixels étant au premier plan.
+\end{itemize} 
+
+\paragraph*{}
+Plusieurs méthodes existent pour différencier ces groupes de pixels. On peut utiliser pour segmenter une image plusieurs méthodes comme la segmentation basée sur la couleur, sur la construction de contours sur les objets les plus nets \dots. 
+Après avoir expérimenté quelques unes de ces méthodes, nous n'avons pas obtenu de résultats concluants. Les zones étaient mal délimitées, et nous nous sommes rendus compte que certaines méthodes fonctionnent bien seulement si le fond est de type simple. Or, dans le cas d'images de portrait, le fond est potentiellement beaucoup plus complexe que de simples fonds uniformes.
+
+\paragraph*{}
+De ce constat, nous avons décidé de nous recentrer sur le traitement de Zhuo et Sim \cite{Zhuo2011} qui mesure la profondeur de champ. Pour estimer cet indice, leur méthode se base sur la construction d'une carte de profondeur. Étant donné que les codes Matlab\copyright qu'ils ont développés sont accessibles, nous avons décidé d'exploiter la carte de profondeur afin de segmenter l'image.
+
+\paragraph*{}
+Pour déterminer la profondeur moyenne à laquelle sont situés les pixels de la personne au premier plan, nous avons choisi d'exploiter la boite englobante du visage calculable à partir de la méthode de Viola et Jones. Il suffit alors de calculer la moyenne des valeurs des pixels de la carte de profondeur contenus dans la boite englobante. Cette partie est donc destinée à être implémentée sous Matlab\copyright.
 
 \subsection{Correction du contraste et de la luminosité}
 
 \subsection{Principe général de fonctionnement de la proposition}
+\paragraph*{}
+Maintenant que nous avons vu les différentes techniques utilisées dans la solution, intéressons-nous au traitement de manière globale.
+\paragraph*{}
+Le principe et la séquence d'application des traitements ont évolué depuis nos premières hypothèses dans le point~\ref{propun}. Si nous prenons en entrée une image et attendons en sortie une image corrigée automatiquement, les étapes pour y arriver ne sont plus dans le même ordre. Voici le nouveau principe:
+\paragraph*{}
+La première étape consiste à corriger les imperfections du visage.
+Pour cela, il faut commencer par détecter le masque de peau du visage en nous basant sur la couleur caractéristique de la peau en YCrCb \cite{Kukharev2004}. 
+Une fois celui ci en notre possession, nous le flouterons afin d'atténuer les traces de rides, cernes et autres imperfections cutanées. Ce flou est à appliquer en combinant la valeur originale des pixels de peau avec leur valeur floue moyennant l'usage d'un facteur d'opacité \cite{Lee}. Il existe plusieurs formes de flous qui peuvent être utilisés à cette fin comme le flou homogène, le flou gaussien, le flou médian ainsi que le flou bilatéral.
+La grande difficulté de cette partie est ainsi de construire correctement le masque de peau. En effet, si ce dernier est trop large, nous prenons le risque de rendre flou des zones qui ne le devraient pas et de perdre du détail.
+En sortie de cette première phase, nous obtenons, un visage lissé et paraissant plus jeune.
+\paragraph*{}
+Dans la seconde étape, nous nous attaquons à la défocalisation de l'image obtenue à la fin de l'étape précédente. Le but ici est de bien détacher le sujet du fond en renforçant l'effet de flou de ce dernier.
+Nous utilisons une carte de profondeur \cite{Zhuo2011} pour déterminer à quelle distance se situe la composante principale de l'image (dans notre cas il s'agit du visage).
+Ainsi, on ne conserve que la composante du premier plan dans sa version nette et on applique le noyau de flou sur le reste de l'image.
+Le choix du noyau revêt une importance particulière car il ne faut pas qu'il soit trop fort pour rendre les objet indistinguables mais l'être assez pour permettre de réellement détacher la personne du reste de la photographie.
+En sortie de cette étape, nous avons donc une image avec un sujet au visage lissé et bien séparé du fond de l'image.
+\paragraph*{}
+Dans la troisième et dernière étape, on corrige le contraste et la luminosité via la méthode expliquée dans le point précédent. 
+Nous avons choisi d'intégrer cette étape à ce niveau de l'algorithme car il ne nous paraissait pas pertinent de réévaluer la couleur des pixels au départ pour ensuite les flouter.
+Cette étape a pour but de corriger les erreurs d'exposition présentes de base sur la photographie comme notamment les cas des images sur ou sous-exposition. 
 
 \subsection{Processus d'évaluation}
+
+
+
+\paragraph*{}Cas des images à tester: 
+
+Référence à la partie~\ref{part:PointEvaluation}.
+La base FEI n'est pas adaptée pour des tests en dehors de la vérification du lissage de la peau.
+Notre traitement est supposé améliorer des images de portrait avec des fonds plus complexes que les fonds uniformes de la base. La première raison à cela est que la base était destiné à un usage scientifique d'étude des visages. La seconde part simplement du principe que les utilisateurs préféreraient disposer d'une photo de profil qui fasse pas penser à une photo d'identité.
+
+Donc nous avons recherché des images dans la base communautaire Flickr\copyright afin d'éprouver de manière plus efficace nos méthodes de différentiation du fond. La recherche que nous avons lancée contenait principalement le mot clé "selfie"\footnote{Selfie: désigne un autoportrait photographique} qui est un terme très en vogue actuellement.
+
+
+\paragraph*{}
+Méthode de test:
+Quantitative pas possible
+
+Qualitative : rapide sur les résultats obtenus avec trois critères : 
+peau bien lissée
+fond plus profond
+contraste et luminosité plus adaptée
+
+
+
+
 
 \section{Conclusion}
 
@@ -643,10 +742,58 @@ Embellissent optimal sans déformation du visage & - Mise en valeur de la totali
 
 
 \section{Développements}
-\subsection{Lissage de la peau}
-\subsection{Augmentation de la profondeur de champ}
-\subsection{Correction du contraste et de la luminosité}
 
+\begin{figure*}
+\centering
+\includegraphics[scale=0.5]{Diagrammes/DiagrammeActivites_00_Global}
+\caption{Diagramme d'Activités du fonctionnement global du projet}
+\label{diag:diagramme00}
+\end{figure*}
+
+\subsection{Lissage de la peau}
+\begin{figure*}
+\centering
+\includegraphics[scale=0.5]{Diagrammes/DiagrammeActivites_10_LissagePeau}
+\caption{Diagramme d'Activités illustrant l'étape de lissage de la peau}
+\label{diag:diagramme10}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.5]{Diagrammes/DiagrammeActivites_11_LissagePeau_Masque}
+\caption{Diagramme d'Activités de la construction du masque des pixels de peau}
+\label{diag:diagramme11}
+\end{figure*}
+
+
+\begin{figure*}[htp]
+ \centering
+ \subfloat[Masque Original]{\label{fig:MasquePeau01}\includegraphics[scale=0.22]{Images/ea_masque_peau_01masque_simple}}               
+ \subfloat[Après opérations morphologiques]{\label{fig:MasquePeau02}\includegraphics[scale=0.22]{Images/ea_masque_peau_02masque_operation_morpho}}
+ \subfloat[Après filtrage sur composantes connexes]{\label{fig:MasquePeau03}\includegraphics[scale=0.22]{Images/ea_masque_peau_03masque_propre}}
+ \caption{Simplification d'un masque de pixels de peau}
+ \label{fig:MasquePeau}
+\end{figure*}
+
+
+
+
+
+\subsection{Augmentation de la profondeur de champ}
+\begin{figure*}
+\centering
+\includegraphics[scale=0.5]{Diagrammes/DiagrammeActivites_20_Profondeur}
+\caption{Diagramme d'Activités illustrant le principe d'augmentation de l'effet de défocalisation}
+\label{diag:diagramme20}
+\end{figure*}
+
+\subsection{Correction du contraste et de la luminosité}
+\begin{figure*}
+\centering
+\includegraphics[scale=0.5]{Diagrammes/DiagrammeActivites_30_Contraste}
+\caption{Diagramme d'Activités de la correction du contraste et de la luminosité}
+\label{diag:diagramme30}
+\end{figure*}
 
 \section{Résultats}
 
@@ -766,7 +913,7 @@ Les données sont issues d'un apprentissage statistique pour lisser les cas exce
 Ensuite à partir de cette base, l'équipe a défini un classifieur qui distingue au niveau qualitatif les photos à partir de leurs critères bas et haut niveau (règle des tiers, saturation, exposition à la lumière et image colorée, taille et ratio, composition des couleurs des régions, ...)
 La classification est effectuée avec un arbre de décision reprenant 15 parmi les 56 propriétés visuelles retenues par le laboratoire. Les résultats seraient en mesure de déterminer si une photographie serait jugée belle ou non par un humain.
 \paragraph{Analyse}
-Une nouvelle fois, cet article recoupe le sujet des critères jaugeant la beauté d'une photographie au sens général. Les traitements décrits dans l’article ont été réalisés avec Matlab.
+Une nouvelle fois, cet article recoupe le sujet des critères jaugeant la beauté d'une photographie au sens général. Les traitements décrits dans l’article ont été réalisés avec Matlab\copyright.
 \section{\emph{Automatic correction and enhancement of facial images}}
 L'article \cite{Konoplev2012} propose un système de détection et de correction des défauts des visages contenus dans une photographie.
 \paragraph{Résumé}
