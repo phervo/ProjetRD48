@@ -36,6 +36,8 @@ function [imageRetour] = Redimensionnement(nomImage,taille)
     if (s(indice) > dimension_maximale)
         ratio = dimension_maximale / s(indice);
         imageRetour = imresize(image, ratio);
+	else
+		imageRetour = image;
     end;
     
 end
