@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Planification Phase 2" company="" webLink="http://" view-date="2014-01-06" view-index="0" gantt-divider-location="185" resource-divider-location="300" version="2.0" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Planification Phase 2" company="" webLink="http://" view-date="2013-11-18" view-index="0" gantt-divider-location="1" resource-divider-location="300" version="2.0" locale="fr_FR">
     <description/>
-    <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="53" order="0"/>
-        <field id="tpd4" name="Date de début" width="23" order="1"/>
-        <field id="tpd5" name="Date de fin" width="23" order="2"/>
+    <view zooming-state="default:6" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="33" order="0"/>
+        <field id="tpd4" name="Date de début" width="33" order="1"/>
+        <field id="tpd5" name="Date de fin" width="33" order="2"/>
         <option id="taskLabelUp" value="name"/>
         <option id="taskLabelDown" value="taskDates"/>
+        <option id="taskLabelRight" value="resources"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="70" order="0"/>
-        <field id="1" name="Rôle par défaut" width="29" order="1"/>
+        <field id="0" name="Nom" width="50" order="0"/>
+        <field id="1" name="Rôle par défaut" width="49" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -17,12 +18,34 @@
             <day-type id="0"/>
             <day-type id="1"/>
             <calendar id="1" name="default">
-                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
-                <only-show-weekends value="false"/>
+                <default-week sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+                <only-show-weekends value="true"/>
                 <overriden-day-types/>
                 <days/>
             </calendar>
         </day-types>
+        <date year="1" month="1" date="1"/>
+        <date year="2012" month="1" date="2"/>
+        <date year="2012" month="4" date="9"/>
+        <date year="1" month="5" date="1"/>
+        <date year="1" month="5" date="8"/>
+        <date year="2012" month="5" date="17"/>
+        <date year="2012" month="5" date="28"/>
+        <date year="1" month="7" date="14"/>
+        <date year="1" month="8" date="15"/>
+        <date year="1" month="11" date="1"/>
+        <date year="1" month="11" date="11"/>
+        <date year="2012" month="11" date="12"/>
+        <date year="1" month="12" date="25"/>
+        <date year="2005" month="3" date="28"/>
+        <date year="" month="1" date="1"/>
+        <date year="" month="5" date="1"/>
+        <date year="" month="5" date="8"/>
+        <date year="" month="7" date="14"/>
+        <date year="" month="8" date="15"/>
+        <date year="" month="11" date="1"/>
+        <date year="" month="11" date="11"/>
+        <date year="" month="12" date="25"/>
     </calendars>
     <tasks empty-milestones="true">
         <taskproperties>
@@ -37,26 +60,63 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Développement modules" color="#8cb6ce" meeting="false" start="2013-12-09" duration="10" complete="0" expand="true"/>
-        <task id="1" name="Intégration" color="#8cb6ce" meeting="false" start="2014-01-06" duration="5" complete="0" expand="true">
-            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        <task id="19" name="Installation et premières manipulations" color="#8cb6ce" meeting="false" start="2013-12-09" duration="7" complete="100" expand="true">
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+            <depend id="22" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="4" name="Fin premier cycle développement" color="#8cb6ce" meeting="false" start="2014-01-13" duration="5" complete="0" expand="true">
-            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        <task id="20" name="Développement Module 1" color="#8cb6ce" meeting="false" start="2013-12-16" duration="7" complete="100" expand="true">
+            <depend id="23" type="2" difference="12" hardness="Strong"/>
+            <depend id="24" type="2" difference="12" hardness="Strong"/>
+            <depend id="25" type="2" difference="12" hardness="Strong"/>
+            <task id="21" name="M1: Détection peau" color="#8cb6ce" meeting="false" start="2013-12-16" duration="7" complete="100" expand="true"/>
+            <task id="22" name="M1: Lissage peau" color="#8cb6ce" meeting="false" start="2013-12-16" duration="7" complete="100" expand="true"/>
         </task>
-        <task id="5" name="Correction et Développement" color="#8cb6ce" meeting="false" start="2014-01-20" duration="5" complete="0" expand="true">
-            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        <task id="23" name="Développement Module 2 et 3" color="#8cb6ce" meeting="false" start="2014-01-06" duration="7" complete="100" expand="true">
+            <depend id="26" type="2" difference="0" hardness="Strong"/>
+            <task id="24" name="M2 : Profondeur de champ" color="#8cb6ce" meeting="false" start="2014-01-06" duration="7" complete="100" expand="true"/>
+            <task id="25" name="M3 : Contraste et luminosité" color="#8cb6ce" meeting="false" start="2014-01-06" duration="7" complete="100" expand="true"/>
         </task>
-        <task id="6" name="Intégration finale et expérimentation" color="#8cb6ce" meeting="false" start="2014-01-27" duration="5" complete="0" expand="true">
-            <depend id="15" type="2" difference="0" hardness="Strong"/>
+        <task id="26" name="Tests d'intégration" color="#8cb6ce" meeting="false" start="2014-01-13" duration="7" complete="100" expand="true">
+            <depend id="27" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="15" name="Préparation soutenance finale" color="#8cb6ce" meeting="false" start="2014-02-03" duration="6" complete="0" expand="true">
-            <depend id="18" type="2" difference="0" hardness="Strong"/>
+        <task id="27" name="Corrections et Expérimentations" color="#8cb6ce" meeting="false" start="2014-01-20" duration="7" complete="100" expand="true">
+            <depend id="28" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="18" name="Soutenance Finale" color="#8cb6ce" meeting="false" start="2014-02-11" duration="5" complete="0" expand="true"/>
+        <task id="28" name="Résultats et Evaluation" color="#8cb6ce" meeting="false" start="2014-01-27" duration="7" complete="100" expand="true">
+            <depend id="29" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="29" name="Rédaction Rapport Final" color="#8cb6ce" meeting="false" start="2014-02-03" duration="7" complete="100" expand="true">
+            <depend id="30" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="30" name="Soutenance Finale et Livraison" color="#8cb6ce" meeting="false" start="2014-02-10" duration="7" complete="100" expand="true"/>
     </tasks>
-    <resources/>
-    <allocations/>
+    <resources>
+        <resource id="0" name="PY" function="Default:1" contacts="" phone=""/>
+        <resource id="1" name="PF" function="Default:1" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="19" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="22" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="25" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="26" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="27" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="29" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="30" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="21" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="24" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="26" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="27" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="29" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="30" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+    </allocations>
     <vacations/>
     <taskdisplaycolumns>
         <displaycolumn property-id="tpd2" order="-1" width="75" visible="false"/>
@@ -68,9 +128,9 @@
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="97" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="42" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="42" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="15" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="15" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="15" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>

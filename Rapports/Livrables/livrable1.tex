@@ -840,7 +840,7 @@ Pour éliminer ces blocs de pixels non désirables, nous avons décrit une nouve
 \end{figure*}
 
 
-Une fois les composantes connexes nous avons choisi de conserver toutes celles qui étaient les plus proches du visage. Pour les différentier, nous avons exploité la boite englobante du visage que l'on peut construire au moyen d'un classificateur de Haar entrainé sur la reconnaissance de visage. Le classificateur de Haar est accessible depuis OpenCv et correspond à une implémentation pratique de la méthode de Viola et Jones \cite{Viola2004}.
+Une fois les composantes connexes nous avons choisi de conserver toutes celles qui étaient les plus proches du visage. Pour les différentier, nous avons exploité la boite englobante du visage que l'on peut construire au moyen d'un classifieur de Haar entrainé sur la reconnaissance de visage. Le classifieur de Haar est accessible depuis OpenCv et correspond à une implémentation pratique de la méthode de Viola et Jones \cite{Viola2004}.
 
 \paragraph*{}
 L'intérêt de cette boite englobante est le suivant, on élabore la liste de toutes les composantes connexes qui passe à l'intérieur, puis on construit un nouveau masque de pixels de peau qui ne contient que les composantes ayant été listées. Avec cette méthode, seuls les blocs connexes au bloc du visage sont conservés. On peut donc garder ce qui a trait aux oreilles et au cou. Il y a cependant toujours des résidus de faux positifs n'ayant pas été complètement filtrés. Le diagramme~\ref{diag:diagramme11} illustre cet enchainement de simplification du masque et la figure~\ref{fig:MasquePeau} offre un exemple plus explicite de filtrage itératif du masque. Une fois le masque des pixels de peau nettoyé, nous pouvons l'exploiter pour l'étape suivante qui est l'application du flou en lui-même.
@@ -929,7 +929,7 @@ Ce module retourne l'image qui a été tout d'abord lissée au niveau du visage,
 
 \section{Résultats}
 \paragraph*{}
-Après avoir fini de développer les modules séparément, nous avons implémenté des scripts batch sous Windows. Pour chaque module, nous avons un script batch qui peut lancer un traitement donné sur tous les fichiers d'un répertoire et effectuer la sauvegarde des résultats dans un autre. De cette manière nous avons pu conserver des traces d'images générées à chaque étape. Le lancement de plusieurs instances de Matlab\copyright~en parallèle étant très consommateur de ressources, nous avons écrit un nouveau script .m\footnote{.m : il s'agit du format des fichiers de script, ou des fonctions de Matlab}. Ce script permet de lancer séquentiellement les fonctions AugmentationProfondeurChamp et CorrectionContrasteLuminosite. De plus nous avons aussi un script batch lançant toute la chaîne de traitement pour une image afin de plus refléter le mode utilisateur. 
+Après avoir fini de développer les modules séparément, nous avons implémenté des scripts batch sous Windows. Pour chaque module, nous avons un script batch qui peut lancer un traitement donné sur tous les fichiers d'un répertoire et effectuer la sauvegarde des résultats dans un autre. De cette manière nous avons pu conserver des traces d'images générées à chaque étape. Le lancement de plusieurs instances de Matlab\copyright~en parallèle étant très consommateur de ressources, nous avons écrit un nouveau script .m\footnote{.m : il s'agit du format des fichiers de script, ou des fonctions de Matlab}. Ce script permet de lancer séquentiellement les fonctions AugmentationProfondeurChamp et CorrectionContrasteLuminosite. De plus nous avons aussi un script batch lançant toute la chaîne de traitement pour une image afin de plus refléter plus fidèlement le mode utilisateur. 
 
 \paragraph*{}
 Au moyen de ces différents scripts batch, nous avons lancé lancé le traitement sur les images que nous avions au préalable recherchées sous Flickr\copyright~et obtenu des résultats que nous tenions à faire figurer. A la suite de ce point, vous pouvez trouver neuf tableaux contenant pour chaque ligne, un identifiant d'image, l'image originale et l'image à l'issue du traitement. Pour limiter de trop longs temps de calcul, nous avons traité des images redimensionnées de sorte que leur plus grande dimension (largeur ou hauteur) fasse 400 pixels.   
@@ -1388,15 +1388,18 @@ La première phase nous a permis de dégager les conclusions suivantes en ce qui
 
 \section{Phase II}
 \subsection{Gantt Previsionnel}
-A l'issue de la première phase nous avons réalisé dans la figure~\ref{fig:PlanningPrevisionnel2} notre hypothèse de planification. Ce diagramme de Gantt, est centré sur le développement du projet.
+A l'issue de la première phase nous avons réalisé dans la figure~\ref{fig:PlanningPrevisionnel2} notre hypothèse de planification. Ce diagramme de Gantt, est centré sur le développement du projet. Nous avions à l'issue de la soutenance intermédiaire, recalculé le planning de manière à terminer le 16 février, étant donné que le planification des projets de Recherche et de développement était supposée être raccourcie d'une semaine. 
 
 \subsection{Gantt Effectif}
 Maintenant que nous arrivons à la fin de la dernière phase, nous avons réalisé un nouveau diagramme de Gantt effectif ~\ref{fig:PlanningEffectif2}. Il illustre ce qui a été réalisé et nous pouvons constater des différences par rapport à ce qui était prévu.
 
 \subsection{Comparaison des différences de planification de la seconde phase}
-
-Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes  Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes. Comparaison des deux diagrammes.
-
+\paragraph*{}
+Tout d'abord, le premier élément notable de comparaison est la durée sur laquelle s'étendent les deux plannings. Si l'un était pressenti pour se terminer le 16 février (\ref{fig:PlanningPrevisionnel2}), l'autre se termine le 23 février (\ref{fig:PlanningEffectif2}). Ensuite, nous pouvons constater que la phase du développement du premier module concernant le lissage de la peau nous a pris deux fois plus de temps que prévu initialement. Cette durée ayant été augmentée explique le décalage de la planification, mais, la date finale a été conservée au 23 février et non au 16 février. Cela nous a permis de tenir l'ensemble des différentes tâches dans les nouveaux délais. Cependant si ce cette réévaluation n'avait pas eu lieu, certains point n'auraient pu être traité en totalité comme l'évaluation par exemple.
+\paragraph*{}
+Ensuite, dans la partie "Correction et Expérimentations", nous comptions privilégier la seconde partie de l'intitulé mais certains modules devaient être améliorés. Ce fut le cas du premier module et du troisième. La construction du masque des pixels de peau n'était pas assez stricte et le module de correction du contraste et de la luminosité avait un temps d'exécution prohibitif. Nous avons donc dédié deux demi-journées à remplir ces objectifs. 
+\paragraph*{}
+Une nouvelle fois, en matière de structure, le planning n'a pas évolué, mais le temps nécessaire pour terminer certaines parties du projet aurait pu ne pas être suffisant.
 
 
 \begin{figure*}
@@ -1904,13 +1907,47 @@ L'utilisation de Matlab s'avère être assez coûteuse et l'implémentation gagn
 	\end{planification}
 \end{fichesuivi}
 
+\begin{fichesuivi}{03 février 2014}{09 février 2014}
+	\tempstravailA{15}{30}
+	\tempstravailB{24}{00}
+\paragraph{}
+	\begin{travaileffectue}
+		\begin{itemize}
+			\item  Fin de la rédaction de la partie développements, résultats et conclusion: simple, $100$ \%;
+			\item Fin de la rédaction de la fiche d’auto-contrôle  : simple, réalisée à $100$ \% ;
+			\item Version alpha du rapport final soumise à M. Perreira Da Silva jeudi :  simple, réalisée à $100$ \% ;
+			\item Modifications du rapport final suite aux commentaire de   M. Perreira Da Silva : simple, réalisée à $100$ \% ;
+			\item Rédaction du support de présentation pour la soutenance : simple, réalisée à $100$ \% ;
+			\item Rendu du rapport final : simple, réalisée à $100$ \% ;
+		\end{itemize}
+	\end{travaileffectue}
+
+
+\paragraph{}
+	\begin{echange}
+		\begin{itemize}
+			\item Envoi du rapport final à M. Perreira Da Silva;
+			\item Nous avons reçu un retour le X. Nous avons pu corriger certains points grâce aux suggestions de M. Perreira Da Silva;
+		\end{itemize}
+	\end{echange}
+
+\paragraph*{}
+	\begin{planification}
+		\begin{itemize}
+			\item La soutenance finale aura lieu le 18 février 2014 à 08h00;
+			\item Un dernier objectif est d’effectuer la procédure de recette, livraison au cours de la semaine prochaine.
+			\item Tous les documents liés au projet devront être mis à disposition de M. Perreira Da Silva.
+\end{itemize}
+	\end{planification}
+\end{fichesuivi}
+
 
 
 
 \newpage
 \printweeksummary
 \chapter{Auto-contrôle et auto-évaluation}
-La figure~\ref{fig:AutoEvaluationTravailIntermediaire} présente l'auto-évaluation que nous avons réalisée pour la première partie du projet de recherche. La figure ~\ref{fig:AutoEvaluationTravailFinal} concerne la seconde partie du projet.
+La figure~\ref{fig:AutoEvaluationTravailIntermediaire} présente l'auto-évaluation que nous avons réalisée pour la première partie du projet de recherche. La figure ~\ref{fig:AutoEvaluationTravailFinal} concerne la seconde partie du projet. Sur la seconde figure, dans la section travail, nous n'avons pas encore procédé à la livraison, mais nous avons tout de même affecté une note prévisionnel sur les deux points la concernant. 
 \begin{figure*}
 	\centering
      \ifscreen % macro TeX (issue de la classe report-rd-info.cls) permettant d'ajuster le contenu en fonction du l'orientation du document (<< screen >> ou pas)
