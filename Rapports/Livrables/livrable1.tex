@@ -876,6 +876,18 @@ ImgFin.(i,j) = (ImgOrig. + ImgFloue(i,j)) * Coef
 \end{equation}
 L'image que nous obtenons en résultat est ensuite sauvegardée afin d'être exploitée dans le module suivant d'amélioration de notre photographie de portrait. En termes de codes et fonctions développées en C++, la partie de construction du masque de pixels de peau a été cristallisée dans la classe DetecteurPeau. La partie dédiée à la combinaison et au lissage est dans la classe LisseurPeau.
 
+\paragraph*{}
+La figure~\ref{fig:lissageExemple} illustre le lissage d'un visage. On peut constater que le masque est perfectible puisqu'un groupe de pixels à droite a été conservé car la boite englobante touche cette zone. Par rapport à la peau en elle-même, on constate que les zones du nez et des cernes sont moins marquées, et que dans l'ensemble le visage fait plus reposé.
+
+\begin{figure*}[htp]
+ \centering
+ \subfloat[Image originale]{\includegraphics[scale=0.35]{Images/ea_test_lissage_01}}               
+ \subfloat[Masque de peau]{\includegraphics[scale=0.35]{Images/ea_test_lissage_02}}
+ \subfloat[Image après lissage]{\includegraphics[scale=0.35]{Images/ea_test_lissage_03}}
+ \caption{Exemple du lissage de la peau d'un visage avec le premier module}
+ \label{fig:lissageExemple}
+\end{figure*}
+
 
 \subsection{Augmentation de la profondeur de champ}
 \paragraph*{}
@@ -897,6 +909,17 @@ l'on combine avec les valeurs originales si les pixels sont considérés comme p
 \includegraphics[scale=0.5]{Diagrammes/DiagrammeActivites_20_Profondeur}
 \caption{Diagramme d'Activités illustrant le principe d'augmentation de l'effet de défocalisation}
 \label{diag:diagramme20}
+\end{figure*}
+
+\paragraph*{}
+La figure~\ref{fig:ProfExemple} présente le résultat que l'on peut obtenir sur la même image utilisée pour le premier module. L'image~\ref{fig:ProfExemple1} est l'originale et non celle obtenue après le lissage. On peut constater que deux zones ont été identifiées comme appartenant à l'arrière-plan. Et il s'agit bien des zones plus floues dans la troisième image~\ref{fig:ProfExemple3}.
+\begin{figure*}[htp]
+ \centering
+ \subfloat[Image originale]{ \label{fig:ProfExemple1} \includegraphics[scale=0.35]{Images/ea_test_prof01}}               
+ \subfloat[Pixels au fond]{\includegraphics[scale=0.35]{Images/ea_test_prof02}}
+ \subfloat[Image après augmentation de la profondeur de champ]{ \label{fig:ProfExemple3}\includegraphics[scale=0.35]{Images/ea_test_prof03}}
+ \caption{Exemple de l'augmentation du flou sur les zones en arrière-plan avec le deuxième module}
+ \label{fig:ProfExemple}
 \end{figure*}
 
 \paragraph*{}
@@ -923,6 +946,17 @@ Ce module retourne l'image qui a été tout d'abord lissée au niveau du visage,
 \includegraphics[scale=0.5]{Diagrammes/DiagrammeActivites_30_Contraste}
 \caption{Diagramme d'Activités de la correction du contraste et de la luminosité}
 \label{diag:diagramme30}
+\end{figure*}
+
+\paragraph*{}
+La figure~\ref{fig:ContExemple} est un exemple de ce que l'on peut obtenir après rehaussement du contraste. Le support est cette fois une image différente par rapport aux modules précédents puisque le contraste n'évoluait que très peu. Nous avons ainsi sélectionné une autre image plus adaptée à la démonstration. En observant le résultat, le contraste offre une gamme de couleurs pour le blanc et le jaune qui sont maintenant plus naturels.
+
+\begin{figure*}[htp]
+ \centering
+ \subfloat[Image originale]{ \label{fig:ea_testcontraste01} \includegraphics[scale=0.35]{Resultats/pb_avant}}               
+ \subfloat[Image plus contrastée]{\includegraphics[scale=0.35]{Resultats/pb_apres}}
+ \caption{Exemple de correction du contraste et de la luminosité avec le troisième module}
+ \label{fig:ContExemple}
 \end{figure*}
 
 
