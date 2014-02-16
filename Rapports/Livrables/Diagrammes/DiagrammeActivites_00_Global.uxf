@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5.1">
+<diagram program="umlet" version="12.2">
   <zoom_level>10</zoom_level>
   <element>
     <type>com.umlet.element.custom.State</type>
     <coordinates>
       <x>430</x>
       <y>190</y>
-      <w>180</w>
+      <w>210</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>Prendre une photographie</panel_attributes>
@@ -17,7 +17,7 @@
     <coordinates>
       <x>430</x>
       <y>250</y>
-      <w>180</w>
+      <w>210</w>
       <h>20</h>
     </coordinates>
     <panel_attributes>Lisser la peau</panel_attributes>
@@ -28,10 +28,10 @@
     <coordinates>
       <x>430</x>
       <y>300</y>
-      <w>180</w>
+      <w>210</w>
       <h>20</h>
     </coordinates>
-    <panel_attributes>Augmenter Effet Defocus</panel_attributes>
+    <panel_attributes>Augmenter Effet Défocalisation</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -39,7 +39,7 @@
     <coordinates>
       <x>430</x>
       <y>350</y>
-      <w>180</w>
+      <w>210</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>Corriger Contraste 
@@ -51,7 +51,7 @@ et Luminosité</panel_attributes>
     <coordinates>
       <x>430</x>
       <y>410</y>
-      <w>180</w>
+      <w>210</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>Ecrire la nouvelle 
@@ -61,7 +61,7 @@ photographie</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>490</x>
+      <x>520</x>
       <y>190</y>
       <w>50</w>
       <h>80</h>
@@ -72,7 +72,7 @@ photographie</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>490</x>
+      <x>520</x>
       <y>240</y>
       <w>50</w>
       <h>80</h>
@@ -83,7 +83,7 @@ photographie</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>490</x>
+      <x>520</x>
       <y>290</y>
       <w>50</w>
       <h>80</h>
@@ -94,7 +94,7 @@ photographie</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>490</x>
+      <x>520</x>
       <y>350</y>
       <w>50</w>
       <h>80</h>
@@ -107,7 +107,7 @@ photographie</panel_attributes>
     <coordinates>
       <x>420</x>
       <y>130</y>
-      <w>200</w>
+      <w>230</w>
       <h>370</h>
     </coordinates>
     <panel_attributes>MagicPortrait</panel_attributes>
@@ -116,7 +116,7 @@ photographie</panel_attributes>
   <element>
     <type>com.umlet.element.custom.InitialState</type>
     <coordinates>
-      <x>510</x>
+      <x>540</x>
       <y>160</y>
       <w>20</w>
       <h>20</h>
@@ -127,7 +127,7 @@ photographie</panel_attributes>
   <element>
     <type>com.umlet.element.custom.FinalState</type>
     <coordinates>
-      <x>510</x>
+      <x>540</x>
       <y>460</y>
       <w>20</w>
       <h>20</h>
@@ -138,7 +138,7 @@ photographie</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>490</x>
+      <x>520</x>
       <y>150</y>
       <w>50</w>
       <h>60</h>
@@ -149,7 +149,7 @@ photographie</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>490</x>
+      <x>520</x>
       <y>410</y>
       <w>50</w>
       <h>70</h>
